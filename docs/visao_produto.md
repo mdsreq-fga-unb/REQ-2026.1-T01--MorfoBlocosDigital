@@ -28,7 +28,7 @@ O público-alvo principal são estudantes do ensino fundamental II e do ensino m
 
 ### __1.3 Rich Picture__
 
-![Rich Picture](/img/rich_picture.jpeg)
+![Rich Picture](img/rich_picture.jpeg)
 
 <p style="text-align:center;font-size:10px;font-weight:bold">Imagem 1 - Fonte: Autoria Própria via IA</p>
 
@@ -42,7 +42,7 @@ O fluxo de informação atual é marcado pelo feedback tardio, uma vez que o est
 
 A infraestrutura baseada no jogo físico impõe restrições de uso, limitando a prática ao ambiente escolar e à disponibilidade de blocos. Soma-se a isso o custo do material, que dificulta sua aquisição e reduz o acesso por parte dos estudantes. Como consequência, há prejuízo na continuidade do aprendizado e na consolidação dos conceitos morfológicos.
 
-![Diagrama de Ishikawa](/img/diagrama_ishikawa.jpeg)
+![Diagrama de Ishikawa](img/diagrama_ishikawa.jpeg)
 
 <p style="text-align:center;font-size:10px;font-weight:bold">Imagem 2</p>
 
@@ -72,7 +72,7 @@ A seguir, é apresentado o quadro-resumo dos stakeholders.
 
 Além do quadro-resumo, será elaborada uma matriz Poder × Interesse para classificar os stakeholders nas categorias Gerenciar de Perto, Manter Satisfeito, Manter Informado e Monitorar, orientando a estratégia de comunicação e engajamento da equipe ao longo do projeto. 
 
-![Mapa de stakweholders](/img/mapa_stakeholders.jpeg)
+![Mapa de stakeholders](img/mapa_stakeholders.jpeg)
 
 
 
@@ -206,6 +206,19 @@ Em comparação com outras abordagens, o Kanban apresenta menor estrutura de pla
 
 Dessa forma, a combinação entre um planejamento inicial e a execução iterativa com Scrum se mostra adequada ao contexto do projeto, garantindo organização, acompanhamento contínuo e evolução incremental do sistema.
 
+## __5. Cronograma__
+
+| Sprint | Período| Foco de Desenvolvimento | Entrega Acadêmica (Relatório) | Processo de validação |
+| :--- | :--- | :--- | :--- | :--- |
+| **Sprint 1** | 14/04 - 28/04| **Inventário de dados**: Mapear prefixos, radicais e sufixos com a PO. | Finalização do PC1 e ajuste do Rich Picture. | **Revisão por pares**: Líder valida se a planilha de morfemas está completa para o MVP. |
+| **Sprint 2** | 29/04 - 13/05| **UX e Prototipagem (Figma)**: Desenhar as telas de "arrastar e soltar" e a lógica visual dos blocos. | **PC2 (19/05)**: Elicitação, Backlog MoSCoW e MVP. | **MoSCoW + Feedback PO**: Reunião com a Profª. Pílar para validar o design e priorizar o Backlog. |
+| **Sprint 3** | 14/05 - 28/05| **Lógica de validação**: Programar/Modelar como o sistema decide se "In + Feliz" é uma palavra válida. | Início de PBB e User Stories. | **DoR (Definition of Ready)**: O líder valida se as User Stories têm critérios de aceitação claros. |
+| **Sprint 4** | 29/05 - 12/06| **Cenários de Teste (BDD)**: Escrever os comportamentos do sistema (Dado que/Quando/Então). | **PC3 (16/06)**: Verificação e Validação (BDD). | **BDD Testing**: Validar os cenários "Dado/Quando/Então" com a lógica pedagógica da PO. |
+|**Sprint 5**| 13/06 - 27/06| **Feedback pedagógico**: Criar as mensagens de erro  e explicações gramaticais do jogo.| **PC4 (07/07)**: Story Mapping e Casos de Uso.| **User Story Mapping**: Validar visualmente se a jornada do aluno não possui falhas de fluxo. |
+| **Sprint 6** | 28/06 - 07/07| **Refinamento e Deploy**: Ajustes finais na interface e preparação da apresentação.| Entrega final: documento completo e vídeo. | **DoD (Definition of Done)**: Checklist final para garantir que tudo cumpre os requisitos do professor. |
+
+
+
 ## __6. Interação entre Equipe e Cliente__
 
 ### __6.1 Composição da Equipe__
@@ -307,4 +320,5 @@ Com a reorganização da equipe, passou-se a priorizar um contato mais frequente
 
 | **Data**       | Versão | Descrição                                           | Autor              |
 | ---------- | ------ | --------------------------------------------------- | ------------------ |
-| 12/04/2026 | 1.0    | Criação, elaboração e repasse do documento           |    Ana Beatriz, Artur Fernandes, [Bruno Souza](https://github.com/youngburny), Carlos Eduardo e Luiz Henrique   |
+| 12/04/2026 | 1.0    | Criação, elaboração e repasse do documento.         |    Ana Beatriz, Artur Fernandes, [Bruno Souza](https://github.com/youngburny), Carlos Eduardo e Luiz Henrique   |
+| 12/04/2026 | 1.1    | Adiciona a seção 5 (Cronograma).         |    Ana Beatriz, [Bruno Souza](https://github.com/youngburny)   |
