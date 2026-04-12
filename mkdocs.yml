@@ -1,0 +1,20 @@
+site_name: MorfoBlocos Digital
+site_description: Documentação do projeto MorfoBlocos Digital - Engenharia de Software
+site_author: Equipe G4
+
+theme:
+  name: material
+  palette:
+    # Opção de alternar entre tema claro e escuro
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Mudar para modo escuro 
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Mudar para modo claro
+
+nav:
+  - Visão Geral: inicio.md
+  - Visão do Produto e Projeto: visao_produto.md
