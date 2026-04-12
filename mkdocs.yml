@@ -16,5 +16,5 @@ theme:
         name: Mudar para modo claro
 
 nav:
-  - Visão Geral: inicio.md
+  - Início: index.md
   - Visão do Produto e Projeto: visao_produto.md
