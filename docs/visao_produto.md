@@ -206,6 +206,106 @@ Em comparação com outras abordagens, o Kanban apresenta menor estrutura de pla
 
 Dessa forma, a combinação entre um planejamento inicial e a execução iterativa com Scrum se mostra adequada ao contexto do projeto, garantindo organização, acompanhamento contínuo e evolução incremental do sistema.
 
+## __4. Engenharia de Requisitos__
+
+### __4.1 Atividades  e Técnicas de ER__
+
+**Elicitação e descoberta**
+
+* **Entrevistas semiestruturadas**: encontros periódicos com a cliente para compreender o jogo físico, seus princípios pedagógicos, o corpus de morfemas e as expectativas em relação à versão digital, identificando tanto requisitos declarados quanto requisitos latentes.
+
+* **Análise documental**: estudo do relatório final do projeto original, do material didático e das peças físicas do jogo, para reconstruir o vocabulário pedagógico e a identidade visual do MorfoBlocos.
+
+* **Observação do contexto real de uso**: acompanhamento da aplicação do jogo físico em sala de aula, quando possível, para capturar requisitos latentes que emergem do uso real e dificilmente apareceriam em entrevistas.
+
+* **Triangulação de fontes de informação**: cruzamento sistemático entre entrevistas, análise documental e observação, de modo a confrontar percepções e consolidar um entendimento compartilhado sobre o problema e suas causas.
+
+**Análise e Consenso**
+
+* **Workshops de Requisitos**: encontros colaborativos com a cliente para discutir escopo, resolver divergências de interpretação e construir entendimento compartilhado sobre aspectos pedagógicos e de conteúdo.
+
+* **Priorização MoSCoW**: classificação das funcionalidades em Must have, Should have, Could have e Won't have for now, junto à cliente, para definir o escopo do MVP e registrar desejáveis para evolução futura.
+
+* **Matriz Avaliação Técnica × Valor de Negócio**: posicionamento das características de produto em uma matriz que cruza valor percebido pela cliente com esforço técnico estimado, orientando a sequência de entregas.
+
+* **Negociação e resolução de conflitos**: mediação estruturada de divergências entre requisitos — por exemplo, entre fidelidade ao jogo físico e viabilidade no prazo do semestre — com registro das decisões e suas justificativas.
+Declaração de Requisitos
+
+**Declaração de Requisitos**
+
+* **Narrativas descritivas**: usadas para declarar requisitos de negócio em linguagem natural, articulando o problema identificado na seção 1.4, o valor esperado para a cliente e as restrições do contexto do projeto.
+
+* **Histórias de usuário**: declaração dos requisitos de usuário no formato "Como <ator>, quero <objetivo>, para <benefício>", organizadas em backlog de produto e utilizadas no planejamento das sprints.
+
+* **Critérios de aceitação Given/When/Then**: cada história de usuário será acompanhada por critérios de aceitação em formato estruturado, explicitando condição inicial, ação e resultado esperado de forma verificável.
+
+* **Catálogos de RFs e RNFs**: os requisitos funcionais serão declarados no padrão "verbo no infinitivo + objeto" (por exemplo, "Combinar morfemas para formar palavras"); os requisitos não funcionais serão organizados segundo o modelo URPS+, conforme orientação do template da disciplina.
+
+* **Catálogo de regras de negócio**: as regras morfológicas do português — quais combinações de morfemas são válidas e a qual processo de formação cada resultado corresponde — serão declaradas em catálogo próprio, distinto dos requisitos funcionais, conforme a definição de regra de negócio adotada pelo livro-texto.
+
+**Representação de Requisitos**
+
+* **Rich Picture no formato AS-IS / TO-BE**: representação sistêmica (contextual) utilizada na seção 1.3 para contrastar o cenário atual do jogo físico com o cenário proposto para a solução digital, capturando atores, fluxos e limitações do contexto.
+
+* **Diagrama de Ishikawa (6M's)**: utilizado na seção 1.4 para organizar a análise das causas do problema identificado, distribuindo os fatores contribuintes pelos eixos Método, Máquina, Mão de Obra, Material, Medida e Meio Ambiente.
+
+* **Mapa de Stakeholders e Matriz Poder × Interesse**: representações sistêmicas (contextuais) utilizadas na seção 1.6 para classificar os stakeholders conforme sua influência e interesse, orientando a estratégia de comunicação da equipe ao longo do projeto.
+
+* **Protótipos de baixa fidelidade e storyboards**: produzidos durante as sprints para apoiar a validação de fluxos de uso com a cliente antes da implementação, mantendo-se no escopo da ER conforme a delimitação do SWEBOK v4.0.
+
+* **Fluxos de navegação e de estados conceituais**: usados em nível conceitual para representar caminhos de uso do estudante (por exemplo, da seleção de morfemas ao recebimento de feedback), sem detalhar elementos de interface ou lógica interna.
+
+**Verificação e Validação de Requisitos**
+
+* **Revisão interna pela equipe**: antes de cada sprint, os requisitos refinados serão revisados pelos membros da equipe para verificar clareza, consistência, completude e testabilidade.
+
+* **Validação com a cliente ao final de cada sprint**: nas reuniões de revisão de sprint, a cliente avaliará o incremento entregue, confirmando que os requisitos implementados atendem a suas expectativas pedagógicas e ao problema declarado na seção 1.4.
+
+* **Definition of Ready (DoR) e Definition of Done (DoD)**: o DoR define as condições mínimas para um item entrar em sprint; o DoD define as condições para considerá-lo concluído. Atuam como filtros de qualidade antes e depois do desenvolvimento.
+
+* **Testes de aceitação baseados em critérios declarados**: cada história de usuário será testada contra seus critérios de aceitação no formato Given/When/Then, tornando a validação objetiva e rastreável.
+
+**Organização e Atualização de Requisitos**
+
+* **Product Backlog único no formato Scrum**: histórias de usuário, RFs, RNFs e regras de negócio serão mantidos em um backlog único, priorizado pela Product Owner (a cliente) e continuamente refinado.
+
+* **Refinamento contínuo do backlog**: ao longo de cada sprint, equipe e cliente revisarão o backlog, atualizando prioridades, detalhando itens para as próximas sprints e ajustando o escopo conforme o aprendizado adquirido.
+
+* **Aplicação do princípio DEEP**: o backlog será mantido Detalhado adequadamente, Estimado, Emergente e Priorizado, conforme prática consolidada no ecossistema Scrum.
+
+* **Controle de versões dos artefatos de requisitos**: a visão do produto, o backlog e os demais artefatos serão mantidos em repositório versionado, preservando histórico de decisões e rastreabilidade de mudanças.
+
+* **Matriz de rastreabilidade**: matriz que conecta objetivos específicos, características de produto, requisitos funcionais e não funcionais, regras de negócio e critérios de aceitação, assegurando que cada decisão técnica permaneça ligada ao problema declarado na seção 1.4.
+
+### __4.2 Engenharia de Requisitos e o Scrum__
+
+As atividades da Engenharia de Requisitos, suas práticas e técnicas são mapeadas, a seguir, às fases do Scrum adotadas pela equipe para a condução do projeto MorfoBlocos Digital. A tabela evidencia onde cada atividade da ER tem maior ênfase ao longo do processo, desde o planejamento inicial da release até o replanejamento da próxima.
+
+_Importante: as atividades da ER não ocorrem de forma estritamente sequencial dentro de cada fase do Scrum. Conforme apresentado no capítulo 5 do livro-texto, elas são entrelaçadas e se retroalimentam ao longo do projeto, de modo que a ordem das linhas da tabela é apenas de apresentação — não de execução obrigatória._
+
+| Fase do Scrum                  | Atividade da ER              | Prática                                                                 | Técnica                                                                                         | Resultado esperado                                                                                                      |
+|--------------------------------|------------------------------|-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| Planejamento da Release        | Elicitação e Descoberta      | Descoberta inicial de requisitos e compreensão do domínio               | Entrevistas semiestruturadas, análise documental, observação do contexto, triangulação de fontes | Visão inicial do produto, corpus linguístico preliminar e compreensão compartilhada do problema junto à cliente        |
+|        | Análise e Consenso           | Priorização estratégica e definição do escopo da release                | Workshops de Requisitos, Priorização MoSCoW, Matriz Avaliação Técnica × Valor de Negócio         | Escopo da release acordado com a cliente, com funcionalidades críticas priorizadas e trade-offs explicitados            |
+|         | Declaração                  | Registro dos requisitos em diferentes níveis de abstração               | Narrativas descritivas, histórias de usuário, catálogos de RFs, RNFs e regras de negócio         | Backlog inicial da release com requisitos compreensíveis e rastreáveis                                                   |
+|         | Representação               | Representação sistêmica do contexto e do problema                       | Rich Picture AS-IS/TO-BE, Diagrama de Ishikawa, Mapa de Stakeholders, Matriz Poder × Interesse   | Entendimento compartilhado sobre contexto, stakeholders e escopo                                                         |
+| Planejamento da Sprint         | Elicitação e Descoberta      | Refinamento dos requisitos selecionados para a sprint                   | Entrevistas pontuais com a cliente, análise documental complementar                             | Requisitos detalhados e esclarecidos para desenvolvimento                                                                |
+|          | Análise e Consenso           | Análise de dependências e viabilidade técnica                           | Análise de dependências, discussão em equipe, estimativa colaborativa                            | Consenso sobre viabilidade e ordem de execução                                                                           |
+|          | Declaração                  | Detalhamento de histórias e critérios de aceitação                      | Critérios Given/When/Then, Definition of Ready (DoR)                                              | Histórias com critérios verificáveis e prontas para desenvolvimento                                                      |
+|          | Representação               | Representação de fluxos de uso                                          | Fluxos de navegação conceituais, sketches, protótipos de baixa fidelidade                        | Representações visuais para entendimento comum                                                                           |
+|          | Organização e Atualização    | Refinamento do backlog da sprint                                        | Refinamento do backlog, princípio DEEP                                                            | Backlog detalhado, estimado e priorizado                                                                                 |
+| Execução da Sprint             | Representação               | Evolução dos protótipos                                                 | Protótipos de baixa e média fidelidade, fluxos de navegação                                       | Representações que orientam implementação e validação                                                                    |
+|             | Verificação e Validação     | Verificação interna dos requisitos                                      | Revisão interna, checklist de critérios de aceitação                                              | Itens em conformidade e prontos para demonstração                                                                         |
+|              | Organização e Atualização    | Acompanhamento do backlog                                               | Atualização contínua do backlog                                                                   | Backlog alinhado ao estado real                                                                                          |
+| Revisão da Sprint              | Verificação e Validação     | Validação do incremento com a cliente                                   | Demonstração, validação com critérios, Definition of Done (DoD)                                   | Incremento validado e feedback registrado                                                                                |
+|              | Representação               | Apresentação visual do incremento                                       | Demonstração do produto, protótipos navegáveis                                                    | Entendimento compartilhado do estado do produto                                                                          |
+|              | Análise e Consenso           | Renegociação de prioridades                                             | Negociação, repriorização colaborativa, registro de decisões                                      | Backlog repriorizado                                                                                                     |
+|              | Declaração                  | Atualização de requisitos                                               | Incorporação de feedback, ajuste de critérios de aceitação                                        | Histórias ajustadas e novas histórias                                                                                    |
+| Retrospectiva da Sprint        | Organização e Atualização    | Revisão do processo de ER                                               | Discussões em grupo, análise de causas                                                            | Melhorias identificadas e aplicadas                                                                                      |
+| Planejamento da Próxima Release| Elicitação e Descoberta      | Identificação de novos requisitos                                       | Workshops, análise documental, triangulação                                                       | Novos requisitos e revisão dos existentes                                                                                |
+| | Análise e Consenso           | Repriorização estratégica                                               | Priorização MoSCoW, Matriz Técnica × Valor                                                        | Backlog priorizado conforme valor                                                                                        |
+| | Organização e Atualização    | Consolidação do backlog e rastreabilidade                               | Refinamento do backlog, atualização da matriz de rastreabilidade                                 | Backlog atualizado e rastreável                                                                                          |
+
 ## __5. Cronograma__
 
 | Sprint | Período| Foco de Desenvolvimento | Entrega Acadêmica (Relatório) | Processo de validação |
@@ -280,6 +380,11 @@ __4. Validação Técnica do Valor de Negócio (Rastreabilidade)__
 
 * **Método**: Simulação de uso em massa e testes de integração com o banco de dados. O processo validará se as interações, acertos e padrões de erro dos estudantes estão sendo armazenados de forma persistente e se as informações geradas no painel de rastreabilidade são claras e acionáveis para o professor.
 
+### __6.4 Registro de Reuniões__
+
+Para garantir a rastreabilidade e o alinhamento com as expectativas da cliente, todas as interações estratégicas são registradas. As mesmas estarão disponibilizadas na aba [Registro de Reuniões](./reunioes.md).
+
+
 ## __10. Lições Aprendidas__
 
 ### __10.1 Unidade 1__
@@ -322,3 +427,4 @@ Com a reorganização da equipe, passou-se a priorizar um contato mais frequente
 | ---------- | ------ | --------------------------------------------------- | ------------------ |
 | 12/04/2026 | 1.0    | Criação, elaboração e repasse do documento.         |    Ana Beatriz, Artur Fernandes, [Bruno Souza](https://github.com/youngburny), Carlos Eduardo e Luiz Henrique   |
 | 12/04/2026 | 1.1    | Adiciona a seção 5 (Cronograma).         |    Ana Beatriz, [Bruno Souza](https://github.com/youngburny)   |
+| 13/04/2026 | 1.2  | Adiciona seção 4.0, 4.1, 4.2 e 6.4

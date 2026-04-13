@@ -18,3 +18,4 @@ theme:
 nav:
   - Início: index.md
   - Visão do Produto e Projeto: visao_produto.md
+  - Registro de Reuniões: reunioes.md
