@@ -177,34 +177,40 @@ Para o desenvolvimento do MorfoBlocos Digital, foram definidas estratégias de e
 
 ### __3.1 Estratégia Priorizada__
 
-A abordagem de Desenvolvimento de Software adotada será híbrida.
+A abordagem de desenvolvimento de software adotada é híbrida. 
 
-O ciclo de vida será iterativo e incremental.
+O ciclo de vida do projeto é iterativo e incremental. 
 
-O processo de engenharia de software escolhido é o Scrum, com utilização de sprints, backlog e reuniões de acompanhamento.
+Para a gestão do desenvolvimento, foi utilizado o framework ágil Scrum, com a organização do trabalho em sprints, uso de backlog e reuniões de acompanhamento. 
+
+Além disso, são adotadas algumas práticas de desenvolvimento inspiradas no XP, com foco na qualidade do código e melhoria contínua.
 
 ### __3.2 Quadro Comparativo__
 
 A seguir, apresenta-se uma comparação entre processos que poderiam ser utilizados no projeto.
 
-| Critério | Scrum | Kanban | XP |
-| :--- | :--- | :--- | :--- |
-| **Organização do trabalho** | Sprints com planejamento definido | Fluxo contínuo visual | Iterações curtas com foco técnico |
-| **Acompanhamento do progresso** | Metas e revisão por sprint | Monitoramento contínuo do fluxo | Baseado na execução das práticas |
-| **Flexibilidade** | Ajustes ao final de cada sprint | Alta, com mudanças a qualquer momento | Alta, com adaptação constante |
-| **Participação do cliente** | Presente nas revisões | Não estruturada | Frequente e integrada |
-| **Qualidade técnica** | Dependente da equipe | Variável | Alta (testes automatizados, refatoração) |
-| **Adequação ao projeto** | Alta | Média | Média |
+| Critério | XP (eXtreme Programming) | OpenUP (Open Unified Process) |
+| :--- | :--- | :--- | 
+| **Abordagem Geral** | Processo ágil com foco intenso em práticas técnicas de qualidade e desenvolvimento iterativo em ciclos curtos.  | Processo iterativo e incremental, baseado no Rational Unified Process (RUP), simplificado e adaptado para equipes menores. |
+| **Organização do Trabalho** | Iterações curtas (1–2 semanas) com foco técnico. Não há fases fixas; o desenvolvimento é guiado por histórias de usuário e pelo feedback contínuo | Quatro fases sequenciais: Concepção, Elaboração, Construção e Transição. Cada fase contém iterações com entregáveis definidos.  | 
+| **Tratamento dos Requisitos** | Requisitos declarados como histórias de usuário, refinados continuamente pelo cliente (on-site customer). Mudanças são naturais e acolhidas a qualquer momento. | Requisitos organizados por casos de uso e refinados iterativamente. Maior formalidade na documentação; mudanças são avaliadas conforme o impacto na arquitetura. |
+| **Qualidade Técnica** | Alta ênfase: TDD (Test-Driven Development), programação em pares, integração contínua, refatoração e design simples são práticas centrais do processo.  | Qualidade assegurada por revisões arquiteturais nas fases iniciais e validações incrementais. Não prescreve práticas técnicas específicas como TDD. | 
+| **Participação do Cliente** | Cliente presente e integrado ao time (on-site customer). Participação frequente e contínua, validando histórias e fornecendo feedback a cada iteração. | Envolvimento do cliente nas fases de Concepção e nas revisões de iteração. Colaboração estruturada, porém menos intensa do que no XP. | 
+| **Flexibilidade de Requisitos** | Alta. Mudanças nos requisitos são aceitas a qualquer momento do ciclo. O escopo é adaptado conforme o feedback real do cliente. | Média. Permite adaptações iterativas, mas exige que a arquitetura principal esteja definida nas fases iniciais, o que pode limitar mudanças estruturais tardias. | 
+| **Documentação** | Mínima e focada no essencial. A comunicação face a face e os testes automatizados substituem grande parte da documentação formal. | Documentação leve e suficiente, mais reduzida que o RUP completo, mas ainda com artefatos formais por fase (visão, casos de uso, plano de iteração). |
+| **Adequação ao Projeto MorfoBlocos** | Alta. A equipe reduzida, o cliente acessível e os requisitos evolutivos do jogo digital favorecem as práticas técnicas do XP e sua abordagem centrada no feedback. | Média. A estrutura de fases pode ser útil para organização, mas a orientação a casos de uso e a documentação formal podem ser excessivas para o escopo e prazo da disciplina. |
 
 ### __3.3 Justificativa__
 
-A escolha de uma abordagem híbrida, com o uso do Scrum como processo principal, permite estruturar o desenvolvimento sem comprometer a capacidade de adaptação ao longo do projeto. O planejamento inicial contribui para a definição do escopo e organização das atividades, enquanto o uso de práticas ágeis possibilita ajustes conforme a evolução do sistema.
+Com base nas características do projeto MorfoBlocos Digital e no quadro comparativo apresentado, o XP (eXtreme Programming) foi escolhido como processo de desenvolvimento por ser o mais adequado ao contexto da equipe, do cliente e do produto. 
 
-O Scrum se mostrou adequado por organizar o trabalho em sprints, facilitando a divisão do desenvolvimento em incrementos funcionais. Essa característica é relevante para o projeto, que envolve a implementação progressiva de funcionalidades interativas, como a montagem e validação de palavras, permitindo entregas parciais e validações frequentes.
+O principal fator que justifica a escolha do XP é a natureza evolutiva dos requisitos do projeto. O jogo digital envolve regras morfológicas complexas, validadas continuamente pela cliente, e funcionalidades interativas cujo comportamento esperado só se torna claro ao longo do desenvolvimento. O XP, ao acolher mudanças de requisitos a qualquer momento e centrar o processo no feedback contínuo do cliente, responde diretamente a esse cenário. Além disso, a cliente (Profª. Pílar) possui disponibilidade para interações frequentes, o que favorece a dinâmica de validação iterativa proposta pelo XP. 
 
-Em comparação com outras abordagens, o Kanban apresenta menor estrutura de planejamento, o que pode dificultar o acompanhamento em um contexto acadêmico com prazos definidos. Já o XP possui foco mais voltado às práticas de desenvolvimento e qualidade de código, não atendendo de forma completa às necessidades de organização do projeto.
+As práticas técnicas do XP também se mostram adequadas às necessidades do produto. A lógica de validação automática das combinações de morfemas, que é o núcleo do MorfoBlocos Digital, exige alta confiabilidade no código. O TDD (Test-Driven Development), a refatoração contínua e a integração contínua garantem que essa lógica seja desenvolvida com qualidade e testada de forma sistemática desde o início, reduzindo o risco de defeitos no mecanismo central do jogo. 
 
-Dessa forma, a combinação entre um planejamento inicial e a execução iterativa com Scrum se mostra adequada ao contexto do projeto, garantindo organização, acompanhamento contínuo e evolução incremental do sistema.
+Em comparação, o OpenUP apresenta uma estrutura de fases mais rígida e maior ênfase na documentação de artefatos formais, como casos de uso e planos de iteração. Embora adequado para projetos que necessitam de maior previsibilidade arquitetural desde o início, o OpenUP pode ser excessivo para o escopo e o prazo da disciplina, além de demandar maior esforço de documentação em um contexto onde a comunicação direta com a cliente é viável e preferível. 
+
+Dessa forma, o XP se mostra o processo mais compatível com a abordagem híbrida adotada pela equipe, combinando rigor técnico com flexibilidade para atender à natureza evolutiva do MorfoBlocos Digital. O Scrum é utilizado de forma complementar como framework de gerenciamento, organizando o trabalho em sprints e garantindo acompanhamento contínuo sem conflitar com as práticas técnicas do XP. 
 
 ## __4. Engenharia de Requisitos__
 
@@ -267,44 +273,43 @@ Declaração de Requisitos
 
 **Organização e Atualização de Requisitos**
 
-* **Product Backlog único no formato Scrum**: histórias de usuário, RFs, RNFs e regras de negócio serão mantidos em um backlog único, priorizado pela Product Owner (a cliente) e continuamente refinado.
+* **Product Backlog único**: histórias de usuário, RFs, RNFs e regras de negócio serão mantidos em um backlog único, priorizado pela Product Owner (a cliente) e continuamente refinado.
 
 * **Refinamento contínuo do backlog**: ao longo de cada sprint, equipe e cliente revisarão o backlog, atualizando prioridades, detalhando itens para as próximas sprints e ajustando o escopo conforme o aprendizado adquirido.
 
-* **Aplicação do princípio DEEP**: o backlog será mantido Detalhado adequadamente, Estimado, Emergente e Priorizado, conforme prática consolidada no ecossistema Scrum.
+* **Aplicação do princípio DEEP**: o backlog será mantido Detalhado adequadamente, Estimado, Emergente e Priorizado, conforme prática consolidada no desenvolvimento ágil.
 
 * **Controle de versões dos artefatos de requisitos**: a visão do produto, o backlog e os demais artefatos serão mantidos em repositório versionado, preservando histórico de decisões e rastreabilidade de mudanças.
 
 * **Matriz de rastreabilidade**: matriz que conecta objetivos específicos, características de produto, requisitos funcionais e não funcionais, regras de negócio e critérios de aceitação, assegurando que cada decisão técnica permaneça ligada ao problema declarado na seção 1.4.
 
-### __4.2 Engenharia de Requisitos e o Scrum__
+### __4.2 Engenharia de Requisitos e o XP__
 
-As atividades da Engenharia de Requisitos, suas práticas e técnicas são mapeadas, a seguir, às fases do Scrum adotadas pela equipe para a condução do projeto MorfoBlocos Digital. A tabela evidencia onde cada atividade da ER tem maior ênfase ao longo do processo, desde o planejamento inicial da release até o replanejamento da próxima.
+As atividades da Engenharia de Requisitos, suas práticas e técnicas são mapeadas, a seguir, às fases do XP adotadas pela equipe para a condução do projeto MorfoBlocos Digital. A tabela evidencia onde cada atividade da ER tem maior ênfase ao longo do processo, desde o Planning Game até a Integração Contínua. 
 
-_Importante: as atividades da ER não ocorrem de forma estritamente sequencial dentro de cada fase do Scrum. Conforme apresentado no capítulo 5 do livro-texto, elas são entrelaçadas e se retroalimentam ao longo do projeto, de modo que a ordem das linhas da tabela é apenas de apresentação — não de execução obrigatória._
+_Importante: as atividades da ER não ocorrem de forma estritamente sequencial dentro de cada fase do XP. Conforme apresentado no capítulo 5 do livro-texto, elas são entraçadas e se retroalimentam ao longo do projeto, de modo que a ordem das linhas da tabela é apenas de apresentação — não de execução obrigatória._
 
-| Fase do Scrum                  | Atividade da ER              | Prática                                                                 | Técnica                                                                                         | Resultado esperado                                                                                                      |
+| Fases do Processo              | Atividades ER              | Prática       | Técnica          | Resultado esperado       |
 |--------------------------------|------------------------------|-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| Planejamento da Release        | Elicitação e Descoberta      | Descoberta inicial de requisitos e compreensão do domínio               | Entrevistas semiestruturadas, análise documental, observação do contexto, triangulação de fontes | Visão inicial do produto, corpus linguístico preliminar e compreensão compartilhada do problema junto à cliente        |
-|        | Análise e Consenso           | Priorização estratégica e definição do escopo da release                | Workshops de Requisitos, Priorização MoSCoW, Matriz Avaliação Técnica × Valor de Negócio         | Escopo da release acordado com a cliente, com funcionalidades críticas priorizadas e trade-offs explicitados            |
-|         | Declaração                  | Registro dos requisitos em diferentes níveis de abstração               | Narrativas descritivas, histórias de usuário, catálogos de RFs, RNFs e regras de negócio         | Backlog inicial da release com requisitos compreensíveis e rastreáveis                                                   |
-|         | Representação               | Representação sistêmica do contexto e do problema                       | Rich Picture AS-IS/TO-BE, Diagrama de Ishikawa, Mapa de Stakeholders, Matriz Poder × Interesse   | Entendimento compartilhado sobre contexto, stakeholders e escopo                                                         |
-| Planejamento da Sprint         | Elicitação e Descoberta      | Refinamento dos requisitos selecionados para a sprint                   | Entrevistas pontuais com a cliente, análise documental complementar                             | Requisitos detalhados e esclarecidos para desenvolvimento                                                                |
-|          | Análise e Consenso           | Análise de dependências e viabilidade técnica                           | Análise de dependências, discussão em equipe, estimativa colaborativa                            | Consenso sobre viabilidade e ordem de execução                                                                           |
-|          | Declaração                  | Detalhamento de histórias e critérios de aceitação                      | Critérios Given/When/Then, Definition of Ready (DoR)                                              | Histórias com critérios verificáveis e prontas para desenvolvimento                                                      |
-|          | Representação               | Representação de fluxos de uso                                          | Fluxos de navegação conceituais, sketches, protótipos de baixa fidelidade                        | Representações visuais para entendimento comum                                                                           |
-|          | Organização e Atualização    | Refinamento do backlog da sprint                                        | Refinamento do backlog, princípio DEEP                                                            | Backlog detalhado, estimado e priorizado                                                                                 |
-| Execução da Sprint             | Representação               | Evolução dos protótipos                                                 | Protótipos de baixa e média fidelidade, fluxos de navegação                                       | Representações que orientam implementação e validação                                                                    |
-|             | Verificação e Validação     | Verificação interna dos requisitos                                      | Revisão interna, checklist de critérios de aceitação                                              | Itens em conformidade e prontos para demonstração                                                                         |
-|              | Organização e Atualização    | Acompanhamento do backlog                                               | Atualização contínua do backlog                                                                   | Backlog alinhado ao estado real                                                                                          |
-| Revisão da Sprint              | Verificação e Validação     | Validação do incremento com a cliente                                   | Demonstração, validação com critérios, Definition of Done (DoD)                                   | Incremento validado e feedback registrado                                                                                |
-|              | Representação               | Apresentação visual do incremento                                       | Demonstração do produto, protótipos navegáveis                                                    | Entendimento compartilhado do estado do produto                                                                          |
-|              | Análise e Consenso           | Renegociação de prioridades                                             | Negociação, repriorização colaborativa, registro de decisões                                      | Backlog repriorizado                                                                                                     |
-|              | Declaração                  | Atualização de requisitos                                               | Incorporação de feedback, ajuste de critérios de aceitação                                        | Histórias ajustadas e novas histórias                                                                                    |
-| Retrospectiva da Sprint        | Organização e Atualização    | Revisão do processo de ER                                               | Discussões em grupo, análise de causas                                                            | Melhorias identificadas e aplicadas                                                                                      |
-| Planejamento da Próxima Release| Elicitação e Descoberta      | Identificação de novos requisitos                                       | Workshops, análise documental, triangulação                                                       | Novos requisitos e revisão dos existentes                                                                                |
-| | Análise e Consenso           | Repriorização estratégica                                               | Priorização MoSCoW, Matriz Técnica × Valor                                                        | Backlog priorizado conforme valor                                                                                        |
-| | Organização e Atualização    | Consolidação do backlog e rastreabilidade                               | Refinamento do backlog, atualização da matriz de rastreabilidade                                 | Backlog atualizado e rastreável                                                                                          |
+| Planning Game        | Elicitação e Descoberta      | Levantamento inicial de requisitos e compreensão do domínio               | Entrevistas semiestruturadas com a cliente, análise documental do jogo físico, triangulação de fontes  | Visão inicial do produto, corpus linguístico de morfemas e compreensão compartilhada do problema com a cliente         |
+|        | Análise e Consenso           | Priorização estratégica e definição do escopo da release                | Priorização MoSCoW, Matriz Avaliação Técnica × Valor de Negócio, workshops com a cliente          | Escopo da release acordado com a cliente, com funcionalidades críticas priorizadas e trade-offs explicitados            |
+|         | Declaração                  | Registro dos requisitos em diferentes níveis de abstração               | Histórias de usuário, catálogos de RFs, RNFs e regras de negócio morfológicas          | Backlog inicial da release com requisitos declarados em linguagem compreensível e rastreável ao problema original    |
+| Releases Pequenas         | Verificação e Validação      | Validação do incremento entregue com a cliente    | Demonstração do incremento funcional, revisão contra critérios de aceitação, Definition of Done (DoD)                              | Incremento validado pela cliente; feedback registrado para ajuste das próximas histórias                                                                 |
+|          | Organização e Atualização           | Repriorização do backlog com base no aprendizado da release    | Refinamento do backlog, negociação colaborativa, princípio DEEP                             | Backlog repriorizado e atualizado com as histórias de maior valor para a próxima release          |
+| Design Simples            | Representação               | Representação sistêmica do contexto e do problema   | Rich Picture AS-IS/TO-BE, Mapa de Stakeholders, Matriz Poder × Interesse, Diagrama de Ishikawa                                       | Entendimento compartilhado sobre o contexto, os atores e o escopo do sistema entre equipe e cliente    |
+|             | Declaração     | Detalhamento de histórias e critérios de aceitação para a iteração      | Critérios de aceitação Given/When/Then, Definition of Ready (DoR)   | Histórias de usuário com critérios verificáveis e prontas para desenvolvimento (Ready)   |
+|   Desenvolvimento (Codificação)   | Elicitação e Descoberta   | Refinamento de requisitos selecionados para a iteração    | Entrevistas pontuais com a cliente, análise documental complementar    | Requisitos detalhados e esclarecidos para suportar o desenvolvimento da iteração corrente    |
+|           | Representação    | Evolução dos protótipos para apoiar a implementação   | Protótipos de baixa e média fidelidade, fluxos de navegação conceituais   | Representações atualizadas que orientam a implementação e apoiam a validação antecipada com a cliente  |
+
+|              | Análise e Consenso  | Análise de dependências e viabilidade técnica dos itens em desenvolvimento  | Discussão em equipe, análise de dependências, programação em pares (pair programming)  | Consenso sobre a viabilidade e a ordem de execução dos itens da iteração |
+
+| Testes | Verificação e Validação  | Verificação interna dos requisitos em desenvolvimento  | Revisão interna pela equipe, checklist de critérios de aceitação, testes de aceitação Given/When/Then    | Itens desenvolvidos em conformidade com os critérios de qualidade e prontos para demonstração                     |
+|   | Organização e Atualização | Atualização do backlog com base nos resultados dos testes   | Atualização contínua do backlog da iteração, registro de defeitos e ajustes de escopo   | Backlog da iteração alinhado ao estado real do desenvolvimento após os testes                                                    |
+| Refatoração | Organização e Atualização          | Revisão e consolidação dos artefatos de requisitos após refatoração do código   | Atualização da matriz de rastreabilidade, revisão de critérios de aceitação impactados    | Artefatos de requisitos consistentes com a estrutura refatorada, rastreabilidade preservada      |
+| Integração Contínua | Verificação e Validação   | Validação contínua dos requisitos integrados ao sistema    | Checklist de critérios de aceitação, DoD aplicado ao incremento integrado     | Incremento integrado validado contra todos os critérios de aceitação definidos      |
+|   | Organização e Atualização   | Consolidação do backlog e da matriz de rastreabilidade ao final de cada iteração    | Refinamento do backlog, atualização da matriz de rastreabilidade, controle de versões dos artefatos     | Backlog do produto atualizado e rastreável, pronto para orientar o início da próxima iteração      |
+
+_O mapeamento apresentado evidencia onde cada atividade da ER tem maior ênfase em cada fase do XP, sem sugerir uma ordem rígida de execução. As atividades se retroalimentam ao longo de todo o projeto, em coerência com os valores de comunicação, feedback, simplicidade e confiança que sustentam a prática da Engenharia de Requisitos descrita no capítulo 5 do livro-texto._
 
 ## __5. Cronograma__
 
@@ -327,7 +332,7 @@ _Importante: as atividades da ER não ocorrem de forma estritamente sequencial d
 * Artur Fernandes: Desenvolvedor backend
 * Bruno Souza: Desenvolvedor backend
 * Carlos Eduardo: Desenvolvedor frontend.
-* Luiz Henrique: Desenvolvedor frontend do projeto auxílio na parte de scrum
+* Luiz Henrique: Desenvolvedor frontend do projeto auxílio na parte de Scrum
 
 ### __6.2 Comunicação__
 
@@ -404,27 +409,11 @@ Houve dificuldade inicial para conciliar a disponibilidade da cliente com os pra
 Com a reorganização da equipe, passou-se a priorizar um contato mais frequente com a cliente e o agendamento de momentos específicos para validação. Isso ajudou a alinhar melhor as decisões do projeto com as expectativas da cliente e com os prazos acadêmicos, reduzindo riscos de retrabalho.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ##  Versionamento
 
 | **Data**       | Versão | Descrição                                           | Autor              |
 | ---------- | ------ | --------------------------------------------------- | ------------------ |
-| 12/04/2026 | 1.0    | Criação, elaboração e repasse do documento.         |    Ana Beatriz, Artur Fernandes, [Bruno Souza](https://github.com/youngburny), Carlos Eduardo e Luiz Henrique   |
-| 12/04/2026 | 1.1    | Adiciona a seção 5 (Cronograma).         |    Ana Beatriz, [Bruno Souza](https://github.com/youngburny)   |
-| 13/04/2026 | 1.2  | Adiciona seção 4.0, 4.1, 4.2 e 6.4
+| 12/04/2026 | 1.0    | Criação, elaboração e repasse do documento.         |    [Ana Beatriz](https://github.com/AnnaBeatrizAraujo), [Artur Fernandes](https://github.com/arturalvesfn), [Bruno Souza](https://github.com/youngburny), [Carlos Eduardo](https://github.com/cadumotta) e [Luiz Henrique](https://github.com/Luizz97)  |
+| 12/04/2026 | 1.1    | Adiciona a seção 5 (Cronograma).         |    [Ana Beatriz](https://github.com/AnnaBeatrizAraujo), [Bruno Souza](https://github.com/youngburny)   |
+| 13/04/2026 | 1.2  | Adiciona seção 4.0, 4.1, 4.2 e 6.4 | [Bruno Souza](https://github.com/youngburny) |
+| 13/04/2026 | 1.3  | Correções nas seções 3.1, 3.2, 3.3, 4.1 e 4.2 | [Bruno Souza](https://github.com/youngburny) |
