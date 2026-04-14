@@ -19,7 +19,7 @@ Reunião feita via Google Meet.
 
 
 ## __Gravação da apresentação para a Unidade I__
-<iframe src="https://unbbr-my.sharepoint.com/personal/241012329_aluno_unb_br/_layouts/15/embed.aspx?UniqueId=93e4412b-2ec4-46fb-8dba-3df15e14ccb8&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="Reunião com Luiz Henrique Pallavicini-20260413_211713-Gravação de Reunião.mp4"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bZIkwk-ZaTY?si=Q5lnI32lGgv9hv4p" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Reunião feita via Teams.
 
@@ -29,3 +29,4 @@ Reunião feita via Teams.
 | ---------- | ------ | --------------------------------------------------- | ------------------ |
 | 13/04/2026 | 1.0    | Criação da aba com a primeira reunião.   |    [Bruno Souza](https://github.com/youngburny)   |
 | 13/04/2026 | 1.1   | Adiciona o vídeo da apresentação para a Unidade I |    [Bruno Souza](https://github.com/youngburny)   |
+| 13/04/2026 | 1.2   | Corrige link do vídeo da apresentação para a Unidade I |    [Bruno Souza](https://github.com/youngburny)   |
