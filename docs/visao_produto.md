@@ -92,33 +92,31 @@ Embora o projeto tenha um cliente único e real (a professora María del Pilar),
 
 ### __2.1 Objetivo Geral do Produto__
 
-Desenvolver a versão digital do jogo didático MorfoBlocos como uma plataforma interativa, com o propósito central de solucionar a baixa eficiência e a falta de rastreabilidade no ensino prático de morfologia. A solução visa proporcionar aos estudantes uma experiência de aprendizagem lúdica e autônoma por meio de feedback automatizado, viabilizando aos professores o acompanhamento contínuo do desempenho e superando as restrições operacionais do modelo físico.
+Desenvolver uma plataforma web interativa (MorfoBlocos Digital) que viabilize a construção autônoma de palavras a partir de morfemas, fornecendo feedback pedagógico automatizado para os estudantes e garantindo o registro e a rastreabilidade do aprendizado para auxiliar o acompanhamento pelos professores.
 
 ### __2.2 Objetivos Específicos (OEs) do Produto__
 
-* (OE1) Digitalizar a mecânica e a identidade visual do MorfoBlocos.
+* (OE1) Desenvolver a interface web interativa para manipulação digital dos morfemas.
 
-* (OE2) Viabilizar a formação autônoma de palavras com feedback automático.
+* (OE2) Implementar o banco de dados para o catálogo de morfemas e atividades.
 
-* (OE3) Estruturar um catálogo de morfemas e exercícios com progressão de dificuldade.
+* (OE3) Construir o motor automatizado de validação morfológica e feedback.
 
-* (OE4) Registrar o histórico de interações do usuário para rastreabilidade de aprendizado.
+* (OE4) Criar o módulo de registro e rastreabilidade de desempenho dos usuários.
 
-* (OE5) Garantir a usabilidade móvel e a adequação da interface ao público do ensino básico.
 
 ### __2.3 Características de Produto (Mapeadas com os Objetivos Específicos)__
 
 A solução proposta para o MorfoBlocos Digital deverá contemplar, de forma preliminar, as seguintes características de produto (CP), mapeadas aos objetivos específicos (OE) da seção 2.2 e aos valores de negócio (VN) identificados:
 
-| ID | Característica de Produto (CP) | Descrição resumida | ID | Valor de Negócio (VN) principal | Contribuição principal | Contribuição secundária |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **CP1** | Catálogo digital de morfemas | Disponibilizar um catálogo interativo de morfemas classificados por categorias, reproduzindo o sistema de cores do jogo original. | VN1 | Preservação da identidade visual e pedagógica do jogo original em meio digital, assegurando continuidade com a proposta da cliente. | OE1 | OE2 |
-| **CP2** | Montagem interativa de palavras por morfemas | O sistema deve permitir a seleção e a combinação de morfemas por meio de uma interface interativa, exibindo em tempo real a palavra formada. | VN2 | Autonomia do estudante no aprendizado de morfologia, eliminando a dependência da presença do professor para orientação e correção. | OE2 | OE1 |
-| **CP3** | Feedback automático com classificação do processo morfológico | A solução deverá fornecer feedback automático sobre a validade das palavras formadas pelo estudante, identificando e explicando o processo morfológico envolvido (flexão, derivação, derivação parassintética, composição, derivação regressiva e reduplicação). | VN3 | Aprendizagem autônoma e redução da dependência do professor para correção individual, com apoio direto ao ensino dos processos de formação de palavras. | OE3 | OE2 |
-| **CP4** | Registro persistente e rastreabilidade do aprendizado | A solução deverá armazenar de forma persistente as interações e respostas dos estudantes, permitindo identificar padrões de erro em conceitos como alomorfia e derivação parassintética e acompanhar a evolução do aprendizado ao longo do tempo. | VN4 | Rastreabilidade do aprendizado, viabilizando intervenções pedagógicas mais precisas e eficazes por parte do professor. | OE4 | OE3 |
-| **CP5** | Atividades didáticas estruturadas e progressivas | A solução deverá oferecer atividades organizadas em níveis crescentes de dificuldade, cobrindo os diferentes processos de formação de palavras e aplicáveis tanto em sala de aula quanto em estudo individual. | VN5 | Experiência de aprendizado estruturada e progressiva, aumentando a retenção do conteúdo e permitindo aplicação em diferentes contextos pedagógicos. | OE5 | OE4 |
-| **CP6** | Acesso mobile sem dependência do jogo físico | A solução deverá ser acessível via smartphone, permitindo que qualquer estudante pratique morfologia a qualquer momento e lugar, sem precisar do jogo físico. | VN6 | Ampliação do alcance do MorfoBlocos, democratizando o acesso ao conteúdo de morfologia para além do ambiente escolar. | OE5 | OE1 |
-| **CP7** | Interface acessível para o público do ensino básico | A solução deverá apresentar interface adequada ao público-alvo, com linguagem clara, elementos visuais bem dimensionados, navegação simples e boas práticas de acessibilidade, garantindo baixa curva de aprendizado. | VN7 | Adoção efetiva pelo público-alvo e inclusão de estudantes com diferentes necessidades e níveis de familiaridade com tecnologia. | OE5 | OE2 |
+| ID  | Característica de Produto (CP)                         | Descrição resumida                                                                                                                                     | ID VN | Contribuição Principal |
+|-----|--------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|-------|------------------------|
+| CP1 | Gestão de Perfis e Acesso                              | Módulo de autenticação para diferenciar as permissões e visões do perfil "Professor" e do perfil "Estudante".                                        | VN4   | OE4                    |
+| CP2 | Gestão do Catálogo e Atividades                        | Módulo administrativo para que o professor possa visualizar, cadastrar e organizar os morfemas e estruturar as atividades no banco de dados.         | VN5   | OE2                    |
+| CP3 | Ambiente de Montagem Interativa                        | O "tabuleiro" digital: interface onde o estudante seleciona, arrasta e combina os blocos de morfemas para tentar formar palavras.                    | VN2   | OE1                    |
+| CP4 | Motor de Validação e Feedback                          | O sistema interno que processa a combinação montada pelo estudante e retorna imediatamente o acerto/erro e a classificação do processo morfológico. | VN3   | OE3                    |
+| CP5 | Histórico de Desempenho do Estudante                   | Painel individual onde o estudante pode consultar seu próprio progresso e o histórico de palavras que já formou.                                     | VN2   | OE4                    |
+| CP6 | Painel de Acompanhamento Docente (Dashboard)           | Área exclusiva do professor para visualizar relatórios consolidados de turmas ou alunos, permitindo identificar padrões de erro morfológico.        | VN4   | OE4                    |
 
 
 ### __2.4 Tecnologias a Serem Utilizadas__
@@ -413,6 +411,7 @@ Com a reorganização da equipe, passou-se a priorizar um contato mais frequente
 | ---------- | ------ | --------------------------------------------------- | ------------------ |
 | 12/04/2026 | 1.0    | Criação, elaboração e repasse do documento.         |    [Ana Beatriz](https://github.com/AnnaBeatrizAraujo), [Artur Fernandes](https://github.com/arturalvesfn), [Bruno Souza](https://github.com/youngburny), [Carlos Eduardo](https://github.com/cadumotta) e [Luiz Henrique](https://github.com/Luizz97)  |
 | 12/04/2026 | 1.1    | Adiciona a seção 5 (Cronograma).         |    [Ana Beatriz](https://github.com/AnnaBeatrizAraujo), [Bruno Souza](https://github.com/youngburny)   |
-| 13/04/2026 | 1.2  | Adiciona seção 4.0, 4.1, 4.2 e 6.4 | [Bruno Souza](https://github.com/youngburny) |
-| 13/04/2026 | 1.3  | Correções nas seções 3.1, 3.2, 3.3, 4.1 e 4.2 | [Bruno Souza](https://github.com/youngburny) |
-| 13/04/2026 | 1.4  | Correção de formatação na tabela da seção 4.2 | [Bruno Souza](https://github.com/youngburny) |
+| 13/04/2026 | 1.2  | Adiciona seção 4.0, 4.1, 4.2 e 6.4. | [Bruno Souza](https://github.com/youngburny) |
+| 13/04/2026 | 1.3  | Correções nas seções 3.1, 3.2, 3.3, 4.1 e 4.2. | [Bruno Souza](https://github.com/youngburny) |
+| 13/04/2026 | 1.4  | Correção de formatação na tabela da seção 4.2. | [Bruno Souza](https://github.com/youngburny) |
+| 05/05/2026 | 1.5  | Correção nas seções 2.1, 2.2 e 2.3. | [Bruno Souza](https://github.com/youngburny) |
