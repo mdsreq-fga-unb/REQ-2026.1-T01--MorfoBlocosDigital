@@ -42,7 +42,7 @@ O fluxo de informação atual é marcado pelo feedback tardio, uma vez que o est
 
 A infraestrutura baseada no jogo físico impõe restrições de uso, limitando a prática ao ambiente escolar e à disponibilidade de blocos. Soma-se a isso o custo do material, que dificulta sua aquisição e reduz o acesso por parte dos estudantes. Como consequência, há prejuízo na continuidade do aprendizado e na consolidação dos conceitos morfológicos.
 
-![Diagrama de Ishikawa](img/diagrama_ishikawa.jpeg)
+![Diagrama de Ishikawa](img/diagramaishikawa_morfoblocos.png)
 
 <p style="text-align:center;font-size:10px;font-weight:bold">Imagem 2</p>
 
@@ -175,40 +175,42 @@ Para o desenvolvimento do MorfoBlocos Digital, foram definidas estratégias de e
 
 ### __3.1 Estratégia Priorizada__
 
-A abordagem de desenvolvimento de software adotada é híbrida. 
+O projeto adota uma abordagem ágil, com ciclo de vida iterativo e incremental, permitindo a evolução contínua dos requisitos a partir do feedback da cliente ao longo das entregas.
 
-O ciclo de vida do projeto é iterativo e incremental. 
+Para a gestão do desenvolvimento, é utilizado o Scrum, responsável pela organização do trabalho em sprints, priorização do backlog e realização de reuniões de planejamento, revisão e retrospectiva.
 
-Para a gestão do desenvolvimento, foi utilizado o framework ágil Scrum, com a organização do trabalho em sprints, uso de backlog e reuniões de acompanhamento. 
+Complementarmente, são aplicadas práticas do XP (eXtreme Programming), como TDD, refatoração e integração contínua, especialmente devido à necessidade de garantir a corretude da lógica de validação das combinações de morfemas.
 
-Além disso, são adotadas algumas práticas de desenvolvimento inspiradas no XP, com foco na qualidade do código e melhoria contínua.
+Dessa forma, Scrum e XP são utilizados de maneira complementar: o Scrum organiza o processo e a interação com a cliente, enquanto o XP orienta a implementação técnica.
+
 
 ### __3.2 Quadro Comparativo__
 
 A seguir, apresenta-se uma comparação entre processos que poderiam ser utilizados no projeto.
 
-| Critério | XP (eXtreme Programming) | OpenUP (Open Unified Process) |
+| **Critério** | **ScrumXP** | **OpenUP (Open Unified Process)** |
 | :--- | :--- | :--- | 
-| **Abordagem Geral** | Processo ágil com foco intenso em práticas técnicas de qualidade e desenvolvimento iterativo em ciclos curtos.  | Processo iterativo e incremental, baseado no Rational Unified Process (RUP), simplificado e adaptado para equipes menores. |
-| **Organização do Trabalho** | Iterações curtas (1–2 semanas) com foco técnico. Não há fases fixas; o desenvolvimento é guiado por histórias de usuário e pelo feedback contínuo | Quatro fases sequenciais: Concepção, Elaboração, Construção e Transição. Cada fase contém iterações com entregáveis definidos.  | 
-| **Tratamento dos Requisitos** | Requisitos declarados como histórias de usuário, refinados continuamente pelo cliente (on-site customer). Mudanças são naturais e acolhidas a qualquer momento. | Requisitos organizados por casos de uso e refinados iterativamente. Maior formalidade na documentação; mudanças são avaliadas conforme o impacto na arquitetura. |
-| **Qualidade Técnica** | Alta ênfase: TDD (Test-Driven Development), programação em pares, integração contínua, refatoração e design simples são práticas centrais do processo.  | Qualidade assegurada por revisões arquiteturais nas fases iniciais e validações incrementais. Não prescreve práticas técnicas específicas como TDD. | 
-| **Participação do Cliente** | Cliente presente e integrado ao time (on-site customer). Participação frequente e contínua, validando histórias e fornecendo feedback a cada iteração. | Envolvimento do cliente nas fases de Concepção e nas revisões de iteração. Colaboração estruturada, porém menos intensa do que no XP. | 
-| **Flexibilidade de Requisitos** | Alta. Mudanças nos requisitos são aceitas a qualquer momento do ciclo. O escopo é adaptado conforme o feedback real do cliente. | Média. Permite adaptações iterativas, mas exige que a arquitetura principal esteja definida nas fases iniciais, o que pode limitar mudanças estruturais tardias. | 
-| **Documentação** | Mínima e focada no essencial. A comunicação face a face e os testes automatizados substituem grande parte da documentação formal. | Documentação leve e suficiente, mais reduzida que o RUP completo, mas ainda com artefatos formais por fase (visão, casos de uso, plano de iteração). |
-| **Adequação ao Projeto MorfoBlocos** | Alta. A equipe reduzida, o cliente acessível e os requisitos evolutivos do jogo digital favorecem as práticas técnicas do XP e sua abordagem centrada no feedback. | Média. A estrutura de fases pode ser útil para organização, mas a orientação a casos de uso e a documentação formal podem ser excessivas para o escopo e prazo da disciplina. |
+| **Abordagem Geral** | Abordagem ágil que combina Scrum para gestão (sprints, backlog e eventos) com práticas técnicas do XP (TDD, refatoração e integração contínua).  | Processo iterativo e incremental baseado no RUP, com maior estruturação e formalização das atividades. |
+| **Organização do Trabalho** | Trabalho organizado em sprints (1–2 semanas), com planejamento, revisão e retrospectiva. Desenvolvimento orientado por backlog priorizado e histórias de usuário. | Quatro fases sequenciais (Concepção, Elaboração, Construção e Transição), cada uma contendo iterações com entregáveis definidos.  | 
+| **Tratamento dos Requisitos** | Requisitos expressos como histórias de usuário, refinados continuamente com a cliente. Alta adaptação a mudanças ao longo do desenvolvimento. | Requisitos organizados em casos de uso, com maior formalização e controle de mudanças ao longo das iterações. |
+| **Qualidade Técnica** | Forte ênfase em práticas do XP, como TDD, refatoração, integração contínua e design simples, promovendo validação contínua do código.  | Qualidade assegurada por validações incrementais e definição arquitetural nas fases iniciais, com menor ênfase em práticas técnicas automatizadas. | 
+| **Participação do Cliente** | Alta participação: cliente envolvido continuamente nas sprints, validando incrementos e fornecendo feedback frequente. | Participação mais estruturada, concentrada nas fases e nas revisões de iteração. | 
+| **Flexibilidade de Requisitos** | Alta flexibilidade, com adaptação contínua baseada no feedback da cliente. | Flexibilidade moderada, podendo ser limitada por decisões arquiteturais definidas nas fases iniciais. | 
+| **Documentação** | Documentação leve, focada no essencial, com maior ênfase na comunicação contínua e nos testes como forma de validação. | Documentação estruturada, com artefatos como visão, casos de uso e planos de iteração. |
+| **Adequação ao Projeto MorfoBlocos** | Alta. Adequada à equipe reduzida, à disponibilidade da cliente e à necessidade de evolução contínua e validação da lógica morfológica. | Média. Pode contribuir para organização, mas tende a ser mais rígido e demandar maior esforço documental para o contexto da disciplina. |
 
 ### __3.3 Justificativa__
 
-Com base nas características do projeto MorfoBlocos Digital e no quadro comparativo apresentado, o XP (eXtreme Programming) foi escolhido como processo de desenvolvimento por ser o mais adequado ao contexto da equipe, do cliente e do produto. 
+Com base nas características do projeto MorfoBlocos Digital e no quadro comparativo apresentado, foi adotada uma abordagem ágil, utilizando o Scrum como framework de gestão do desenvolvimento e práticas do XP (eXtreme Programming) no desenvolvimento, por ser a alternativa mais adequada ao contexto da equipe, do cliente e do produto.
 
-O principal fator que justifica a escolha do XP é a natureza evolutiva dos requisitos do projeto. O jogo digital envolve regras morfológicas complexas, validadas continuamente pela cliente, e funcionalidades interativas cujo comportamento esperado só se torna claro ao longo do desenvolvimento. O XP, ao acolher mudanças de requisitos a qualquer momento e centrar o processo no feedback contínuo do cliente, responde diretamente a esse cenário. Além disso, a cliente (Profª. Pílar) possui disponibilidade para interações frequentes, o que favorece a dinâmica de validação iterativa proposta pelo XP. 
+O principal fator que justifica essa escolha é a natureza evolutiva dos requisitos do projeto. O jogo digital envolve regras morfológicas complexas, validadas continuamente pela cliente, e funcionalidades interativas cujo comportamento esperado só se torna claro ao longo do desenvolvimento. O Scrum, ao organizar o trabalho em ciclos curtos (sprints) e promover feedback contínuo da cliente e validação frequente das funcionalidades desenvolvidas, responde diretamente a esse cenário. Além disso, a cliente (Profª. Pilar) possui disponibilidade para interações frequentes, o que favorece a dinâmica iterativa proposta pela abordagem ágil.
 
-As práticas técnicas do XP também se mostram adequadas às necessidades do produto. A lógica de validação automática das combinações de morfemas, que é o núcleo do MorfoBlocos Digital, exige alta confiabilidade no código. O TDD (Test-Driven Development), a refatoração contínua e a integração contínua garantem que essa lógica seja desenvolvida com qualidade e testada de forma sistemática desde o início, reduzindo o risco de defeitos no mecanismo central do jogo. 
+As práticas do XP também se mostram adequadas às necessidades do produto. A lógica de validação automática das combinações de morfemas, que é o núcleo do MorfoBlocos Digital, exige alta confiabilidade no código. O TDD (Test-Driven Development), a refatoração contínua e a integração contínua garantem que essa lógica seja desenvolvida com qualidade e testada de forma sistemática desde o início, reduzindo o risco de defeitos no mecanismo central do jogo.
 
-Em comparação, o OpenUP apresenta uma estrutura de fases mais rígida e maior ênfase na documentação de artefatos formais, como casos de uso e planos de iteração. Embora adequado para projetos que necessitam de maior previsibilidade arquitetural desde o início, o OpenUP pode ser excessivo para o escopo e o prazo da disciplina, além de demandar maior esforço de documentação em um contexto onde a comunicação direta com a cliente é viável e preferível. 
+Em comparação, o OpenUP apresenta uma estrutura de fases mais rígida e maior ênfase na documentação de artefatos formais, como casos de uso e planos de iteração. Embora adequado para projetos que necessitam de maior previsibilidade arquitetural desde o início, o OpenUP pode ser excessivo para o escopo e o prazo da disciplina, além de demandar maior esforço de documentação em um contexto onde a comunicação direta com a cliente é viável e preferível.
 
-Dessa forma, o XP se mostra o processo mais compatível com a abordagem híbrida adotada pela equipe, combinando rigor técnico com flexibilidade para atender à natureza evolutiva do MorfoBlocos Digital. O Scrum é utilizado de forma complementar como framework de gerenciamento, organizando o trabalho em sprints e garantindo acompanhamento contínuo sem conflitar com as práticas técnicas do XP. 
+Dessa forma, o Scrum, em conjunto com práticas do XP, se mostra a alternativa mais adequada ao projeto, pois permite alinhar a organização do processo com a qualidade técnica do desenvolvimento, lidar com requisitos evolutivos e viabilizar entregas incrementais com validação contínua.
+ 
 
 ## __4. Engenharia de Requisitos__
 
@@ -416,3 +418,4 @@ Com a reorganização da equipe, passou-se a priorizar um contato mais frequente
 | 13/04/2026 | 1.4  | Correção de formatação na tabela da seção 4.2. | [Bruno Souza](https://github.com/youngburny) |
 | 05/05/2026 | 1.5  | Correção nas seções 2.1, 2.2 e 2.3. | [Bruno Souza](https://github.com/youngburny) |
 | 06/05/2026 | 1.6  | Correção nas seções 4.2, 5 e 6.1. | [Bruno Souza](https://github.com/youngburny) |
+| 06/05/2026 | 1.7  | Correção nas seções 1.4, 3.1, 3.2 e 3.3 | [Bruno Souza](https://github.com/youngburny) |
