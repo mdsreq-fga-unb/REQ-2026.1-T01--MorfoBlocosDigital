@@ -96,27 +96,28 @@ Desenvolver uma plataforma web interativa (MorfoBlocos Digital) que viabilize a 
 
 ### __2.2 Objetivos Específicos (OEs) do Produto__
 
-* (OE1) Desenvolver a interface web interativa para manipulação digital dos morfemas.
+* (OE1) Proporcionar um ambiente digital interativo que permita aos estudantes a manipulação autônoma e a combinação livre de blocos de morfemas.
 
-* (OE2) Implementar o banco de dados para o catálogo de morfemas e atividades.
+* (OE2) Estruturar e disponibilizar um catálogo digital gerenciável de morfemas, palavras válidas e atividades pedagógicas.
 
-* (OE3) Construir o motor automatizado de validação morfológica e feedback.
+* (OE3) Fornecer feedback pedagógico imediato e automatizado sobre a validade morfológica e os processos de formação das combinações realizadas pelo estudante.
 
-* (OE4) Criar o módulo de registro e rastreabilidade de desempenho dos usuários.
+* (OE4) Viabilizar o acompanhamento contínuo do aprendizado por meio do registro, consolidação e rastreabilidade do desempenho individual e coletivo dos estudantes.
+
 
 
 ### __2.3 Características de Produto (Mapeadas com os Objetivos Específicos)__
 
 A solução proposta para o MorfoBlocos Digital deverá contemplar, de forma preliminar, as seguintes características de produto (CP), mapeadas aos objetivos específicos (OE) da seção 2.2 e aos valores de negócio (VN) identificados:
 
-| ID  | Característica de Produto (CP)                         | Descrição resumida                                                                                                                                     | ID VN | Contribuição Principal |
-|-----|--------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|-------|------------------------|
-| CP1 | Gestão de Perfis e Acesso                              | Módulo de autenticação para diferenciar as permissões e visões do perfil "Professor" e do perfil "Estudante".                                        | VN4   | OE4                    |
-| CP2 | Gestão do Catálogo e Atividades                        | Módulo administrativo para que o professor possa visualizar, cadastrar e organizar os morfemas e estruturar as atividades no banco de dados.         | VN5   | OE2                    |
-| CP3 | Ambiente de Montagem Interativa                        | O "tabuleiro" digital: interface onde o estudante seleciona, arrasta e combina os blocos de morfemas para tentar formar palavras.                    | VN2   | OE1                    |
-| CP4 | Motor de Validação e Feedback                          | O sistema interno que processa a combinação montada pelo estudante e retorna imediatamente o acerto/erro e a classificação do processo morfológico. | VN3   | OE3                    |
-| CP5 | Histórico de Desempenho do Estudante                   | Painel individual onde o estudante pode consultar seu próprio progresso e o histórico de palavras que já formou.                                     | VN2   | OE4                    |
-| CP6 | Painel de Acompanhamento Docente (Dashboard)           | Área exclusiva do professor para visualizar relatórios consolidados de turmas ou alunos, permitindo identificar padrões de erro morfológico.        | VN4   | OE4                    |
+| ID  | Característica de Produto (CP)                         | Descrição resumida   | Contribuição Principal |
+|-----|--------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------|
+| CP1 | Controle de Acesso e Perfis de Usuário  | Mecanismo que garante que professores e estudantes acessem ambientes, ferramentas e dados adequados aos seus respectivos papéis no processo de aprendizagem.          | OE4                    |
+| CP2 | Administração de Conteúdo Pedagógico     | Ambiente administrativo para que a professora possa gerenciar o catálogo de morfemas de forma autônoma, além de cadastrar e estruturar as atividades.  | OE2                    |
+| CP3 | Espaço de Construção Morfológica      | O "tabuleiro" digital: área visual e intuitiva onde o estudante seleciona, arrasta e combina os blocos para explorar e formar palavras livremente.    | OE1                  |
+| CP4 | Validador de Estruturas e Feedback em Tempo Real | Sistema que avalia instantaneamente a combinação formada, informando ao estudante se a palavra é válida e qual processo morfológico foi utilizado.   | OE3                    |
+| CP5 | Portfólio de Progresso do Estudante        | Painel individualizado para que o aluno consulte suas próprias conquistas, histórico de tentativas e palavras já descobertas.                | OE4                    |
+| CP6 | Painel de Monitoramento de Turmas (Dashboard)           | Área exclusiva da docência para visualização de relatórios consolidados, permitindo a identificação ágil de dificuldades recorrentes e padrões de erro das turmas.     | OE4                    |
 
 
 ### __2.4 Tecnologias a Serem Utilizadas__
@@ -419,3 +420,4 @@ Com a reorganização da equipe, passou-se a priorizar um contato mais frequente
 | 05/05/2026 | 1.5  | Correção nas seções 2.1, 2.2 e 2.3. | [Bruno Souza](https://github.com/youngburny) |
 | 06/05/2026 | 1.6  | Correção nas seções 4.2, 5 e 6.1. | [Bruno Souza](https://github.com/youngburny) |
 | 06/05/2026 | 1.7  | Correção nas seções 1.4, 3.1, 3.2 e 3.3 | [Bruno Souza](https://github.com/youngburny) |
+| 12/05/2026 | 1.8  | Correção nas seções 2.2 e 2.3. | [Bruno Souza](https://github.com/youngburny) |
