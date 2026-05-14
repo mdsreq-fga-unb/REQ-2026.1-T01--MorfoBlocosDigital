@@ -170,47 +170,30 @@ Assim, a proposta é considerada viável, desde que:
 
 * **Para a equipe de desenvolvimento**: a oportunidade de aplicar na prática os conceitos da disciplina de Requisitos de Software, desenvolvendo uma solução real com cliente real, utilizando tecnologias amplamente adotadas no mercado e consolidando competências em desenvolvimento web, modelagem de dados e engenharia de requisitos.
 
-## __3. Estratégias de Engenharia de Software__
+## **3. Intervenção Social**
 
-Para o desenvolvimento do MorfoBlocos Digital, foram definidas estratégias de engenharia de software que permitam organizar o trabalho da equipe, acompanhar a evolução do sistema e garantir entregas ao longo do semestre, considerando as limitações de tempo e o contexto acadêmico do projeto.
+A solução proposta pelo MorfoBlocos Digital tende a produzir uma intervenção social voltada à ampliação do acesso ao ensino de morfologia, à transformação das práticas de correção, acompanhamento e realização de atividades morfológicas, e à redução da dependência da correção manual realizada pelo professor durante as atividades de aprendizagem. 
 
-### __3.1 Estratégia Priorizada__
+Entre os principais impactos esperados da solução, destacam-se:
 
-O projeto adota uma abordagem ágil, com ciclo de vida iterativo e incremental, permitindo a evolução contínua dos requisitos a partir do feedback da cliente ao longo das entregas.
+* Ampliar o acesso ao conteúdo de morfologia fora do ambiente físico da sala de aula;
+* Permitir maior autonomia dos estudantes na realização das atividades;
+* Oferecer feedback automático sobre as palavras formadas;
+* Permitir acompanhamento básico do desempenho dos estudantes pelos professores;
+* Reduzir limitações operacionais associadas ao uso exclusivo do jogo físico;
+* Incentivar o uso de recursos digitais no apoio ao ensino de Língua Portuguesa.
 
-Para a gestão do desenvolvimento, é utilizado o Scrum, responsável pela organização do trabalho em sprints, priorização do backlog e realização de reuniões de planejamento, revisão e retrospectiva.
+A utilização da plataforma também pode gerar impactos não previstos inicialmente, que precisam ser considerados durante o desenvolvimento e uso do sistema, tais como:
 
-Complementarmente, são aplicadas práticas do XP (eXtreme Programming), como TDD, refatoração e integração contínua, especialmente devido à necessidade de garantir a corretude da lógica de validação das combinações de morfemas.
+* Dependência maior do acesso à internet e a dispositivos digitais;
+* Dificuldade de utilização por usuários com menor familiaridade tecnológica;
+* Risco de redução da interação presencial entre professor e estudante durante as atividades;
+* Possibilidade de interpretação excessivamente automatizada de conteúdos que dependem de mediação pedagógica;
+* Necessidade de cuidados com armazenamento e rastreabilidade dos dados de desempenho e histórico das atividades dos estudantes.
 
-Dessa forma, Scrum e XP são utilizados de maneira complementar: o Scrum organiza o processo e a interação com a cliente, enquanto o XP orienta a implementação técnica.
+Por fim, a intervenção social do MorfoBlocos Digital não está apenas na digitalização do jogo físico, mas também na mudança da forma como as atividades podem ser realizadas, acompanhadas e utilizadas em diferentes contextos educacionais. Dessa forma, os requisitos do sistema devem considerar não apenas os benefícios esperados, mas também os possíveis efeitos decorrentes do uso contínuo da plataforma.
 
 
-### __3.2 Quadro Comparativo__
-
-A seguir, apresenta-se uma comparação entre processos que poderiam ser utilizados no projeto.
-
-| **Critério** | **ScrumXP** | **OpenUP (Open Unified Process)** |
-| :--- | :--- | :--- | 
-| **Abordagem Geral** | Abordagem ágil que combina Scrum para gestão (sprints, backlog e eventos) com práticas técnicas do XP (TDD, refatoração e integração contínua).  | Processo iterativo e incremental baseado no RUP, com maior estruturação e formalização das atividades. |
-| **Organização do Trabalho** | Trabalho organizado em sprints (1–2 semanas), com planejamento, revisão e retrospectiva. Desenvolvimento orientado por backlog priorizado e histórias de usuário. | Quatro fases sequenciais (Concepção, Elaboração, Construção e Transição), cada uma contendo iterações com entregáveis definidos.  | 
-| **Tratamento dos Requisitos** | Requisitos expressos como histórias de usuário, refinados continuamente com a cliente. Alta adaptação a mudanças ao longo do desenvolvimento. | Requisitos organizados em casos de uso, com maior formalização e controle de mudanças ao longo das iterações. |
-| **Qualidade Técnica** | Forte ênfase em práticas do XP, como TDD, refatoração, integração contínua e design simples, promovendo validação contínua do código.  | Qualidade assegurada por validações incrementais e definição arquitetural nas fases iniciais, com menor ênfase em práticas técnicas automatizadas. | 
-| **Participação do Cliente** | Alta participação: cliente envolvido continuamente nas sprints, validando incrementos e fornecendo feedback frequente. | Participação mais estruturada, concentrada nas fases e nas revisões de iteração. | 
-| **Flexibilidade de Requisitos** | Alta flexibilidade, com adaptação contínua baseada no feedback da cliente. | Flexibilidade moderada, podendo ser limitada por decisões arquiteturais definidas nas fases iniciais. | 
-| **Documentação** | Documentação leve, focada no essencial, com maior ênfase na comunicação contínua e nos testes como forma de validação. | Documentação estruturada, com artefatos como visão, casos de uso e planos de iteração. |
-| **Adequação ao Projeto MorfoBlocos** | Alta. Adequada à equipe reduzida, à disponibilidade da cliente e à necessidade de evolução contínua e validação da lógica morfológica. | Média. Pode contribuir para organização, mas tende a ser mais rígido e demandar maior esforço documental para o contexto da disciplina. |
-
-### __3.3 Justificativa__
-
-Com base nas características do projeto MorfoBlocos Digital e no quadro comparativo apresentado, foi adotada uma abordagem ágil, utilizando o Scrum como framework de gestão do desenvolvimento e práticas do XP (eXtreme Programming) no desenvolvimento, por ser a alternativa mais adequada ao contexto da equipe, do cliente e do produto.
-
-O principal fator que justifica essa escolha é a natureza evolutiva dos requisitos do projeto. O jogo digital envolve regras morfológicas complexas, validadas continuamente pela cliente, e funcionalidades interativas cujo comportamento esperado só se torna claro ao longo do desenvolvimento. O Scrum, ao organizar o trabalho em ciclos curtos (sprints) e promover feedback contínuo da cliente e validação frequente das funcionalidades desenvolvidas, responde diretamente a esse cenário. Além disso, a cliente (Profª. Pilar) possui disponibilidade para interações frequentes, o que favorece a dinâmica iterativa proposta pela abordagem ágil.
-
-As práticas do XP também se mostram adequadas às necessidades do produto. A lógica de validação automática das combinações de morfemas, que é o núcleo do MorfoBlocos Digital, exige alta confiabilidade no código. O TDD (Test-Driven Development), a refatoração contínua e a integração contínua garantem que essa lógica seja desenvolvida com qualidade e testada de forma sistemática desde o início, reduzindo o risco de defeitos no mecanismo central do jogo.
-
-Em comparação, o OpenUP apresenta uma estrutura de fases mais rígida e maior ênfase na documentação de artefatos formais, como casos de uso e planos de iteração. Embora adequado para projetos que necessitam de maior previsibilidade arquitetural desde o início, o OpenUP pode ser excessivo para o escopo e o prazo da disciplina, além de demandar maior esforço de documentação em um contexto onde a comunicação direta com a cliente é viável e preferível.
-
-Dessa forma, o Scrum, em conjunto com práticas do XP, se mostra a alternativa mais adequada ao projeto, pois permite alinhar a organização do processo com a qualidade técnica do desenvolvimento, lidar com requisitos evolutivos e viabilizar entregas incrementais com validação contínua.
  
 
 ## __4. Engenharia de Requisitos__
@@ -315,8 +298,8 @@ _Processo: ScrumXP  |  Sprints de 2 semanas  |  PO: Profª. María del Pilar Tob
 | Sprint | Início   | Fim      | Objetivo Principal    | Entregas Esperadas     | Validação do Cliente    |
 |--------|----------|----------|----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
 | Sprint 1 | 14/04/2026 | 28/04/2026 | Planejamento da Release e Elicitação Inicial.             | - Backlog inicial definido com a PO.<br>- Mapeamento preliminar de morfemas com a Profª. Pilar.<br>- Ajuste do Rich Picture.         | Reunião com a Profª. Pilar para validar o backlog inicial e confirmar prioridades.                  |
-| Sprint 2 | 29/04/2026 | 12/05/2026 | Elicitação, Prototipagem e Definição de Requisitos.       | - Protótipos de baixa fidelidade das telas principais.<br>- Entrega Unidade 2 (até 18/05).<br>- Requisitos de Software (RF e RNF com URPS+).<br>- DoR e DoD definidos.<br>- Backlog priorizado e MVP definido.<br>- Intervenção Social documentada. | Reunião com a Profª. Pilar para validar protótipos e requisitos levantados.                         |
-| Sprint 3 | 13/05/2026 | 26/05/2026 | Análise, Consenso e Início do PBB.                        | - PBB iniciado.<br>- User Stories com critérios de aceitação (DoR verificado).<br>- Refinamento do backlog com a PO.                                         | Reunião com a Profª. Pilar para validar User Stories e critérios de aceitação.                      |
+| Sprint 2 | 29/04/2026 | 12/05/2026 | Elicitação, Prototipagem e Definição de Requisitos.       | - Entrega Unidade 2 (até 18/05).<br>- Requisitos de Software (RF e RNF com URPS+).<br>- DoR e DoD definidos.<br>- Backlog priorizado e MVP definido.<br>- Intervenção Social documentada. | Reunião com a Profª. Pilar para validar protótipos e requisitos levantados.                         |
+| Sprint 3 | 13/05/2026 | 26/05/2026 | Análise, Consenso e Início do PBB.                        | - Protótipos de baixa fidelidade das telas principais.<br>- PBB iniciado.<br>- User Stories com critérios de aceitação (DoR verificado).<br>- Refinamento do backlog com a PO.                                         | Reunião com a Profª. Pilar para validar User Stories e critérios de aceitação.                      |
 | Sprint 4 | 27/05/2026 | 09/06/2026 | Verificação, Validação e BDD.                             | - Cenários BDD escritos (Dado/Quando/Então).<br>- Entrega Unidade 3 (até 15/06).<br>- Verificação e Validação de Requisitos.<br>- Organização e Atualização de Requisitos.<br>- PBB e BDD documentados. | Reunião com a Profª. Pilar para validar cenários BDD com a lógica pedagógica do jogo.               |
 | Sprint 5 | 10/06/2026 | 23/06/2026 | User Story Mapping e Casos de Uso.                        | - User Story Mapping elaborado.<br>- Modelos e Especificação de Casos de Uso iniciados.                                                                        | Reunião com a Profª. Pilar para validar o mapeamento da jornada do estudante.                       |
 | Sprint 6 | 24/06/2026 | 07/07/2026 | Refinamento Final e Entrega.                              | - Ajustes finais nos artefatos de requisitos.<br>- Entrega Unidade 4 (até 06/07).<br>- User Story Mapping finalizado.<br>- Modelos e Especificação de Casos de Uso.<br>- Documento completo e vídeo final entregues.<br>- DoD aplicado a todas as entregas. | Homologação final com a Profª. Pilar. DoD aplicado a todas as entregas.                             |
@@ -368,7 +351,7 @@ __2. Validação Pedagógica e de Regras de Domínio__
 
 * **Método**: Baterias de testes focadas nas regras de negócio da aplicação. Será validada a exatidão do catálogo digital de morfemas e a precisão do feedback automático diante de casos reais de formação de palavras, incluindo tratamento de exceções morfológicas, ocorrências de alomorfia e derivações parassintéticas.
 
-__3. Validação de Usabilidade e Experiência do Usuário (UX)__
+**3. Validação de Usabilidade e Experiência do Usuário (UX)**
 
 * **Objetivo**: Certificar que a interface gráfica atende aos requisitos de acessibilidade e que a curva de aprendizado é adequada ao público do ensino básico.
 
@@ -384,14 +367,99 @@ __4. Validação Técnica do Valor de Negócio (Rastreabilidade)__
 
 * **Método**: Simulação de uso em massa e testes de integração com o banco de dados. O processo validará se as interações, acertos e padrões de erro dos estudantes estão sendo armazenados de forma persistente e se as informações geradas no painel de rastreabilidade são claras e acionáveis para o professor.
 
-### __6.4 Registro de Reuniões__
+### **6.4 Registro de Reuniões**
 
 Para garantir a rastreabilidade e o alinhamento com as expectativas da cliente, todas as interações estratégicas são registradas. As mesmas estarão disponibilizadas na aba [Registro de Reuniões](./reunioes.md).
 
+## **7. Requisitos de Software**
 
-## __10. Lições Aprendidas__
+Esta seção detalha as especificações fundamentais para a concepção e o desenvolvimento do software. O conteúdo está organizado entre requisitos funcionais, que definem as ações e comportamentos que o sistema deve executar, e requisitos não funcionais, que estabelecem os critérios de qualidade, desempenho e restrições técnicas necessários para garantir uma experiência de uso eficiente e segura.
 
-### __10.1 Unidade 1__
+### **7.1 Requisitos Funcionais (RF)**
+
+| ID | Requisito Funcional (Verbo + Objeto) | Rastreabilidade (CP) | Prioridade (MoSCoW) |
+| :--- | :--- | :--- | :--- |
+| **RF01** | Disponibilizar credenciais de acesso para usuários. | CP1 - Controle de Acesso | Must Have |
+| **RF02** | Autenticar acesso ao sistema utilizando credenciais. | CP1 - Controle de Acesso | Must Have |
+| **RF03** | Permitir a recuperação de acesso mediante envio de nova senha. | CP1 - Controle de Acesso | Should Have |
+| **RF04** | Permitir operações de cadastro, edição, remoção e consulta de morfemas, palavras válidas e atividades pedagógicas. | CP2 - Admin de Conteúdo | Must Have |
+| **RF05** | Permitir ao estudante acessar atividades pedagógicas disponíveis. | CP3 - Espaço de Construção | Must Have |
+| **RF06** | Movimentar blocos de morfemas na área de montagem. | CP3 - Espaço de Construção | Must Have |
+| **RF07** | Submeter a combinação de blocos para validação. | CP3 - Espaço de Construção | Must Have |
+| **RF08** | Exibir explicações com textos, imagens ou vídeos sobre conteúdos morfológicos relacionados às atividades. | CP3 - Espaço de Construção | Could Have |
+| **RF09** | Exibir feedback da validação da combinação de blocos submetida. | CP4 - Validador de Estruturas | Must Have |
+| **RF10** | Exibir o processo de formação morfológica da palavra validada. | CP4 - Validador de Estruturas | Must Have |
+| **RF11** | Salvar a pontuação obtida na atividade finalizada. | CP5 - Portfólio de Progresso | Must Have |
+| **RF12** | Liberar acesso a níveis superiores mediante pontuação mínima. | CP5 - Portfólio de Progresso | Should Have |
+| **RF13** | Gerar o histórico de pontuações individuais. | CP5 - Portfólio de Progresso | Must Have |
+| **RF14** | Gerar relatório de desempenho consolidado da turma. | CP6 - Painel de Monitoramento | Must Have |
+| **RF15** | Exibir os erros morfológicos mais frequentes dos estudantes para o professor. | CP6 - Painel de Monitoramento | Should Have |
+
+### **7.2 Requisitos Não Funcionais (RNF)**
+
+| ID | Categoria (URPS+) | Descrição Mensurável para Teste | Método de Validação / Teste |
+| :--- | :--- | :--- | :--- |
+| **RNF01** | Usabilidade | O estudante deve conseguir arrastar, encaixar os blocos e formar sua primeira palavra em menos de 1 minuto em seu primeiro uso, sem auxílio de tutoriais. | Teste de Usabilidade (cronometrado com novos usuários). |
+| **RNF02** | Usabilidade | A interface deve permitir selecionar, mover e soltar blocos utilizando eventos nativos de mouse (desktop) e touch (mobile) sem falhas de renderização. | Teste de Interface Automático (ferramentas de E2E) e Teste Manual (Touch/Mouse). |
+| **RNF03** | Confiabilidade | O sistema deve salvar corretamente as respostas e pontuações dos usuários após a finalização das atividades. | Teste de Integração (simulação de inserção, fechamento do navegador e reabertura). |
+| **RNF04** | Confiabilidade | O sistema deve preservar a integridade dos dados durante acessos simultâneos. | Teste de Carga e Concorrência no Banco de Dados (verificação ACID). |
+| **RNF05** | Performance | O sistema deve processar a combinação de blocos e exibir o feedback visual na tela em um tempo máximo de 2 segundos. | Monitoramento de Tempo de Resposta (Network Tab / Testes de Performance). |
+| **RNF06** | Suportabilidade | A interface cliente deve comunicar-se com a lógica de negócio exclusivamente por meio de APIs. | Inspeção de Arquitetura e Code Review. |
+| **RNF07** | Suportabilidade | O sistema deve permitir a carga inicial e a manutenção futura do catálogo de morfemas diretamente no banco de dados. | Teste de Inserção de Dados via script SQL ou via acesso ao painel do Django Admin. |
+| **RNF08** | Implementação | O código-fonte do cliente (frontend) deve ser escrito obrigatoriamente utilizando a biblioteca React e tipagem estática com TypeScript. | Inspeção de Código / Configuração do Repositório. |
+| **RNF09** | Implementação | O código-fonte do servidor (backend) deve ser escrito obrigatoriamente na linguagem Python utilizando o framework Django. | Inspeção de Código / Configuração do Repositório. |
+| **RNF10** | Implementação | O modelo de dados relacionais deve ser implementado e persistido utilizando o SGBD PostgreSQL. | Validação da Infraestrutura / Configuração de Banco. |
+| **RNF11** | Suportabilidade | O sistema deve operar sem falhas críticas nas duas últimas versões estáveis dos navegadores Google Chrome, Mozilla Firefox, Microsoft Edge e Safari. | Teste de Compatibilidade Cross-browser. |
+| **RNF12** | Usabilidade | A interface da área de jogo deve readequar seus elementos sem sobreposição (quebra de layout) ou scroll horizontal em telas a partir de 360px de largura (smartphones comuns). | Teste de Interface Cross-device (Emuladores mobile / DevTools). |
+| **RNF13** | Restrições | O sistema deve ser acessível via protocolo HTTP/HTTPS a partir de um navegador web, sem exigir qualquer tipo de instalação ou download local por parte do usuário. | Teste de Implantação e Acesso URL. |
+
+### **7.3 Matriz de Valor e Esforço**
+
+![Matriz de Valor e Esforço](img/matriz_valor_esforco.png)
+
+
+## **8. Definition of Ready (DoR) e Definition of Done (DoD)**
+
+Esta seção apresenta os critérios de Definition of Ready (DoR) e Definition of Done (DoD) adotados pela equipe para o desenvolvimento do MorfoBlocos Digital. Essas definições estabelecem um acordo de trabalho claro, garantindo que os itens do Product Backlog estejam maduros o suficiente antes de entrarem em uma Sprint (DoR) e que o incremento de software gerado atenda aos padrões de qualidade exigidos antes de ser considerado finalizado (DoD).
+
+### **8.1 Definition of Ready (DoR) - Definição de Preparado**
+
+O DoR atua como um filtro de entrada. Um item do backlog (como uma História de Usuário ou Requisito Funcional) só será aceito para o Sprint Backlog e puxado para desenvolvimento se cumprir todos os seguintes critérios:
+
+* **Clareza e Formato**: O item está descrito de forma clara, preferencialmente no formato de História de Usuário ("Como [ator], quero [ação] para [valor]") ou como um Requisito Funcional bem delimitado.
+
+* **Critérios de Aceitação**: O item possui critérios de aceitação explícitos e testáveis (ex: formato Given/When/Then), garantindo que a equipe saiba exatamente como o comportamento será validado.
+
+* **Priorização**: O item foi priorizado pela Product Owner (Profª. Pilar) e está alinhado com o objetivo do MVP.
+
+* **Estimativa**: O esforço de desenvolvimento do item foi discutido, compreendido e estimado por toda a equipe técnica (Ana Beatriz, Artur, Bruno, Carlos e Luiz Henrique).
+
+* **Dependências Resolvidas**: Quaisquer dependências externas ou bloqueios técnicos (ex: necessidade de definição de uma regra morfológica específica ou protótipo de interface validado) foram mapeados e resolvidos prévia ou paralelamente.
+
+* **Rastreabilidade**: O item está associado a uma Característica de Produto (CP) e, se aplicável, seus Requisitos Não Funcionais (RNFs) restritivos estão mapeados.
+
+### **8.2 Definition of Done (DoD) - Definição de Pronto**
+
+O DoD atua como o filtro de saída. Um item do backlog que estava em desenvolvimento só avança para o status "Concluído" (Done) se cumprir absolutamente todos os critérios abaixo, refletindo as práticas do ScrumXP adotadas pela equipe:
+
+* **Código Implementado**: A funcionalidade foi totalmente codificada respeitando as restrições arquiteturais definidas (React com TypeScript no Frontend; Django em Python e PostgreSQL no Backend).
+
+* **Testes Executados e Aprovados**: A lógica desenvolvida passou pelos testes unitários e/ou testes automatizados previstos (refletindo a prática de TDD do eXtreme Programming).
+
+* **Critérios de Aceitação Atendidos**: O incremento atende a 100% dos critérios de aceitação definidos no momento do planejamento da Sprint (DoR).
+
+* **Requisitos Não Funcionais Validados**: O código desenvolvido respeita os RNFs aplicáveis (ex: tempo de resposta inferior a 2 segundos, interface responsiva para telas a partir de 360px).
+
+* **Revisão de Código (Code Review)**: O código fonte passou por inspeção e foi aprovado por pelo menos um membro da equipe diferente do autor original (Pull Request aprovado).
+
+* **Integração Bem-Sucedida**: O código foi integrado à branch principal do projeto sem gerar quebras de layout ou conflitos no restante do sistema.
+
+* **Validação do Cliente**: A funcionalidade está funcional no ambiente de testes e pronta para ser demonstrada e validada pela Profª. Pilar na reunião de Sprint Review.
+
+
+## **10. Lições Aprendidas**
+
+### **10.1 Unidade 1**
 
 Nesta primeira unidade, a equipe enfrentou alguns desafios importantes de organização e gestão, que exigiram ajustes no início do projeto para garantir a continuidade das atividades.
 
@@ -421,3 +489,4 @@ Com a reorganização da equipe, passou-se a priorizar um contato mais frequente
 | 06/05/2026 | 1.6  | Correção nas seções 4.2, 5 e 6.1. | [Bruno Souza](https://github.com/youngburny) |
 | 06/05/2026 | 1.7  | Correção nas seções 1.4, 3.1, 3.2 e 3.3 | [Bruno Souza](https://github.com/youngburny) |
 | 12/05/2026 | 1.8  | Correção nas seções 2.2 e 2.3. | [Bruno Souza](https://github.com/youngburny) |
+| 13/05/2026 | 1.9  | Correção na seção 3 e 5, e adição das seções 7, 7.1, 7.2, 7.3, 8, 8.1 e 8.2. | [Bruno Souza](https://github.com/youngburny) |
