@@ -193,12 +193,51 @@ A utilização da plataforma também pode gerar impactos não previstos inicialm
 
 Por fim, a intervenção social do MorfoBlocos Digital não está apenas na digitalização do jogo físico, mas também na mudança da forma como as atividades podem ser realizadas, acompanhadas e utilizadas em diferentes contextos educacionais. Dessa forma, os requisitos do sistema devem considerar não apenas os benefícios esperados, mas também os possíveis efeitos decorrentes do uso contínuo da plataforma.
 
+## __4. Estratégias de Engenharia de Software__
 
- 
+Para o desenvolvimento do MorfoBlocos Digital, foram definidas estratégias de engenharia de software que permitam organizar o trabalho da equipe, acompanhar a evolução do sistema e garantir entregas ao longo do semestre, considerando as limitações de tempo e o contexto acadêmico do projeto.
 
-## __4. Engenharia de Requisitos__
+### __4.1 Estratégia Priorizada__
 
-### __4.1 Atividades  e Técnicas de ER__
+O projeto adota uma abordagem ágil, com ciclo de vida iterativo e incremental, permitindo a evolução contínua dos requisitos a partir do feedback da cliente ao longo das entregas.
+
+Para a gestão do desenvolvimento, é utilizado o Scrum, responsável pela organização do trabalho em sprints, priorização do backlog e realização de reuniões de planejamento, revisão e retrospectiva.
+
+Complementarmente, são aplicadas práticas do XP (eXtreme Programming), como TDD, refatoração e integração contínua, especialmente devido à necessidade de garantir a corretude da lógica de validação das combinações de morfemas.
+
+Dessa forma, Scrum e XP são utilizados de maneira complementar: o Scrum organiza o processo e a interação com a cliente, enquanto o XP orienta a implementação técnica.
+
+
+### __4.2 Quadro Comparativo__
+
+A seguir, apresenta-se uma comparação entre processos que poderiam ser utilizados no projeto.
+
+| **Critério** | **ScrumXP** | **OpenUP (Open Unified Process)** |
+| :--- | :--- | :--- | 
+| **Abordagem Geral** | Abordagem ágil que combina Scrum para gestão (sprints, backlog e eventos) com práticas técnicas do XP (TDD, refatoração e integração contínua).  | Processo iterativo e incremental baseado no RUP, com maior estruturação e formalização das atividades. |
+| **Organização do Trabalho** | Trabalho organizado em sprints (1–2 semanas), com planejamento, revisão e retrospectiva. Desenvolvimento orientado por backlog priorizado e histórias de usuário. | Quatro fases sequenciais (Concepção, Elaboração, Construção e Transição), cada uma contendo iterações com entregáveis definidos.  | 
+| **Tratamento dos Requisitos** | Requisitos expressos como histórias de usuário, refinados continuamente com a cliente. Alta adaptação a mudanças ao longo do desenvolvimento. | Requisitos organizados em casos de uso, com maior formalização e controle de mudanças ao longo das iterações. |
+| **Qualidade Técnica** | Forte ênfase em práticas do XP, como TDD, refatoração, integração contínua e design simples, promovendo validação contínua do código.  | Qualidade assegurada por validações incrementais e definição arquitetural nas fases iniciais, com menor ênfase em práticas técnicas automatizadas. | 
+| **Participação do Cliente** | Alta participação: cliente envolvido continuamente nas sprints, validando incrementos e fornecendo feedback frequente. | Participação mais estruturada, concentrada nas fases e nas revisões de iteração. | 
+| **Flexibilidade de Requisitos** | Alta flexibilidade, com adaptação contínua baseada no feedback da cliente. | Flexibilidade moderada, podendo ser limitada por decisões arquiteturais definidas nas fases iniciais. | 
+| **Documentação** | Documentação leve, focada no essencial, com maior ênfase na comunicação contínua e nos testes como forma de validação. | Documentação estruturada, com artefatos como visão, casos de uso e planos de iteração. |
+| **Adequação ao Projeto MorfoBlocos** | Alta. Adequada à equipe reduzida, à disponibilidade da cliente e à necessidade de evolução contínua e validação da lógica morfológica. | Média. Pode contribuir para organização, mas tende a ser mais rígido e demandar maior esforço documental para o contexto da disciplina. |
+
+### __3.3 Justificativa__
+
+Com base nas características do projeto MorfoBlocos Digital e no quadro comparativo apresentado, foi adotada uma abordagem ágil, utilizando o Scrum como framework de gestão do desenvolvimento e práticas do XP (eXtreme Programming) no desenvolvimento, por ser a alternativa mais adequada ao contexto da equipe, do cliente e do produto.
+
+O principal fator que justifica essa escolha é a natureza evolutiva dos requisitos do projeto. O jogo digital envolve regras morfológicas complexas, validadas continuamente pela cliente, e funcionalidades interativas cujo comportamento esperado só se torna claro ao longo do desenvolvimento. O Scrum, ao organizar o trabalho em ciclos curtos (sprints) e promover feedback contínuo da cliente e validação frequente das funcionalidades desenvolvidas, responde diretamente a esse cenário. Além disso, a cliente (Profª. Pilar) possui disponibilidade para interações frequentes, o que favorece a dinâmica iterativa proposta pela abordagem ágil.
+
+As práticas do XP também se mostram adequadas às necessidades do produto. A lógica de validação automática das combinações de morfemas, que é o núcleo do MorfoBlocos Digital, exige alta confiabilidade no código. O TDD (Test-Driven Development), a refatoração contínua e a integração contínua garantem que essa lógica seja desenvolvida com qualidade e testada de forma sistemática desde o início, reduzindo o risco de defeitos no mecanismo central do jogo.
+
+Em comparação, o OpenUP apresenta uma estrutura de fases mais rígida e maior ênfase na documentação de artefatos formais, como casos de uso e planos de iteração. Embora adequado para projetos que necessitam de maior previsibilidade arquitetural desde o início, o OpenUP pode ser excessivo para o escopo e o prazo da disciplina, além de demandar maior esforço de documentação em um contexto onde a comunicação direta com a cliente é viável e preferível.
+
+Dessa forma, o Scrum, em conjunto com práticas do XP, se mostra a alternativa mais adequada ao projeto, pois permite alinhar a organização do processo com a qualidade técnica do desenvolvimento, lidar com requisitos evolutivos e viabilizar entregas incrementais com validação contínua.
+
+## __5. Engenharia de Requisitos__
+
+### __5.1 Atividades  e Técnicas de ER__
 
 **Elicitação e descoberta**
 
@@ -267,7 +306,7 @@ Declaração de Requisitos
 
 * **Matriz de rastreabilidade**: matriz que conecta objetivos específicos, características de produto, requisitos funcionais e não funcionais, regras de negócio e critérios de aceitação, assegurando que cada decisão técnica permaneça ligada ao problema declarado na seção 1.4.
 
-### __4.2 Engenharia de Requisitos e o XP__
+### __5.2 Engenharia de Requisitos e o XP__
 
 As atividades da Engenharia de Requisitos, suas práticas e técnicas são mapeadas, a seguir, às cerimônias do Scrum adotadas pela equipe para a condução do projeto MorfoBlocos Digital. Embora o processo escolhido seja o ScrumXP — combinando o framework Scrum para gerenciamento com as práticas técnicas do XP para engenharia —, optou-se por organizar a tabela em torno das cerimônias do Scrum por serem os momentos formais de tomada de decisão e validação no ciclo iterativo, conforme descrito na seção 4.10 do livro-texto. 
 
@@ -291,7 +330,7 @@ _Importante: as atividades da ER não ocorrem de forma estritamente sequencial d
 
 _O mapeamento apresentado evidencia onde cada atividade da ER tem maior ênfase em cada cerimônia do Scrum, sem sugerir uma ordem rígida de execução. As práticas técnicas do XP — como programação em pares, TDD, integração contínua e refatoração — permeiam a execução da sprint e dão suporte à qualidade dos requisitos implementados, em coerência com os valores de comunicação, feedback, simplicidade e confiança que sustentam a prática da Engenharia de Requisitos descrita no capítulo 5 do livro-texto._
 
-## __5. Cronograma e Entregas__
+## __6. Cronograma e Entregas__
 
 _Processo: ScrumXP  |  Sprints de 2 semanas  |  PO: Profª. María del Pilar Tobar Acosta_
 
@@ -306,9 +345,9 @@ _Processo: ScrumXP  |  Sprints de 2 semanas  |  PO: Profª. María del Pilar Tob
 
 
 
-## __6. Interação entre Equipe e Cliente__
+## __7. Interação entre Equipe e Cliente__
 
-### __6.1 Composição da Equipe__
+### __7.1 Composição da Equipe__
 
 * Ana Beatriz Souza Araújo: Engenharia de Requisitos, Desenvolvedor backend
 * Artur Fernandes: Engenharia de Requisitos, Desenvolvedor backend
@@ -316,7 +355,7 @@ _Processo: ScrumXP  |  Sprints de 2 semanas  |  PO: Profª. María del Pilar Tob
 * Carlos Eduardo: Engenharia de Requisitos, Desenvolvedor frontend.
 * Luiz Henrique: Engenharia de Requisitos, Desenvolvedor frontend do projeto auxílio na parte de Scrum
 
-### __6.2 Comunicação__
+### __7.2 Comunicação__
 
 **Ferramentas de comunicação**:
 
@@ -331,7 +370,7 @@ Sincronização Acadêmica: Ocorrerão momentos dedicados à comunicação duran
 
 * **Interações com a Cliente**: A comunicação direta com a cliente seguirá um protocolo rigoroso de rastreabilidade. Todo o contato oficial será feito de forma 100% remota via reuniões online no Google Meet, que serão integralmente gravadas. Essa prática resguarda o projeto, assegurando que todos os requisitos, feedbacks, aprovação e mudanças de escopo solicitadas pela cliente estejam registrados em vídeo e áudio para consulta futura.
 
-### __6.3 Processo de Validação__
+### __7.3 Processo de Validação__
 
 Para garantir que o MorfoBlocos Digital construa o produto correto e solucione o problema central de baixa eficiência e falta de rastreabilidade no ensino de morfologia, a equipe de desenvolvimento adotará uma estratégia de validação contínua. Os processos de validação foram estruturados em quatro frentes principais, mapeadas para as características do produto e perfis de _stakeholders_:
 
@@ -367,15 +406,15 @@ __4. Validação Técnica do Valor de Negócio (Rastreabilidade)__
 
 * **Método**: Simulação de uso em massa e testes de integração com o banco de dados. O processo validará se as interações, acertos e padrões de erro dos estudantes estão sendo armazenados de forma persistente e se as informações geradas no painel de rastreabilidade são claras e acionáveis para o professor.
 
-### **6.4 Registro de Reuniões**
+### **7.4 Registro de Reuniões**
 
 Para garantir a rastreabilidade e o alinhamento com as expectativas da cliente, todas as interações estratégicas são registradas. As mesmas estarão disponibilizadas na aba [Registro de Reuniões](./reunioes.md).
 
-## **7. Requisitos de Software**
+## **8. Requisitos de Software**
 
 Esta seção detalha as especificações fundamentais para a concepção e o desenvolvimento do software. O conteúdo está organizado entre requisitos funcionais, que definem as ações e comportamentos que o sistema deve executar, e requisitos não funcionais, que estabelecem os critérios de qualidade, desempenho e restrições técnicas necessários para garantir uma experiência de uso eficiente e segura.
 
-### **7.1 Requisitos Funcionais (RF)**
+### **8.1 Requisitos Funcionais (RF)**
 
 | ID | Requisito Funcional (Verbo + Objeto) | Rastreabilidade (CP) | Prioridade (MoSCoW) |
 | :--- | :--- | :--- | :--- |
@@ -395,7 +434,7 @@ Esta seção detalha as especificações fundamentais para a concepção e o des
 | **RF14** | Gerar relatório de desempenho consolidado da turma. | CP6 - Painel de Monitoramento | Must Have |
 | **RF15** | Exibir os erros morfológicos mais frequentes dos estudantes para o professor. | CP6 - Painel de Monitoramento | Should Have |
 
-### **7.2 Requisitos Não Funcionais (RNF)**
+### **8.2 Requisitos Não Funcionais (RNF)**
 
 | ID | Categoria (URPS+) | Descrição Mensurável para Teste | Método de Validação / Teste |
 | :--- | :--- | :--- | :--- |
@@ -413,16 +452,16 @@ Esta seção detalha as especificações fundamentais para a concepção e o des
 | **RNF12** | Usabilidade | A interface da área de jogo deve readequar seus elementos sem sobreposição (quebra de layout) ou scroll horizontal em telas a partir de 360px de largura (smartphones comuns). | Teste de Interface Cross-device (Emuladores mobile / DevTools). |
 | **RNF13** | Restrições | O sistema deve ser acessível via protocolo HTTP/HTTPS a partir de um navegador web, sem exigir qualquer tipo de instalação ou download local por parte do usuário. | Teste de Implantação e Acesso URL. |
 
-### **7.3 Matriz de Valor e Esforço**
+### **8.3 Matriz de Valor e Esforço**
 
 ![Matriz de Valor e Esforço](img/matriz_valor_esforco.png)
 
 
-## **8. Definition of Ready (DoR) e Definition of Done (DoD)**
+## **9. Definition of Ready (DoR) e Definition of Done (DoD)**
 
 Esta seção apresenta os critérios de Definition of Ready (DoR) e Definition of Done (DoD) adotados pela equipe para o desenvolvimento do MorfoBlocos Digital. Essas definições estabelecem um acordo de trabalho claro, garantindo que os itens do Product Backlog estejam maduros o suficiente antes de entrarem em uma Sprint (DoR) e que o incremento de software gerado atenda aos padrões de qualidade exigidos antes de ser considerado finalizado (DoD).
 
-### **8.1 Definition of Ready (DoR) - Definição de Preparado**
+### **9.1 Definition of Ready (DoR) - Definição de Preparado**
 
 O DoR atua como um filtro de entrada. Um item do backlog (como uma História de Usuário ou Requisito Funcional) só será aceito para o Sprint Backlog e puxado para desenvolvimento se cumprir todos os seguintes critérios:
 
@@ -438,7 +477,7 @@ O DoR atua como um filtro de entrada. Um item do backlog (como uma História de 
 
 * **Rastreabilidade**: O item está associado a uma Característica de Produto (CP) e, se aplicável, seus Requisitos Não Funcionais (RNFs) restritivos estão mapeados.
 
-### **8.2 Definition of Done (DoD) - Definição de Pronto**
+### **9.2 Definition of Done (DoD) - Definição de Pronto**
 
 O DoD atua como o filtro de saída. Um item do backlog que estava em desenvolvimento só avança para o status "Concluído" (Done) se cumprir absolutamente todos os critérios abaixo, refletindo as práticas do ScrumXP adotadas pela equipe:
 
@@ -457,9 +496,9 @@ O DoD atua como o filtro de saída. Um item do backlog que estava em desenvolvim
 * **Validação do Cliente**: A funcionalidade está funcional no ambiente de testes e pronta para ser demonstrada e validada pela Profª. Pilar na reunião de Sprint Review.
 
 
-## **10. Lições Aprendidas**
+## **11. Lições Aprendidas**
 
-### **10.1 Unidade 1**
+### **11.1 Unidade 1**
 
 Nesta primeira unidade, a equipe enfrentou alguns desafios importantes de organização e gestão, que exigiram ajustes no início do projeto para garantir a continuidade das atividades.
 
@@ -490,3 +529,4 @@ Com a reorganização da equipe, passou-se a priorizar um contato mais frequente
 | 06/05/2026 | 1.7  | Correção nas seções 1.4, 3.1, 3.2 e 3.3 | [Bruno Souza](https://github.com/youngburny) |
 | 12/05/2026 | 1.8  | Correção nas seções 2.2 e 2.3. | [Bruno Souza](https://github.com/youngburny) |
 | 13/05/2026 | 1.9  | Correção na seção 3 e 5, e adição das seções 7, 7.1, 7.2, 7.3, 8, 8.1 e 8.2. | [Bruno Souza](https://github.com/youngburny) |
+| 15/05/2026 | 1.10  | Correção na enumeração das seções. | [Bruno Souza](https://github.com/youngburny) |
