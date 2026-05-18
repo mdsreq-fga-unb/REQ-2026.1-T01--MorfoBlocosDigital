@@ -56,7 +56,7 @@ Pontos a detalhar (para a professora complementar):
 * O feedback de erro deve mostrar apenas “errado” ou explicar o motivo?"
 
 <audio controls>
-    <source src="audio/resposta1.mp3" type="audio/mp3">
+    <source src="audio/audio_resposta1.ogg" type="audio/mpeg">
 </audio>
 
 * **Pergunta 2:**
@@ -71,7 +71,7 @@ Pontos a detalhar:
 * Já estão classificados por categoria (prefixo, radical, sufixo)?
 
 <audio controls>
-    <source src="audio/resposta2.mp3" type="audio/mp3">
+    <source src="audio/audio_resposta2.ogg" type="audio/mpeg">
 </audio>
 
 * **Pergunta 3:**
@@ -89,7 +89,7 @@ Pontos a detalhar:
 * Essas regras mudam conforme o nível de dificuldade?
 
 <audio controls>
-    <source src="audio/resposta3.mp3" type="audio/mp3">
+    <source src="audio/audio_resposta3.ogg" type="audio/mpeg">
 </audio>
 
 Reunião realizada via Google Meet (07/05/2026)

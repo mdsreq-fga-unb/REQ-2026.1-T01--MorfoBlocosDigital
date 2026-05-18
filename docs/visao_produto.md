@@ -471,10 +471,6 @@ Esta seção detalha as especificações fundamentais para a concepção e o des
 | **RNF11** | Usabilidade | A interface deve readequar seus elementos sem sobreposição ou scroll horizontal em telas a partir de 360px de largura. | Teste Cross-device (Emuladores mobile / DevTools). |
 | **RNF12** | Restrições | O sistema deve ser acessível via HTTP/HTTPS a partir de um navegador web, sem exigir instalação local. | Teste de Implantação e Acesso URL. |
 
-### **8.3 Matriz de Valor e Esforço**
-
-![Matriz de Valor e Esforço](img/matriz_valor_esforco.png)
-
 
 ## **9. Definition of Ready (DoR) e Definition of Done (DoD)**
 
@@ -518,9 +514,12 @@ O DoD atua como o filtro de saída. Um item do backlog que estava em desenvolvim
 
 A presente seção apresenta o backlog do produto MorfoBlocos Digital, organizado a partir dos requisitos funcionais (RFs), requisitos não funcionais (RNFs) e regras de negócio (RN) elicitados e consolidados ao longo das atividades de Engenharia de Requisitos. Todas as histórias de usuário aqui declaradas derivam diretamente da lista de RFs apresentada anteriormente neste documento. Trata-se de uma lista preliminar, sujeita a refinamentos durante o desenvolvimento, conforme o produto evolui e novos aprendizados emergem das interações com a cliente.
 
-Esta versão da seção incorpora as correções acordadas com a banca durante a apresentação da Unidade, incluindo: 
+Esta versão da seção incorpora as correções acordadas com o professor e revisadas pelo monitor durante a apresentação da Unidade, incluindo: 
+
 1. O desmembramento dos requisitos de manutenção de catálogo em operações CRUD distintas;
+
 2. A reclassificação de determinados itens — antes tratados como requisitos funcionais — como regras de negócio;
+
 3. A adoção de critérios objetivos para a classificação MoSCoW e para a Matriz de Valor de Negócio × Complexidade Técnica.
 
 ### **10.1 Backlog Geral**
@@ -548,7 +547,7 @@ O Story Map propriamente dito está disponível em artefato externo, acessível 
 #### 10.1.2 Catálogo Consolidado de Requisitos Funcionais
 O catálogo a seguir consolida os 22 requisitos funcionais (RFs) elicitados para o MorfoBlocos Digital, organizados por Característica de Produto (CP) e com a respectiva classificação MoSCoW. 
 
-As operações de manutenção do catálogo de conteúdo (morfemas, palavras válidas e atividades pedagógicas) foram desmembradas em operações CRUD individuais — Cadastrar, Editar, Remover e Listar — conforme recomendação da banca, de modo a tornar cada RF atômico, testável e independentemente rastreável.
+As operações de manutenção do catálogo de conteúdo (morfemas, palavras válidas e atividades pedagógicas) foram desmembradas em operações CRUD individuais — Cadastrar, Editar, Remover e Listar — conforme recomendação do professor, de modo a tornar cada RF atômico, testável e independentemente rastreável.
 
 | ID | CP | Requisito Funcional | Ator Principal | MoSCoW |
 | :--- | :--- | :--- | :--- | :--- |
@@ -656,9 +655,9 @@ Para os requisitos CRUD relacionados à manutenção de catálogo (RF04a-d, RF05
 
 ### **10.2 Priorização do Backlog Geral e MVP**
 
-A priorização do backlog do MorfoBlocos Digital foi conduzida combinando duas técnicas complementares declaradas pela equipe na seção 4.1 (Atividades e Técnicas de ER) como práticas da atividade de Análise e Consenso: a Priorização MoSCoW e a Matriz Avaliação Técnica × Valor de Negócio (operacionalizada como Matriz de Valor de Negócio × Complexidade Técnica). O uso conjunto preserva a coerência metodológica do projeto e amplia a capacidade de justificar as decisões de escopo perante a cliente e a banca avaliadora.
+A priorização do backlog do MorfoBlocos Digital foi conduzida combinando duas técnicas complementares declaradas pela equipe na seção 5.1 (Atividades e Técnicas de ER) como práticas da atividade de Análise e Consenso: a Priorização MoSCoW e a Matriz Avaliação Técnica × Valor de Negócio (operacionalizada como Matriz de Valor de Negócio × Complexidade Técnica). O uso conjunto preserva a coerência metodológica do projeto e amplia a capacidade de justificar as decisões de escopo perante a cliente e a avaliação do professor.
 
-Em atendimento às recomendações da banca, esta versão da seção adota critérios objetivos para a aplicação das duas técnicas. A classificação MoSCoW de cada requisito é justificada por critérios explícitos relacionados à participação do requisito nos fluxos essenciais do MVP; e a Matriz é fundamentada por uma escala numérica de Valor de Negócio (VB, de 1 a 5) e de Complexidade Técnica (CT, de 1 a 5), cada uma com critérios objetivos próprios.
+Em atendimento às recomendações do professor, esta versão da seção adota critérios objetivos para a aplicação das duas técnicas. A classificação MoSCoW de cada requisito é justificada por critérios explícitos relacionados à participação do requisito nos fluxos essenciais do MVP; e a Matriz é fundamentada por uma escala numérica de Valor de Negócio (VB, de 1 a 5) e de Complexidade Técnica (CT, de 1 a 5), cada uma com critérios objetivos próprios.
 
 #### **10.2.1 Critérios Objetivos para a Classificação MoSCoW**
 
@@ -899,3 +898,4 @@ Como forma de reduzir inconsistências, a equipe passou a utilizar identificador
 | 13/05/2026 | 1.9  | Correção na seção 3 e 5, e adição das seções 7, 7.1, 7.2, 7.3, 8, 8.1 e 8.2. | [Bruno Souza](https://github.com/youngburny) |
 | 15/05/2026 | 1.10  | Correção na enumeração das seções. | [Bruno Souza](https://github.com/youngburny) |
 | 18/05/2026 | 2.0  | Adiciona seção 10 (Backlog) e respectivas subseções, seção 11.2 e 2.6.1., e corrige seção 8.1 e 8.2.  | [Bruno Souza](https://github.com/youngburny) |
+| 18/05/2026 | 2.1  | Correção na seção 10, e realocação da Matriz de Priorização.   | [Bruno Souza](https://github.com/youngburny) |
