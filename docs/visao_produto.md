@@ -88,13 +88,13 @@ Embora o projeto tenha um cliente único e real (a professora María del Pilar),
 
 * Professores de Língua Portuguesa: atuam como mediadores do uso do jogo em sala de aula, necessitando de recursos para aplicar o material, propor atividades e, futuramente, acompanhar o desempenho dos estudantes.
 
-## __2. Solução Proposta__
+## **2. Solução Proposta**
 
-### __2.1 Objetivo Geral do Produto__
+### **2.1 Objetivo Geral do Produto**
 
 Desenvolver uma plataforma web interativa (MorfoBlocos Digital) que viabilize a construção autônoma de palavras a partir de morfemas, fornecendo feedback pedagógico automatizado para os estudantes e garantindo o registro e a rastreabilidade do aprendizado para auxiliar o acompanhamento pelos professores.
 
-### __2.2 Objetivos Específicos (OEs) do Produto__
+### **2.2 Objetivos Específicos (OEs) do Produto**
 
 * (OE1) Proporcionar um ambiente digital interativo que permita aos estudantes a manipulação autônoma e a combinação livre de blocos de morfemas.
 
@@ -106,7 +106,7 @@ Desenvolver uma plataforma web interativa (MorfoBlocos Digital) que viabilize a 
 
 
 
-### __2.3 Características de Produto (Mapeadas com os Objetivos Específicos)__
+### **2.3 Características de Produto (Mapeadas com os Objetivos Específicos)**
 
 A solução proposta para o MorfoBlocos Digital deverá contemplar, de forma preliminar, as seguintes características de produto (CP), mapeadas aos objetivos específicos (OE) da seção 2.2 e aos valores de negócio (VN) identificados:
 
@@ -120,7 +120,7 @@ A solução proposta para o MorfoBlocos Digital deverá contemplar, de forma pre
 | CP6 | Painel de Monitoramento de Turmas (Dashboard)           | Área exclusiva da docência para visualização de relatórios consolidados, permitindo a identificação ágil de dificuldades recorrentes e padrões de erro das turmas.     | OE4                    |
 
 
-### __2.4 Tecnologias a Serem Utilizadas__
+### **2.4 Tecnologias a Serem Utilizadas**
 
 A solução será desenvolvida com base em uma arquitetura cliente-servidor, garantindo organização e separação das responsabilidades do sistema.
 
@@ -136,7 +136,7 @@ As tecnologias foram escolhidas por serem simples de utilizar, bem documentadas 
 | **Backend** | Django (Python) |
 | **Banco de Dados** | PostgreSQL |
 
-### __2.5 Pesquisa de Mercado e Análise Competitiva__
+### **2.5 Pesquisa de Mercado e Análise Competitiva**
 
 Existem hoje algumas soluções digitais voltadas ao ensino de língua portuguesa, principalmente baseadas em exercícios e jogos educativos. Um exemplo é o Gramatikê, desenvolvido pela Universidade de Brasília, que funciona offline e propõe o ensino de gramática por meio de atividades interativas e jogos, com conteúdos adaptados a diferentes níveis de aprendizagem.
 
@@ -148,7 +148,7 @@ O MorfoBlocos Digital se diferencia justamente nesse ponto. Enquanto essas solu�
 
 Assim, o principal diferencial da solução está na mudança de abordagem: sair de um modelo centrado em respostas para um modelo que incentiva a construção ativa, com foco específico em morfologia.
 
-### __2.6 Viabilidade da Proposta__
+### **2.6 Viabilidade da Proposta**
 
 A proposta é viável no **contexto da disciplina**, considerando o acesso direto à cliente, o escopo definido e a possibilidade de entrega incremental de um MVP funcional ao final do semestre. Embora a **equipe seja reduzida** e ainda esteja em processo de consolidação do domínio sobre algumas tecnologias adotadas, o projeto foi estruturado de forma compatível com essa realidade, com entregas incrementais, priorização das funcionalidades essenciais e validações frequentes com a cliente.
 
@@ -160,7 +160,19 @@ Assim, a proposta é considerada viável, desde que:
 * As prioridades sejam mantidas ao longo das entregas; e
 * A equipe preserve a estratégia de aprendizado contínuo e validação com a cliente ao longo do desenvolvimento.
 
-### __2.7 Benefícios Esperados__
+#### **2.6.1 Estimativas de custos**
+
+| Categoria | Item | Descrição | Custo Estimado (Comercial) | Custo Efetivo (Projeto Acadêmico) |
+| :--- | :--- | :--- | :--- | :--- |
+| **Infraestrutura** | Hospedagem Frontend (Vercel / Netlify) | Servidor em nuvem para hospedar a interface em React/TypeScript. | R$ 110,00 ($20 USD) | R$ 0,00 (Hobby Tier) |
+| **Infraestrutura** | Hospedagem Backend (Render / DigitalOcean) | Servidor em nuvem (VM) para rodar a API em Django (Python). | R$ 40,00 ($7 USD) | R$ 0,00 (Free Tier) |
+| **Infraestrutura** | Banco de Dados (Supabase / Render) | Instância gerenciada do PostgreSQL para salvar catálogo e histórico. | R$ 80,00 ($15 USD) | R$ 0,00 (Free Tier) |
+| **Infraestrutura** | Registro de Domínio | Endereço web oficial (ex: morfoblocos.com.br). | R$ 3,33 (R$ 40/ano) | R$ 3,33 (R$ 40/ano) |
+| **Ferramentas** | Controle de Versão e CI/CD (GitHub) | Repositório de código e automação de deploys. | R$ 110,00 ($20 USD) | R$ 0,00 (Free/Student) |
+| **Ferramentas** | Design e Prototipação (Figma) | Criação de telas e validação visual com a cliente. | R$ 80,00 ($15 USD) | R$ 0,00 (Education) |
+| **Ferramentas** | Gestão Ágil (Notion / Trello) | Controle do Backlog, Sprints e documentação. | R$ 55,00 ($10 USD) | R$ 0,00 (Free Tier) |
+
+### **2.7 Benefícios Esperados**
 
 * **Para a cliente**: ampliar o alcance pedagógico do MorfoBlocos, superando as limitações do jogo físico e viabilizando seu uso em um número significativo de escolas sem custo adicional de material. A solução permitirá ainda que a professora gerencie o conteúdo de morfemas e exercícios de forma autônoma e acompanhe a evolução do aprendizado dos estudantes ao longo do tempo.
 
@@ -414,43 +426,50 @@ Para garantir a rastreabilidade e o alinhamento com as expectativas da cliente, 
 
 Esta seção detalha as especificações fundamentais para a concepção e o desenvolvimento do software. O conteúdo está organizado entre requisitos funcionais, que definem as ações e comportamentos que o sistema deve executar, e requisitos não funcionais, que estabelecem os critérios de qualidade, desempenho e restrições técnicas necessários para garantir uma experiência de uso eficiente e segura.
 
-### **8.1 Requisitos Funcionais (RF)**
+### **8.1 Lista de Requisitos Funcionais**
 
-| ID | Requisito Funcional (Verbo + Objeto) | Rastreabilidade (CP) | Prioridade (MoSCoW) |
-| :--- | :--- | :--- | :--- |
-| **RF01** | Disponibilizar credenciais de acesso para usuários. | CP1 - Controle de Acesso | Must Have |
-| **RF02** | Autenticar acesso ao sistema utilizando credenciais. | CP1 - Controle de Acesso | Must Have |
-| **RF03** | Permitir a recuperação de acesso mediante envio de nova senha. | CP1 - Controle de Acesso | Should Have |
-| **RF04** | Permitir operações de cadastro, edição, remoção e consulta de morfemas, palavras válidas e atividades pedagógicas. | CP2 - Admin de Conteúdo | Must Have |
-| **RF05** | Permitir ao estudante acessar atividades pedagógicas disponíveis. | CP3 - Espaço de Construção | Must Have |
-| **RF06** | Movimentar blocos de morfemas na área de montagem. | CP3 - Espaço de Construção | Must Have |
-| **RF07** | Submeter a combinação de blocos para validação. | CP3 - Espaço de Construção | Must Have |
-| **RF08** | Exibir explicações com textos, imagens ou vídeos sobre conteúdos morfológicos relacionados às atividades. | CP3 - Espaço de Construção | Could Have |
-| **RF09** | Exibir feedback da validação da combinação de blocos submetida. | CP4 - Validador de Estruturas | Must Have |
-| **RF10** | Exibir o processo de formação morfológica da palavra validada. | CP4 - Validador de Estruturas | Must Have |
-| **RF11** | Salvar a pontuação obtida na atividade finalizada. | CP5 - Portfólio de Progresso | Must Have |
-| **RF12** | Liberar acesso a níveis superiores mediante pontuação mínima. | CP5 - Portfólio de Progresso | Should Have |
-| **RF13** | Gerar o histórico de pontuações individuais. | CP5 - Portfólio de Progresso | Must Have |
-| **RF14** | Gerar relatório de desempenho consolidado da turma. | CP6 - Painel de Monitoramento | Must Have |
-| **RF15** | Exibir os erros morfológicos mais frequentes dos estudantes para o professor. | CP6 - Painel de Monitoramento | Should Have |
+| ID | Requisito Funcional (Verbo + Objeto) | Rastreabilidade (CP) | Prioridade (MoSCoW) | Justificativa MoSCoW |
+| :--- | :--- | :--- | :--- | :--- |
+| **RF01** | Solicitar credenciais de acesso ao sistema. | CP1 - Controle de Acesso | Must Have | Sem autenticação nenhum usuário consegue acessar o sistema. |
+| **RF02** | Autenticar acesso ao sistema utilizando credenciais. | CP1 - Controle de Acesso | Must Have | É o mecanismo central de entrada no sistema para todos os perfis. |
+| **RF03** | Permitir a recuperação de acesso mediante envio de nova senha. | CP1 - Controle de Acesso | Should Have | Agrega usabilidade mas o MVP funciona sem recuperação de senha. |
+| **RF04a** | Cadastrar morfemas no catálogo do sistema. | CP2 - Admin de Conteúdo | Must Have | Sem morfemas cadastrados o jogo não tem conteúdo para funcionar. |
+| **RF04b** | Editar morfemas existentes no catálogo do sistema. | CP2 - Admin de Conteúdo | Must Have | Necessário para correção e atualização de conteúdo cadastrado. |
+| **RF04c** | Remover morfemas do catálogo do sistema. | CP2 - Admin de Conteúdo | Must Have | Necessário para exclusão de conteúdo incorreto ou obsoleto. |
+| **RF04d** | Listar morfemas cadastrados no catálogo do sistema. | CP2 - Admin de Conteúdo | Must Have | Necessário para que o administrador gerencie o catálogo existente. |
+| **RF05a** | Cadastrar palavras válidas no catálogo do sistema. | CP2 - Admin de Conteúdo | Must Have | Sem palavras válidas o validador não tem base para funcionar. |
+| **RF05b** | Editar palavras válidas existentes no catálogo do sistema. | CP2 - Admin de Conteúdo | Must Have | Necessário para correção de palavras cadastradas incorretamente. |
+| **RF05c** | Remover palavras válidas do catálogo do sistema. | CP2 - Admin de Conteúdo | Must Have | Necessário para exclusão de palavras inválidas ou duplicadas. |
+| **RF05d** | Listar palavras válidas cadastradas no catálogo do sistema. | CP2 - Admin de Conteúdo | Must Have | Necessário para que o administrador gerencie o catálogo existente. |
+| **RF06a** | Cadastrar atividades pedagógicas no sistema. | CP2 - Admin de Conteúdo | Must Have | Sem atividades cadastradas o estudante não tem o que realizar. |
+| **RF06b** | Editar atividades pedagógicas existentes no sistema. | CP2 - Admin de Conteúdo | Must Have | Necessário para atualização e correção de atividades já criadas. |
+| **RF06c** | Remover atividades pedagógicas do sistema. | CP2 - Admin de Conteúdo | Must Have | Necessário para exclusão de atividades obsoletas ou incorretas. |
+| **RF06d** | Listar atividades pedagógicas cadastradas no sistema. | CP2 - Admin de Conteúdo | Must Have | Necessário para que o administrador gerencie as atividades disponíveis. |
+| **RF07** | Realizar atividades pedagógicas disponíveis no sistema. | CP3 - Espaço de Construção | Must Have | É a funcionalidade central do produto — sem ela o sistema não tem propósito. |
+| **RF08** | Movimentar blocos de morfemas na área de montagem. | CP3 - Espaço de Construção | Must Have | É a mecânica principal do jogo — sem drag and drop o produto não existe. |
+| **RF09** | Exibir explicações sobre conteúdos morfológicos relacionados às atividades. | CP3 - Espaço de Construção | Could Have | Desejável pedagogicamente mas o MVP funciona sem material de apoio. |
+| **RF10** | Validar a combinação de blocos submetida e exibir o processo de formação morfológica da palavra. | CP4 - Validador de Estruturas | Must Have | É o coração do sistema — valida e retroalimenta o aprendizado do estudante. |
+| **RF11** | Consultar o histórico de pontuações individuais. | CP5 - Portfólio de Progresso | Must Have | Permite ao estudante acompanhar sua própria evolução ao longo do tempo. |
+| **RF12** | Acessar relatório de desempenho consolidado da turma. | CP6 - Painel de Monitoramento | Must Have | Permite ao professor identificar dificuldades e orientar intervenções pedagógicas. |
+| **RF13** | Analisar os erros morfológicos mais frequentes dos estudantes. | CP6 - Painel de Monitoramento | Should Have | Agrega valor ao monitoramento mas o painel funciona sem esse detalhamento. |
 
-### **8.2 Requisitos Não Funcionais (RNF)**
+
+## **8.2 Lista de Requisitos Não Funcionais**
 
 | ID | Categoria (URPS+) | Descrição Mensurável para Teste | Método de Validação / Teste |
 | :--- | :--- | :--- | :--- |
-| **RNF01** | Usabilidade | O estudante deve conseguir arrastar, encaixar os blocos e formar sua primeira palavra em menos de 1 minuto em seu primeiro uso, sem auxílio de tutoriais. | Teste de Usabilidade (cronometrado com novos usuários). |
-| **RNF02** | Usabilidade | A interface deve permitir selecionar, mover e soltar blocos utilizando eventos nativos de mouse (desktop) e touch (mobile) sem falhas de renderização. | Teste de Interface Automático (ferramentas de E2E) e Teste Manual (Touch/Mouse). |
-| **RNF03** | Confiabilidade | O sistema deve salvar corretamente as respostas e pontuações dos usuários após a finalização das atividades. | Teste de Integração (simulação de inserção, fechamento do navegador e reabertura). |
+| **RNF01** | Usabilidade | O estudante deve conseguir arrastar, encaixar os blocos e formar sua primeira palavra em menos de 1 minuto em seu primeiro uso, sem auxílio de tutoriais. | Teste de Usabilidade cronometrado com novos usuários. |
+| **RNF02** | Usabilidade | A interface deve permitir selecionar, mover e soltar blocos utilizando eventos nativos de mouse (desktop) e touch (mobile) sem falhas de renderização. | Teste de Interface Automático (E2E) e Teste Manual (Touch/Mouse). |
+| **RNF03** | Performance | O sistema deve processar a combinação de blocos e exibir o feedback visual na tela em um tempo máximo de 2 segundos. | Monitoramento de Tempo de Resposta (Network Tab / Testes de Performance). |
 | **RNF04** | Confiabilidade | O sistema deve preservar a integridade dos dados durante acessos simultâneos. | Teste de Carga e Concorrência no Banco de Dados (verificação ACID). |
-| **RNF05** | Performance | O sistema deve processar a combinação de blocos e exibir o feedback visual na tela em um tempo máximo de 2 segundos. | Monitoramento de Tempo de Resposta (Network Tab / Testes de Performance). |
-| **RNF06** | Suportabilidade | A interface cliente deve comunicar-se com a lógica de negócio exclusivamente por meio de APIs. | Inspeção de Arquitetura e Code Review. |
-| **RNF07** | Suportabilidade | O sistema deve permitir a carga inicial e a manutenção futura do catálogo de morfemas diretamente no banco de dados. | Teste de Inserção de Dados via script SQL ou via acesso ao painel do Django Admin. |
-| **RNF08** | Implementação | O código-fonte do cliente (frontend) deve ser escrito obrigatoriamente utilizando a biblioteca React e tipagem estática com TypeScript. | Inspeção de Código / Configuração do Repositório. |
-| **RNF09** | Implementação | O código-fonte do servidor (backend) deve ser escrito obrigatoriamente na linguagem Python utilizando o framework Django. | Inspeção de Código / Configuração do Repositório. |
-| **RNF10** | Implementação | O modelo de dados relacionais deve ser implementado e persistido utilizando o SGBD PostgreSQL. | Validação da Infraestrutura / Configuração de Banco. |
-| **RNF11** | Suportabilidade | O sistema deve operar sem falhas críticas nas duas últimas versões estáveis dos navegadores Google Chrome, Mozilla Firefox, Microsoft Edge e Safari. | Teste de Compatibilidade Cross-browser. |
-| **RNF12** | Usabilidade | A interface da área de jogo deve readequar seus elementos sem sobreposição (quebra de layout) ou scroll horizontal em telas a partir de 360px de largura (smartphones comuns). | Teste de Interface Cross-device (Emuladores mobile / DevTools). |
-| **RNF13** | Restrições | O sistema deve ser acessível via protocolo HTTP/HTTPS a partir de um navegador web, sem exigir qualquer tipo de instalação ou download local por parte do usuário. | Teste de Implantação e Acesso URL. |
+| **RNF05** | Suportabilidade | A interface cliente deve comunicar-se com a lógica de negócio exclusivamente por meio de APIs. | Inspeção de Arquitetura e Code Review. |
+| **RNF06** | Suportabilidade | O sistema deve permitir a manutenção do catálogo de morfemas via Django Admin, sem telas de cadastro no frontend React. | Teste de Inserção via Django Admin. |
+| **RNF07** | Restrições | O frontend deve ser desenvolvido obrigatoriamente utilizando React com TypeScript. | Inspeção de Código / Configuração do Repositório. |
+| **RNF08** | Restrições | O backend deve ser desenvolvido obrigatoriamente em Python utilizando o framework Django. | Inspeção de Código / Configuração do Repositório. |
+| **RNF09** | Restrições | O banco de dados deve ser implementado utilizando o SGBD PostgreSQL. | Validação da Infraestrutura / Configuração de Banco. |
+| **RNF10** | Suportabilidade | O sistema deve operar sem falhas críticas nas duas últimas versões estáveis dos navegadores Chrome, Firefox, Edge e Safari. | Teste de Compatibilidade Cross-browser. |
+| **RNF11** | Usabilidade | A interface deve readequar seus elementos sem sobreposição ou scroll horizontal em telas a partir de 360px de largura. | Teste Cross-device (Emuladores mobile / DevTools). |
+| **RNF12** | Restrições | O sistema deve ser acessível via HTTP/HTTPS a partir de um navegador web, sem exigir instalação local. | Teste de Implantação e Acesso URL. |
 
 ### **8.3 Matriz de Valor e Esforço**
 
@@ -495,10 +514,320 @@ O DoD atua como o filtro de saída. Um item do backlog que estava em desenvolvim
 
 * **Validação do Cliente**: A funcionalidade está funcional no ambiente de testes e pronta para ser demonstrada e validada pela Profª. Pilar na reunião de Sprint Review.
 
+## **10. Backlog**
+
+A presente seção apresenta o backlog do produto MorfoBlocos Digital, organizado a partir dos requisitos funcionais (RFs), requisitos não funcionais (RNFs) e regras de negócio (RN) elicitados e consolidados ao longo das atividades de Engenharia de Requisitos. Todas as histórias de usuário aqui declaradas derivam diretamente da lista de RFs apresentada anteriormente neste documento. Trata-se de uma lista preliminar, sujeita a refinamentos durante o desenvolvimento, conforme o produto evolui e novos aprendizados emergem das interações com a cliente.
+
+Esta versão da seção incorpora as correções acordadas com a banca durante a apresentação da Unidade, incluindo: 
+1. O desmembramento dos requisitos de manutenção de catálogo em operações CRUD distintas;
+2. A reclassificação de determinados itens — antes tratados como requisitos funcionais — como regras de negócio;
+3. A adoção de critérios objetivos para a classificação MoSCoW e para a Matriz de Valor de Negócio × Complexidade Técnica.
+
+### **10.1 Backlog Geral**
+
+#### **10.1.1 Nota Metodológica**
+
+O modelo tradicional de Product Backlog em formato de lista priorizada (Épicos → Histórias de Usuário → Tarefas), conforme descrito por Schwaber e Sutherland (2020) e adotado por padrão em frameworks ágeis como Scrum e XP, foi substituído pela técnica de User Story Mapping (USM) no escopo deste projeto.
+
+A decisão pela substituição se justifica por três motivos principais:
+
+* **Visão de fluxo de uso, não apenas de funcionalidades:** o USM, conforme proposto por Patton (2014) e descrito no livro-texto da disciplina (cap. 9), organiza as histórias de usuário em torno das atividades do usuário, preservando a narrativa de uso do produto. Em um produto educacional como o MorfoBlocos Digital — em que a sequência pedagógica (acessar atividade → manipular blocos → submeter → receber feedback → progredir) é parte do valor entregue —, essa narrativa é mais informativa do que uma lista hierárquica isolada de funcionalidades.
+
+* **Alinhamento com a abordagem Lean Inception adotada pela equipe:** ao longo do projeto, a equipe adotou práticas inspiradas em Lean Inception (Caroli, 2018), que utiliza o Story Map como artefato natural de organização do MVP e de releases incrementais.
+
+* **Compatibilidade com o processo XP escolhido:** o XP não prescreve um formato rígido de backlog. O Story Map atende plenamente à necessidade de organização, priorização visual e planejamento de releases declarada na seção 3 deste documento.
+
+Esta seção 10.1 mantém, portanto, os catálogos consolidados de RFs, RNFs e Regras de Negócio, a tabela de User Stories com rastreabilidade para RNFs e a Matriz de Rastreabilidade — artefatos que apoiam o Story Map e que persistem mesmo com a substituição do Product Backlog em formato tradicional.
+
+O Story Map propriamente dito está disponível em artefato externo, acessível através do link abaixo:
+
+* [Story Map - MorfoBlocos Digital](https://www.figma.com/board/2QDaUAET4CTGoCnczRMA7q/map-story?node-id=0-1&t=qIX4xvA4BemHOm9A-0)
+
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/board/2QDaUAET4CTGoCnczRMA7q/map-story?node-id=0-1&embed-host=share" allowfullscreen></iframe>
+
+#### 10.1.2 Catálogo Consolidado de Requisitos Funcionais
+O catálogo a seguir consolida os 22 requisitos funcionais (RFs) elicitados para o MorfoBlocos Digital, organizados por Característica de Produto (CP) e com a respectiva classificação MoSCoW. 
+
+As operações de manutenção do catálogo de conteúdo (morfemas, palavras válidas e atividades pedagógicas) foram desmembradas em operações CRUD individuais — Cadastrar, Editar, Remover e Listar — conforme recomendação da banca, de modo a tornar cada RF atômico, testável e independentemente rastreável.
+
+| ID | CP | Requisito Funcional | Ator Principal | MoSCoW |
+| :--- | :--- | :--- | :--- | :--- |
+| **RF01** | CP1 | Solicitar credenciais de acesso ao sistema. | Usuário | Must Have |
+| **RF02** | CP1 | Autenticar acesso ao sistema utilizando credenciais. | Usuário | Must Have |
+| **RF03** | CP1 | Permitir a recuperação de acesso mediante envio de nova senha. | Usuário | Should Have |
+| **RF04a** | CP2 | Cadastrar morfemas no catálogo do sistema. | Administrador | Must Have |
+| **RF04b** | CP2 | Editar morfemas existentes no catálogo do sistema. | Administrador | Must Have |
+| **RF04c** | CP2 | Remover morfemas do catálogo do sistema. | Administrador | Must Have |
+| **RF04d** | CP2 | Listar morfemas cadastrados no catálogo do sistema. | Administrador | Must Have |
+| **RF05a** | CP2 | Cadastrar palavras válidas no catálogo do sistema. | Administrador | Must Have |
+| **RF05b** | CP2 | Editar palavras válidas existentes no catálogo do sistema. | Administrador | Must Have |
+| **RF05c** | CP2 | Remover palavras válidas do catálogo do sistema. | Administrador | Must Have |
+| **RF05d** | CP2 | Listar palavras válidas cadastradas no catálogo do sistema. | Administrador | Must Have |
+| **RF06a** | CP2 | Cadastrar atividades pedagógicas no sistema. | Administrador | Must Have |
+| **RF06b** | CP2 | Editar atividades pedagógicas existentes no sistema. | Administrador | Must Have |
+| **RF06c** | CP2 | Remover atividades pedagógicas do sistema. | Administrador | Must Have |
+| **RF06d** | CP2 | Listar atividades pedagógicas cadastradas no sistema. | Administrador | Must Have |
+| **RF07** | CP3 | Realizar atividades pedagógicas disponíveis no sistema. | Estudante | Must Have |
+| **RF08** | CP3 | Movimentar blocos de morfemas na área de montagem. | Estudante | Must Have |
+| **RF09** | CP3 | Exibir explicações sobre conteúdos morfológicos relacionados às atividades. | Estudante | Could Have |
+| **RF10** | CP4 | Validar a combinação de blocos submetida e exibir o processo de formação morfológica da palavra. | Sistema | Must Have |
+| **RF11** | CP5 | Consultar o histórico de pontuações individuais. | Estudante | Must Have |
+| **RF12** | CP6 | Acessar relatório de desempenho consolidado da turma. | Professor | Must Have |
+| **RF13** | CP6 | Analisar os erros morfológicos mais frequentes dos estudantes. | Professor | Should Have |
+
+**Legenda de Características de Produto:**
+
+* **CP1 — Controle de Acesso:** autenticação, autorização e gestão de credenciais.
+
+* **CP2 — Administração de Conteúdo:** curadoria de morfemas, palavras válidas e atividades pedagógicas.
+
+* **CP3 — Espaço de Construção:** ambiente de manipulação de blocos pelo estudante.
+
+* **CP4 — Validador de Estruturas:** validação morfológica e apresentação do processo de formação.
+
+* **CP5 — Portfólio de Progresso:** registro e visualização individual de desempenho.
+
+* **CP6 — Painel de Monitoramento:** visão consolidada do desempenho da turma para o professor.
+
+#### 10.1.3 Catálogo Consolidado de Requisitos Não Funcionais
+O catálogo a seguir consolida os 12 requisitos não funcionais (RNFs) declarados para o MorfoBlocos Digital, classificados segundo o modelo URPS+ (Usability, Reliability, Performance, Supportability, e categoria adicional de Restrições). 
+
+Cada RNF possui uma descrição mensurável e um método de validação associado, permitindo a verificação objetiva do seu atendimento durante o desenvolvimento e a entrega do produto.
+
+| ID | Categoria | Descrição Mensurável | Método de Validação |
+| :--- | :--- | :--- | :--- |
+| **RNF01** | Usabilidade | O estudante deve conseguir arrastar, encaixar os blocos e formar sua primeira palavra em menos de 1 minuto em seu primeiro uso, sem auxílio de tutoriais. | Teste de Usabilidade cronometrado com novos usuários. |
+| **RNF02** | Usabilidade | A interface deve permitir selecionar, mover e soltar blocos utilizando eventos nativos de mouse (desktop) e touch (mobile) sem falhas de renderização. | Teste de Interface Automático (E2E) e Teste Manual (Touch/Mouse). |
+| **RNF03** | Performance | O sistema deve processar a combinação de blocos e exibir o feedback visual na tela em um tempo máximo de 2 segundos. | Monitoramento de Tempo de Resposta (Network Tab / Testes de Performance). |
+| **RNF04** | Confiabilidade | O sistema deve preservar a integridade dos dados durante acessos simultâneos. | Teste de Carga e Concorrência no Banco de Dados (verificação ACID). |
+| **RNF05** | Suportabilidade | A interface cliente deve comunicar-se com a lógica de negócio exclusivamente por meio de APIs. | Inspeção de Arquitetura e Code Review. |
+| **RNF06** | Suportabilidade | O sistema deve permitir a manutenção do catálogo de morfemas via Django Admin, sem telas de cadastro no frontend React. | Teste de Inserção via Django Admin. |
+| **RNF07** | Restrições | O frontend deve ser desenvolvido obrigatoriamente utilizando React com TypeScript. | Inspeção de Código / Configuração do Repositório. |
+| **RNF08** | Restrições | O backend deve ser desenvolvido obrigatoriamente em Python utilizando o framework Django. | Inspeção de Código / Configuração do Repositório. |
+| **RNF09** | Restrições | O banco de dados deve ser implementado utilizando o SGBD PostgreSQL. | Validação da Infraestrutura / Configuração de Banco. |
+| **RNF10** | Suportabilidade | O sistema deve operar sem falhas críticas nas duas últimas versões estáveis dos navegadores Chrome, Firefox, Edge e Safari. | Teste de Compatibilidade Cross-browser. |
+| **RNF11** | Usabilidade | A interface deve readequar seus elementos sem sobreposição ou scroll horizontal em telas a partir de 360px de largura. | Teste Cross-device (Emuladores mobile / DevTools). |
+| **RNF12** | Restrições | O sistema deve ser acessível via HTTP/HTTPS a partir de um navegador web, sem exigir instalação local. | Teste de Implantação e Acesso URL. |
+
+#### 10.1.4 Catálogo de Regras de Negócio
+As Regras de Negócio (RN) representam restrições e políticas do domínio do MorfoBlocos Digital que orientam o comportamento do sistema, independentemente de implementação tecnológica. Diferentemente dos RFs (que descrevem o que o sistema faz) e dos RNFs (que descrevem como o sistema deve se comportar em termos de qualidade), as RNs estabelecem o que é permitido, obrigatório ou vedado no contexto pedagógico e operacional do produto.
+
+| ID | Regra de Negócio |
+| :--- | :--- |
+| **RN01** | Apenas usuários autenticados podem acessar o sistema. |
+| **RN02** | Apenas professores podem acessar relatórios de desempenho. |
+| **RN03** | Apenas administradores podem cadastrar morfemas, palavras e atividades. |
+| **RN04** | Apenas palavras previamente cadastradas podem ser consideradas válidas. |
+| **RN05** | Toda tentativa realizada pelo estudante deve ser registrada no histórico. |
+| **RN06** | A pontuação obtida pelo estudante deve ser salva automaticamente ao finalizar uma atividade. |
+| **RN07** | O acesso a níveis superiores só é liberado mediante atingimento de pontuação mínima definida pelo sistema. |
+| **RN08** | Todo resultado de atividade finalizada deve ser armazenado de forma persistente no histórico do estudante. |
+
+*Observação:* as regras RN06 e RN07 foram originalmente declaradas, em versões anteriores deste documento, como requisitos funcionais (RF11 — Salvar pontuação obtida na atividade finalizada — e RF12 — Liberar acesso a níveis superiores mediante pontuação mínima, respectivamente). Após correção do professor e revisão do monitor, optou-se pela reclassificação destes itens como Regras de Negócio, uma vez que descrevem políticas comportamentais automáticas e invariantes do domínio, e não funcionalidades disparadas por ator humano.
+
+#### 10.1.5 User Stories Derivadas dos Requisitos Funcionais
+A tabela a seguir apresenta cada RF declarado utilizando a técnica de User Story no formato “Como [ator], quero [objetivo], para [benefício]”, conforme proposto por Cohn (2004) e adotado pela equipe como prática de Declaração de Requisitos (seção 4.1).
+
+Para os requisitos CRUD relacionados à manutenção de catálogo (RF04a-d, RF05a-d, RF06a-d), optou-se por consolidar as quatro operações em uma única User Story épica por entidade, com Critérios de Aceitação que cobrem individualmente cada operação — abordagem alinhada à prática de épicos e refinamento progressivo descrita por Cohn (2004). A coluna “RNFs Relacionados” estabelece a rastreabilidade entre as histórias e os requisitos não funcionais aplicáveis.
+
+| RFs | User Story Derivada | RNFs Relacionados |
+| :--- | :--- | :--- |
+| **RF01** | US01 — Como usuário, quero solicitar credenciais de acesso ao sistema, para que minha conta seja criada e eu possa entrar na plataforma. | RNF04 |
+| **RF02** | US02 — Como usuário, quero autenticar meu acesso ao sistema utilizando minhas credenciais, para entrar na plataforma de forma segura. | RNF03, RNF04 |
+| **RF03** | US03 — Como usuário, quero recuperar meu acesso mediante envio de nova senha, para retomar o uso da plataforma caso esqueça minha senha. | RNF04 |
+| **RF04a–d** | US04 — Como administrador, quero realizar operações de cadastro, edição, remoção e listagem de morfemas no catálogo, para manter o conteúdo morfológico do sistema sempre atualizado e correto. | RNF04, RNF06 |
+| **RF05a–d** | US05 — Como administrador, quero realizar operações de cadastro, edição, remoção e listagem de palavras válidas no catálogo, para garantir que o validador morfológico opere sobre uma base íntegra e atualizada. | RNF04, RNF06 |
+| **RF06a–d** | US06 — Como administrador, quero realizar operações de cadastro, edição, remoção e listagem de atividades pedagógicas, para disponibilizar exercícios contextualizados às necessidades pedagógicas dos estudantes. | RNF04, RNF06 |
+| **RF07** | US07 — Como estudante, quero realizar as atividades pedagógicas disponíveis no sistema, para praticar e desenvolver minha compreensão sobre morfologia. | RNF01, RNF02, RNF03, RNF11 |
+| **RF08** | US08 — Como estudante, quero movimentar blocos de morfemas na área de montagem, para combinar prefixos, radicais e sufixos livremente. | RNF01, RNF02, RNF03, RNF11 |
+| **RF09** | US09 — Como estudante, quero visualizar explicações sobre conteúdos morfológicos relacionados às atividades, para aprender enquanto pratico. | RNF01 |
+| **RF10** | US10 — Como estudante, quero que minha combinação de blocos seja validada e o processo de formação morfológica da palavra seja exibido, para compreender se acertei e como os morfemas se combinam. | RNF03, RNF04 |
+| **RF11** | US11 — Como estudante, quero consultar o histórico das minhas pontuações individuais, para acompanhar minha evolução ao longo do tempo. | RNF01, RNF04 |
+| **RF12** | US12 — Como professor, quero acessar o relatório de desempenho consolidado da turma, para monitorar o progresso coletivo dos estudantes. | RNF01, RNF03, RNF04 |
+| **RF13** | US13 — Como professor, quero analisar os erros morfológicos mais frequentes dos estudantes, para direcionar interventions pedagógicas mais eficazes. | RNF03, RNF04 |
+
+*Observação sobre RNFs transversais:* os RNFs de restrição tecnológica e arquitetural — RNF05 (comunicação por APIs), RNF07 (React/TypeScript), RNF08 (Django), RNF09 (PostgreSQL), RNF10 (compatibilidade cross-browser) e RNF12 (acesso via navegador) — aplicam-se de forma transversal a todas as User Stories deste backlog. Embora não estejam repetidos linha a linha, devem ser considerados válidos e obrigatórios para todos os RFs do produto.
+
+#### **10.1.6 Matriz de Rastreabilidade**
+
+[Matriz de Rastreabilidade](https://www.figma.com/board/8yYBKLEMtOAvjRyc6SRAay/Matriz-de-Rastreabilidade?node-id=0-1&p=f&t=nh6i2uiwdDRRwwad-0)
+
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/board/8yYBKLEMtOAvjRyc6SRAay/Matriz-de-Rastreabilidade?node-id=0-1&embed-host=share" allowfullscreen></iframe>
+
+### **10.2 Priorização do Backlog Geral e MVP**
+
+A priorização do backlog do MorfoBlocos Digital foi conduzida combinando duas técnicas complementares declaradas pela equipe na seção 4.1 (Atividades e Técnicas de ER) como práticas da atividade de Análise e Consenso: a Priorização MoSCoW e a Matriz Avaliação Técnica × Valor de Negócio (operacionalizada como Matriz de Valor de Negócio × Complexidade Técnica). O uso conjunto preserva a coerência metodológica do projeto e amplia a capacidade de justificar as decisões de escopo perante a cliente e a banca avaliadora.
+
+Em atendimento às recomendações da banca, esta versão da seção adota critérios objetivos para a aplicação das duas técnicas. A classificação MoSCoW de cada requisito é justificada por critérios explícitos relacionados à participação do requisito nos fluxos essenciais do MVP; e a Matriz é fundamentada por uma escala numérica de Valor de Negócio (VB, de 1 a 5) e de Complexidade Técnica (CT, de 1 a 5), cada uma com critérios objetivos próprios.
+
+#### **10.2.1 Critérios Objetivos para a Classificação MoSCoW**
+
+A priorização inicial dos requisitos do MorfoBlocos Digital foi realizada utilizando a técnica MoSCoW, adotada pela equipe como mecanismo de classificação da relevância functional de cada requisito para o Produto Mínimo Viável (MVP). A aplicação da técnica considerou o impacto de cada requisito nos fluxos principais do sistema, especialmente se:
+
+* Participam diretamente dos casos de uso principais;
+
+* Permitem a execução das atividades pedagógicas do estudante;
+
+* Registram, recuperam ou preservam informações relacionadas ao progresso do usuário;
+
+* Sustentam funcionalidades de acompanhamento pedagógico do professor;
+
+* Ou comprometem a execução adequada dos fluxos principais quando ausentes.
+
+A partir desses critérios, cada requisito foi classificado segundo o modelo MoSCoW:
+
+| Classificação | Critério |
+| :--- | :--- |
+| **Must Have** | O requisito participa diretamente de um fluxo essencial do MVP. Sem ele, o sistema não executa o caso de uso principal ou perde sua função central. |
+| **Should Have** | O requisito apoia um fluxo essencial ou amplia um fluxo principal com suporte pedagógico, operacional ou de acompanhamento. O MVP continua funcionando sem ele, mas com perda de cobertura, automação ou qualidade. |
+| **Could Have** | O requisito complementa o uso do sistema, mas não altera a execução dos fluxos principais do MVP. |
+| **Won't Have** | O requisito não entra na primeira versão do MVP. Foi postergado por baixo impacto no fluxo principal ou por custo técnico incompatível com a versão inicial. |
+
+A classificação MoSCoW serviu como base para a definição quantitativa do Valor de Negócio (VB), apresentada na seção seguinte, utilizada posteriormente na Matriz de Valor de Negócio × Complexidade Técnica.
+
+#### **10.2.2 Critérios Objetivos para o Valor de Negócio (VN)**
+Os Valores de Negócio (VN) representam os principais benefícios pedagógicos, operacionais e funcionais que o MorfoBlocos Digital pretende entregar aos seus usuários e à instituição educacional. Esses valores orientam a priorização dos requisitos e servem como referência para avaliação do impacto de cada funcionalidade no MVP. Foram identificados os seguintes Valores de Negócio principais:
+
+| ID | Valor de Negócio |
+| :--- | :--- |
+| **VN1** | Garantir acesso contínuo e rastreável às atividades do estudante. |
+| **VN2** | Reduzir o esforço manual de manutenção do conteúdo pedagógico. |
+| **VN3** | Estimular a aprendizagem prática e interativa de morfologia. |
+| **VN4** | Fornecer feedback sobre a formação morfológica das palavras. |
+| **VN5** | Permitir acompanhamento contínuo da evolução individual do estudante. |
+| **VN6** | Apoiar intervenções pedagógicas baseadas no desempenho da turma. |
+
+Para permitir o posicionamento quantitativo dos requisitos na Matriz de Priorização, as classificações MoSCoW foram convertidas em uma escala numérica de Valor de Negócio (VB), variando de 1 a 5:
+
+| Classificação MoSCoW | Valor de Negócio (VB) | Interpretação |
+| :--- | :--- | :--- |
+| **Must Have** | 5 | Essencial para execução do fluxo principal do MVP. |
+| **Should Have** | 4 | Importante para ampliação, acompanhamento ou qualidade do fluxo principal. |
+| **Could Have** | 3 | Complementar ao sistema, sem impacto direto no funcionamento central. |
+| **Won't Have** | 1 ou 2 | Fora do escopo da versão inicial. |
+
+#### **10.2.3 Critérios Objetivos para a Complexidade Técnica (CT)**
+
+A Complexidade Técnica representa o nível de esforço necessário para implementar cada requisito, considerando os riscos técnicos envolvidos no desenvolvimento e na manutenção da solução. Um requisito foi considerado mais complexo quando envolve um ou mais dos seguintes fatores:
+
+* Integração entre frontend, backend e banco de dados;
+
+* Necessidade de persistência e manipulação estruturada de dados;
+
+* Validações executadas em tempo real durante a interação do usuário;
+
+* Tratamento de acessos simultâneos e integridade das informações;
+
+* Compatibilidade entre diferentes dispositivos, resoluções ou navegadores;
+
+* Maior volume de testes técnicos e de integração;
+
+* Ou necessidade de alterações arquiteturais relevantes na aplicação.
+
+A partir desses fatores, foi definida a seguinte escala de classificação:
+
+| Nível de CT | Descrição |
+| :--- | :--- |
+| **1 — Muito Baixa** | Implementação simples e localizada, restrita a uma única camada do sistema, sem necessidade de integrações relevantes ou regras complexas. |
+| **2 — Baixa** | Exige integrações básicas, regras de negócio simples ou persistência elementar de dados, utilizando soluções já conhecidas pela equipe. |
+| **3 — Média** | Envolve integração entre múltiplas camadas do sistema, validações adicionais, maior volume de testes ou manipulação estruturada de dados. |
+| **4 — Alta** | Exige sincronização entre diferentes componentes, compatibilidade entre dispositivos/navegadores, processamento mais sofisticado ou maior risco técnico. |
+| **5 — Muito Alta** | Envolve algoritmos complexos, validações em tempo real, concorrência, requisitos críticos de desempenho, alta dependência arquitetural ou elevado esforço de testes e manutenção. |
+
+#### **10.2.4 Regra de Decisão da Matriz**
+
+A posição de cada requisito na Matriz foi definida pelo cruzamento entre a classificação de Valor de Negócio e o nível de Complexidade Técnica, segundo as seguintes regras de agregação:
+
+* Requisitos classificados como Must Have ou Should Have (VB 4 ou 5) foram considerados de alto valor de negócio;
+
+* Requisitos classificados como Could Have ou Won't Have (VB 3 ou inferior) foram considerados de baixo valor de negócio;
+
+* Requisitos com CT 1 ou 2 (Muito Baixa ou Baixa) foram considerados de baixa complexidade técnica;
+
+* Requisitos com CT 3, 4 ou 5 (Média, Alta ou Muito Alta) foram considerados de alta complexidade técnica.
+
+A partir desse cruzamento, os requisitos foram distribuídos nos quatro quadrantes da Matriz:
+
+| Quadrante | Interpretação |
+| :--- | :--- |
+| **Q1 — Alto valor + Baixa complexidade técnica** | Requisitos priorizados para implementação inicial. Entregam alto impacto com menor esforço técnico. |
+| **Q2 — Alto valor + Alta complexidade técnica** | Requisitos essenciais, porém com maior risco ou custo de implementação. Devem ser planejados com atenção. |
+| **Q3 — Baixo valor + Baixa complexidade técnica** | Requisitos complementares que agregam valor, mas não são críticos para o MVP. Podem ser incluídos conforme capacidade. |
+| **Q4 — Baixo valor + Alta complexidade técnica** | Requisitos com baixo retorno frente ao alto custo técnico. Devem ser adiados para futuras versões. |
+
+![Matriz de Priorização de Requisitos](/img/matrizdepriorizacao.png)
+
+#### 10.2.5 Classificação Consolidada dos Requisitos
+A tabela a seguir consolida a classificação final de todos os requisitos funcionais e não funcionais, cruzando MoSCoW, VB, CT, quadrante na matriz e decisão de inclusão no MVP. As justificativas detalhadas de VB e CT para cada item estão disponíveis no documento de Requisitos de Software (artefato auxiliar deste projeto).
+
+| ID | Requisito | MoSCoW | VB | CT | Quadrante | MVP? |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **RF01** | Solicitar credenciais de acesso ao sistema. | Must Have | 5 | 1 | Q1 | Sim |
+| **RF02** | Autenticar acesso ao sistema utilizando credenciais. | Must Have | 5 | 3 | Q2 | Sim |
+| **RF03** | Permitir a recuperação de acesso mediante envio de nova senha. | Should Have | 4 | 3 | Q2 | Sim |
+| **RF04a** | Cadastrar morfemas no catálogo do sistema. | Must Have | 5 | 2 | Q1 | Sim |
+| **RF04b** | Editar morfemas existentes no catálogo do sistema. | Must Have | 4 | 2 | Q1 | Sim |
+| **RF04c** | Remover morfemas do catálogo do sistema. | Must Have | 4 | 2 | Q1 | Sim |
+| **RF04d** | Listar morfemas cadastrados no catálogo do sistema. | Must Have | 4 | 2 | Q1 | Sim |
+| **RF05a** | Cadastrar palavras válidas no catálogo do sistema. | Must Have | 5 | 2 | Q1 | Sim |
+| **RF05b** | Editar palavras válidas existentes no catálogo do sistema. | Must Have | 4 | 2 | Q1 | Sim |
+| **RF05c** | Remover palavras válidas do catálogo do sistema. | Must Have | 4 | 2 | Q1 | Sim |
+| **RF05d** | Listar palavras válidas cadastradas no catálogo do sistema. | Must Have | 4 | 2 | Q1 | Sim |
+| **RF06a** | Cadastrar atividades pedagógicas no sistema. | Must Have | 5 | 2 | Q1 | Sim |
+| **RF06b** | Editar atividades pedagógicas existentes no sistema. | Must Have | 4 | 2 | Q1 | Sim |
+| **RF06c** | Remover atividades pedagógicas do sistema. | Must Have | 4 | 2 | Q1 | Sim |
+| **RF06d** | Listar atividades pedagógicas cadastradas no sistema. | Must Have | 4 | 2 | Q1 | Sim |
+| **RF07** | Realizar atividades pedagógicas disponíveis no sistema. | Must Have | 5 | 4 | Q2 | Sim |
+| **RF08** | Movimentar blocos de morfemas na área de montagem. | Must Have | 5 | 5 | Q2 | Sim |
+| **RF09** | Exibir explicações sobre conteúdos morfológicos relacionados às atividades. | Could Have | 3 | 2 | Q3 | Não |
+| **RF10** | Validar combinação de blocos e exibir processo de formação morfológica. | Must Have | 5 | 5 | Q2 | Sim |
+| **RF11** | Consultar o histórico de pontuações individuais. | Must Have | 5 | 3 | Q2 | Sim |
+| **RF12** | Acessar relatório de desempenho consolidado da turma. | Must Have | 5 | 4 | Q2 | Sim |
+| **RF13** | Analisar os erros morfológicos mais frequentes dos estudantes. | Should Have | 4 | 4 | Q2 | Sim |
+
+#### 10.2.6 Definição do MVP
+O Produto Mínimo Viável do MorfoBlocos Digital foi definido como o menor conjunto de funcionalidades capaz de demonstrar, em ambiente real de uso, a hipótese central de valor do produto:
+
+> Um estudante consegue, de forma autônoma, realizar atividades pedagógicas de morfologia combinando blocos de morfemas, ter sua combinação validada com exibição do processo de formação morfológica, acompanhar seu próprio progresso, e permitir que o professor monitore o desempenho coletivo da turma e identifique padrões de erros morfológicos — sem depender da mediação síncrona do professor para validação.
+
+Aplicando a regra de decisão da matriz e os critérios MoSCoW, o MVP é composto por todos os requisitos classificados como Must Have e Should Have, totalizando 21 dos 22 requisitos funcionais declarados. O único RF excluído do MVP é o RF09 (exibição de explicações morfológicas), classificado como Could Have e posicionado no quadrante Q3 (baixo valor + baixa complexidade), o qual será planejado para uma release posterior.
+
+A inclusão dos Should Have (RF03 e RF13) no MVP é justificada pela regra de agregação da Matriz: ambos os requisitos atingem o limiar de alto valor de negócio (VB = 4) e, juntos, sustentam aspectos críticos do produto. O RF03 (recuperação de senha) garante a continuidade de acesso e a recuperação do progresso pelo estudante; o RF13 (análise de erros frequentes) sustenta diretamente um dos Valores de Negócio principais do produto, declarado na seção 2.3 — a rastreabilidade do aprendizado, fundamental para a intervenção pedagógica do professor.
+
+**Distribuição do MVP por Característica de Produto:**
+
+| CP | Característica de Produto | RFs no MVP | Cobertura |
+| :--- | :--- | :--- | :--- |
+| **CP1** | Controle de Acesso | RF01, RF02, RF03 | Total |
+| **CP2** | Administração de Conteúdo | RF04a-d, RF05a-d, RF06a-d | Total |
+| **CP3** | Espaço de Construção | RF07, RF08 | Parcial (RF09 fora) |
+| **CP4** | Validador de Estruturas | RF10 | Total |
+| **CP5** | Portfólio de Progresso | RF11 | Total |
+| **CP6** | Painel de Monitoramento | RF12, RF13 | Total |
+
+**Cobertura do MVP em relação aos Objetivos Específicos:**
+
+| OE | Objetivo Específico | Coberto pelo MVP? |
+| :--- | :--- | :--- |
+| **OE1** | Digitalizar a mecânica e a identidade visual do MorfoBlocos. | Sim (CP2, CP3) |
+| **OE2** | Viabilizar a formação autônoma de palavras com feedback automático. | Sim (CP3, CP4) |
+| **OE3** | Estruturar um catálogo de morfemas e exercícios com progressão de dificuldade. | Sim (CP2) |
+| **OE4** | Registrar o histórico de interações do usuário para rastreabilidade de aprendizado. | Sim (CP5, CP6) |
+| **OE5** | Garantir a usabilidade móvel e a adequação da interface ao público do ensino básico. | Sim (RNF01, RNF02, RNF11) |
+
+**Requisitos Não Funcionais aplicáveis ao MVP:**
+Todos os 12 RNFs declarados no catálogo de requisitos são considerados válidos para o MVP, por descreverem propriedades transversais ao produto (usabilidade, confiabilidade, performance, suportabilidade e restrições arquiteturais). A entrega do MVP só é considerada concluída se atender, simultaneamente, aos critérios de aceitação dos 21 RFs incluídos e aos critérios mensuráveis dos 12 RNFs catalogados.
+
+**Itens fora do MVP (planejados para releases futuras):**
+
+| ID | Requisito | Motivo da exclusão |
+| :--- | :--- | :--- |
+| **RF09** | Exibir explicações sobre conteúdos morfológicos relacionados às atividades. | Classificado como Could Have (VB=3, CT=2), posicionado no quadrante Q3. Complementa o aprendizado, mas o fluxo principal funciona sem material de apoio textual. |
+
 
 ## **11. Lições Aprendidas**
 
-### **11.1 Unidade 1**
+### **11.1 Unidade I**
 
 Nesta primeira unidade, a equipe enfrentou alguns desafios importantes de organização e gestão, que exigiram ajustes no início do projeto para garantir a continuidade das atividades.
 
@@ -513,6 +842,45 @@ Para resolver essa situação, foi necessário reorganizar a equipe e redistribu
 Houve dificuldade inicial para conciliar a disponibilidade da cliente com os prazos da disciplina. Além disso, a falta de um fluxo definido de comunicação no começo levou a algumas decisões internas que ainda não tinham sido validadas.
 
 Com a reorganização da equipe, passou-se a priorizar um contato mais frequente com a cliente e o agendamento de momentos específicos para validação. Isso ajudou a alinhar melhor as decisões do projeto com as expectativas da cliente e com os prazos acadêmicos, reduzindo riscos de retrabalho.
+
+### **11.2 Unidade II**
+
+* **Dificuldades na elicitação e entendimento dos requisitos**
+
+A elicitação de requisitos apresentou dificuldades devido à necessidade de compreender regras morfológicas específicas e alinhar o funcionamento do sistema às expectativas pedagógicas da cliente. Em alguns momentos, requisitos foram interpretados de formas diferentes pela equipe.
+Como solução, foram realizadas reuniões frequentes com a cliente, utilização de exemplos práticos do jogo físico e refinamento contínuo dos requisitos. Além disso, diagramas, protótipos e descrições mais objetivas ajudaram a construir um entendimento comum entre equipe e cliente.
+
+* **Escrita e diferenciação entre requisitos funcionais e não funcionais**
+
+Houve dificuldade inicial na escrita de requisitos claros, objetivos e verificáveis, principalmente na diferenciação entre comportamentos do sistema e restrições de qualidade ou usabilidade.
+A fim de resolver esse problema, a equipe passou a utilizar verbos mais específicos e padronizados na documentação dos requisitos, além de revisar coletivamente os RFs e RNFs para garantir clareza, consistência e alinhamento com o escopo do MVP.
+
+* **Organização e refinamento das regras de negócio**
+
+A representação das regras morfológicas do sistema apresentou complexidade maior do que a esperada, especialmente em situações relacionadas à classificação de palavras e organização dos morfemas.
+Em resposta a essa dificuldade, as regras foram refinadas junto à cliente de forma incremental, utilizando exemplos reais do jogo físico e separando claramente regras de negócio dos requisitos funcionais do sistema.
+
+* **Dificuldades para priorizar o backlog e definir o MVP**
+
+A definição do MVP apresentou dificuldades porque muitas funcionalidades pareciam importantes para a experiência pedagógica do sistema, tornando difícil decidir quais requisitos realmente deveriam permanecer fora da primeira versão do produto.
+Com as revisões realizadas, a equipe passou a utilizar critérios mais objetivos de priorização, relacionando a classificação MoSCoW ao valor de negócio e à complexidade técnica de cada requisito. Isso ajudou a justificar melhor as decisões tomadas no backlog e tornou o escopo do MVP mais consistente.
+
+* **Refinamento e detalhamento dos requisitos**
+
+Alguns requisitos foram inicialmente escritos de forma muito ampla, agrupando múltiplas responsabilidades em um único item. Isso dificultava a rastreabilidade, a validação individual e a priorização dos requisitos.
+Após as revisões do documento, principalmente nas funcionalidades relacionadas às operações de CRUD, os requisitos foram desmembrados em partes menores e independentes, tornando-os mais claros, testáveis e rastreáveis.
+
+* **Construção das matrizes de rastreabilidade e priorização**
+
+A elaboração das matrizes apresentou dificuldades relacionadas à consistência entre os diferentes artefatos do projeto. Alterações realizadas nos requisitos frequentemente impactavam objetivos específicos, características de produto, valores de negócio, priorização e definição do MVP.
+Além disso, a equipe encontrou dificuldades para manter coerência entre a classificação MoSCoW, o valor de negócio, a complexidade técnica e o posicionamento dos requisitos nos quadrantes da matriz.
+Para resolver esses problemas, foram realizadas revisões incrementais e verificações cruzadas entre os artefatos, garantindo alinhamento entre requisitos, tabelas e justificativas metodológicas. A definição de critérios objetivos também ajudou a tornar as decisões de priorização mais consistentes.
+
+* **Manutenção da rastreabilidade entre os artefatos**
+
+À medida que o documento evoluiu, tornou-se mais difícil manter alinhamento entre objetivos específicos, características de produto, requisitos funcionais, requisitos não funcionais e regras de negócio. Pequenas alterações em uma seção frequentemente exigiam ajustes em várias outras partes do documento.
+Como forma de reduzir inconsistências, a equipe passou a utilizar identificadores padronizados e revisões integradas entre os artefatos, facilitando a manutenção da rastreabilidade e a validação das relações entre os elementos do projeto.
+
 
 
 ##  Versionamento
@@ -530,3 +898,4 @@ Com a reorganização da equipe, passou-se a priorizar um contato mais frequente
 | 12/05/2026 | 1.8  | Correção nas seções 2.2 e 2.3. | [Bruno Souza](https://github.com/youngburny) |
 | 13/05/2026 | 1.9  | Correção na seção 3 e 5, e adição das seções 7, 7.1, 7.2, 7.3, 8, 8.1 e 8.2. | [Bruno Souza](https://github.com/youngburny) |
 | 15/05/2026 | 1.10  | Correção na enumeração das seções. | [Bruno Souza](https://github.com/youngburny) |
+| 18/05/2026 | 2.0  | Adiciona seção 10 (Backlog) e respectivas subseções, seção 11.2 e 2.6.1., e corrige seção 8.1 e 8.2.  | [Bruno Souza](https://github.com/youngburny) |
