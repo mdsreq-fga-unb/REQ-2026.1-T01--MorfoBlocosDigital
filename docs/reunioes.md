@@ -35,6 +35,71 @@ Reunião feita via Teams (22/04/2026).
 
 Reunião feita via Teams (29/04/2026).
 
+## **Reunião com cliente #02: Alinhamento para início do desenvolvimento do BackLog.**
+
+Formulamos algumas perguntas previamente que nos ajudariam a ter uma orientação e um alinhamento para começarmos a desenvolver o BackLog do nosso produto. A professora Pílar foi solícita e zelosa ao responder nossas perguntas.
+
+Houve erro na gravação do vídeo da reunião, mas conseguimos capturar o áudio das respostas da cliente para nossas perguntas, assim evidenciado abaixo.
+
+* **Pergunta 1:**
+
+_"Como a senhora imagina o fluxo perfeito? O aluno entra, vê uma lista de morfemas, arrasta, e o que exatamente deve aparecer na tela quando ele acerta ou erra?"_
+
+A interface deve manter o modelo de blocos do jogo físico. O sistema deve ter níveis de dificuldade.
+
+Pontos a detalhar (para a professora complementar):
+
+* Como seria a transição visual entre um nível e outro?
+
+* O aluno escolhe o nível ou o sistema define automaticamente?
+
+* O feedback de erro deve mostrar apenas “errado” ou explicar o motivo?"
+
+<audio controls>
+    <source src="audio/resposta1.mp3" type="audio/mp3">
+</audio>
+
+* **Pergunta 2:**
+
+O Padrão de Dados (Catálogo)
+
+_"Para construirmos o Catálogo de Morfemas, a senhora já tem uma lista ou planilha com os radicais, prefixos e sufixos catalogados que possamos usar para alimentar o banco de dados?"_
+
+A professora vai enviar a carga inicial de dados.
+Pontos a detalhar:
+
+* Já estão classificados por categoria (prefixo, radical, sufixo)?
+
+<audio controls>
+    <source src="audio/resposta2.mp3" type="audio/mp3">
+</audio>
+
+* **Pergunta 3:**
+
+As Regras de Correção
+
+_"No jogo físico, quais são as regras exatas que a senhora usa para dizer que uma combinação morfológica é inválida? Existe alguma exceção ou ‘pegadinha’ comum que o sistema precisa saber identificar?"_
+
+Vogal no início e no final da palavra pode gerar significado diferente — isso é uma “pegadinha” comum que o sistema precisa identificar.
+
+Pontos a detalhar:
+
+* Existem outras exceções além dessa?
+
+* Essas regras mudam conforme o nível de dificuldade?
+
+<audio controls>
+    <source src="audio/resposta3.mp3" type="audio/mp3">
+</audio>
+
+Reunião realizada via Google Meet (07/05/2026)
+
+## **Monitoria #03**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZUS9idSJXv8?si=rCXhZVKk-QCqWMqZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Reunião realizada via Teams (13/05/2026)
+
 ##  Versionamento
 
 | **Data**       | Versão | Descrição                                           | Autor              |
@@ -43,3 +108,4 @@ Reunião feita via Teams (29/04/2026).
 | 13/04/2026 | 1.1   | Adiciona o vídeo da apresentação para a Unidade I. |    [Bruno Souza](https://github.com/youngburny)   |
 | 13/04/2026 | 1.2   | Corrige link do vídeo da apresentação para a Unidade I. |    [Bruno Souza](https://github.com/youngburny)   |
 | 05/05/2026 | 1.3   | Adiciona vídeos da Monitoria #1 e #2. |    [Bruno Souza](https://github.com/youngburny)   |
+| 18/05/2026 | 1.4   | Adiciona vídeos da Monitoria #3 e Reunião com cliente #2. |    [Bruno Souza](https://github.com/youngburny)   |
