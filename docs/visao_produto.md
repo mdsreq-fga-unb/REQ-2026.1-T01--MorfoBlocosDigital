@@ -754,7 +754,7 @@ A partir desse cruzamento, os requisitos foram distribuídos nos quatro quadrant
 | **Q3 — Baixo valor + Baixa complexidade técnica** | Requisitos complementares que agregam valor, mas não são críticos para o MVP. Podem ser incluídos conforme capacidade. |
 | **Q4 — Baixo valor + Alta complexidade técnica** | Requisitos com baixo retorno frente ao alto custo técnico. Devem ser adiados para futuras versões. |
 
-![Matriz de Priorização de Requisitos](/img/matrizdepriorizacao.png)
+![Matriz de Priorização de Requisitos](img/matrizdepriorizacao.png)
 
 #### 10.2.5 Classificação Consolidada dos Requisitos
 A tabela a seguir consolida a classificação final de todos os requisitos funcionais e não funcionais, cruzando MoSCoW, VB, CT, quadrante na matriz e decisão de inclusão no MVP. As justificativas detalhadas de VB e CT para cada item estão disponíveis no documento de Requisitos de Software (artefato auxiliar deste projeto).
