@@ -100,6 +100,12 @@ Reunião realizada via Google Meet (07/05/2026)
 
 Reunião realizada via Teams (13/05/2026)
 
+## **Gravação da apresentação para a Unidade II**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xrx7luTY9ec?si=CU_4BPLt1KcRFO5-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Reunião feita via Teams (18/05/2026).
+
 ##  Versionamento
 
 | **Data**       | Versão | Descrição                                           | Autor              |
@@ -109,3 +115,4 @@ Reunião realizada via Teams (13/05/2026)
 | 13/04/2026 | 1.2   | Corrige link do vídeo da apresentação para a Unidade I. |    [Bruno Souza](https://github.com/youngburny)   |
 | 05/05/2026 | 1.3   | Adiciona vídeos da Monitoria #1 e #2. |    [Bruno Souza](https://github.com/youngburny)   |
 | 18/05/2026 | 1.4   | Adiciona vídeos da Monitoria #3 e Reunião com cliente #2. |    [Bruno Souza](https://github.com/youngburny)   |
+| 18/05/2026 | 1.5   | Adiciona vídeo da apresentação para a Unidade II. |    [Bruno Souza](https://github.com/youngburny)   |

@@ -713,7 +713,7 @@ Para permitir o posicionamento quantitativo dos requisitos na Matriz de Prioriza
 
 | Classificação MoSCoW | Valor de Negócio (VB) | Interpretação |
 | :--- | :--- | :--- |
-| **Must Have** | 5 | Essencial para execução do fluxo principal do MVP. |
+| **Must Have** | 4 ou 5 | Essencial para o MVP. VB 5 quando o requisito participa diretamente do fluxo central do produto (sem ele, o caso de uso principal não existe). VB 4 quando o requisito é operação de apoio indispensável dentro de uma característica essencial — por exemplo, operações secundárias de CRUDs em CP2 (Editar, Remover, Listar), que sustentam a manutenção do conteúdo cadastrado mas não disparam o fluxo principal por si só. |
 | **Should Have** | 4 | Importante para ampliação, acompanhamento ou qualidade do fluxo principal. |
 | **Could Have** | 3 | Complementar ao sistema, sem impacto direto no funcionamento central. |
 | **Won't Have** | 1 ou 2 | Fora do escopo da versão inicial. |
@@ -864,7 +864,7 @@ Com a reorganização da equipe, passou-se a priorizar um contato mais frequente
 
 ### **11.2 Unidade II**
 
-* **Dificuldades na elicitação e entendimento dos requisitos**
+* **Elicitação e entendimento dos requisitos**
 
 A elicitação de requisitos apresentou dificuldades devido à necessidade de compreender regras morfológicas específicas e alinhar o funcionamento do sistema às expectativas pedagógicas da cliente. Em alguns momentos, requisitos foram interpretados de formas diferentes pela equipe.
 Como solução, foram realizadas reuniões frequentes com a cliente, utilização de exemplos práticos do jogo físico e refinamento contínuo dos requisitos. Além disso, diagramas, protótipos e descrições mais objetivas ajudaram a construir um entendimento comum entre equipe e cliente.
@@ -901,7 +901,6 @@ Para resolver esses problemas, foram realizadas revisões incrementais e verific
 Como forma de reduzir inconsistências, a equipe passou a utilizar identificadores padronizados e revisões integradas entre os artefatos, facilitando a manutenção da rastreabilidade e a validação das relações entre os elementos do projeto.
 
 
-
 ##  Versionamento
 
 | **Data**       | Versão | Descrição                                           | Autor              |
@@ -920,3 +919,4 @@ Como forma de reduzir inconsistências, a equipe passou a utilizar identificador
 | 18/05/2026 | 2.0  | Adiciona seção 10 (Backlog) e respectivas subseções, seção 11.2 e 2.6.1., e corrige seção 8.1 e 8.2.  | [Bruno Souza](https://github.com/youngburny) |
 | 18/05/2026 | 2.1  | Correção na seção 10, e realocação da Matriz de Priorização.   | [Bruno Souza](https://github.com/youngburny) |
 | 18/05/2026 | 2.2  | Correção na seção 8.1, 9, 9.1, 9.2, 10, 10.1.2, 10.1.5, 10.2.4, 10.2.5 e 10.2.6.   | [Bruno Souza](https://github.com/youngburny) |
+| 18/05/2026 | 2.2.1  | Correção na seção 10.2.2 e 11.2.   | [Bruno Souza](https://github.com/youngburny) |
