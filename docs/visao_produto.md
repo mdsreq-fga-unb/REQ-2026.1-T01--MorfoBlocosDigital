@@ -446,13 +446,15 @@ Esta seção detalha as especificações fundamentais para a concepção e o des
 | **RF06c** | Remover atividades pedagógicas do sistema. | CP2 - Admin de Conteúdo | Must Have | Necessário para exclusão de atividades obsoletas ou incorretas. |
 | **RF06d** | Listar atividades pedagógicas cadastradas no sistema. | CP2 - Admin de Conteúdo | Must Have | Necessário para que o administrador gerencie as atividades disponíveis. |
 | **RF07** | Realizar atividades pedagógicas disponíveis no sistema. | CP3 - Espaço de Construção | Must Have | É a funcionalidade central do produto — sem ela o sistema não tem propósito. |
-| **RF08** | Movimentar blocos de morfemas na área de montagem. | CP3 - Espaço de Construção | Must Have | É a mecânica principal do jogo — sem drag and drop o produto não existe. |
-| **RF09** | Exibir explicações sobre conteúdos morfológicos relacionados às atividades. | CP3 - Espaço de Construção | Could Have | Desejável pedagogicamente mas o MVP funciona sem material de apoio. |
-| **RF10** | Validar a combinação de blocos submetida e exibir o processo de formação morfológica da palavra. | CP4 - Validador de Estruturas | Must Have | É o coração do sistema — valida e retroalimenta o aprendizado do estudante. |
-| **RF11** | Consultar o histórico de pontuações individuais. | CP5 - Portfólio de Progresso | Must Have | Permite ao estudante acompanhar sua própria evolução ao longo do tempo. |
-| **RF12** | Acessar relatório de desempenho consolidado da turma. | CP6 - Painel de Monitoramento | Must Have | Permite ao professor identificar dificuldades e orientar intervenções pedagógicas. |
-| **RF13** | Analisar os erros morfológicos mais frequentes dos estudantes. | CP6 - Painel de Monitoramento | Should Have | Agrega valor ao monitoramento mas o painel funciona sem esse detalhamento. |
-
+| **RF08** | Movimentar blocos de morfemas na área de montagem. | CP3 - Espaço de Construção | Must Have | É a mecânica principal para a montagem/processo de formação das palavras. |
+| **RF09** | Submeter a combinação de blocos para validação. | CP3 - Espaço de Construção | Must Have | Mecânica importante, sem a submissão não há validação, logo o aluno não recebe feedback para evolução nas atividades. |
+| **RF10** | Consultar explicações sobre conteúdos morfológicos relacionados às atividades. | CP3 - Espaço de Construção | Could Have | Desejável pedagogicamente mas o MVP funciona sem material de apoio. |
+| **RF11** | Consultar o resultado da validação da combinação de blocos submetida. | CP4 - Validador de Estruturas | Must Have | Permite ao estudante acompanhar sua própria evolução ao longo do tempo. |
+| **RF12** | Consultar o processo de formação morfológica da palavra validada. | CP4 - Validação de Estruturas | Must Have | Garante o objetivo didático do sistema, permitindo que o estudante compreenda a estrutura e a regra por trás da palavra que acabou de validar. |
+| **RF13** | Consultar o histórico de pontuações individuais. | CP5 - Portfólio de Progresso | Must Have | Fundamental para a gamificação e engajamento, permitindo que o estudante acompanhe seu próprio progresso ao longo do tempo.
+| **RF14** | Consultar os detalhes de uma atividade realizada. | CP5 - Portfólio de Progresso | Should Have | Importante para que o estudante revise seus erros e acertos passados, mas o MVP funciona apenas com a exibição do histórico de notas/pontos. |
+| **RF15** | Acessar relatório de desempenho consolidado da turma. | CP6 - Painel de Monitoramento | Must Have | Permite ao professor identificar dificuldades e orientar intervenções pedagógicas. |
+| **RF16** | Consultar os erros morfológicos mais frequentes dos estudantes. | CP6 - Painel de Monitoramento | Should Have | Agrega valor ao monitoramento, mas o painel funciona sem esse detalhamento. |
 
 ## **8.2 Lista de Requisitos Não Funcionais**
 
@@ -474,41 +476,42 @@ Esta seção detalha as especificações fundamentais para a concepção e o des
 
 ## **9. Definition of Ready (DoR) e Definition of Done (DoD)**
 
-Esta seção apresenta os critérios de Definition of Ready (DoR) e Definition of Done (DoD) adotados pela equipe para o desenvolvimento do MorfoBlocos Digital. Essas definições estabelecem um acordo de trabalho claro, garantindo que os itens do Product Backlog estejam maduros o suficiente antes de entrarem em uma Sprint (DoR) e que o incremento de software gerado atenda aos padrões de qualidade exigidos antes de ser considerado finalizado (DoD).
+Esta seção apresenta os critérios de Definition of Ready (DoR) e Definition of Done (DoD) adotados pela equipe para o desenvolvimento do MorfoBlocos Digital. Alinhados à abordagem ScrumXP e à organização do backlog via User Story Mapping (USM), esses critérios funcionam como "contratos de qualidade". O DoR garante que o trabalho esteja maduro e rastreável antes de entrar na Sprint, enquanto o DoD atesta que o incremento atende aos rigorosos padrões técnicos e de negócio antes da entrega.
 
 ### **9.1 Definition of Ready (DoR) - Definição de Preparado**
 
-O DoR atua como um filtro de entrada. Um item do backlog (como uma História de Usuário ou Requisito Funcional) só será aceito para o Sprint Backlog e puxado para desenvolvimento se cumprir todos os seguintes critérios:
+Um item do Story Map (Épico ou User Story) só será selecionado para o Sprint Backlog e puxado para desenvolvimento se cumprir todos os seguintes critérios:
 
-* **Clareza e Formato**: O item está descrito de forma clara, preferencialmente no formato de História de Usuário ("Como [ator], quero [ação] para [valor]") ou como um Requisito Funcional bem delimitado.
+* **Formato e Clareza**: A funcionalidade está descrita no formato de User Story ("Como [ator], quero [objetivo], para [benefício]") e associada a uma Característica de Produto (CP) específica.
 
-* **Critérios de Aceitação**: O item possui critérios de aceitação explícitos e testáveis (ex: formato Given/When/Then), garantindo que a equipe saiba exatamente como o comportamento será validado.
+* **Critérios de Aceitação**: A User Story possui critérios de aceitação explícitos e testáveis (ex: formato Given/When/Then), cobrindo os fluxos principais e alternativos (especialmente crucial para RFs atomizados de operações CRUD).
 
-* **Priorização**: O item foi priorizado pela Product Owner (Profª. Pilar) e está alinhado com o objetivo do MVP.
+* **Rastreabilidade de Restrições**: Todos os Requisitos Não Funcionais (RNFs) e Regras de Negócio (RN01 a RN08) aplicáveis à história estão mapeados e compreendidos pela equipe.
 
-* **Estimativa**: O esforço de desenvolvimento do item foi discutido, compreendido e estimado por toda a equipe técnica (Ana Beatriz, Artur, Bruno, Carlos e Luiz Henrique).
+* **Priorização Consolidada**: O item possui justificativa objetiva de Valor de Negócio (VB) e Complexidade Técnica (CT), está classificado na matriz de priorização e alinhado com o escopo do MVP.
 
-* **Dependências Resolvidas**: Quaisquer dependências externas ou bloqueios técnicos (ex: necessidade de definição de uma regra morfológica específica ou protótipo de interface validado) foram mapeados e resolvidos prévia ou paralelamente.
+* **Estimativa Conjunta**: O esforço técnico foi discutido e estimado coletivamente pelos desenvolvedores (Ana Beatriz, Artur, Bruno, Carlos e Luiz Henrique).
 
-* **Rastreabilidade**: O item está associado a uma Característica de Produto (CP) e, se aplicável, seus Requisitos Não Funcionais (RNFs) restritivos estão mapeados.
+* **Resolução de Dependências**: Não há bloqueios externos pendentes. Se a história exige validação pedagógica prévia (ex: uma regra morfológica específica) ou ativos visuais, estes já foram fornecidos ou validados pela cliente (Profª. Pilar).
 
 ### **9.2 Definition of Done (DoD) - Definição de Pronto**
 
-O DoD atua como o filtro de saída. Um item do backlog que estava em desenvolvimento só avança para o status "Concluído" (Done) se cumprir absolutamente todos os critérios abaixo, refletindo as práticas do ScrumXP adotadas pela equipe:
+Uma User Story em desenvolvimento só avança para o status "Concluído" (Done) e compõe o incremento do produto se cumprir absolutamente todos os critérios abaixo:
 
-* **Código Implementado**: A funcionalidade foi totalmente codificada respeitando as restrições arquiteturais definidas (React com TypeScript no Frontend; Django em Python e PostgreSQL no Backend).
+* **Implementação Arquitetural**: O código foi finalizado respeitando rigorosamente os RNFs de restrição transversal do projeto (Frontend em React/TypeScript, Backend em Django/Python e persistência no PostgreSQL).
 
-* **Testes Executados e Aprovados**: A lógica desenvolvida passou pelos testes unitários e/ou testes automatizados previstos (refletindo a prática de TDD do eXtreme Programming).
+* **Garantia das Regras de Negócio**: O comportamento do sistema atende às políticas invariantes declaradas (ex: salvamento automático de pontuação - RN06; restrição de relatórios apenas para professores - RN02).
 
-* **Critérios de Aceitação Atendidos**: O incremento atende a 100% dos critérios de aceitação definidos no momento do planejamento da Sprint (DoR).
+* **Testes e Qualidade (Práticas XP)**: A lógica implementada passou pelos testes automatizados e/ou testes unitários definidos na etapa de concepção (TDD).
 
-* **Requisitos Não Funcionais Validados**: O código desenvolvido respeita os RNFs aplicáveis (ex: tempo de resposta inferior a 2 segundos, interface responsiva para telas a partir de 360px).
+* **Validação de RNFs**: Os requisitos não funcionais mapeados para a história foram validados (ex: tempo de resposta inferior a 2 segundos - RNF03; interface não sobreposta em resoluções a partir de 360px - RNF11).
 
-* **Revisão de Código (Code Review)**: O código fonte passou por inspeção e foi aprovado por pelo menos um membro da equipe diferente do autor original (Pull Request aprovado).
+* **Revisão de Código (Code Review)**: O código fonte passou por inspeção técnica e foi aprovado por pelo menos um membro da equipe diferente do autor original (Pull Request aprovado).
 
-* **Integração Bem-Sucedida**: O código foi integrado à branch principal do projeto sem gerar quebras de layout ou conflitos no restante do sistema.
+* **Integração Contínua**: O código foi integrado à branch principal sem gerar regressões, falhas de compilação ou quebras nos fluxos já existentes.
 
-* **Validação do Cliente**: A funcionalidade está funcional no ambiente de testes e pronta para ser demonstrada e validada pela Profª. Pilar na reunião de Sprint Review.
+* **Homologação**: A funcionalidade está operando perfeitamente em ambiente de homologação, pronta para ser demonstrada e validada pela cliente (Profª Pilar) na cerimônia de Sprint Review.
+
 
 ## **10. Backlog**
 
@@ -520,7 +523,9 @@ Esta versão da seção incorpora as correções acordadas com o professor e rev
 
 2. A reclassificação de determinados itens — antes tratados como requisitos funcionais — como regras de negócio;
 
-3. A adoção de critérios objetivos para a classificação MoSCoW e para a Matriz de Valor de Negócio × Complexidade Técnica.
+3. A adoção de critérios objetivos para a classificação MoSCoW e para a Matriz de Valor de Negócio × Complexidade Técnica;
+
+4. A atomização dos requisitos funcionais de modo a garantir que cada Característica de Produto seja sustentada por mais de um RF, preservando a coerência arquitetural do produto.
 
 ### **10.1 Backlog Geral**
 
@@ -545,9 +550,11 @@ O Story Map propriamente dito está disponível em artefato externo, acessível 
 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/board/2QDaUAET4CTGoCnczRMA7q/map-story?node-id=0-1&embed-host=share" allowfullscreen></iframe>
 
 #### 10.1.2 Catálogo Consolidado de Requisitos Funcionais
-O catálogo a seguir consolida os 22 requisitos funcionais (RFs) elicitados para o MorfoBlocos Digital, organizados por Característica de Produto (CP) e com a respectiva classificação MoSCoW. 
+O catálogo a seguir consolida os 24 requisitos funcionais (RFs) elicitados para o MorfoBlocos Digital, organizados por Característica de Produto (CP) e com a respectiva classificação MoSCoW. 
 
 As operações de manutenção do catálogo de conteúdo (morfemas, palavras válidas e atividades pedagógicas) foram desmembradas em operações CRUD individuais — Cadastrar, Editar, Remover e Listar — conforme recomendação do professor, de modo a tornar cada RF atômico, testável e independentemente rastreável.
+
+Adicionalmente, em resposta à observação do professor de que CPs com apenas um RF apresentam baixa coesão arquitetural, foram introduzidos novos RFs em CP3, CP4 e CP5: o RF09 (Submeter combinação) separa o ato da submissão da movimentação livre dos blocos (RF08); o RF10 anterior (que acumulava as responsabilidades de validar e exibir o processo de formação morfológica) foi desmembrado em RF11 e RF12, garantindo que cada operação seja independentemente rastreável e testável; e o RF14 (Consultar detalhes de uma atividade) amplifica o valor pedagógico do Portfólio de Progresso (CP5), permitindo ao estudante revisar não apenas sua pontuação, mas o conteúdo específico de cada tentativa realizada.
 
 | ID | CP | Requisito Funcional | Ator Principal | MoSCoW |
 | :--- | :--- | :--- | :--- | :--- |
@@ -568,11 +575,14 @@ As operações de manutenção do catálogo de conteúdo (morfemas, palavras vá
 | **RF06d** | CP2 | Listar atividades pedagógicas cadastradas no sistema. | Administrador | Must Have |
 | **RF07** | CP3 | Realizar atividades pedagógicas disponíveis no sistema. | Estudante | Must Have |
 | **RF08** | CP3 | Movimentar blocos de morfemas na área de montagem. | Estudante | Must Have |
-| **RF09** | CP3 | Exibir explicações sobre conteúdos morfológicos relacionados às atividades. | Estudante | Could Have |
-| **RF10** | CP4 | Validar a combinação de blocos submetida e exibir o processo de formação morfológica da palavra. | Sistema | Must Have |
-| **RF11** | CP5 | Consultar o histórico de pontuações individuais. | Estudante | Must Have |
-| **RF12** | CP6 | Acessar relatório de desempenho consolidado da turma. | Professor | Must Have |
-| **RF13** | CP6 | Analisar os erros morfológicos mais frequentes dos estudantes. | Professor | Should Have |
+| **RF09** | CP3 | Submeter a combinação de blocos para validação. | Estudante | Must Have |
+| **RF10** | CP3 | Exibir explicações sobre conteúdos morfológicos relacionados às atividades. | Estudante | Could Have |
+| **RF11** | CP4 | Validar a combinação de blocos submetida com base no catálogo de palavras válidas. | Sistema | Must Have |
+| **RF12** | CP4 | Consultar o processo de formação morfológica da palavra validada. | Estudante | Must Have |
+| **RF13** | CP5 | Consultar o histórico de pontuações individuais. | Estudante | Must Have |
+| **RF14** | CP5 | Consultar os detalhes de uma atividade realizada. | Estudante | Should Have |
+| **RF15** | CP6 | Acessar relatório de desempenho consolidado da turma. | Professor | Must Have |
+| **RF16** | CP6 | Analisar os erros morfológicos mais frequentes dos estudantes. | Professor | Should Have |
 
 **Legenda de Características de Produto:**
 
@@ -580,11 +590,11 @@ As operações de manutenção do catálogo de conteúdo (morfemas, palavras vá
 
 * **CP2 — Administração de Conteúdo:** curadoria de morfemas, palavras válidas e atividades pedagógicas.
 
-* **CP3 — Espaço de Construção:** ambiente de manipulação de blocos pelo estudante.
+* **CP3 — Espaço de Construção**: ambiente de manipulação e submissão de blocos pelo estudante.
 
 * **CP4 — Validador de Estruturas:** validação morfológica e apresentação do processo de formação.
 
-* **CP5 — Portfólio de Progresso:** registro e visualização individual de desempenho.
+* **CP5 — Portfólio de Progresso**: registro e visualização individual de desempenho e tentativas realizadas.
 
 * **CP6 — Painel de Monitoramento:** visão consolidada do desempenho da turma para o professor.
 
@@ -639,11 +649,14 @@ Para os requisitos CRUD relacionados à manutenção de catálogo (RF04a-d, RF05
 | **RF06a–d** | US06 — Como administrador, quero realizar operações de cadastro, edição, remoção e listagem de atividades pedagógicas, para disponibilizar exercícios contextualizados às necessidades pedagógicas dos estudantes. | RNF04, RNF06 |
 | **RF07** | US07 — Como estudante, quero realizar as atividades pedagógicas disponíveis no sistema, para praticar e desenvolver minha compreensão sobre morfologia. | RNF01, RNF02, RNF03, RNF11 |
 | **RF08** | US08 — Como estudante, quero movimentar blocos de morfemas na área de montagem, para combinar prefixos, radicais e sufixos livremente. | RNF01, RNF02, RNF03, RNF11 |
-| **RF09** | US09 — Como estudante, quero visualizar explicações sobre conteúdos morfológicos relacionados às atividades, para aprender enquanto pratico. | RNF01 |
-| **RF10** | US10 — Como estudante, quero que minha combinação de blocos seja validada e o processo de formação morfológica da palavra seja exibido, para compreender se acertei e como os morfemas se combinam. | RNF03, RNF04 |
-| **RF11** | US11 — Como estudante, quero consultar o histórico das minhas pontuações individuais, para acompanhar minha evolução ao longo do tempo. | RNF01, RNF04 |
-| **RF12** | US12 — Como professor, quero acessar o relatório de desempenho consolidado da turma, para monitorar o progresso coletivo dos estudantes. | RNF01, RNF03, RNF04 |
-| **RF13** | US13 — Como professor, quero analisar os erros morfológicos mais frequentes dos estudantes, para direcionar interventions pedagógicas mais eficazes. | RNF03, RNF04 |
+| **RF09** | US09 — Como estudante, quero submeter a combinação de blocos que montei, para que ela seja avaliada pelo sistema. | RNF03, RNF04 |
+| **RF10** | US10 — Como estudante, quero visualizar explicações sobre conteúdos morfológicos relacionados às atividades, para aprender enquanto prático. | RNF01|
+| **RF11** | US11 — Como estudante, quero que minha combinação de blocos seja validada com base no catálogo de palavras válidas, para receber um resultado correto sobre a palavra formada. | RNF03, RNF04 |
+| **RF12** | US12 — Como estudante, quero consultar o processo de formação morfológica da palavra validada, para compreender como os morfemas se combinam. | RNF01, RNF03 |
+| **RF13** | US13 — Como estudante, quero consultar o histórico das minhas pontuações individuais, para acompanhar minha evolução ao longo do tempo. | RNF01, RNF04 |
+| **RF14** | US14 — Como estudante, quero consultar os detalhes de uma atividade que já realizei, para revisar quais blocos utilizei, quais palavras formei e onde acertei ou errei. | RNF01, RNF04 |
+| **RF15** | US15 — Como professor, quero acessar o relatório de desempenho consolidado da turma, para monitorar o progresso coletivo dos estudantes. | RNF01, RNF03, RNF04 |
+| **RF16** | US16 — Como professor, quero analisar os erros morfológicos mais frequentes dos estudantes, para direcionar intervenções pedagógicas mais eficazes. | RNF03, RNF04 |
 
 *Observação sobre RNFs transversais:* os RNFs de restrição tecnológica e arquitetural — RNF05 (comunicação por APIs), RNF07 (React/TypeScript), RNF08 (Django), RNF09 (PostgreSQL), RNF10 (compatibilidade cross-browser) e RNF12 (acesso via navegador) — aplicam-se de forma transversal a todas as User Stories deste backlog. Embora não estejam repetidos linha a linha, devem ser considerados válidos e obrigatórios para todos os RFs do produto.
 
@@ -754,7 +767,7 @@ A partir desse cruzamento, os requisitos foram distribuídos nos quatro quadrant
 | **Q3 — Baixo valor + Baixa complexidade técnica** | Requisitos complementares que agregam valor, mas não são críticos para o MVP. Podem ser incluídos conforme capacidade. |
 | **Q4 — Baixo valor + Alta complexidade técnica** | Requisitos com baixo retorno frente ao alto custo técnico. Devem ser adiados para futuras versões. |
 
-![Matriz de Priorização de Requisitos](img/matrizdepriorizacao.png)
+![Matriz de Priorização de Requisitos](img/matriz_valor_complex.png)
 
 #### 10.2.5 Classificação Consolidada dos Requisitos
 A tabela a seguir consolida a classificação final de todos os requisitos funcionais e não funcionais, cruzando MoSCoW, VB, CT, quadrante na matriz e decisão de inclusão no MVP. As justificativas detalhadas de VB e CT para cada item estão disponíveis no documento de Requisitos de Software (artefato auxiliar deste projeto).
@@ -778,20 +791,27 @@ A tabela a seguir consolida a classificação final de todos os requisitos funci
 | **RF06d** | Listar atividades pedagógicas cadastradas no sistema. | Must Have | 4 | 2 | Q1 | Sim |
 | **RF07** | Realizar atividades pedagógicas disponíveis no sistema. | Must Have | 5 | 4 | Q2 | Sim |
 | **RF08** | Movimentar blocos de morfemas na área de montagem. | Must Have | 5 | 5 | Q2 | Sim |
-| **RF09** | Exibir explicações sobre conteúdos morfológicos relacionados às atividades. | Could Have | 3 | 2 | Q3 | Não |
-| **RF10** | Validar combinação de blocos e exibir processo de formação morfológica. | Must Have | 5 | 5 | Q2 | Sim |
-| **RF11** | Consultar o histórico de pontuações individuais. | Must Have | 5 | 3 | Q2 | Sim |
-| **RF12** | Acessar relatório de desempenho consolidado da turma. | Must Have | 5 | 4 | Q2 | Sim |
-| **RF13** | Analisar os erros morfológicos mais frequentes dos estudantes. | Should Have | 4 | 4 | Q2 | Sim |
+| **RF09** | Submeter a combinação de blocos para validação. | Must Have | 5 | 2 | Q1 | Sim |
+| **RF10** | Exibir explicações sobre conteúdos morfológicos relacionados às atividades. | Could Have | 3 | 2 | Q3 | Não |
+| **RF11** | Validar a combinação de blocos submetida com base no catálogo de palavras válidas. | Must Have | 5 | 5 | Q2 | Sim |
+| **RF12** | Consultar o processo de formação morfológica da palavra validada. | Must Have | 5 | 3 | Q2 | Sim |
+| **RF13** | Consultar o histórico de pontuações individuais. | Must Have | 5 | 3 | Q2 | Sim |
+| **RF14** | Consultar os detalhes de uma atividade realizada. | Should Have | 4 | 3 | Q2 | Sim |
+| **RF15** | Acessar relatório de desempenho consolidado da turma. | Must Have | 5 | 4 | Q2 | Sim |
+| **RF16** | Analisar os erros morfológicos mais frequentes dos estudantes. | Should Have | 4 | 4 | Q2 | Sim |
+
+
+
 
 #### 10.2.6 Definição do MVP
 O Produto Mínimo Viável do MorfoBlocos Digital foi definido como o menor conjunto de funcionalidades capaz de demonstrar, em ambiente real de uso, a hipótese central de valor do produto:
 
-> Um estudante consegue, de forma autônoma, realizar atividades pedagógicas de morfologia combinando blocos de morfemas, ter sua combinação validada com exibição do processo de formação morfológica, acompanhar seu próprio progresso, e permitir que o professor monitore o desempenho coletivo da turma e identifique padrões de erros morfológicos — sem depender da mediação síncrona do professor para validação.
+> Um estudante consegue, de forma autônoma, realizar atividades pedagógicas de morfologia combinando blocos de morfemas, submeter sua combinação para validação automática, consultar o processo de formação morfológica da palavra validada, acompanhar seu próprio progresso e revisar atividades realizadas, e permitir que o professor monitore o desempenho coletivo da turma e identifique padrões de erros morfológicos — sem depender da mediação síncrona do professor para validação.
 
-Aplicando a regra de decisão da matriz e os critérios MoSCoW, o MVP é composto por todos os requisitos classificados como Must Have e Should Have, totalizando 21 dos 22 requisitos funcionais declarados. O único RF excluído do MVP é o RF09 (exibição de explicações morfológicas), classificado como Could Have e posicionado no quadrante Q3 (baixo valor + baixa complexidade), o qual será planejado para uma release posterior.
+Aplicando a regra de decisão da matriz e os critérios MoSCoW, o MVP é composto por todos os requisitos classificados como Must Have e Should Have, totalizando 23 dos 24 requisitos funcionais declarados. O único RF excluído do MVP é o RF10 (exibição de explicações morfológicas), classificado como Could Have e posicionado no quadrante Q3 (baixo valor + baixa complexidade), o qual será planejado para uma release posterior.
 
-A inclusão dos Should Have (RF03 e RF13) no MVP é justificada pela regra de agregação da Matriz: ambos os requisitos atingem o limiar de alto valor de negócio (VB = 4) e, juntos, sustentam aspectos críticos do produto. O RF03 (recuperação de senha) garante a continuidade de acesso e a recuperação do progresso pelo estudante; o RF13 (análise de erros frequentes) sustenta diretamente um dos Valores de Negócio principais do produto, declarado na seção 2.3 — a rastreabilidade do aprendizado, fundamental para a intervenção pedagógica do professor.
+A inclusão dos três Should Have (RF03, RF14 e RF16) no MVP é justificada pela regra de agregação da Matriz: todos atingem o limiar de alto valor de negócio (VB = 4) e, em conjunto, sustentam aspectos críticos do produto. O RF03 (recuperação de senha) garante a continuidade de acesso e a recuperação do progresso pelo estudante; o RF14 (consultar detalhes de uma atividade realizada) amplifica o valor pedagógico do CP5, permitindo ao estudante revisar especificamente onde acertou e onde errou em cada tentativa; e o RF16 (análise de erros frequentes) sustenta diretamente um dos Valores de Negócio principais do produto, declarado na seção 2.3 — a rastreabilidade do aprendizado, fundamental para a intervenção pedagógica do professor.
+
 
 **Distribuição do MVP por Característica de Produto:**
 
@@ -799,10 +819,10 @@ A inclusão dos Should Have (RF03 e RF13) no MVP é justificada pela regra de ag
 | :--- | :--- | :--- | :--- |
 | **CP1** | Controle de Acesso | RF01, RF02, RF03 | Total |
 | **CP2** | Administração de Conteúdo | RF04a-d, RF05a-d, RF06a-d | Total |
-| **CP3** | Espaço de Construção | RF07, RF08 | Parcial (RF09 fora) |
-| **CP4** | Validador de Estruturas | RF10 | Total |
-| **CP5** | Portfólio de Progresso | RF11 | Total |
-| **CP6** | Painel de Monitoramento | RF12, RF13 | Total |
+| **CP3** | Espaço de Construção | RF07, RF08, RF09 | Parcial (RF10 fora) |
+| **CP4** | Validador de Estruturas | RF11, RF12 | Total |
+| **CP5** | Portfólio de Progresso | RF13, RF14 | Total |
+| **CP6** | Painel de Monitoramento | RF15, RF16 | Total |
 
 **Cobertura do MVP em relação aos Objetivos Específicos:**
 
@@ -815,13 +835,13 @@ A inclusão dos Should Have (RF03 e RF13) no MVP é justificada pela regra de ag
 | **OE5** | Garantir a usabilidade móvel e a adequação da interface ao público do ensino básico. | Sim (RNF01, RNF02, RNF11) |
 
 **Requisitos Não Funcionais aplicáveis ao MVP:**
-Todos os 12 RNFs declarados no catálogo de requisitos são considerados válidos para o MVP, por descreverem propriedades transversais ao produto (usabilidade, confiabilidade, performance, suportabilidade e restrições arquiteturais). A entrega do MVP só é considerada concluída se atender, simultaneamente, aos critérios de aceitação dos 21 RFs incluídos e aos critérios mensuráveis dos 12 RNFs catalogados.
+Todos os 12 RNFs declarados no catálogo de requisitos são considerados válidos para o MVP, por descreverem propriedades transversais ao produto (usabilidade, confiabilidade, performance, suportabilidade e restrições arquiteturais). A entrega do MVP só é considerada concluída se atender, simultaneamente, aos critérios de aceitação dos 23 RFs incluídos e aos critérios mensuráveis dos 12 RNFs catalogados.
 
 **Itens fora do MVP (planejados para releases futuras):**
 
 | ID | Requisito | Motivo da exclusão |
 | :--- | :--- | :--- |
-| **RF09** | Exibir explicações sobre conteúdos morfológicos relacionados às atividades. | Classificado como Could Have (VB=3, CT=2), posicionado no quadrante Q3. Complementa o aprendizado, mas o fluxo principal funciona sem material de apoio textual. |
+| **RF10** | Exibir explicações sobre conteúdos morfológicos relacionados às atividades. | Classificado como Could Have (VB=3, CT=2), posicionado no quadrante Q3. Complementa o aprendizado, mas o fluxo principal funciona sem material de apoio textual. |
 
 
 ## **11. Lições Aprendidas**
@@ -899,3 +919,4 @@ Como forma de reduzir inconsistências, a equipe passou a utilizar identificador
 | 15/05/2026 | 1.10  | Correção na enumeração das seções. | [Bruno Souza](https://github.com/youngburny) |
 | 18/05/2026 | 2.0  | Adiciona seção 10 (Backlog) e respectivas subseções, seção 11.2 e 2.6.1., e corrige seção 8.1 e 8.2.  | [Bruno Souza](https://github.com/youngburny) |
 | 18/05/2026 | 2.1  | Correção na seção 10, e realocação da Matriz de Priorização.   | [Bruno Souza](https://github.com/youngburny) |
+| 18/05/2026 | 2.2  | Correção na seção 8.1, 9, 9.1, 9.2, 10, 10.1.2, 10.1.5, 10.2.4, 10.2.5 e 10.2.6.   | [Bruno Souza](https://github.com/youngburny) |
