@@ -1,0 +1,4095 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentação do projeto MorfoBlocos Digital - Engenharia de Software">
+      
+      
+        <meta name="author" content="Equipe G4">
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../reunioes/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Visão do Produto e Projeto - MorfoBlocos Digital</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#visao-do-produto" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MorfoBlocos Digital" class="md-header__button md-logo" aria-label="MorfoBlocos Digital" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MorfoBlocos Digital
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Visão do Produto e Projeto
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Mudar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Mudar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MorfoBlocos Digital" class="md-nav__button md-logo" aria-label="MorfoBlocos Digital" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MorfoBlocos Digital
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão do Produto e Projeto
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão do Produto e Projeto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-cenario-atual-do-cliente-e-do-negocio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Cenário Atual do Cliente e do Negócio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Cenário Atual do Cliente e do Negócio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-identificacao-do-clienteparceiro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Identificação do Cliente/Parceiro
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-introducao-ao-negocio-e-contexto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Introdução ao Negócio e Contexto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-rich-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Rich Picture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-identificacao-da-oportunidade-ou-problema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Identificação da Oportunidade ou Problema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-desafios-do-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 Desafios do Projeto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-mapa-de-stakeholders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 Mapa de Stakeholders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-segmentacao-de-clientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.7 Segmentação de Clientes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-solucao-proposta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Solução Proposta
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Solução Proposta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-objetivo-geral-do-produto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Objetivo Geral do Produto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-objetivos-especificos-oes-do-produto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Objetivos Específicos (OEs) do Produto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-caracteristicas-de-produto-mapeadas-com-os-objetivos-especificos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Características de Produto (Mapeadas com os Objetivos Específicos)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-tecnologias-a-serem-utilizadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Tecnologias a Serem Utilizadas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-pesquisa-de-mercado-e-analise-competitiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Pesquisa de Mercado e Análise Competitiva
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-viabilidade-da-proposta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 Viabilidade da Proposta
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.6 Viabilidade da Proposta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#261-estimativas-de-custos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6.1 Estimativas de custos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-beneficios-esperados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7 Benefícios Esperados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-intervencao-social" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Intervenção Social
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-estrategias-de-engenharia-de-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Estratégias de Engenharia de Software
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Estratégias de Engenharia de Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-estrategia-priorizada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Estratégia Priorizada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-quadro-comparativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Quadro Comparativo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-justificativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Justificativa
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-engenharia-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Engenharia de Requisitos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Engenharia de Requisitos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-atividades-e-tecnicas-de-er" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Atividades e Técnicas de ER
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-engenharia-de-requisitos-e-o-xp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Engenharia de Requisitos e o XP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-cronograma-e-entregas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Cronograma e Entregas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-interacao-entre-equipe-e-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Interação entre Equipe e Cliente
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Interação entre Equipe e Cliente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-composicao-da-equipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Composição da Equipe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-comunicacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Comunicação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-processo-de-validacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Processo de Validação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-registro-de-reunioes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Registro de Reuniões
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-requisitos-de-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Requisitos de Software
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Requisitos de Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-lista-de-requisitos-funcionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Lista de Requisitos Funcionais
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-lista-de-requisitos-nao-funcionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Lista de Requisitos Não Funcionais
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-definition-of-ready-dor-e-definition-of-done-dod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Definition of Ready (DoR) e Definition of Done (DoD)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Definition of Ready (DoR) e Definition of Done (DoD)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-definition-of-ready-dor-definicao-de-preparado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Definition of Ready (DoR) - Definição de Preparado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-definition-of-done-dod-definicao-de-pronto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Definition of Done (DoD) - Definição de Pronto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-backlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Backlog
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Backlog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-backlog-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Backlog Geral
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.1 Backlog Geral">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1011-nota-metodologica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.1 Nota Metodológica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1012-catalogo-consolidado-de-requisitos-funcionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.2 Catálogo Consolidado de Requisitos Funcionais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1013-catalogo-consolidado-de-requisitos-nao-funcionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.3 Catálogo Consolidado de Requisitos Não Funcionais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1014-catalogo-de-regras-de-negocio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.4 Catálogo de Regras de Negócio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1015-user-stories-derivadas-dos-requisitos-funcionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.5 User Stories Derivadas dos Requisitos Funcionais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1016-matriz-de-rastreabilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.6 Matriz de Rastreabilidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-priorizacao-do-backlog-geral-e-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Priorização do Backlog Geral e MVP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.2 Priorização do Backlog Geral e MVP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1021-criterios-objetivos-para-a-classificacao-moscow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.1 Critérios Objetivos para a Classificação MoSCoW
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1022-criterios-objetivos-para-o-valor-de-negocio-vn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.2 Critérios Objetivos para o Valor de Negócio (VN)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1023-criterios-objetivos-para-a-complexidade-tecnica-ct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.3 Critérios Objetivos para a Complexidade Técnica (CT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1024-regra-de-decisao-da-matriz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.4 Regra de Decisão da Matriz
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1025-classificacao-consolidada-dos-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.5 Classificação Consolidada dos Requisitos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1026-definicao-do-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.6 Definição do MVP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-licoes-aprendidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Lições Aprendidas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Lições Aprendidas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-unidade-i" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Unidade I
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-unidade-ii" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Unidade II
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versionamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versionamento
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reunioes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Registro de Reuniões
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-cenario-atual-do-cliente-e-do-negocio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Cenário Atual do Cliente e do Negócio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Cenário Atual do Cliente e do Negócio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-identificacao-do-clienteparceiro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Identificação do Cliente/Parceiro
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-introducao-ao-negocio-e-contexto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Introdução ao Negócio e Contexto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-rich-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Rich Picture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-identificacao-da-oportunidade-ou-problema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Identificação da Oportunidade ou Problema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-desafios-do-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 Desafios do Projeto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-mapa-de-stakeholders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 Mapa de Stakeholders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-segmentacao-de-clientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.7 Segmentação de Clientes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-solucao-proposta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Solução Proposta
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Solução Proposta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-objetivo-geral-do-produto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Objetivo Geral do Produto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-objetivos-especificos-oes-do-produto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Objetivos Específicos (OEs) do Produto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-caracteristicas-de-produto-mapeadas-com-os-objetivos-especificos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Características de Produto (Mapeadas com os Objetivos Específicos)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-tecnologias-a-serem-utilizadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Tecnologias a Serem Utilizadas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-pesquisa-de-mercado-e-analise-competitiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Pesquisa de Mercado e Análise Competitiva
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-viabilidade-da-proposta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 Viabilidade da Proposta
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.6 Viabilidade da Proposta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#261-estimativas-de-custos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6.1 Estimativas de custos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-beneficios-esperados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7 Benefícios Esperados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-intervencao-social" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Intervenção Social
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-estrategias-de-engenharia-de-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Estratégias de Engenharia de Software
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Estratégias de Engenharia de Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-estrategia-priorizada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Estratégia Priorizada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-quadro-comparativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Quadro Comparativo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-justificativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Justificativa
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-engenharia-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Engenharia de Requisitos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Engenharia de Requisitos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-atividades-e-tecnicas-de-er" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Atividades e Técnicas de ER
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-engenharia-de-requisitos-e-o-xp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Engenharia de Requisitos e o XP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-cronograma-e-entregas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Cronograma e Entregas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-interacao-entre-equipe-e-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Interação entre Equipe e Cliente
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Interação entre Equipe e Cliente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-composicao-da-equipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Composição da Equipe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-comunicacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Comunicação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-processo-de-validacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Processo de Validação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-registro-de-reunioes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Registro de Reuniões
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-requisitos-de-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Requisitos de Software
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Requisitos de Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-lista-de-requisitos-funcionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Lista de Requisitos Funcionais
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-lista-de-requisitos-nao-funcionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Lista de Requisitos Não Funcionais
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-definition-of-ready-dor-e-definition-of-done-dod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Definition of Ready (DoR) e Definition of Done (DoD)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Definition of Ready (DoR) e Definition of Done (DoD)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-definition-of-ready-dor-definicao-de-preparado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Definition of Ready (DoR) - Definição de Preparado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-definition-of-done-dod-definicao-de-pronto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Definition of Done (DoD) - Definição de Pronto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-backlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Backlog
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Backlog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-backlog-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Backlog Geral
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.1 Backlog Geral">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1011-nota-metodologica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.1 Nota Metodológica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1012-catalogo-consolidado-de-requisitos-funcionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.2 Catálogo Consolidado de Requisitos Funcionais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1013-catalogo-consolidado-de-requisitos-nao-funcionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.3 Catálogo Consolidado de Requisitos Não Funcionais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1014-catalogo-de-regras-de-negocio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.4 Catálogo de Regras de Negócio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1015-user-stories-derivadas-dos-requisitos-funcionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.5 User Stories Derivadas dos Requisitos Funcionais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1016-matriz-de-rastreabilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1.6 Matriz de Rastreabilidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-priorizacao-do-backlog-geral-e-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Priorização do Backlog Geral e MVP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.2 Priorização do Backlog Geral e MVP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1021-criterios-objetivos-para-a-classificacao-moscow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.1 Critérios Objetivos para a Classificação MoSCoW
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1022-criterios-objetivos-para-o-valor-de-negocio-vn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.2 Critérios Objetivos para o Valor de Negócio (VN)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1023-criterios-objetivos-para-a-complexidade-tecnica-ct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.3 Critérios Objetivos para a Complexidade Técnica (CT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1024-regra-de-decisao-da-matriz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.4 Regra de Decisão da Matriz
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1025-classificacao-consolidada-dos-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.5 Classificação Consolidada dos Requisitos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1026-definicao-do-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2.6 Definição do MVP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-licoes-aprendidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Lições Aprendidas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Lições Aprendidas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-unidade-i" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Unidade I
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-unidade-ii" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Unidade II
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versionamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versionamento
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="visao-do-produto">Visao do produto</h1>
+<h2 id="1-cenario-atual-do-cliente-e-do-negocio">1. Cenário Atual do Cliente e do Negócio</h2>
+<h3 id="11-identificacao-do-clienteparceiro"><strong>1.1 Identificação do Cliente/Parceiro</strong></h3>
+<p><strong>Nome: Profª. María del Pilar Tobar Acosta.</strong></p>
+<p><strong>Tipo</strong>: Cliente individual — professora de Língua Portuguesa do Instituto Federal de Brasília (IFB), pesquisadora na área de ensino de morfologia e idealizadora do jogo didático Morfologia em Blocos (MorfoBlocos).</p>
+<p><strong>Representante</strong>: a própria professora María del Pilar Tobar Acosta, autora do jogo físico e principal parte interessada no desenvolvimento da versão digital.</p>
+<p><strong>Forma de contato</strong>: reuniões presenciais e por videoconferência, e-mail e canal de mensagens instantâneas para alinhamentos rápidos.</p>
+<p><strong>Vínculo com o projeto</strong>: cliente real e Product Owner (PO). Será responsável por fornecer o conteúdo didático (morfemas, categorias e processos de formação de palavras), validar as decisões de design e conteúdo e avaliar as entregas realizadas ao longo do desenvolvimento.</p>
+<h3 id="12-introducao-ao-negocio-e-contexto"><strong>1.2 Introdução ao Negócio e Contexto</strong></h3>
+<p>O MorfoBlocos é uma ferramenta didática para o ensino de morfologia. Atualmente, a operação é analógica, baseada em blocos físicos. O propósito aqui é a entrega de feedback pedagógico sobre a estrutura das palavras. O gargalo atual reside na baixa escalabilidade do modelo físico e na latência do feedback, já que a validação depende 100% da disponibilidade síncrona do professor.</p>
+<p>O jogo é composto por peças coloridas que representam morfemas — raízes (ou radicais), prefixos, sufixos e desinências — que podem ser combinadas pelos estudantes para formar diferentes vocábulos. Cada peça traz, de um lado, o morfema em si e, do outro, a classificação do elemento e o processo de formação envolvido (flexão, derivação, derivação parassintética, composição, derivação regressiva e reduplicação). Dessa forma, ao montar palavras, o estudante visualiza não apenas o resultado, mas o processo morfológico que o gerou.</p>
+<p>O jogo já foi aplicado em turmas do ensino médio integrado, licenciatura e tecnólogo do IFB Campus São Sebastião, com resultados positivos relatados pela equipe e pelos estudantes participantes. No relatório final do projeto original, a própria idealizadora manifestou a intenção de desenvolver uma versão digital do jogo como forma de ampliar seu alcance e viabilizar seu uso em um número significativo de escolas.</p>
+<p>Apesar de seu valor pedagógico, o uso do jogo apresenta limitações operacionais e financeiras. Sua aplicação depende da presença do professor para orientação e validação manual das respostas, o que reduz a autonomia dos estudantes. Além disso, o custo do jogo físico pode dificultar sua ampla adoção por estudantes e instituições de ensino. Nesse contexto, a solução digital proposta não substitui o recurso físico, mas atua como um complemento, ampliando seu alcance e possibilidades de uso.</p>
+<p>O público-alvo principal são estudantes do ensino fundamental II e do ensino médio, mas o material também vem sendo utilizado com estudantes de licenciatura em Letras e Pedagogia, como recurso para formação de professores de língua materna.</p>
+<h3 id="13-rich-picture"><strong>1.3 Rich Picture</strong></h3>
+<p><img alt="Rich Picture" src="../img/rich_picture.jpeg" /></p>
+<p style="text-align:center;font-size:10px;font-weight:bold">Imagem 1 - Fonte: Autoria Própria via IA</p>
+
+<p>O diagrama representa o funcionamento atual do projeto MorfoBlocos, no qual professores de Língua Portuguesa como a professora Pilar, apresentam o conteúdo de morfologia e os estudantes do ensino médio utilizam o jogo físico para manipular blocos com morfemas, formando palavras e analisando sua estrutura. As atividades são corrigidas manualmente pelo professor, sem registro ou acompanhamento do desempenho. Esse modelo apresenta limitações como a ausência de feedback imediato, a dependência do professor e a restrição do uso ao ambiente de sala de aula, o que dificulta a prática contínua dos alunos. Como proposta de melhoria, o diagrama indica a transição para uma solução digital baseada em uma base estruturada de morfemas, permitindo a realização de exercícios variados, correção automática, acesso fora da sala de aula e acompanhamento do desempenho dos estudantes.</p>
+<h3 id="14-identificacao-da-oportunidade-ou-problema"><strong>1.4 Identificação da Oportunidade ou Problema</strong></h3>
+<p>O projeto surge da necessidade de superar o gargalo operacional no ensino de morfologia causado pelo uso exclusivo do jogo físico MorfoBlocos. No cenário atual, a dinâmica pedagógica apresenta uma dependência crítica da mediação do professor, responsável pela orientação e correção manual das atividades, o que impede o acompanhamento individualizado e limita a escalabilidade das práticas em sala de aula.</p>
+<p>O fluxo de informação atual é marcado pelo feedback tardio, uma vez que o estudante não recebe validação imediata sobre a classificação de morfemas ou os processos de formação de palavras, como derivação e flexão. Além disso, a ausência de registro sistemático das respostas gera falta de rastreabilidade do aprendizado, impossibilitando que o professor identifique padrões de erro em conceitos como alomorfia e derivação parassintética ao longo do tempo.</p>
+<p>A infraestrutura baseada no jogo físico impõe restrições de uso, limitando a prática ao ambiente escolar e à disponibilidade de blocos. Soma-se a isso o custo do material, que dificulta sua aquisição e reduz o acesso por parte dos estudantes. Como consequência, há prejuízo na continuidade do aprendizado e na consolidação dos conceitos morfológicos.</p>
+<p><img alt="Diagrama de Ishikawa" src="../img/diagramaishikawa_morfoblocos.png" /></p>
+<p style="text-align:center;font-size:10px;font-weight:bold">Imagem 2</p>
+
+<h3 id="15-desafios-do-projeto"><strong>1.5 Desafios do Projeto</strong></h3>
+<p>O principal desafio do projeto está na transição de um modelo de ensino baseado na manipulação de blocos físicos e na correção manual para uma solução digital estruturada e integrada. Atualmente, esse processo limita a rastreabilidade das respostas e dificulta o acompanhamento do desempenho dos alunos, devido à ausência de registro sistematizado e à centralização da validação no professor. Outro ponto a ser observado está na estruturação dos dados linguísticos. O sistema deve organizar morfemas, suas variações e relações, incluindo casos como alomorfes e processos de derivação, permitindo a validação automática das respostas de forma consistente.</p>
+<p>Além disso, há o desafio relacionado à coleta e análise de dados educacionais. A solução deve registrar as respostas dos alunos, possibilitando a identificação de padrões de erro e o acompanhamento da evolução individual. A usabilidade também é um fator crítico, exigindo uma interface intuitiva e de fácil utilização, sem necessidade de treinamento. Por fim, o sistema deve garantir confiabilidade, permitindo o uso em diferentes contextos e assegurando o armazenamento correto dos dados mesmo com o aumento do volume de informações.</p>
+<h3 id="16-mapa-de-stakeholders"><strong>1.6 Mapa de Stakeholders</strong></h3>
+<p>Os principais stakeholders do projeto são: a professora María del Pilar Tobar Acosta, como cliente, idealizadora do jogo físico e responsável por validar as decisões de conteúdo e pedagógicas; os estudantes do ensino básico e superior, como usuários finais do jogo digital; os professores de Língua Portuguesa que poderão adotar a solução em suas aulas; as instituições de ensino (IFB, escolas públicas e privadas) como potenciais adotantes da solução; e a equipe de desenvolvimento, responsável por construir tecnicamente a solução no contexto da disciplina.</p>
+<p>A seguir, é apresentado o quadro-resumo dos stakeholders.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Stakeholder</strong></th>
+<th><strong>Relação com a solução</strong></th>
+<th><strong>Interesse Principal</strong></th>
+<th><strong>Influência</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Profª. María del Pilar Tobar Acosta</td>
+<td>Cliente e idealizadora do jogo físico</td>
+<td>Validar conteúdo, proposta pedagógica, escopo e entregas</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>Estudantes do ensino básico</td>
+<td>Usuários finais do jogo digital</td>
+<td>Aprender morfologia de forma lúdica, visual e engajadora</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>Professores de Língua Portuguesa</td>
+<td>Usuários que aplicam o jogo em sala</td>
+<td>Dispor de recurso didático de fácil acesso e com acompanhamento do aluno</td>
+<td>Média</td>
+</tr>
+<tr>
+<td>Estudantes de Licenciatura em Letras</td>
+<td>Usuários em contexto de formação de professores</td>
+<td>Utilizar o jogo como recurso pedagógico em sua formação</td>
+<td>Média</td>
+</tr>
+<tr>
+<td>Instituições de ensino (IFB e escolas)</td>
+<td>Potenciais adotantes da solução</td>
+<td>Ampliar recursos didáticos disponíveis sem custo adicional de material físico</td>
+<td>Baixa</td>
+</tr>
+<tr>
+<td>Equipe de desenvolvimento</td>
+<td>Responsável pela construção do produto</td>
+<td>Entregar uma solução viável, funcional e alinhada aos objetivos da disciplina</td>
+<td>Alta</td>
+</tr>
+</tbody>
+</table>
+<p>Além do quadro-resumo, será elaborada uma matriz Poder × Interesse para classificar os stakeholders nas categorias Gerenciar de Perto, Manter Satisfeito, Manter Informado e Monitorar, orientando a estratégia de comunicação e engajamento da equipe ao longo do projeto. </p>
+<p><img alt="Mapa de stakeholders" src="../img/mapa_stakeholders.jpeg" /></p>
+<h3 id="17-segmentacao-de-clientes"><strong>1.7 Segmentação de Clientes</strong></h3>
+<p>Embora o projeto tenha um cliente único e real (a professora María del Pilar), a solução atenderá a diferentes perfis de usuários finais, que podem ser segmentados da seguinte forma:</p>
+<ul>
+<li>
+<p>Estudantes do Ensino Fundamental II (11 a 14 anos): têm seu primeiro contato mais formal com conteúdos de morfologia. Precisam de uma experiência altamente visual, lúdica e guiada, com linguagem simples e feedback imediato;</p>
+</li>
+<li>
+<p>Estudantes do Ensino Médio (15 a 18 anos): já possuem alguma familiaridade com os conceitos morfológicos e podem ser desafiados com atividades mais complexas, envolvendo diferentes processos de formação de palavras e análise de vocábulos mais sofisticados;</p>
+</li>
+<li>
+<p>Estudantes de Licenciatura em Letras e Pedagogia: utilizam o jogo tanto como recurso de estudo quanto como referência para sua futura prática docente, demandando explicações teóricas mais aprofundadas e exemplos relacionados ao ensino;</p>
+</li>
+<li>
+<p>Professores de Língua Portuguesa: atuam como mediadores do uso do jogo em sala de aula, necessitando de recursos para aplicar o material, propor atividades e, futuramente, acompanhar o desempenho dos estudantes.</p>
+</li>
+</ul>
+<h2 id="2-solucao-proposta"><strong>2. Solução Proposta</strong></h2>
+<h3 id="21-objetivo-geral-do-produto"><strong>2.1 Objetivo Geral do Produto</strong></h3>
+<p>Desenvolver uma plataforma web interativa (MorfoBlocos Digital) que viabilize a construção autônoma de palavras a partir de morfemas, fornecendo feedback pedagógico automatizado para os estudantes e garantindo o registro e a rastreabilidade do aprendizado para auxiliar o acompanhamento pelos professores.</p>
+<h3 id="22-objetivos-especificos-oes-do-produto"><strong>2.2 Objetivos Específicos (OEs) do Produto</strong></h3>
+<ul>
+<li>
+<p>(OE1) Proporcionar um ambiente digital interativo que permita aos estudantes a manipulação autônoma e a combinação livre de blocos de morfemas.</p>
+</li>
+<li>
+<p>(OE2) Estruturar e disponibilizar um catálogo digital gerenciável de morfemas, palavras válidas e atividades pedagógicas.</p>
+</li>
+<li>
+<p>(OE3) Fornecer feedback pedagógico imediato e automatizado sobre a validade morfológica e os processos de formação das combinações realizadas pelo estudante.</p>
+</li>
+<li>
+<p>(OE4) Viabilizar o acompanhamento contínuo do aprendizado por meio do registro, consolidação e rastreabilidade do desempenho individual e coletivo dos estudantes.</p>
+</li>
+</ul>
+<h3 id="23-caracteristicas-de-produto-mapeadas-com-os-objetivos-especificos"><strong>2.3 Características de Produto (Mapeadas com os Objetivos Específicos)</strong></h3>
+<p>A solução proposta para o MorfoBlocos Digital deverá contemplar, de forma preliminar, as seguintes características de produto (CP), mapeadas aos objetivos específicos (OE) da seção 2.2 e aos valores de negócio (VN) identificados:</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Característica de Produto (CP)</th>
+<th>Descrição resumida</th>
+<th>Contribuição Principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CP1</td>
+<td>Controle de Acesso e Perfis de Usuário</td>
+<td>Mecanismo que garante que professores e estudantes acessem ambientes, ferramentas e dados adequados aos seus respectivos papéis no processo de aprendizagem.</td>
+<td>OE4</td>
+</tr>
+<tr>
+<td>CP2</td>
+<td>Administração de Conteúdo Pedagógico</td>
+<td>Ambiente administrativo para que a professora possa gerenciar o catálogo de morfemas de forma autônoma, além de cadastrar e estruturar as atividades.</td>
+<td>OE2</td>
+</tr>
+<tr>
+<td>CP3</td>
+<td>Espaço de Construção Morfológica</td>
+<td>O "tabuleiro" digital: área visual e intuitiva onde o estudante seleciona, arrasta e combina os blocos para explorar e formar palavras livremente.</td>
+<td>OE1</td>
+</tr>
+<tr>
+<td>CP4</td>
+<td>Validador de Estruturas e Feedback em Tempo Real</td>
+<td>Sistema que avalia instantaneamente a combinação formada, informando ao estudante se a palavra é válida e qual processo morfológico foi utilizado.</td>
+<td>OE3</td>
+</tr>
+<tr>
+<td>CP5</td>
+<td>Portfólio de Progresso do Estudante</td>
+<td>Painel individualizado para que o aluno consulte suas próprias conquistas, histórico de tentativas e palavras já descobertas.</td>
+<td>OE4</td>
+</tr>
+<tr>
+<td>CP6</td>
+<td>Painel de Monitoramento de Turmas (Dashboard)</td>
+<td>Área exclusiva da docência para visualização de relatórios consolidados, permitindo a identificação ágil de dificuldades recorrentes e padrões de erro das turmas.</td>
+<td>OE4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="24-tecnologias-a-serem-utilizadas"><strong>2.4 Tecnologias a Serem Utilizadas</strong></h3>
+<p>A solução será desenvolvida com base em uma arquitetura cliente-servidor, garantindo organização e separação das responsabilidades do sistema.</p>
+<p>Serão utilizadas as tecnologias React, TypeScript e Tailwind CSS no frontend, permitindo a construção de uma interface interativa, especialmente para a funcionalidade de arrastar blocos.</p>
+<p>No backend, será utilizado Python com o framework Django, responsável pela lógica do sistema e validação das palavras. Para o armazenamento de dados, será utilizado o PostgreSQL, para garantir estrutura e confiabilidade.</p>
+<p>As tecnologias foram escolhidas por serem simples de utilizar, bem documentadas e adequadas ao tempo da disciplina, permitindo o desenvolvimento de um MVP funcional de forma organizada.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Camada</th>
+<th style="text-align: left;">Tecnologias</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Frontend</strong></td>
+<td style="text-align: left;">React + TypeScript + Tailwind CSS</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Backend</strong></td>
+<td style="text-align: left;">Django (Python)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Banco de Dados</strong></td>
+<td style="text-align: left;">PostgreSQL</td>
+</tr>
+</tbody>
+</table>
+<h3 id="25-pesquisa-de-mercado-e-analise-competitiva"><strong>2.5 Pesquisa de Mercado e Análise Competitiva</strong></h3>
+<p>Existem hoje algumas soluções digitais voltadas ao ensino de língua portuguesa, principalmente baseadas em exercícios e jogos educativos. Um exemplo é o Gramatikê, desenvolvido pela Universidade de Brasília, que funciona offline e propõe o ensino de gramática por meio de atividades interativas e jogos, com conteúdos adaptados a diferentes níveis de aprendizagem.</p>
+<p>De modo geral, essas soluções seguem uma lógica baseada em exercícios estruturados, como responder perguntas, completar frases ou escolher alternativas. Esse modelo contribui para a prática e fixação do conteúdo, mas tende a focar mais no reconhecimento de respostas corretas, com menor ênfase na exploração ativa da formação das palavras. Outras plataformas educacionais seguem um padrão semelhante, com forte uso de repetição e memorização, especialmente no ensino de vocabulário e regras gramaticais.</p>
+<p>Nesse cenário, ferramentas como o Gramatikê e outros aplicativos educacionais oferecem boa base para a prática, mas exploram de forma mais limitada a construção das palavras a partir de seus elementos.</p>
+<p>O MorfoBlocos Digital se diferencia justamente nesse ponto. Enquanto essas soluções se concentram na resolução de exercícios, a proposta do sistema é permitir que o aluno monte palavras utilizando blocos que representam morfemas. Dessa forma, o aluno pode testar combinações, observar resultados e compreender melhor os processos de formação das palavras. Além disso, o sistema oferece correção automática e feedback imediato, tornando o aprendizado mais dinâmico.</p>
+<p>Assim, o principal diferencial da solução está na mudança de abordagem: sair de um modelo centrado em respostas para um modelo que incentiva a construção ativa, com foco específico em morfologia.</p>
+<h3 id="26-viabilidade-da-proposta"><strong>2.6 Viabilidade da Proposta</strong></h3>
+<p>A proposta é viável no <strong>contexto da disciplina</strong>, considerando o acesso direto à cliente, o escopo definido e a possibilidade de entrega incremental de um MVP funcional ao final do semestre. Embora a <strong>equipe seja reduzida</strong> e ainda esteja em processo de consolidação do domínio sobre algumas tecnologias adotadas, o projeto foi estruturado de forma compatível com essa realidade, com entregas incrementais, priorização das funcionalidades essenciais e validações frequentes com a cliente.</p>
+<p>O principal <strong>risco técnico</strong> está na estruturação da base de morfemas e na implementação do mecanismo de feedback automático, que exige modelagem cuidadosa das relações entre morfemas, alomorfes e processos de formação de palavras. Esse risco é mitigado pela divisão incremental das entregas, pelo uso de tecnologias amplamente documentadas como Django e PostgreSQL, e pelo acesso contínuo à cliente para validação do conteúdo linguístico.</p>
+<p>Assim, a proposta é considerada viável, desde que:</p>
+<ul>
+<li>O escopo do MVP permaneça controlado;</li>
+<li>As prioridades sejam mantidas ao longo das entregas; e</li>
+<li>A equipe preserve a estratégia de aprendizado contínuo e validação com a cliente ao longo do desenvolvimento.</li>
+</ul>
+<h4 id="261-estimativas-de-custos"><strong>2.6.1 Estimativas de custos</strong></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Categoria</th>
+<th style="text-align: left;">Item</th>
+<th style="text-align: left;">Descrição</th>
+<th style="text-align: left;">Custo Estimado (Comercial)</th>
+<th style="text-align: left;">Custo Efetivo (Projeto Acadêmico)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Infraestrutura</strong></td>
+<td style="text-align: left;">Hospedagem Frontend (Vercel / Netlify)</td>
+<td style="text-align: left;">Servidor em nuvem para hospedar a interface em React/TypeScript.</td>
+<td style="text-align: left;">R$ 110,00 ($20 USD)</td>
+<td style="text-align: left;">R$ 0,00 (Hobby Tier)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Infraestrutura</strong></td>
+<td style="text-align: left;">Hospedagem Backend (Render / DigitalOcean)</td>
+<td style="text-align: left;">Servidor em nuvem (VM) para rodar a API em Django (Python).</td>
+<td style="text-align: left;">R$ 40,00 ($7 USD)</td>
+<td style="text-align: left;">R$ 0,00 (Free Tier)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Infraestrutura</strong></td>
+<td style="text-align: left;">Banco de Dados (Supabase / Render)</td>
+<td style="text-align: left;">Instância gerenciada do PostgreSQL para salvar catálogo e histórico.</td>
+<td style="text-align: left;">R$ 80,00 ($15 USD)</td>
+<td style="text-align: left;">R$ 0,00 (Free Tier)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Infraestrutura</strong></td>
+<td style="text-align: left;">Registro de Domínio</td>
+<td style="text-align: left;">Endereço web oficial (ex: morfoblocos.com.br).</td>
+<td style="text-align: left;">R$ 3,33 (R$ 40/ano)</td>
+<td style="text-align: left;">R$ 3,33 (R$ 40/ano)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ferramentas</strong></td>
+<td style="text-align: left;">Controle de Versão e CI/CD (GitHub)</td>
+<td style="text-align: left;">Repositório de código e automação de deploys.</td>
+<td style="text-align: left;">R$ 110,00 ($20 USD)</td>
+<td style="text-align: left;">R$ 0,00 (Free/Student)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ferramentas</strong></td>
+<td style="text-align: left;">Design e Prototipação (Figma)</td>
+<td style="text-align: left;">Criação de telas e validação visual com a cliente.</td>
+<td style="text-align: left;">R$ 80,00 ($15 USD)</td>
+<td style="text-align: left;">R$ 0,00 (Education)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ferramentas</strong></td>
+<td style="text-align: left;">Gestão Ágil (Notion / Trello)</td>
+<td style="text-align: left;">Controle do Backlog, Sprints e documentação.</td>
+<td style="text-align: left;">R$ 55,00 ($10 USD)</td>
+<td style="text-align: left;">R$ 0,00 (Free Tier)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="27-beneficios-esperados"><strong>2.7 Benefícios Esperados</strong></h3>
+<ul>
+<li>
+<p><strong>Para a cliente</strong>: ampliar o alcance pedagógico do MorfoBlocos, superando as limitações do jogo físico e viabilizando seu uso em um número significativo de escolas sem custo adicional de material. A solução permitirá ainda que a professora gerencie o conteúdo de morfemas e exercícios de forma autônoma e acompanhe a evolução do aprendizado dos estudantes ao longo do tempo.</p>
+</li>
+<li>
+<p><strong>Para os estudantes</strong>: uma experiência de aprendizado de morfologia mais autônoma, interativa e acessível, com feedback imediato sobre as palavras formadas, progressão de dificuldade clara e acesso ao conteúdo a qualquer momento e lugar, sem depender do jogo físico ou da presença do professor.</p>
+</li>
+<li>
+<p><strong>Para os professores de Língua Portuguesa</strong>: um recurso didático digital pronto para uso em sala de aula ou como atividade complementar, reduzindo o tempo dedicado à correção manual e oferecendo dados sobre o desempenho dos estudantes para orientar intervenções pedagógicas mais precisas.</p>
+</li>
+<li>
+<p><strong>Para a equipe de desenvolvimento</strong>: a oportunidade de aplicar na prática os conceitos da disciplina de Requisitos de Software, desenvolvendo uma solução real com cliente real, utilizando tecnologias amplamente adotadas no mercado e consolidando competências em desenvolvimento web, modelagem de dados e engenharia de requisitos.</p>
+</li>
+</ul>
+<h2 id="3-intervencao-social"><strong>3. Intervenção Social</strong></h2>
+<p>A solução proposta pelo MorfoBlocos Digital tende a produzir uma intervenção social voltada à ampliação do acesso ao ensino de morfologia, à transformação das práticas de correção, acompanhamento e realização de atividades morfológicas, e à redução da dependência da correção manual realizada pelo professor durante as atividades de aprendizagem. </p>
+<p>Entre os principais impactos esperados da solução, destacam-se:</p>
+<ul>
+<li>Ampliar o acesso ao conteúdo de morfologia fora do ambiente físico da sala de aula;</li>
+<li>Permitir maior autonomia dos estudantes na realização das atividades;</li>
+<li>Oferecer feedback automático sobre as palavras formadas;</li>
+<li>Permitir acompanhamento básico do desempenho dos estudantes pelos professores;</li>
+<li>Reduzir limitações operacionais associadas ao uso exclusivo do jogo físico;</li>
+<li>Incentivar o uso de recursos digitais no apoio ao ensino de Língua Portuguesa.</li>
+</ul>
+<p>A utilização da plataforma também pode gerar impactos não previstos inicialmente, que precisam ser considerados durante o desenvolvimento e uso do sistema, tais como:</p>
+<ul>
+<li>Dependência maior do acesso à internet e a dispositivos digitais;</li>
+<li>Dificuldade de utilização por usuários com menor familiaridade tecnológica;</li>
+<li>Risco de redução da interação presencial entre professor e estudante durante as atividades;</li>
+<li>Possibilidade de interpretação excessivamente automatizada de conteúdos que dependem de mediação pedagógica;</li>
+<li>Necessidade de cuidados com armazenamento e rastreabilidade dos dados de desempenho e histórico das atividades dos estudantes.</li>
+</ul>
+<p>Por fim, a intervenção social do MorfoBlocos Digital não está apenas na digitalização do jogo físico, mas também na mudança da forma como as atividades podem ser realizadas, acompanhadas e utilizadas em diferentes contextos educacionais. Dessa forma, os requisitos do sistema devem considerar não apenas os benefícios esperados, mas também os possíveis efeitos decorrentes do uso contínuo da plataforma.</p>
+<h2 id="4-estrategias-de-engenharia-de-software"><strong>4. Estratégias de Engenharia de Software</strong></h2>
+<p>Para o desenvolvimento do MorfoBlocos Digital, foram definidas estratégias de engenharia de software que permitam organizar o trabalho da equipe, acompanhar a evolução do sistema e garantir entregas ao longo do semestre, considerando as limitações de tempo e o contexto acadêmico do projeto.</p>
+<h3 id="41-estrategia-priorizada"><strong>4.1 Estratégia Priorizada</strong></h3>
+<p>O projeto adota uma abordagem ágil, com ciclo de vida iterativo e incremental, permitindo a evolução contínua dos requisitos a partir do feedback da cliente ao longo das entregas.</p>
+<p>Para a gestão do desenvolvimento, é utilizado o Scrum, responsável pela organização do trabalho em sprints, priorização do backlog e realização de reuniões de planejamento, revisão e retrospectiva.</p>
+<p>Complementarmente, são aplicadas práticas do XP (eXtreme Programming), como TDD, refatoração e integração contínua, especialmente devido à necessidade de garantir a corretude da lógica de validação das combinações de morfemas.</p>
+<p>Dessa forma, Scrum e XP são utilizados de maneira complementar: o Scrum organiza o processo e a interação com a cliente, enquanto o XP orienta a implementação técnica.</p>
+<h3 id="42-quadro-comparativo"><strong>4.2 Quadro Comparativo</strong></h3>
+<p>A seguir, apresenta-se uma comparação entre processos que poderiam ser utilizados no projeto.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Critério</strong></th>
+<th style="text-align: left;"><strong>ScrumXP</strong></th>
+<th style="text-align: left;"><strong>OpenUP (Open Unified Process)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Abordagem Geral</strong></td>
+<td style="text-align: left;">Abordagem ágil que combina Scrum para gestão (sprints, backlog e eventos) com práticas técnicas do XP (TDD, refatoração e integração contínua).</td>
+<td style="text-align: left;">Processo iterativo e incremental baseado no RUP, com maior estruturação e formalização das atividades.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Organização do Trabalho</strong></td>
+<td style="text-align: left;">Trabalho organizado em sprints (1–2 semanas), com planejamento, revisão e retrospectiva. Desenvolvimento orientado por backlog priorizado e histórias de usuário.</td>
+<td style="text-align: left;">Quatro fases sequenciais (Concepção, Elaboração, Construção e Transição), cada uma contendo iterações com entregáveis definidos.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tratamento dos Requisitos</strong></td>
+<td style="text-align: left;">Requisitos expressos como histórias de usuário, refinados continuamente com a cliente. Alta adaptação a mudanças ao longo do desenvolvimento.</td>
+<td style="text-align: left;">Requisitos organizados em casos de uso, com maior formalização e controle de mudanças ao longo das iterações.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Qualidade Técnica</strong></td>
+<td style="text-align: left;">Forte ênfase em práticas do XP, como TDD, refatoração, integração contínua e design simples, promovendo validação contínua do código.</td>
+<td style="text-align: left;">Qualidade assegurada por validações incrementais e definição arquitetural nas fases iniciais, com menor ênfase em práticas técnicas automatizadas.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Participação do Cliente</strong></td>
+<td style="text-align: left;">Alta participação: cliente envolvido continuamente nas sprints, validando incrementos e fornecendo feedback frequente.</td>
+<td style="text-align: left;">Participação mais estruturada, concentrada nas fases e nas revisões de iteração.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Flexibilidade de Requisitos</strong></td>
+<td style="text-align: left;">Alta flexibilidade, com adaptação contínua baseada no feedback da cliente.</td>
+<td style="text-align: left;">Flexibilidade moderada, podendo ser limitada por decisões arquiteturais definidas nas fases iniciais.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Documentação</strong></td>
+<td style="text-align: left;">Documentação leve, focada no essencial, com maior ênfase na comunicação contínua e nos testes como forma de validação.</td>
+<td style="text-align: left;">Documentação estruturada, com artefatos como visão, casos de uso e planos de iteração.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Adequação ao Projeto MorfoBlocos</strong></td>
+<td style="text-align: left;">Alta. Adequada à equipe reduzida, à disponibilidade da cliente e à necessidade de evolução contínua e validação da lógica morfológica.</td>
+<td style="text-align: left;">Média. Pode contribuir para organização, mas tende a ser mais rígido e demandar maior esforço documental para o contexto da disciplina.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-justificativa"><strong>3.3 Justificativa</strong></h3>
+<p>Com base nas características do projeto MorfoBlocos Digital e no quadro comparativo apresentado, foi adotada uma abordagem ágil, utilizando o Scrum como framework de gestão do desenvolvimento e práticas do XP (eXtreme Programming) no desenvolvimento, por ser a alternativa mais adequada ao contexto da equipe, do cliente e do produto.</p>
+<p>O principal fator que justifica essa escolha é a natureza evolutiva dos requisitos do projeto. O jogo digital envolve regras morfológicas complexas, validadas continuamente pela cliente, e funcionalidades interativas cujo comportamento esperado só se torna claro ao longo do desenvolvimento. O Scrum, ao organizar o trabalho em ciclos curtos (sprints) e promover feedback contínuo da cliente e validação frequente das funcionalidades desenvolvidas, responde diretamente a esse cenário. Além disso, a cliente (Profª. Pilar) possui disponibilidade para interações frequentes, o que favorece a dinâmica iterativa proposta pela abordagem ágil.</p>
+<p>As práticas do XP também se mostram adequadas às necessidades do produto. A lógica de validação automática das combinações de morfemas, que é o núcleo do MorfoBlocos Digital, exige alta confiabilidade no código. O TDD (Test-Driven Development), a refatoração contínua e a integração contínua garantem que essa lógica seja desenvolvida com qualidade e testada de forma sistemática desde o início, reduzindo o risco de defeitos no mecanismo central do jogo.</p>
+<p>Em comparação, o OpenUP apresenta uma estrutura de fases mais rígida e maior ênfase na documentação de artefatos formais, como casos de uso e planos de iteração. Embora adequado para projetos que necessitam de maior previsibilidade arquitetural desde o início, o OpenUP pode ser excessivo para o escopo e o prazo da disciplina, além de demandar maior esforço de documentação em um contexto onde a comunicação direta com a cliente é viável e preferível.</p>
+<p>Dessa forma, o Scrum, em conjunto com práticas do XP, se mostra a alternativa mais adequada ao projeto, pois permite alinhar a organização do processo com a qualidade técnica do desenvolvimento, lidar com requisitos evolutivos e viabilizar entregas incrementais com validação contínua.</p>
+<h2 id="5-engenharia-de-requisitos"><strong>5. Engenharia de Requisitos</strong></h2>
+<h3 id="51-atividades-e-tecnicas-de-er"><strong>5.1 Atividades  e Técnicas de ER</strong></h3>
+<p><strong>Elicitação e descoberta</strong></p>
+<ul>
+<li>
+<p><strong>Entrevistas semiestruturadas</strong>: encontros periódicos com a cliente para compreender o jogo físico, seus princípios pedagógicos, o corpus de morfemas e as expectativas em relação à versão digital, identificando tanto requisitos declarados quanto requisitos latentes.</p>
+</li>
+<li>
+<p><strong>Análise documental</strong>: estudo do relatório final do projeto original, do material didático e das peças físicas do jogo, para reconstruir o vocabulário pedagógico e a identidade visual do MorfoBlocos.</p>
+</li>
+<li>
+<p><strong>Observação do contexto real de uso</strong>: acompanhamento da aplicação do jogo físico em sala de aula, quando possível, para capturar requisitos latentes que emergem do uso real e dificilmente apareceriam em entrevistas.</p>
+</li>
+<li>
+<p><strong>Triangulação de fontes de informação</strong>: cruzamento sistemático entre entrevistas, análise documental e observação, de modo a confrontar percepções e consolidar um entendimento compartilhado sobre o problema e suas causas.</p>
+</li>
+</ul>
+<p><strong>Análise e Consenso</strong></p>
+<ul>
+<li>
+<p><strong>Workshops de Requisitos</strong>: encontros colaborativos com a cliente para discutir escopo, resolver divergências de interpretação e construir entendimento compartilhado sobre aspectos pedagógicos e de conteúdo.</p>
+</li>
+<li>
+<p><strong>Priorização MoSCoW</strong>: classificação das funcionalidades em Must have, Should have, Could have e Won't have for now, junto à cliente, para definir o escopo do MVP e registrar desejáveis para evolução futura.</p>
+</li>
+<li>
+<p><strong>Matriz Avaliação Técnica × Valor de Negócio</strong>: posicionamento das características de produto em uma matriz que cruza valor percebido pela cliente com esforço técnico estimado, orientando a sequência de entregas.</p>
+</li>
+<li>
+<p><strong>Negociação e resolução de conflitos</strong>: mediação estruturada de divergências entre requisitos — por exemplo, entre fidelidade ao jogo físico e viabilidade no prazo do semestre — com registro das decisões e suas justificativas.
+Declaração de Requisitos</p>
+</li>
+</ul>
+<p><strong>Declaração de Requisitos</strong></p>
+<ul>
+<li>
+<p><strong>Narrativas descritivas</strong>: usadas para declarar requisitos de negócio em linguagem natural, articulando o problema identificado na seção 1.4, o valor esperado para a cliente e as restrições do contexto do projeto.</p>
+</li>
+<li>
+<p><strong>Histórias de usuário</strong>: declaração dos requisitos de usuário no formato "Como <ator>, quero <objetivo>, para <benefício>", organizadas em backlog de produto e utilizadas no planejamento das sprints.</p>
+</li>
+<li>
+<p><strong>Critérios de aceitação Given/When/Then</strong>: cada história de usuário será acompanhada por critérios de aceitação em formato estruturado, explicitando condição inicial, ação e resultado esperado de forma verificável.</p>
+</li>
+<li>
+<p><strong>Catálogos de RFs e RNFs</strong>: os requisitos funcionais serão declarados no padrão "verbo no infinitivo + objeto" (por exemplo, "Combinar morfemas para formar palavras"); os requisitos não funcionais serão organizados segundo o modelo URPS+, conforme orientação do template da disciplina.</p>
+</li>
+<li>
+<p><strong>Catálogo de regras de negócio</strong>: as regras morfológicas do português — quais combinações de morfemas são válidas e a qual processo de formação cada resultado corresponde — serão declaradas em catálogo próprio, distinto dos requisitos funcionais, conforme a definição de regra de negócio adotada pelo livro-texto.</p>
+</li>
+</ul>
+<p><strong>Representação de Requisitos</strong></p>
+<ul>
+<li>
+<p><strong>Rich Picture no formato AS-IS / TO-BE</strong>: representação sistêmica (contextual) utilizada na seção 1.3 para contrastar o cenário atual do jogo físico com o cenário proposto para a solução digital, capturando atores, fluxos e limitações do contexto.</p>
+</li>
+<li>
+<p><strong>Diagrama de Ishikawa (6M's)</strong>: utilizado na seção 1.4 para organizar a análise das causas do problema identificado, distribuindo os fatores contribuintes pelos eixos Método, Máquina, Mão de Obra, Material, Medida e Meio Ambiente.</p>
+</li>
+<li>
+<p><strong>Mapa de Stakeholders e Matriz Poder × Interesse</strong>: representações sistêmicas (contextuais) utilizadas na seção 1.6 para classificar os stakeholders conforme sua influência e interesse, orientando a estratégia de comunicação da equipe ao longo do projeto.</p>
+</li>
+<li>
+<p><strong>Protótipos de baixa fidelidade e storyboards</strong>: produzidos durante as sprints para apoiar a validação de fluxos de uso com a cliente antes da implementação, mantendo-se no escopo da ER conforme a delimitação do SWEBOK v4.0.</p>
+</li>
+<li>
+<p><strong>Fluxos de navegação e de estados conceituais</strong>: usados em nível conceitual para representar caminhos de uso do estudante (por exemplo, da seleção de morfemas ao recebimento de feedback), sem detalhar elementos de interface ou lógica interna.</p>
+</li>
+</ul>
+<p><strong>Verificação e Validação de Requisitos</strong></p>
+<ul>
+<li>
+<p><strong>Revisão interna pela equipe</strong>: antes de cada sprint, os requisitos refinados serão revisados pelos membros da equipe para verificar clareza, consistência, completude e testabilidade.</p>
+</li>
+<li>
+<p><strong>Validação com a cliente ao final de cada sprint</strong>: nas reuniões de revisão de sprint, a cliente avaliará o incremento entregue, confirmando que os requisitos implementados atendem a suas expectativas pedagógicas e ao problema declarado na seção 1.4.</p>
+</li>
+<li>
+<p><strong>Definition of Ready (DoR) e Definition of Done (DoD)</strong>: o DoR define as condições mínimas para um item entrar em sprint; o DoD define as condições para considerá-lo concluído. Atuam como filtros de qualidade antes e depois do desenvolvimento.</p>
+</li>
+<li>
+<p><strong>Testes de aceitação baseados em critérios declarados</strong>: cada história de usuário será testada contra seus critérios de aceitação no formato Given/When/Then, tornando a validação objetiva e rastreável.</p>
+</li>
+</ul>
+<p><strong>Organização e Atualização de Requisitos</strong></p>
+<ul>
+<li>
+<p><strong>Product Backlog único</strong>: histórias de usuário, RFs, RNFs e regras de negócio serão mantidos em um backlog único, priorizado pela Product Owner (a cliente) e continuamente refinado.</p>
+</li>
+<li>
+<p><strong>Refinamento contínuo do backlog</strong>: ao longo de cada sprint, equipe e cliente revisarão o backlog, atualizando prioridades, detalhando itens para as próximas sprints e ajustando o escopo conforme o aprendizado adquirido.</p>
+</li>
+<li>
+<p><strong>Aplicação do princípio DEEP</strong>: o backlog será mantido Detalhado adequadamente, Estimado, Emergente e Priorizado, conforme prática consolidada no desenvolvimento ágil.</p>
+</li>
+<li>
+<p><strong>Controle de versões dos artefatos de requisitos</strong>: a visão do produto, o backlog e os demais artefatos serão mantidos em repositório versionado, preservando histórico de decisões e rastreabilidade de mudanças.</p>
+</li>
+<li>
+<p><strong>Matriz de rastreabilidade</strong>: matriz que conecta objetivos específicos, características de produto, requisitos funcionais e não funcionais, regras de negócio e critérios de aceitação, assegurando que cada decisão técnica permaneça ligada ao problema declarado na seção 1.4.</p>
+</li>
+</ul>
+<h3 id="52-engenharia-de-requisitos-e-o-xp"><strong>5.2 Engenharia de Requisitos e o XP</strong></h3>
+<p>As atividades da Engenharia de Requisitos, suas práticas e técnicas são mapeadas, a seguir, às cerimônias do Scrum adotadas pela equipe para a condução do projeto MorfoBlocos Digital. Embora o processo escolhido seja o ScrumXP — combinando o framework Scrum para gerenciamento com as práticas técnicas do XP para engenharia —, optou-se por organizar a tabela em torno das cerimônias do Scrum por serem os momentos formais de tomada de decisão e validação no ciclo iterativo, conforme descrito na seção 4.10 do livro-texto. </p>
+<p><em>Importante: as atividades da ER não ocorrem de forma estritamente sequencial dentro de cada cerimônia. Conforme apresentado no capítulo 5 do livro-texto, elas são entrelaçadas e se retroalimentam ao longo do projeto, de modo que a ordem das linhas da tabela é apenas de apresentação — não de execução obrigatória.</em></p>
+<table>
+<thead>
+<tr>
+<th>Cerimônia do Scrum</th>
+<th>Atividade ER</th>
+<th>Prática</th>
+<th>Técnica</th>
+<th>Resultado esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Refinamento do Product Backlog</td>
+<td>Elicitação e Descoberta</td>
+<td>Levantamento contínuo de requisitos e compreensão do domínio.</td>
+<td>Entrevistas semiestruturadas com a cliente, análise documental do jogo físico, triangulação de fontes.</td>
+<td>Itens do backlog detalhados e compreensão compartilhada do problema com a cliente.</td>
+</tr>
+<tr>
+<td></td>
+<td>Análise e Consenso</td>
+<td>Priorização contínua e definição de escopo dos próximos itens.</td>
+<td>Priorização MoSCoW, Matriz Avaliação Técnica x Valor de Negócio, workshops com a cliente.</td>
+<td>Backlog priorizado, com trade-offs explicitados e funcionalidades críticas no topo.</td>
+</tr>
+<tr>
+<td></td>
+<td>Declaração</td>
+<td>Detalhamento dos itens do backlog em diferentes níveis de abstração.</td>
+<td>Histórias de usuário, critérios de aceitação Given/When/Then, catálogos de RFs, RNFs e regras de negócio.</td>
+<td>Itens do backlog declarados em linguagem compreensível, rastreáveis ao problema da seção 1.4.</td>
+</tr>
+<tr>
+<td></td>
+<td>Representação</td>
+<td>Representação sistêmica do contexto e do problema.</td>
+<td>Rich Picture AS-IS/TO-BE, Mapa de Stakeholders, Matriz Poder x Interesse, Diagrama de Ishikawa.</td>
+<td>Entendimento compartilhado sobre o contexto, os atores e o escopo do sistema.</td>
+</tr>
+<tr>
+<td>Planejamento da Sprint</td>
+<td>Análise e Consenso</td>
+<td>Análise de viabilidade e seleção dos itens da sprint.</td>
+<td>Discussão em equipe, análise de dependências, programação em pares (XP).</td>
+<td>Consenso sobre a meta da sprint e os itens selecionados para o Sprint Backlog.</td>
+</tr>
+<tr>
+<td></td>
+<td>Declaração</td>
+<td>Refinamento final dos critérios de aceitação dos itens selecionados.</td>
+<td>Definition of Ready (DoR), critérios Given/When/Then.</td>
+<td>Histórias de usuário com critérios verificáveis e prontas para desenvolvimento (Ready).</td>
+</tr>
+<tr>
+<td></td>
+<td>Representação</td>
+<td>Evolução de protótipos para apoiar a implementação.</td>
+<td>Protótipos de baixa e média fidelidade, fluxos de navegação conceituais.</td>
+<td>Representações que orientam a implementação e antecipam validações com a cliente.</td>
+</tr>
+<tr>
+<td>Daily Scrum</td>
+<td>Elicitação e Descoberta</td>
+<td>Esclarecimento pontual de dúvidas sobre requisitos em desenvolvimento.</td>
+<td>Conversas curtas com a cliente quando necessário, registro de impedimentos relacionados a requisitos.</td>
+<td>Impedimentos de ER identificados e tratados com agilidade durante a sprint.</td>
+</tr>
+<tr>
+<td></td>
+<td>Organização e Atualização</td>
+<td>Atualização incremental do estado dos itens em desenvolvimento.</td>
+<td>Sincronização sobre progresso, registro de descobertas que impactam o backlog.</td>
+<td>Visibilidade contínua do estado dos itens da sprint frente aos requisitos declarados.</td>
+</tr>
+<tr>
+<td>Revisão da Sprint</td>
+<td>Verificação e Validação</td>
+<td>Validação do incremento entregue com a cliente.</td>
+<td>Demonstração do incremento funcional, revisão contra critérios de aceitação, Definition of Done (DoD).</td>
+<td>Incremento validado pela cliente, com feedback registrado para ajuste de itens futuros.</td>
+</tr>
+<tr>
+<td></td>
+<td>Organização e Atualização</td>
+<td>Repriorização do backlog com base no aprendizado da sprint.</td>
+<td>Refinamento do backlog, negociação colaborativa, princípio DEEP.</td>
+<td>Product Backlog repriorizado e atualizado com itens de maior valor para a próxima sprint.</td>
+</tr>
+<tr>
+<td>Retrospectiva da Sprint</td>
+<td>Organização e Atualização</td>
+<td>Reflexão sobre o processo de ER e ajuste de práticas.</td>
+<td>Discussão estruturada da equipe sobre como os requisitos foram tratados, identificação de melhorias.</td>
+<td>Ajustes nas práticas e técnicas de ER para a próxima sprint, artefatos consistentes e rastreáveis.</td>
+</tr>
+<tr>
+<td></td>
+<td>Verificação e Validação</td>
+<td>Verificação da qualidade dos artefatos de requisitos produzidos.</td>
+<td>Revisão interna pela equipe dos artefatos da sprint, controle de versões.</td>
+<td>Artefatos de requisitos verificados e versionados ao final de cada sprint.</td>
+</tr>
+</tbody>
+</table>
+<p><em>O mapeamento apresentado evidencia onde cada atividade da ER tem maior ênfase em cada cerimônia do Scrum, sem sugerir uma ordem rígida de execução. As práticas técnicas do XP — como programação em pares, TDD, integração contínua e refatoração — permeiam a execução da sprint e dão suporte à qualidade dos requisitos implementados, em coerência com os valores de comunicação, feedback, simplicidade e confiança que sustentam a prática da Engenharia de Requisitos descrita no capítulo 5 do livro-texto.</em></p>
+<h2 id="6-cronograma-e-entregas"><strong>6. Cronograma e Entregas</strong></h2>
+<p><em>Processo: ScrumXP  |  Sprints de 2 semanas  |  PO: Profª. María del Pilar Tobar Acosta</em></p>
+<table>
+<thead>
+<tr>
+<th>Sprint</th>
+<th>Início</th>
+<th>Fim</th>
+<th>Objetivo Principal</th>
+<th>Entregas Esperadas</th>
+<th>Validação do Cliente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sprint 1</td>
+<td>14/04/2026</td>
+<td>28/04/2026</td>
+<td>Planejamento da Release e Elicitação Inicial.</td>
+<td>- Backlog inicial definido com a PO.<br>- Mapeamento preliminar de morfemas com a Profª. Pilar.<br>- Ajuste do Rich Picture.</td>
+<td>Reunião com a Profª. Pilar para validar o backlog inicial e confirmar prioridades.</td>
+</tr>
+<tr>
+<td>Sprint 2</td>
+<td>29/04/2026</td>
+<td>12/05/2026</td>
+<td>Elicitação, Prototipagem e Definição de Requisitos.</td>
+<td>- Entrega Unidade 2 (até 18/05).<br>- Requisitos de Software (RF e RNF com URPS+).<br>- DoR e DoD definidos.<br>- Backlog priorizado e MVP definido.<br>- Intervenção Social documentada.</td>
+<td>Reunião com a Profª. Pilar para validar protótipos e requisitos levantados.</td>
+</tr>
+<tr>
+<td>Sprint 3</td>
+<td>13/05/2026</td>
+<td>26/05/2026</td>
+<td>Análise, Consenso e Início do PBB.</td>
+<td>- Protótipos de baixa fidelidade das telas principais.<br>- PBB iniciado.<br>- User Stories com critérios de aceitação (DoR verificado).<br>- Refinamento do backlog com a PO.</td>
+<td>Reunião com a Profª. Pilar para validar User Stories e critérios de aceitação.</td>
+</tr>
+<tr>
+<td>Sprint 4</td>
+<td>27/05/2026</td>
+<td>09/06/2026</td>
+<td>Verificação, Validação e BDD.</td>
+<td>- Cenários BDD escritos (Dado/Quando/Então).<br>- Entrega Unidade 3 (até 15/06).<br>- Verificação e Validação de Requisitos.<br>- Organização e Atualização de Requisitos.<br>- PBB e BDD documentados.</td>
+<td>Reunião com a Profª. Pilar para validar cenários BDD com a lógica pedagógica do jogo.</td>
+</tr>
+<tr>
+<td>Sprint 5</td>
+<td>10/06/2026</td>
+<td>23/06/2026</td>
+<td>User Story Mapping e Casos de Uso.</td>
+<td>- User Story Mapping elaborado.<br>- Modelos e Especificação de Casos de Uso iniciados.</td>
+<td>Reunião com a Profª. Pilar para validar o mapeamento da jornada do estudante.</td>
+</tr>
+<tr>
+<td>Sprint 6</td>
+<td>24/06/2026</td>
+<td>07/07/2026</td>
+<td>Refinamento Final e Entrega.</td>
+<td>- Ajustes finais nos artefatos de requisitos.<br>- Entrega Unidade 4 (até 06/07).<br>- User Story Mapping finalizado.<br>- Modelos e Especificação de Casos de Uso.<br>- Documento completo e vídeo final entregues.<br>- DoD aplicado a todas as entregas.</td>
+<td>Homologação final com a Profª. Pilar. DoD aplicado a todas as entregas.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-interacao-entre-equipe-e-cliente"><strong>7. Interação entre Equipe e Cliente</strong></h2>
+<h3 id="71-composicao-da-equipe"><strong>7.1 Composição da Equipe</strong></h3>
+<ul>
+<li>Ana Beatriz Souza Araújo: Engenharia de Requisitos, Desenvolvedor backend</li>
+<li>Artur Fernandes: Engenharia de Requisitos, Desenvolvedor backend</li>
+<li>Bruno Souza: Engenharia de Requisitos, Desenvolvedor backend</li>
+<li>Carlos Eduardo: Engenharia de Requisitos, Desenvolvedor frontend.</li>
+<li>Luiz Henrique: Engenharia de Requisitos, Desenvolvedor frontend do projeto auxílio na parte de Scrum</li>
+</ul>
+<h3 id="72-comunicacao"><strong>7.2 Comunicação</strong></h3>
+<p><strong>Ferramentas de comunicação</strong>:</p>
+<ul>
+<li>
+<p><strong>WhatsApp</strong>: Canal oficial para a troca de mensagens rápidas e comunicação do dia a dia da equipe. Será utilizado para avisos urgentes, envio de links úteis e resolução de dúvidas pontuais que não exigem debates complexos.</p>
+</li>
+<li>
+<p><strong>Google Meet</strong>: Plataforma padrão para todas as chamadas de áudio e vídeo. Diretriz obrigatória: Absolutamente todas as reuniões realizadas no Meet devem ser gravadas. Isso garante a preservação do histórico de decisões e facilita o repasse de informações para membros que porventura não possam participar ao vivo.</p>
+</li>
+</ul>
+<p><strong>Rituais e Rotinas de Alinhamento</strong>:</p>
+<ul>
+<li>
+<p><strong>Dailies</strong>: Reuniões rápidas de alinhamento para que a equipe compartilhe o que foi feito, o que será desenvolvido no dia e levante possíveis bloqueios ou impedimentos técnicos.
+Sincronização Acadêmica: Ocorrerão momentos dedicados à comunicação durante o período das aulas e imediatamente após o encerramento das mesmas. Este tempo será aproveitado para consolidar o trabalho, integrar as tarefas dos desenvolvedores e planejar as próximas etapas com toda a equipe reunida.</p>
+</li>
+<li>
+<p><strong>Interações com a Cliente</strong>: A comunicação direta com a cliente seguirá um protocolo rigoroso de rastreabilidade. Todo o contato oficial será feito de forma 100% remota via reuniões online no Google Meet, que serão integralmente gravadas. Essa prática resguarda o projeto, assegurando que todos os requisitos, feedbacks, aprovação e mudanças de escopo solicitadas pela cliente estejam registrados em vídeo e áudio para consulta futura.</p>
+</li>
+</ul>
+<h3 id="73-processo-de-validacao"><strong>7.3 Processo de Validação</strong></h3>
+<p>Para garantir que o MorfoBlocos Digital construa o produto correto e solucione o problema central de baixa eficiência e falta de rastreabilidade no ensino de morfologia, a equipe de desenvolvimento adotará uma estratégia de validação contínua. Os processos de validação foram estruturados em quatro frentes principais, mapeadas para as características do produto e perfis de <em>stakeholders</em>:</p>
+<p><strong>1. Validação de Requisitos e Alinhamento de Negócio</strong></p>
+<ul>
+<li>
+<p><strong>Objetivo</strong>: Assegurar que a transição do meio físico para o digital preserve a identidade visual e os princípios pedagógicos do jogo original.</p>
+</li>
+<li>
+<p><strong>Stakeholders envolvidos</strong>: Prof.ª María del Pilar Tobar Acosta (Cliente/PO).</p>
+</li>
+<li>
+<p><strong>Método</strong>: Revisões conjuntas da documentação de requisitos, diagramas e, principalmente, validação de protótipos de interface (baixa e alta fidelidade) para garantir a continuidade da proposta idealizada pela autora.</p>
+</li>
+</ul>
+<p><strong>2. Validação Pedagógica e de Regras de Domínio</strong></p>
+<ul>
+<li>
+<p><strong>Objetivo</strong>: Atestar a precisão técnica e acadêmica do "motor" de correção do jogo, garantindo que o sistema classifique corretamente as construções morfológicas.</p>
+</li>
+<li>
+<p><strong>Stakeholders envolvidos</strong>: Cliente/PO e estudantes de Licenciatura em Letras.</p>
+</li>
+<li>
+<p><strong>Método</strong>: Baterias de testes focadas nas regras de negócio da aplicação. Será validada a exatidão do catálogo digital de morfemas e a precisão do feedback automático diante de casos reais de formação de palavras, incluindo tratamento de exceções morfológicas, ocorrências de alomorfia e derivações parassintéticas.</p>
+</li>
+</ul>
+<p><strong>3. Validação de Usabilidade e Experiência do Usuário (UX)</strong></p>
+<ul>
+<li>
+<p><strong>Objetivo</strong>: Certificar que a interface gráfica atende aos requisitos de acessibilidade e que a curva de aprendizado é adequada ao público do ensino básico.</p>
+</li>
+<li>
+<p><strong>Stakeholders envolvidos</strong>: Estudantes do Ensino Fundamental II e do Ensino Médio </p>
+</li>
+<li>
+<p><strong>Método</strong>: Realização de testes de usabilidade com os usuários finais utilizando protótipos navegáveis ou versões preliminares (<em>releases</em>). A equipe avaliará, por meio de observação sistemática, a capacidade do estudante de formar palavras de maneira autônoma (seleção e combinação de morfemas) sem a necessidade de mediação externa, mitigando o risco de rejeição tecnológica.</p>
+</li>
+</ul>
+<p><strong>4. Validação Técnica do Valor de Negócio (Rastreabilidade)</strong></p>
+<ul>
+<li>
+<p><strong>Objetivo</strong>: Confirmar que a solução supera efetivamente a limitação de acompanhamento do modelo físico, gerando dados úteis para intervenções pedagógicas.</p>
+</li>
+<li>
+<p><strong>Stakeholders envolvidos</strong>: Professores de Língua Portuguesa e equipe de desenvolvimento.</p>
+</li>
+<li>
+<p><strong>Método</strong>: Simulação de uso em massa e testes de integração com o banco de dados. O processo validará se as interações, acertos e padrões de erro dos estudantes estão sendo armazenados de forma persistente e se as informações geradas no painel de rastreabilidade são claras e acionáveis para o professor.</p>
+</li>
+</ul>
+<h3 id="74-registro-de-reunioes"><strong>7.4 Registro de Reuniões</strong></h3>
+<p>Para garantir a rastreabilidade e o alinhamento com as expectativas da cliente, todas as interações estratégicas são registradas. As mesmas estarão disponibilizadas na aba <a href="../reunioes/">Registro de Reuniões</a>.</p>
+<h2 id="8-requisitos-de-software"><strong>8. Requisitos de Software</strong></h2>
+<p>Esta seção detalha as especificações fundamentais para a concepção e o desenvolvimento do software. O conteúdo está organizado entre requisitos funcionais, que definem as ações e comportamentos que o sistema deve executar, e requisitos não funcionais, que estabelecem os critérios de qualidade, desempenho e restrições técnicas necessários para garantir uma experiência de uso eficiente e segura.</p>
+<h3 id="81-lista-de-requisitos-funcionais"><strong>8.1 Lista de Requisitos Funcionais</strong></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ID</th>
+<th style="text-align: left;">Requisito Funcional (Verbo + Objeto)</th>
+<th style="text-align: left;">Rastreabilidade (CP)</th>
+<th style="text-align: left;">Prioridade (MoSCoW)</th>
+<th style="text-align: left;">Justificativa MoSCoW</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>RF01</strong></td>
+<td style="text-align: left;">Solicitar credenciais de acesso ao sistema.</td>
+<td style="text-align: left;">CP1 - Controle de Acesso</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">Sem autenticação nenhum usuário consegue acessar o sistema.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF02</strong></td>
+<td style="text-align: left;">Autenticar acesso ao sistema utilizando credenciais.</td>
+<td style="text-align: left;">CP1 - Controle de Acesso</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">É o mecanismo central de entrada no sistema para todos os perfis.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF03</strong></td>
+<td style="text-align: left;">Permitir a recuperação de acesso mediante envio de nova senha.</td>
+<td style="text-align: left;">CP1 - Controle de Acesso</td>
+<td style="text-align: left;">Should Have</td>
+<td style="text-align: left;">Agrega usabilidade mas o MVP funciona sem recuperação de senha.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF04a</strong></td>
+<td style="text-align: left;">Cadastrar morfemas no catálogo do sistema.</td>
+<td style="text-align: left;">CP2 - Admin de Conteúdo</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">Sem morfemas cadastrados o jogo não tem conteúdo para funcionar.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF04b</strong></td>
+<td style="text-align: left;">Editar morfemas existentes no catálogo do sistema.</td>
+<td style="text-align: left;">CP2 - Admin de Conteúdo</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">Necessário para correção e atualização de conteúdo cadastrado.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF04c</strong></td>
+<td style="text-align: left;">Remover morfemas do catálogo do sistema.</td>
+<td style="text-align: left;">CP2 - Admin de Conteúdo</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">Necessário para exclusão de conteúdo incorreto ou obsoleto.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF04d</strong></td>
+<td style="text-align: left;">Listar morfemas cadastrados no catálogo do sistema.</td>
+<td style="text-align: left;">CP2 - Admin de Conteúdo</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">Necessário para que o administrador gerencie o catálogo existente.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF05a</strong></td>
+<td style="text-align: left;">Cadastrar palavras válidas no catálogo do sistema.</td>
+<td style="text-align: left;">CP2 - Admin de Conteúdo</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">Sem palavras válidas o validador não tem base para funcionar.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF05b</strong></td>
+<td style="text-align: left;">Editar palavras válidas existentes no catálogo do sistema.</td>
+<td style="text-align: left;">CP2 - Admin de Conteúdo</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">Necessário para correção de palavras cadastradas incorretamente.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF05c</strong></td>
+<td style="text-align: left;">Remover palavras válidas do catálogo do sistema.</td>
+<td style="text-align: left;">CP2 - Admin de Conteúdo</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">Necessário para exclusão de palavras inválidas ou duplicadas.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF05d</strong></td>
+<td style="text-align: left;">Listar palavras válidas cadastradas no catálogo do sistema.</td>
+<td style="text-align: left;">CP2 - Admin de Conteúdo</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">Necessário para que o administrador gerencie o catálogo existente.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF06a</strong></td>
+<td style="text-align: left;">Cadastrar atividades pedagógicas no sistema.</td>
+<td style="text-align: left;">CP2 - Admin de Conteúdo</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">Sem atividades cadastradas o estudante não tem o que realizar.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF06b</strong></td>
+<td style="text-align: left;">Editar atividades pedagógicas existentes no sistema.</td>
+<td style="text-align: left;">CP2 - Admin de Conteúdo</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">Necessário para atualização e correção de atividades já criadas.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF06c</strong></td>
+<td style="text-align: left;">Remover atividades pedagógicas do sistema.</td>
+<td style="text-align: left;">CP2 - Admin de Conteúdo</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">Necessário para exclusão de atividades obsoletas ou incorretas.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF06d</strong></td>
+<td style="text-align: left;">Listar atividades pedagógicas cadastradas no sistema.</td>
+<td style="text-align: left;">CP2 - Admin de Conteúdo</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">Necessário para que o administrador gerencie as atividades disponíveis.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF07</strong></td>
+<td style="text-align: left;">Realizar atividades pedagógicas disponíveis no sistema.</td>
+<td style="text-align: left;">CP3 - Espaço de Construção</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">É a funcionalidade central do produto — sem ela o sistema não tem propósito.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF08</strong></td>
+<td style="text-align: left;">Movimentar blocos de morfemas na área de montagem.</td>
+<td style="text-align: left;">CP3 - Espaço de Construção</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">É a mecânica principal para a montagem/processo de formação das palavras.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF09</strong></td>
+<td style="text-align: left;">Submeter a combinação de blocos para validação.</td>
+<td style="text-align: left;">CP3 - Espaço de Construção</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">Mecânica importante, sem a submissão não há validação, logo o aluno não recebe feedback para evolução nas atividades.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF10</strong></td>
+<td style="text-align: left;">Consultar explicações sobre conteúdos morfológicos relacionados às atividades.</td>
+<td style="text-align: left;">CP3 - Espaço de Construção</td>
+<td style="text-align: left;">Could Have</td>
+<td style="text-align: left;">Desejável pedagogicamente mas o MVP funciona sem material de apoio.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF11</strong></td>
+<td style="text-align: left;">Consultar o resultado da validação da combinação de blocos submetida.</td>
+<td style="text-align: left;">CP4 - Validador de Estruturas</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">Permite ao estudante acompanhar sua própria evolução ao longo do tempo.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF12</strong></td>
+<td style="text-align: left;">Consultar o processo de formação morfológica da palavra validada.</td>
+<td style="text-align: left;">CP4 - Validação de Estruturas</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">Garante o objetivo didático do sistema, permitindo que o estudante compreenda a estrutura e a regra por trás da palavra que acabou de validar.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF13</strong></td>
+<td style="text-align: left;">Consultar o histórico de pontuações individuais.</td>
+<td style="text-align: left;">CP5 - Portfólio de Progresso</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">Fundamental para a gamificação e engajamento, permitindo que o estudante acompanhe seu próprio progresso ao longo do tempo.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF14</strong></td>
+<td style="text-align: left;">Consultar os detalhes de uma atividade realizada.</td>
+<td style="text-align: left;">CP5 - Portfólio de Progresso</td>
+<td style="text-align: left;">Should Have</td>
+<td style="text-align: left;">Importante para que o estudante revise seus erros e acertos passados, mas o MVP funciona apenas com a exibição do histórico de notas/pontos.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF15</strong></td>
+<td style="text-align: left;">Acessar relatório de desempenho consolidado da turma.</td>
+<td style="text-align: left;">CP6 - Painel de Monitoramento</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">Permite ao professor identificar dificuldades e orientar intervenções pedagógicas.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF16</strong></td>
+<td style="text-align: left;">Consultar os erros morfológicos mais frequentes dos estudantes.</td>
+<td style="text-align: left;">CP6 - Painel de Monitoramento</td>
+<td style="text-align: left;">Should Have</td>
+<td style="text-align: left;">Agrega valor ao monitoramento, mas o painel funciona sem esse detalhamento.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="82-lista-de-requisitos-nao-funcionais"><strong>8.2 Lista de Requisitos Não Funcionais</strong></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ID</th>
+<th style="text-align: left;">Categoria (URPS+)</th>
+<th style="text-align: left;">Descrição Mensurável para Teste</th>
+<th style="text-align: left;">Método de Validação / Teste</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>RNF01</strong></td>
+<td style="text-align: left;">Usabilidade</td>
+<td style="text-align: left;">O estudante deve conseguir arrastar, encaixar os blocos e formar sua primeira palavra em menos de 1 minuto em seu primeiro uso, sem auxílio de tutoriais.</td>
+<td style="text-align: left;">Teste de Usabilidade cronometrado com novos usuários.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RNF02</strong></td>
+<td style="text-align: left;">Usabilidade</td>
+<td style="text-align: left;">A interface deve permitir selecionar, mover e soltar blocos utilizando eventos nativos de mouse (desktop) e touch (mobile) sem falhas de renderização.</td>
+<td style="text-align: left;">Teste de Interface Automático (E2E) e Teste Manual (Touch/Mouse).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RNF03</strong></td>
+<td style="text-align: left;">Performance</td>
+<td style="text-align: left;">O sistema deve processar a combinação de blocos e exibir o feedback visual na tela em um tempo máximo de 2 segundos.</td>
+<td style="text-align: left;">Monitoramento de Tempo de Resposta (Network Tab / Testes de Performance).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RNF04</strong></td>
+<td style="text-align: left;">Confiabilidade</td>
+<td style="text-align: left;">O sistema deve preservar a integridade dos dados durante acessos simultâneos.</td>
+<td style="text-align: left;">Teste de Carga e Concorrência no Banco de Dados (verificação ACID).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RNF05</strong></td>
+<td style="text-align: left;">Suportabilidade</td>
+<td style="text-align: left;">A interface cliente deve comunicar-se com a lógica de negócio exclusivamente por meio de APIs.</td>
+<td style="text-align: left;">Inspeção de Arquitetura e Code Review.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RNF06</strong></td>
+<td style="text-align: left;">Suportabilidade</td>
+<td style="text-align: left;">O sistema deve permitir a manutenção do catálogo de morfemas via Django Admin, sem telas de cadastro no frontend React.</td>
+<td style="text-align: left;">Teste de Inserção via Django Admin.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RNF07</strong></td>
+<td style="text-align: left;">Restrições</td>
+<td style="text-align: left;">O frontend deve ser desenvolvido obrigatoriamente utilizando React com TypeScript.</td>
+<td style="text-align: left;">Inspeção de Código / Configuração do Repositório.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RNF08</strong></td>
+<td style="text-align: left;">Restrições</td>
+<td style="text-align: left;">O backend deve ser desenvolvido obrigatoriamente em Python utilizando o framework Django.</td>
+<td style="text-align: left;">Inspeção de Código / Configuração do Repositório.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RNF09</strong></td>
+<td style="text-align: left;">Restrições</td>
+<td style="text-align: left;">O banco de dados deve ser implementado utilizando o SGBD PostgreSQL.</td>
+<td style="text-align: left;">Validação da Infraestrutura / Configuração de Banco.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RNF10</strong></td>
+<td style="text-align: left;">Suportabilidade</td>
+<td style="text-align: left;">O sistema deve operar sem falhas críticas nas duas últimas versões estáveis dos navegadores Chrome, Firefox, Edge e Safari.</td>
+<td style="text-align: left;">Teste de Compatibilidade Cross-browser.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RNF11</strong></td>
+<td style="text-align: left;">Usabilidade</td>
+<td style="text-align: left;">A interface deve readequar seus elementos sem sobreposição ou scroll horizontal em telas a partir de 360px de largura.</td>
+<td style="text-align: left;">Teste Cross-device (Emuladores mobile / DevTools).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RNF12</strong></td>
+<td style="text-align: left;">Restrições</td>
+<td style="text-align: left;">O sistema deve ser acessível via HTTP/HTTPS a partir de um navegador web, sem exigir instalação local.</td>
+<td style="text-align: left;">Teste de Implantação e Acesso URL.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="9-definition-of-ready-dor-e-definition-of-done-dod"><strong>9. Definition of Ready (DoR) e Definition of Done (DoD)</strong></h2>
+<p>Esta seção apresenta os critérios de Definition of Ready (DoR) e Definition of Done (DoD) adotados pela equipe para o desenvolvimento do MorfoBlocos Digital. Alinhados à abordagem ScrumXP e à organização do backlog via User Story Mapping (USM), esses critérios funcionam como "contratos de qualidade". O DoR garante que o trabalho esteja maduro e rastreável antes de entrar na Sprint, enquanto o DoD atesta que o incremento atende aos rigorosos padrões técnicos e de negócio antes da entrega.</p>
+<h3 id="91-definition-of-ready-dor-definicao-de-preparado"><strong>9.1 Definition of Ready (DoR) - Definição de Preparado</strong></h3>
+<p>Um item do Story Map (Épico ou User Story) só será selecionado para o Sprint Backlog e puxado para desenvolvimento se cumprir todos os seguintes critérios:</p>
+<ul>
+<li>
+<p><strong>Formato e Clareza</strong>: A funcionalidade está descrita no formato de User Story ("Como [ator], quero [objetivo], para [benefício]") e associada a uma Característica de Produto (CP) específica.</p>
+</li>
+<li>
+<p><strong>Critérios de Aceitação</strong>: A User Story possui critérios de aceitação explícitos e testáveis (ex: formato Given/When/Then), cobrindo os fluxos principais e alternativos (especialmente crucial para RFs atomizados de operações CRUD).</p>
+</li>
+<li>
+<p><strong>Rastreabilidade de Restrições</strong>: Todos os Requisitos Não Funcionais (RNFs) e Regras de Negócio (RN01 a RN08) aplicáveis à história estão mapeados e compreendidos pela equipe.</p>
+</li>
+<li>
+<p><strong>Priorização Consolidada</strong>: O item possui justificativa objetiva de Valor de Negócio (VB) e Complexidade Técnica (CT), está classificado na matriz de priorização e alinhado com o escopo do MVP.</p>
+</li>
+<li>
+<p><strong>Estimativa Conjunta</strong>: O esforço técnico foi discutido e estimado coletivamente pelos desenvolvedores (Ana Beatriz, Artur, Bruno, Carlos e Luiz Henrique).</p>
+</li>
+<li>
+<p><strong>Resolução de Dependências</strong>: Não há bloqueios externos pendentes. Se a história exige validação pedagógica prévia (ex: uma regra morfológica específica) ou ativos visuais, estes já foram fornecidos ou validados pela cliente (Profª. Pilar).</p>
+</li>
+</ul>
+<h3 id="92-definition-of-done-dod-definicao-de-pronto"><strong>9.2 Definition of Done (DoD) - Definição de Pronto</strong></h3>
+<p>Uma User Story em desenvolvimento só avança para o status "Concluído" (Done) e compõe o incremento do produto se cumprir absolutamente todos os critérios abaixo:</p>
+<ul>
+<li>
+<p><strong>Implementação Arquitetural</strong>: O código foi finalizado respeitando rigorosamente os RNFs de restrição transversal do projeto (Frontend em React/TypeScript, Backend em Django/Python e persistência no PostgreSQL).</p>
+</li>
+<li>
+<p><strong>Garantia das Regras de Negócio</strong>: O comportamento do sistema atende às políticas invariantes declaradas (ex: salvamento automático de pontuação - RN06; restrição de relatórios apenas para professores - RN02).</p>
+</li>
+<li>
+<p><strong>Testes e Qualidade (Práticas XP)</strong>: A lógica implementada passou pelos testes automatizados e/ou testes unitários definidos na etapa de concepção (TDD).</p>
+</li>
+<li>
+<p><strong>Validação de RNFs</strong>: Os requisitos não funcionais mapeados para a história foram validados (ex: tempo de resposta inferior a 2 segundos - RNF03; interface não sobreposta em resoluções a partir de 360px - RNF11).</p>
+</li>
+<li>
+<p><strong>Revisão de Código (Code Review)</strong>: O código fonte passou por inspeção técnica e foi aprovado por pelo menos um membro da equipe diferente do autor original (Pull Request aprovado).</p>
+</li>
+<li>
+<p><strong>Integração Contínua</strong>: O código foi integrado à branch principal sem gerar regressões, falhas de compilação ou quebras nos fluxos já existentes.</p>
+</li>
+<li>
+<p><strong>Homologação</strong>: A funcionalidade está operando perfeitamente em ambiente de homologação, pronta para ser demonstrada e validada pela cliente (Profª Pilar) na cerimônia de Sprint Review.</p>
+</li>
+</ul>
+<h2 id="10-backlog"><strong>10. Backlog</strong></h2>
+<p>A presente seção apresenta o backlog do produto MorfoBlocos Digital, organizado a partir dos requisitos funcionais (RFs), requisitos não funcionais (RNFs) e regras de negócio (RN) elicitados e consolidados ao longo das atividades de Engenharia de Requisitos. Todas as histórias de usuário aqui declaradas derivam diretamente da lista de RFs apresentada anteriormente neste documento. Trata-se de uma lista preliminar, sujeita a refinamentos durante o desenvolvimento, conforme o produto evolui e novos aprendizados emergem das interações com a cliente.</p>
+<p>Esta versão da seção incorpora as correções acordadas com o professor e revisadas pelo monitor durante a apresentação da Unidade, incluindo: </p>
+<ol>
+<li>
+<p>O desmembramento dos requisitos de manutenção de catálogo em operações CRUD distintas;</p>
+</li>
+<li>
+<p>A reclassificação de determinados itens — antes tratados como requisitos funcionais — como regras de negócio;</p>
+</li>
+<li>
+<p>A adoção de critérios objetivos para a classificação MoSCoW e para a Matriz de Valor de Negócio × Complexidade Técnica;</p>
+</li>
+<li>
+<p>A atomização dos requisitos funcionais de modo a garantir que cada Característica de Produto seja sustentada por mais de um RF, preservando a coerência arquitetural do produto.</p>
+</li>
+</ol>
+<h3 id="101-backlog-geral"><strong>10.1 Backlog Geral</strong></h3>
+<h4 id="1011-nota-metodologica"><strong>10.1.1 Nota Metodológica</strong></h4>
+<p>O modelo tradicional de Product Backlog em formato de lista priorizada (Épicos → Histórias de Usuário → Tarefas), conforme descrito por Schwaber e Sutherland (2020) e adotado por padrão em frameworks ágeis como Scrum e XP, foi substituído pela técnica de User Story Mapping (USM) no escopo deste projeto.</p>
+<p>A decisão pela substituição se justifica por três motivos principais:</p>
+<ul>
+<li>
+<p><strong>Visão de fluxo de uso, não apenas de funcionalidades:</strong> o USM, conforme proposto por Patton (2014) e descrito no livro-texto da disciplina (cap. 9), organiza as histórias de usuário em torno das atividades do usuário, preservando a narrativa de uso do produto. Em um produto educacional como o MorfoBlocos Digital — em que a sequência pedagógica (acessar atividade → manipular blocos → submeter → receber feedback → progredir) é parte do valor entregue —, essa narrativa é mais informativa do que uma lista hierárquica isolada de funcionalidades.</p>
+</li>
+<li>
+<p><strong>Alinhamento com a abordagem Lean Inception adotada pela equipe:</strong> ao longo do projeto, a equipe adotou práticas inspiradas em Lean Inception (Caroli, 2018), que utiliza o Story Map como artefato natural de organização do MVP e de releases incrementais.</p>
+</li>
+<li>
+<p><strong>Compatibilidade com o processo XP escolhido:</strong> o XP não prescreve um formato rígido de backlog. O Story Map atende plenamente à necessidade de organização, priorização visual e planejamento de releases declarada na seção 3 deste documento.</p>
+</li>
+</ul>
+<p>Esta seção 10.1 mantém, portanto, os catálogos consolidados de RFs, RNFs e Regras de Negócio, a tabela de User Stories com rastreabilidade para RNFs e a Matriz de Rastreabilidade — artefatos que apoiam o Story Map e que persistem mesmo com a substituição do Product Backlog em formato tradicional.</p>
+<p>O Story Map propriamente dito está disponível em artefato externo, acessível através do link abaixo:</p>
+<ul>
+<li><a href="https://www.figma.com/board/2QDaUAET4CTGoCnczRMA7q/map-story?node-id=0-1&amp;t=qIX4xvA4BemHOm9A-0">Story Map - MorfoBlocos Digital</a></li>
+</ul>
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/board/2QDaUAET4CTGoCnczRMA7q/map-story?node-id=0-1&embed-host=share" allowfullscreen></iframe>
+
+<h4 id="1012-catalogo-consolidado-de-requisitos-funcionais">10.1.2 Catálogo Consolidado de Requisitos Funcionais</h4>
+<p>O catálogo a seguir consolida os 24 requisitos funcionais (RFs) elicitados para o MorfoBlocos Digital, organizados por Característica de Produto (CP) e com a respectiva classificação MoSCoW. </p>
+<p>As operações de manutenção do catálogo de conteúdo (morfemas, palavras válidas e atividades pedagógicas) foram desmembradas em operações CRUD individuais — Cadastrar, Editar, Remover e Listar — conforme recomendação do professor, de modo a tornar cada RF atômico, testável e independentemente rastreável.</p>
+<p>Adicionalmente, em resposta à observação do professor de que CPs com apenas um RF apresentam baixa coesão arquitetural, foram introduzidos novos RFs em CP3, CP4 e CP5: o RF09 (Submeter combinação) separa o ato da submissão da movimentação livre dos blocos (RF08); o RF10 anterior (que acumulava as responsabilidades de validar e exibir o processo de formação morfológica) foi desmembrado em RF11 e RF12, garantindo que cada operação seja independentemente rastreável e testável; e o RF14 (Consultar detalhes de uma atividade) amplifica o valor pedagógico do Portfólio de Progresso (CP5), permitindo ao estudante revisar não apenas sua pontuação, mas o conteúdo específico de cada tentativa realizada.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ID</th>
+<th style="text-align: left;">CP</th>
+<th style="text-align: left;">Requisito Funcional</th>
+<th style="text-align: left;">Ator Principal</th>
+<th style="text-align: left;">MoSCoW</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>RF01</strong></td>
+<td style="text-align: left;">CP1</td>
+<td style="text-align: left;">Solicitar credenciais de acesso ao sistema.</td>
+<td style="text-align: left;">Usuário</td>
+<td style="text-align: left;">Must Have</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF02</strong></td>
+<td style="text-align: left;">CP1</td>
+<td style="text-align: left;">Autenticar acesso ao sistema utilizando credenciais.</td>
+<td style="text-align: left;">Usuário</td>
+<td style="text-align: left;">Must Have</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF03</strong></td>
+<td style="text-align: left;">CP1</td>
+<td style="text-align: left;">Permitir a recuperação de acesso mediante envio de nova senha.</td>
+<td style="text-align: left;">Usuário</td>
+<td style="text-align: left;">Should Have</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF04a</strong></td>
+<td style="text-align: left;">CP2</td>
+<td style="text-align: left;">Cadastrar morfemas no catálogo do sistema.</td>
+<td style="text-align: left;">Administrador</td>
+<td style="text-align: left;">Must Have</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF04b</strong></td>
+<td style="text-align: left;">CP2</td>
+<td style="text-align: left;">Editar morfemas existentes no catálogo do sistema.</td>
+<td style="text-align: left;">Administrador</td>
+<td style="text-align: left;">Must Have</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF04c</strong></td>
+<td style="text-align: left;">CP2</td>
+<td style="text-align: left;">Remover morfemas do catálogo do sistema.</td>
+<td style="text-align: left;">Administrador</td>
+<td style="text-align: left;">Must Have</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF04d</strong></td>
+<td style="text-align: left;">CP2</td>
+<td style="text-align: left;">Listar morfemas cadastrados no catálogo do sistema.</td>
+<td style="text-align: left;">Administrador</td>
+<td style="text-align: left;">Must Have</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF05a</strong></td>
+<td style="text-align: left;">CP2</td>
+<td style="text-align: left;">Cadastrar palavras válidas no catálogo do sistema.</td>
+<td style="text-align: left;">Administrador</td>
+<td style="text-align: left;">Must Have</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF05b</strong></td>
+<td style="text-align: left;">CP2</td>
+<td style="text-align: left;">Editar palavras válidas existentes no catálogo do sistema.</td>
+<td style="text-align: left;">Administrador</td>
+<td style="text-align: left;">Must Have</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF05c</strong></td>
+<td style="text-align: left;">CP2</td>
+<td style="text-align: left;">Remover palavras válidas do catálogo do sistema.</td>
+<td style="text-align: left;">Administrador</td>
+<td style="text-align: left;">Must Have</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF05d</strong></td>
+<td style="text-align: left;">CP2</td>
+<td style="text-align: left;">Listar palavras válidas cadastradas no catálogo do sistema.</td>
+<td style="text-align: left;">Administrador</td>
+<td style="text-align: left;">Must Have</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF06a</strong></td>
+<td style="text-align: left;">CP2</td>
+<td style="text-align: left;">Cadastrar atividades pedagógicas no sistema.</td>
+<td style="text-align: left;">Administrador</td>
+<td style="text-align: left;">Must Have</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF06b</strong></td>
+<td style="text-align: left;">CP2</td>
+<td style="text-align: left;">Editar atividades pedagógicas existentes no sistema.</td>
+<td style="text-align: left;">Administrador</td>
+<td style="text-align: left;">Must Have</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF06c</strong></td>
+<td style="text-align: left;">CP2</td>
+<td style="text-align: left;">Remover atividades pedagógicas do sistema.</td>
+<td style="text-align: left;">Administrador</td>
+<td style="text-align: left;">Must Have</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF06d</strong></td>
+<td style="text-align: left;">CP2</td>
+<td style="text-align: left;">Listar atividades pedagógicas cadastradas no sistema.</td>
+<td style="text-align: left;">Administrador</td>
+<td style="text-align: left;">Must Have</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF07</strong></td>
+<td style="text-align: left;">CP3</td>
+<td style="text-align: left;">Realizar atividades pedagógicas disponíveis no sistema.</td>
+<td style="text-align: left;">Estudante</td>
+<td style="text-align: left;">Must Have</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF08</strong></td>
+<td style="text-align: left;">CP3</td>
+<td style="text-align: left;">Movimentar blocos de morfemas na área de montagem.</td>
+<td style="text-align: left;">Estudante</td>
+<td style="text-align: left;">Must Have</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF09</strong></td>
+<td style="text-align: left;">CP3</td>
+<td style="text-align: left;">Submeter a combinação de blocos para validação.</td>
+<td style="text-align: left;">Estudante</td>
+<td style="text-align: left;">Must Have</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF10</strong></td>
+<td style="text-align: left;">CP3</td>
+<td style="text-align: left;">Exibir explicações sobre conteúdos morfológicos relacionados às atividades.</td>
+<td style="text-align: left;">Estudante</td>
+<td style="text-align: left;">Could Have</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF11</strong></td>
+<td style="text-align: left;">CP4</td>
+<td style="text-align: left;">Validar a combinação de blocos submetida com base no catálogo de palavras válidas.</td>
+<td style="text-align: left;">Sistema</td>
+<td style="text-align: left;">Must Have</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF12</strong></td>
+<td style="text-align: left;">CP4</td>
+<td style="text-align: left;">Consultar o processo de formação morfológica da palavra validada.</td>
+<td style="text-align: left;">Estudante</td>
+<td style="text-align: left;">Must Have</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF13</strong></td>
+<td style="text-align: left;">CP5</td>
+<td style="text-align: left;">Consultar o histórico de pontuações individuais.</td>
+<td style="text-align: left;">Estudante</td>
+<td style="text-align: left;">Must Have</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF14</strong></td>
+<td style="text-align: left;">CP5</td>
+<td style="text-align: left;">Consultar os detalhes de uma atividade realizada.</td>
+<td style="text-align: left;">Estudante</td>
+<td style="text-align: left;">Should Have</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF15</strong></td>
+<td style="text-align: left;">CP6</td>
+<td style="text-align: left;">Acessar relatório de desempenho consolidado da turma.</td>
+<td style="text-align: left;">Professor</td>
+<td style="text-align: left;">Must Have</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF16</strong></td>
+<td style="text-align: left;">CP6</td>
+<td style="text-align: left;">Analisar os erros morfológicos mais frequentes dos estudantes.</td>
+<td style="text-align: left;">Professor</td>
+<td style="text-align: left;">Should Have</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Legenda de Características de Produto:</strong></p>
+<ul>
+<li>
+<p><strong>CP1 — Controle de Acesso:</strong> autenticação, autorização e gestão de credenciais.</p>
+</li>
+<li>
+<p><strong>CP2 — Administração de Conteúdo:</strong> curadoria de morfemas, palavras válidas e atividades pedagógicas.</p>
+</li>
+<li>
+<p><strong>CP3 — Espaço de Construção</strong>: ambiente de manipulação e submissão de blocos pelo estudante.</p>
+</li>
+<li>
+<p><strong>CP4 — Validador de Estruturas:</strong> validação morfológica e apresentação do processo de formação.</p>
+</li>
+<li>
+<p><strong>CP5 — Portfólio de Progresso</strong>: registro e visualização individual de desempenho e tentativas realizadas.</p>
+</li>
+<li>
+<p><strong>CP6 — Painel de Monitoramento:</strong> visão consolidada do desempenho da turma para o professor.</p>
+</li>
+</ul>
+<h4 id="1013-catalogo-consolidado-de-requisitos-nao-funcionais">10.1.3 Catálogo Consolidado de Requisitos Não Funcionais</h4>
+<p>O catálogo a seguir consolida os 12 requisitos não funcionais (RNFs) declarados para o MorfoBlocos Digital, classificados segundo o modelo URPS+ (Usability, Reliability, Performance, Supportability, e categoria adicional de Restrições). </p>
+<p>Cada RNF possui uma descrição mensurável e um método de validação associado, permitindo a verificação objetiva do seu atendimento durante o desenvolvimento e a entrega do produto.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ID</th>
+<th style="text-align: left;">Categoria</th>
+<th style="text-align: left;">Descrição Mensurável</th>
+<th style="text-align: left;">Método de Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>RNF01</strong></td>
+<td style="text-align: left;">Usabilidade</td>
+<td style="text-align: left;">O estudante deve conseguir arrastar, encaixar os blocos e formar sua primeira palavra em menos de 1 minuto em seu primeiro uso, sem auxílio de tutoriais.</td>
+<td style="text-align: left;">Teste de Usabilidade cronometrado com novos usuários.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RNF02</strong></td>
+<td style="text-align: left;">Usabilidade</td>
+<td style="text-align: left;">A interface deve permitir selecionar, mover e soltar blocos utilizando eventos nativos de mouse (desktop) e touch (mobile) sem falhas de renderização.</td>
+<td style="text-align: left;">Teste de Interface Automático (E2E) e Teste Manual (Touch/Mouse).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RNF03</strong></td>
+<td style="text-align: left;">Performance</td>
+<td style="text-align: left;">O sistema deve processar a combinação de blocos e exibir o feedback visual na tela em um tempo máximo de 2 segundos.</td>
+<td style="text-align: left;">Monitoramento de Tempo de Resposta (Network Tab / Testes de Performance).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RNF04</strong></td>
+<td style="text-align: left;">Confiabilidade</td>
+<td style="text-align: left;">O sistema deve preservar a integridade dos dados durante acessos simultâneos.</td>
+<td style="text-align: left;">Teste de Carga e Concorrência no Banco de Dados (verificação ACID).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RNF05</strong></td>
+<td style="text-align: left;">Suportabilidade</td>
+<td style="text-align: left;">A interface cliente deve comunicar-se com a lógica de negócio exclusivamente por meio de APIs.</td>
+<td style="text-align: left;">Inspeção de Arquitetura e Code Review.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RNF06</strong></td>
+<td style="text-align: left;">Suportabilidade</td>
+<td style="text-align: left;">O sistema deve permitir a manutenção do catálogo de morfemas via Django Admin, sem telas de cadastro no frontend React.</td>
+<td style="text-align: left;">Teste de Inserção via Django Admin.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RNF07</strong></td>
+<td style="text-align: left;">Restrições</td>
+<td style="text-align: left;">O frontend deve ser desenvolvido obrigatoriamente utilizando React com TypeScript.</td>
+<td style="text-align: left;">Inspeção de Código / Configuração do Repositório.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RNF08</strong></td>
+<td style="text-align: left;">Restrições</td>
+<td style="text-align: left;">O backend deve ser desenvolvido obrigatoriamente em Python utilizando o framework Django.</td>
+<td style="text-align: left;">Inspeção de Código / Configuração do Repositório.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RNF09</strong></td>
+<td style="text-align: left;">Restrições</td>
+<td style="text-align: left;">O banco de dados deve ser implementado utilizando o SGBD PostgreSQL.</td>
+<td style="text-align: left;">Validação da Infraestrutura / Configuração de Banco.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RNF10</strong></td>
+<td style="text-align: left;">Suportabilidade</td>
+<td style="text-align: left;">O sistema deve operar sem falhas críticas nas duas últimas versões estáveis dos navegadores Chrome, Firefox, Edge e Safari.</td>
+<td style="text-align: left;">Teste de Compatibilidade Cross-browser.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RNF11</strong></td>
+<td style="text-align: left;">Usabilidade</td>
+<td style="text-align: left;">A interface deve readequar seus elementos sem sobreposição ou scroll horizontal em telas a partir de 360px de largura.</td>
+<td style="text-align: left;">Teste Cross-device (Emuladores mobile / DevTools).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RNF12</strong></td>
+<td style="text-align: left;">Restrições</td>
+<td style="text-align: left;">O sistema deve ser acessível via HTTP/HTTPS a partir de um navegador web, sem exigir instalação local.</td>
+<td style="text-align: left;">Teste de Implantação e Acesso URL.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1014-catalogo-de-regras-de-negocio">10.1.4 Catálogo de Regras de Negócio</h4>
+<p>As Regras de Negócio (RN) representam restrições e políticas do domínio do MorfoBlocos Digital que orientam o comportamento do sistema, independentemente de implementação tecnológica. Diferentemente dos RFs (que descrevem o que o sistema faz) e dos RNFs (que descrevem como o sistema deve se comportar em termos de qualidade), as RNs estabelecem o que é permitido, obrigatório ou vedado no contexto pedagógico e operacional do produto.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ID</th>
+<th style="text-align: left;">Regra de Negócio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>RN01</strong></td>
+<td style="text-align: left;">Apenas usuários autenticados podem acessar o sistema.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RN02</strong></td>
+<td style="text-align: left;">Apenas professores podem acessar relatórios de desempenho.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RN03</strong></td>
+<td style="text-align: left;">Apenas administradores podem cadastrar morfemas, palavras e atividades.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RN04</strong></td>
+<td style="text-align: left;">Apenas palavras previamente cadastradas podem ser consideradas válidas.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RN05</strong></td>
+<td style="text-align: left;">Toda tentativa realizada pelo estudante deve ser registrada no histórico.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RN06</strong></td>
+<td style="text-align: left;">A pontuação obtida pelo estudante deve ser salva automaticamente ao finalizar uma atividade.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RN07</strong></td>
+<td style="text-align: left;">O acesso a níveis superiores só é liberado mediante atingimento de pontuação mínima definida pelo sistema.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RN08</strong></td>
+<td style="text-align: left;">Todo resultado de atividade finalizada deve ser armazenado de forma persistente no histórico do estudante.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Observação:</em> as regras RN06 e RN07 foram originalmente declaradas, em versões anteriores deste documento, como requisitos funcionais (RF11 — Salvar pontuação obtida na atividade finalizada — e RF12 — Liberar acesso a níveis superiores mediante pontuação mínima, respectivamente). Após correção do professor e revisão do monitor, optou-se pela reclassificação destes itens como Regras de Negócio, uma vez que descrevem políticas comportamentais automáticas e invariantes do domínio, e não funcionalidades disparadas por ator humano.</p>
+<h4 id="1015-user-stories-derivadas-dos-requisitos-funcionais">10.1.5 User Stories Derivadas dos Requisitos Funcionais</h4>
+<p>A tabela a seguir apresenta cada RF declarado utilizando a técnica de User Story no formato “Como [ator], quero [objetivo], para [benefício]”, conforme proposto por Cohn (2004) e adotado pela equipe como prática de Declaração de Requisitos (seção 4.1).</p>
+<p>Para os requisitos CRUD relacionados à manutenção de catálogo (RF04a-d, RF05a-d, RF06a-d), optou-se por consolidar as quatro operações em uma única User Story épica por entidade, com Critérios de Aceitação que cobrem individualmente cada operação — abordagem alinhada à prática de épicos e refinamento progressivo descrita por Cohn (2004). A coluna “RNFs Relacionados” estabelece a rastreabilidade entre as histórias e os requisitos não funcionais aplicáveis.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">RFs</th>
+<th style="text-align: left;">User Story Derivada</th>
+<th style="text-align: left;">RNFs Relacionados</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>RF01</strong></td>
+<td style="text-align: left;">US01 — Como usuário, quero solicitar credenciais de acesso ao sistema, para que minha conta seja criada e eu possa entrar na plataforma.</td>
+<td style="text-align: left;">RNF04</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF02</strong></td>
+<td style="text-align: left;">US02 — Como usuário, quero autenticar meu acesso ao sistema utilizando minhas credenciais, para entrar na plataforma de forma segura.</td>
+<td style="text-align: left;">RNF03, RNF04</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF03</strong></td>
+<td style="text-align: left;">US03 — Como usuário, quero recuperar meu acesso mediante envio de nova senha, para retomar o uso da plataforma caso esqueça minha senha.</td>
+<td style="text-align: left;">RNF04</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF04a–d</strong></td>
+<td style="text-align: left;">US04 — Como administrador, quero realizar operações de cadastro, edição, remoção e listagem de morfemas no catálogo, para manter o conteúdo morfológico do sistema sempre atualizado e correto.</td>
+<td style="text-align: left;">RNF04, RNF06</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF05a–d</strong></td>
+<td style="text-align: left;">US05 — Como administrador, quero realizar operações de cadastro, edição, remoção e listagem de palavras válidas no catálogo, para garantir que o validador morfológico opere sobre uma base íntegra e atualizada.</td>
+<td style="text-align: left;">RNF04, RNF06</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF06a–d</strong></td>
+<td style="text-align: left;">US06 — Como administrador, quero realizar operações de cadastro, edição, remoção e listagem de atividades pedagógicas, para disponibilizar exercícios contextualizados às necessidades pedagógicas dos estudantes.</td>
+<td style="text-align: left;">RNF04, RNF06</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF07</strong></td>
+<td style="text-align: left;">US07 — Como estudante, quero realizar as atividades pedagógicas disponíveis no sistema, para praticar e desenvolver minha compreensão sobre morfologia.</td>
+<td style="text-align: left;">RNF01, RNF02, RNF03, RNF11</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF08</strong></td>
+<td style="text-align: left;">US08 — Como estudante, quero movimentar blocos de morfemas na área de montagem, para combinar prefixos, radicais e sufixos livremente.</td>
+<td style="text-align: left;">RNF01, RNF02, RNF03, RNF11</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF09</strong></td>
+<td style="text-align: left;">US09 — Como estudante, quero submeter a combinação de blocos que montei, para que ela seja avaliada pelo sistema.</td>
+<td style="text-align: left;">RNF03, RNF04</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF10</strong></td>
+<td style="text-align: left;">US10 — Como estudante, quero visualizar explicações sobre conteúdos morfológicos relacionados às atividades, para aprender enquanto prático.</td>
+<td style="text-align: left;">RNF01</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF11</strong></td>
+<td style="text-align: left;">US11 — Como estudante, quero que minha combinação de blocos seja validada com base no catálogo de palavras válidas, para receber um resultado correto sobre a palavra formada.</td>
+<td style="text-align: left;">RNF03, RNF04</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF12</strong></td>
+<td style="text-align: left;">US12 — Como estudante, quero consultar o processo de formação morfológica da palavra validada, para compreender como os morfemas se combinam.</td>
+<td style="text-align: left;">RNF01, RNF03</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF13</strong></td>
+<td style="text-align: left;">US13 — Como estudante, quero consultar o histórico das minhas pontuações individuais, para acompanhar minha evolução ao longo do tempo.</td>
+<td style="text-align: left;">RNF01, RNF04</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF14</strong></td>
+<td style="text-align: left;">US14 — Como estudante, quero consultar os detalhes de uma atividade que já realizei, para revisar quais blocos utilizei, quais palavras formei e onde acertei ou errei.</td>
+<td style="text-align: left;">RNF01, RNF04</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF15</strong></td>
+<td style="text-align: left;">US15 — Como professor, quero acessar o relatório de desempenho consolidado da turma, para monitorar o progresso coletivo dos estudantes.</td>
+<td style="text-align: left;">RNF01, RNF03, RNF04</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF16</strong></td>
+<td style="text-align: left;">US16 — Como professor, quero analisar os erros morfológicos mais frequentes dos estudantes, para direcionar intervenções pedagógicas mais eficazes.</td>
+<td style="text-align: left;">RNF03, RNF04</td>
+</tr>
+</tbody>
+</table>
+<p><em>Observação sobre RNFs transversais:</em> os RNFs de restrição tecnológica e arquitetural — RNF05 (comunicação por APIs), RNF07 (React/TypeScript), RNF08 (Django), RNF09 (PostgreSQL), RNF10 (compatibilidade cross-browser) e RNF12 (acesso via navegador) — aplicam-se de forma transversal a todas as User Stories deste backlog. Embora não estejam repetidos linha a linha, devem ser considerados válidos e obrigatórios para todos os RFs do produto.</p>
+<h4 id="1016-matriz-de-rastreabilidade"><strong>10.1.6 Matriz de Rastreabilidade</strong></h4>
+<p><a href="https://www.figma.com/board/8yYBKLEMtOAvjRyc6SRAay/Matriz-de-Rastreabilidade?node-id=0-1&amp;p=f&amp;t=nh6i2uiwdDRRwwad-0">Matriz de Rastreabilidade</a></p>
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/board/8yYBKLEMtOAvjRyc6SRAay/Matriz-de-Rastreabilidade?node-id=0-1&embed-host=share" allowfullscreen></iframe>
+
+<h3 id="102-priorizacao-do-backlog-geral-e-mvp"><strong>10.2 Priorização do Backlog Geral e MVP</strong></h3>
+<p>A priorização do backlog do MorfoBlocos Digital foi conduzida combinando duas técnicas complementares declaradas pela equipe na seção 5.1 (Atividades e Técnicas de ER) como práticas da atividade de Análise e Consenso: a Priorização MoSCoW e a Matriz Avaliação Técnica × Valor de Negócio (operacionalizada como Matriz de Valor de Negócio × Complexidade Técnica). O uso conjunto preserva a coerência metodológica do projeto e amplia a capacidade de justificar as decisões de escopo perante a cliente e a avaliação do professor.</p>
+<p>Em atendimento às recomendações do professor, esta versão da seção adota critérios objetivos para a aplicação das duas técnicas. A classificação MoSCoW de cada requisito é justificada por critérios explícitos relacionados à participação do requisito nos fluxos essenciais do MVP; e a Matriz é fundamentada por uma escala numérica de Valor de Negócio (VB, de 1 a 5) e de Complexidade Técnica (CT, de 1 a 5), cada uma com critérios objetivos próprios.</p>
+<h4 id="1021-criterios-objetivos-para-a-classificacao-moscow"><strong>10.2.1 Critérios Objetivos para a Classificação MoSCoW</strong></h4>
+<p>A priorização inicial dos requisitos do MorfoBlocos Digital foi realizada utilizando a técnica MoSCoW, adotada pela equipe como mecanismo de classificação da relevância functional de cada requisito para o Produto Mínimo Viável (MVP). A aplicação da técnica considerou o impacto de cada requisito nos fluxos principais do sistema, especialmente se:</p>
+<ul>
+<li>
+<p>Participam diretamente dos casos de uso principais;</p>
+</li>
+<li>
+<p>Permitem a execução das atividades pedagógicas do estudante;</p>
+</li>
+<li>
+<p>Registram, recuperam ou preservam informações relacionadas ao progresso do usuário;</p>
+</li>
+<li>
+<p>Sustentam funcionalidades de acompanhamento pedagógico do professor;</p>
+</li>
+<li>
+<p>Ou comprometem a execução adequada dos fluxos principais quando ausentes.</p>
+</li>
+</ul>
+<p>A partir desses critérios, cada requisito foi classificado segundo o modelo MoSCoW:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Classificação</th>
+<th style="text-align: left;">Critério</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Must Have</strong></td>
+<td style="text-align: left;">O requisito participa diretamente de um fluxo essencial do MVP. Sem ele, o sistema não executa o caso de uso principal ou perde sua função central.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Should Have</strong></td>
+<td style="text-align: left;">O requisito apoia um fluxo essencial ou amplia um fluxo principal com suporte pedagógico, operacional ou de acompanhamento. O MVP continua funcionando sem ele, mas com perda de cobertura, automação ou qualidade.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Could Have</strong></td>
+<td style="text-align: left;">O requisito complementa o uso do sistema, mas não altera a execução dos fluxos principais do MVP.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Won't Have</strong></td>
+<td style="text-align: left;">O requisito não entra na primeira versão do MVP. Foi postergado por baixo impacto no fluxo principal ou por custo técnico incompatível com a versão inicial.</td>
+</tr>
+</tbody>
+</table>
+<p>A classificação MoSCoW serviu como base para a definição quantitativa do Valor de Negócio (VB), apresentada na seção seguinte, utilizada posteriormente na Matriz de Valor de Negócio × Complexidade Técnica.</p>
+<h4 id="1022-criterios-objetivos-para-o-valor-de-negocio-vn"><strong>10.2.2 Critérios Objetivos para o Valor de Negócio (VN)</strong></h4>
+<p>Os Valores de Negócio (VN) representam os principais benefícios pedagógicos, operacionais e funcionais que o MorfoBlocos Digital pretende entregar aos seus usuários e à instituição educacional. Esses valores orientam a priorização dos requisitos e servem como referência para avaliação do impacto de cada funcionalidade no MVP. Foram identificados os seguintes Valores de Negócio principais:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ID</th>
+<th style="text-align: left;">Valor de Negócio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>VN1</strong></td>
+<td style="text-align: left;">Garantir acesso contínuo e rastreável às atividades do estudante.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>VN2</strong></td>
+<td style="text-align: left;">Reduzir o esforço manual de manutenção do conteúdo pedagógico.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>VN3</strong></td>
+<td style="text-align: left;">Estimular a aprendizagem prática e interativa de morfologia.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>VN4</strong></td>
+<td style="text-align: left;">Fornecer feedback sobre a formação morfológica das palavras.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>VN5</strong></td>
+<td style="text-align: left;">Permitir acompanhamento contínuo da evolução individual do estudante.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>VN6</strong></td>
+<td style="text-align: left;">Apoiar intervenções pedagógicas baseadas no desempenho da turma.</td>
+</tr>
+</tbody>
+</table>
+<p>Para permitir o posicionamento quantitativo dos requisitos na Matriz de Priorização, as classificações MoSCoW foram convertidas em uma escala numérica de Valor de Negócio (VB), variando de 1 a 5:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Classificação MoSCoW</th>
+<th style="text-align: left;">Valor de Negócio (VB)</th>
+<th style="text-align: left;">Interpretação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Must Have</strong></td>
+<td style="text-align: left;">4 ou 5</td>
+<td style="text-align: left;">Essencial para o MVP. VB 5 quando o requisito participa diretamente do fluxo central do produto (sem ele, o caso de uso principal não existe). VB 4 quando o requisito é operação de apoio indispensável dentro de uma característica essencial — por exemplo, operações secundárias de CRUDs em CP2 (Editar, Remover, Listar), que sustentam a manutenção do conteúdo cadastrado mas não disparam o fluxo principal por si só.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Should Have</strong></td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Importante para ampliação, acompanhamento ou qualidade do fluxo principal.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Could Have</strong></td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Complementar ao sistema, sem impacto direto no funcionamento central.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Won't Have</strong></td>
+<td style="text-align: left;">1 ou 2</td>
+<td style="text-align: left;">Fora do escopo da versão inicial.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1023-criterios-objetivos-para-a-complexidade-tecnica-ct"><strong>10.2.3 Critérios Objetivos para a Complexidade Técnica (CT)</strong></h4>
+<p>A Complexidade Técnica representa o nível de esforço necessário para implementar cada requisito, considerando os riscos técnicos envolvidos no desenvolvimento e na manutenção da solução. Um requisito foi considerado mais complexo quando envolve um ou mais dos seguintes fatores:</p>
+<ul>
+<li>
+<p>Integração entre frontend, backend e banco de dados;</p>
+</li>
+<li>
+<p>Necessidade de persistência e manipulação estruturada de dados;</p>
+</li>
+<li>
+<p>Validações executadas em tempo real durante a interação do usuário;</p>
+</li>
+<li>
+<p>Tratamento de acessos simultâneos e integridade das informações;</p>
+</li>
+<li>
+<p>Compatibilidade entre diferentes dispositivos, resoluções ou navegadores;</p>
+</li>
+<li>
+<p>Maior volume de testes técnicos e de integração;</p>
+</li>
+<li>
+<p>Ou necessidade de alterações arquiteturais relevantes na aplicação.</p>
+</li>
+</ul>
+<p>A partir desses fatores, foi definida a seguinte escala de classificação:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Nível de CT</th>
+<th style="text-align: left;">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1 — Muito Baixa</strong></td>
+<td style="text-align: left;">Implementação simples e localizada, restrita a uma única camada do sistema, sem necessidade de integrações relevantes ou regras complexas.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2 — Baixa</strong></td>
+<td style="text-align: left;">Exige integrações básicas, regras de negócio simples ou persistência elementar de dados, utilizando soluções já conhecidas pela equipe.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3 — Média</strong></td>
+<td style="text-align: left;">Envolve integração entre múltiplas camadas do sistema, validações adicionais, maior volume de testes ou manipulação estruturada de dados.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4 — Alta</strong></td>
+<td style="text-align: left;">Exige sincronização entre diferentes componentes, compatibilidade entre dispositivos/navegadores, processamento mais sofisticado ou maior risco técnico.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>5 — Muito Alta</strong></td>
+<td style="text-align: left;">Envolve algoritmos complexos, validações em tempo real, concorrência, requisitos críticos de desempenho, alta dependência arquitetural ou elevado esforço de testes e manutenção.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1024-regra-de-decisao-da-matriz"><strong>10.2.4 Regra de Decisão da Matriz</strong></h4>
+<p>A posição de cada requisito na Matriz foi definida pelo cruzamento entre a classificação de Valor de Negócio e o nível de Complexidade Técnica, segundo as seguintes regras de agregação:</p>
+<ul>
+<li>
+<p>Requisitos classificados como Must Have ou Should Have (VB 4 ou 5) foram considerados de alto valor de negócio;</p>
+</li>
+<li>
+<p>Requisitos classificados como Could Have ou Won't Have (VB 3 ou inferior) foram considerados de baixo valor de negócio;</p>
+</li>
+<li>
+<p>Requisitos com CT 1 ou 2 (Muito Baixa ou Baixa) foram considerados de baixa complexidade técnica;</p>
+</li>
+<li>
+<p>Requisitos com CT 3, 4 ou 5 (Média, Alta ou Muito Alta) foram considerados de alta complexidade técnica.</p>
+</li>
+</ul>
+<p>A partir desse cruzamento, os requisitos foram distribuídos nos quatro quadrantes da Matriz:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Quadrante</th>
+<th style="text-align: left;">Interpretação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Q1 — Alto valor + Baixa complexidade técnica</strong></td>
+<td style="text-align: left;">Requisitos priorizados para implementação inicial. Entregam alto impacto com menor esforço técnico.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Q2 — Alto valor + Alta complexidade técnica</strong></td>
+<td style="text-align: left;">Requisitos essenciais, porém com maior risco ou custo de implementação. Devem ser planejados com atenção.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Q3 — Baixo valor + Baixa complexidade técnica</strong></td>
+<td style="text-align: left;">Requisitos complementares que agregam valor, mas não são críticos para o MVP. Podem ser incluídos conforme capacidade.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Q4 — Baixo valor + Alta complexidade técnica</strong></td>
+<td style="text-align: left;">Requisitos com baixo retorno frente ao alto custo técnico. Devem ser adiados para futuras versões.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Matriz de Priorização de Requisitos" src="../img/matriz_valor_complex.png" /></p>
+<h4 id="1025-classificacao-consolidada-dos-requisitos">10.2.5 Classificação Consolidada dos Requisitos</h4>
+<p>A tabela a seguir consolida a classificação final de todos os requisitos funcionais e não funcionais, cruzando MoSCoW, VB, CT, quadrante na matriz e decisão de inclusão no MVP. As justificativas detalhadas de VB e CT para cada item estão disponíveis no documento de Requisitos de Software (artefato auxiliar deste projeto).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ID</th>
+<th style="text-align: left;">Requisito</th>
+<th style="text-align: left;">MoSCoW</th>
+<th style="text-align: left;">VB</th>
+<th style="text-align: left;">CT</th>
+<th style="text-align: left;">Quadrante</th>
+<th style="text-align: left;">MVP?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>RF01</strong></td>
+<td style="text-align: left;">Solicitar credenciais de acesso ao sistema.</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Q1</td>
+<td style="text-align: left;">Sim</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF02</strong></td>
+<td style="text-align: left;">Autenticar acesso ao sistema utilizando credenciais.</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Q2</td>
+<td style="text-align: left;">Sim</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF03</strong></td>
+<td style="text-align: left;">Permitir a recuperação de acesso mediante envio de nova senha.</td>
+<td style="text-align: left;">Should Have</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Q2</td>
+<td style="text-align: left;">Sim</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF04a</strong></td>
+<td style="text-align: left;">Cadastrar morfemas no catálogo do sistema.</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Q1</td>
+<td style="text-align: left;">Sim</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF04b</strong></td>
+<td style="text-align: left;">Editar morfemas existentes no catálogo do sistema.</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Q1</td>
+<td style="text-align: left;">Sim</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF04c</strong></td>
+<td style="text-align: left;">Remover morfemas do catálogo do sistema.</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Q1</td>
+<td style="text-align: left;">Sim</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF04d</strong></td>
+<td style="text-align: left;">Listar morfemas cadastrados no catálogo do sistema.</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Q1</td>
+<td style="text-align: left;">Sim</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF05a</strong></td>
+<td style="text-align: left;">Cadastrar palavras válidas no catálogo do sistema.</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Q1</td>
+<td style="text-align: left;">Sim</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF05b</strong></td>
+<td style="text-align: left;">Editar palavras válidas existentes no catálogo do sistema.</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Q1</td>
+<td style="text-align: left;">Sim</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF05c</strong></td>
+<td style="text-align: left;">Remover palavras válidas do catálogo do sistema.</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Q1</td>
+<td style="text-align: left;">Sim</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF05d</strong></td>
+<td style="text-align: left;">Listar palavras válidas cadastradas no catálogo do sistema.</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Q1</td>
+<td style="text-align: left;">Sim</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF06a</strong></td>
+<td style="text-align: left;">Cadastrar atividades pedagógicas no sistema.</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Q1</td>
+<td style="text-align: left;">Sim</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF06b</strong></td>
+<td style="text-align: left;">Editar atividades pedagógicas existentes no sistema.</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Q1</td>
+<td style="text-align: left;">Sim</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF06c</strong></td>
+<td style="text-align: left;">Remover atividades pedagógicas do sistema.</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Q1</td>
+<td style="text-align: left;">Sim</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF06d</strong></td>
+<td style="text-align: left;">Listar atividades pedagógicas cadastradas no sistema.</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Q1</td>
+<td style="text-align: left;">Sim</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF07</strong></td>
+<td style="text-align: left;">Realizar atividades pedagógicas disponíveis no sistema.</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Q2</td>
+<td style="text-align: left;">Sim</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF08</strong></td>
+<td style="text-align: left;">Movimentar blocos de morfemas na área de montagem.</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Q2</td>
+<td style="text-align: left;">Sim</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF09</strong></td>
+<td style="text-align: left;">Submeter a combinação de blocos para validação.</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Q1</td>
+<td style="text-align: left;">Sim</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF10</strong></td>
+<td style="text-align: left;">Exibir explicações sobre conteúdos morfológicos relacionados às atividades.</td>
+<td style="text-align: left;">Could Have</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Q3</td>
+<td style="text-align: left;">Não</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF11</strong></td>
+<td style="text-align: left;">Validar a combinação de blocos submetida com base no catálogo de palavras válidas.</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Q2</td>
+<td style="text-align: left;">Sim</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF12</strong></td>
+<td style="text-align: left;">Consultar o processo de formação morfológica da palavra validada.</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Q2</td>
+<td style="text-align: left;">Sim</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF13</strong></td>
+<td style="text-align: left;">Consultar o histórico de pontuações individuais.</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Q2</td>
+<td style="text-align: left;">Sim</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF14</strong></td>
+<td style="text-align: left;">Consultar os detalhes de uma atividade realizada.</td>
+<td style="text-align: left;">Should Have</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Q2</td>
+<td style="text-align: left;">Sim</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF15</strong></td>
+<td style="text-align: left;">Acessar relatório de desempenho consolidado da turma.</td>
+<td style="text-align: left;">Must Have</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Q2</td>
+<td style="text-align: left;">Sim</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RF16</strong></td>
+<td style="text-align: left;">Analisar os erros morfológicos mais frequentes dos estudantes.</td>
+<td style="text-align: left;">Should Have</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Q2</td>
+<td style="text-align: left;">Sim</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1026-definicao-do-mvp">10.2.6 Definição do MVP</h4>
+<p>O Produto Mínimo Viável do MorfoBlocos Digital foi definido como o menor conjunto de funcionalidades capaz de demonstrar, em ambiente real de uso, a hipótese central de valor do produto:</p>
+<blockquote>
+<p>Um estudante consegue, de forma autônoma, realizar atividades pedagógicas de morfologia combinando blocos de morfemas, submeter sua combinação para validação automática, consultar o processo de formação morfológica da palavra validada, acompanhar seu próprio progresso e revisar atividades realizadas, e permitir que o professor monitore o desempenho coletivo da turma e identifique padrões de erros morfológicos — sem depender da mediação síncrona do professor para validação.</p>
+</blockquote>
+<p>Aplicando a regra de decisão da matriz e os critérios MoSCoW, o MVP é composto por todos os requisitos classificados como Must Have e Should Have, totalizando 23 dos 24 requisitos funcionais declarados. O único RF excluído do MVP é o RF10 (exibição de explicações morfológicas), classificado como Could Have e posicionado no quadrante Q3 (baixo valor + baixa complexidade), o qual será planejado para uma release posterior.</p>
+<p>A inclusão dos três Should Have (RF03, RF14 e RF16) no MVP é justificada pela regra de agregação da Matriz: todos atingem o limiar de alto valor de negócio (VB = 4) e, em conjunto, sustentam aspectos críticos do produto. O RF03 (recuperação de senha) garante a continuidade de acesso e a recuperação do progresso pelo estudante; o RF14 (consultar detalhes de uma atividade realizada) amplifica o valor pedagógico do CP5, permitindo ao estudante revisar especificamente onde acertou e onde errou em cada tentativa; e o RF16 (análise de erros frequentes) sustenta diretamente um dos Valores de Negócio principais do produto, declarado na seção 2.3 — a rastreabilidade do aprendizado, fundamental para a intervenção pedagógica do professor.</p>
+<p><strong>Distribuição do MVP por Característica de Produto:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">CP</th>
+<th style="text-align: left;">Característica de Produto</th>
+<th style="text-align: left;">RFs no MVP</th>
+<th style="text-align: left;">Cobertura</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>CP1</strong></td>
+<td style="text-align: left;">Controle de Acesso</td>
+<td style="text-align: left;">RF01, RF02, RF03</td>
+<td style="text-align: left;">Total</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CP2</strong></td>
+<td style="text-align: left;">Administração de Conteúdo</td>
+<td style="text-align: left;">RF04a-d, RF05a-d, RF06a-d</td>
+<td style="text-align: left;">Total</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CP3</strong></td>
+<td style="text-align: left;">Espaço de Construção</td>
+<td style="text-align: left;">RF07, RF08, RF09</td>
+<td style="text-align: left;">Parcial (RF10 fora)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CP4</strong></td>
+<td style="text-align: left;">Validador de Estruturas</td>
+<td style="text-align: left;">RF11, RF12</td>
+<td style="text-align: left;">Total</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CP5</strong></td>
+<td style="text-align: left;">Portfólio de Progresso</td>
+<td style="text-align: left;">RF13, RF14</td>
+<td style="text-align: left;">Total</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CP6</strong></td>
+<td style="text-align: left;">Painel de Monitoramento</td>
+<td style="text-align: left;">RF15, RF16</td>
+<td style="text-align: left;">Total</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cobertura do MVP em relação aos Objetivos Específicos:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">OE</th>
+<th style="text-align: left;">Objetivo Específico</th>
+<th style="text-align: left;">Coberto pelo MVP?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>OE1</strong></td>
+<td style="text-align: left;">Digitalizar a mecânica e a identidade visual do MorfoBlocos.</td>
+<td style="text-align: left;">Sim (CP2, CP3)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>OE2</strong></td>
+<td style="text-align: left;">Viabilizar a formação autônoma de palavras com feedback automático.</td>
+<td style="text-align: left;">Sim (CP3, CP4)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>OE3</strong></td>
+<td style="text-align: left;">Estruturar um catálogo de morfemas e exercícios com progressão de dificuldade.</td>
+<td style="text-align: left;">Sim (CP2)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>OE4</strong></td>
+<td style="text-align: left;">Registrar o histórico de interações do usuário para rastreabilidade de aprendizado.</td>
+<td style="text-align: left;">Sim (CP5, CP6)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>OE5</strong></td>
+<td style="text-align: left;">Garantir a usabilidade móvel e a adequação da interface ao público do ensino básico.</td>
+<td style="text-align: left;">Sim (RNF01, RNF02, RNF11)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requisitos Não Funcionais aplicáveis ao MVP:</strong>
+Todos os 12 RNFs declarados no catálogo de requisitos são considerados válidos para o MVP, por descreverem propriedades transversais ao produto (usabilidade, confiabilidade, performance, suportabilidade e restrições arquiteturais). A entrega do MVP só é considerada concluída se atender, simultaneamente, aos critérios de aceitação dos 23 RFs incluídos e aos critérios mensuráveis dos 12 RNFs catalogados.</p>
+<p><strong>Itens fora do MVP (planejados para releases futuras):</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ID</th>
+<th style="text-align: left;">Requisito</th>
+<th style="text-align: left;">Motivo da exclusão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>RF10</strong></td>
+<td style="text-align: left;">Exibir explicações sobre conteúdos morfológicos relacionados às atividades.</td>
+<td style="text-align: left;">Classificado como Could Have (VB=3, CT=2), posicionado no quadrante Q3. Complementa o aprendizado, mas o fluxo principal funciona sem material de apoio textual.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="11-licoes-aprendidas"><strong>11. Lições Aprendidas</strong></h2>
+<h3 id="111-unidade-i"><strong>11.1 Unidade I</strong></h3>
+<p>Nesta primeira unidade, a equipe enfrentou alguns desafios importantes de organização e gestão, que exigiram ajustes no início do projeto para garantir a continuidade das atividades.</p>
+<ul>
+<li><strong>Reorganização da Liderança</strong></li>
+</ul>
+<p>A saída do líder original da disciplina impactou diretamente a organização do grupo, já que várias tarefas estavam centralizadas nele. Isso gerou um período de desorganização e falta de clareza na distribuição das atividades.</p>
+<p>Para resolver essa situação, foi necessário reorganizar a equipe e redistribuir as responsabilidades entre os membros. Um dos integrantes assumiu a coordenação das atividades, ajudando a estruturar novamente o fluxo de trabalho e garantindo que cada pessoa soubesse sua função na entrega da documentação.</p>
+<ul>
+<li><strong>Comunicação com a cliente e prazos</strong></li>
+</ul>
+<p>Houve dificuldade inicial para conciliar a disponibilidade da cliente com os prazos da disciplina. Além disso, a falta de um fluxo definido de comunicação no começo levou a algumas decisões internas que ainda não tinham sido validadas.</p>
+<p>Com a reorganização da equipe, passou-se a priorizar um contato mais frequente com a cliente e o agendamento de momentos específicos para validação. Isso ajudou a alinhar melhor as decisões do projeto com as expectativas da cliente e com os prazos acadêmicos, reduzindo riscos de retrabalho.</p>
+<h3 id="112-unidade-ii"><strong>11.2 Unidade II</strong></h3>
+<ul>
+<li><strong>Elicitação e entendimento dos requisitos</strong></li>
+</ul>
+<p>A elicitação de requisitos apresentou dificuldades devido à necessidade de compreender regras morfológicas específicas e alinhar o funcionamento do sistema às expectativas pedagógicas da cliente. Em alguns momentos, requisitos foram interpretados de formas diferentes pela equipe.
+Como solução, foram realizadas reuniões frequentes com a cliente, utilização de exemplos práticos do jogo físico e refinamento contínuo dos requisitos. Além disso, diagramas, protótipos e descrições mais objetivas ajudaram a construir um entendimento comum entre equipe e cliente.</p>
+<ul>
+<li><strong>Escrita e diferenciação entre requisitos funcionais e não funcionais</strong></li>
+</ul>
+<p>Houve dificuldade inicial na escrita de requisitos claros, objetivos e verificáveis, principalmente na diferenciação entre comportamentos do sistema e restrições de qualidade ou usabilidade.
+A fim de resolver esse problema, a equipe passou a utilizar verbos mais específicos e padronizados na documentação dos requisitos, além de revisar coletivamente os RFs e RNFs para garantir clareza, consistência e alinhamento com o escopo do MVP.</p>
+<ul>
+<li><strong>Organização e refinamento das regras de negócio</strong></li>
+</ul>
+<p>A representação das regras morfológicas do sistema apresentou complexidade maior do que a esperada, especialmente em situações relacionadas à classificação de palavras e organização dos morfemas.
+Em resposta a essa dificuldade, as regras foram refinadas junto à cliente de forma incremental, utilizando exemplos reais do jogo físico e separando claramente regras de negócio dos requisitos funcionais do sistema.</p>
+<ul>
+<li><strong>Dificuldades para priorizar o backlog e definir o MVP</strong></li>
+</ul>
+<p>A definição do MVP apresentou dificuldades porque muitas funcionalidades pareciam importantes para a experiência pedagógica do sistema, tornando difícil decidir quais requisitos realmente deveriam permanecer fora da primeira versão do produto.
+Com as revisões realizadas, a equipe passou a utilizar critérios mais objetivos de priorização, relacionando a classificação MoSCoW ao valor de negócio e à complexidade técnica de cada requisito. Isso ajudou a justificar melhor as decisões tomadas no backlog e tornou o escopo do MVP mais consistente.</p>
+<ul>
+<li><strong>Refinamento e detalhamento dos requisitos</strong></li>
+</ul>
+<p>Alguns requisitos foram inicialmente escritos de forma muito ampla, agrupando múltiplas responsabilidades em um único item. Isso dificultava a rastreabilidade, a validação individual e a priorização dos requisitos.
+Após as revisões do documento, principalmente nas funcionalidades relacionadas às operações de CRUD, os requisitos foram desmembrados em partes menores e independentes, tornando-os mais claros, testáveis e rastreáveis.</p>
+<ul>
+<li><strong>Construção das matrizes de rastreabilidade e priorização</strong></li>
+</ul>
+<p>A elaboração das matrizes apresentou dificuldades relacionadas à consistência entre os diferentes artefatos do projeto. Alterações realizadas nos requisitos frequentemente impactavam objetivos específicos, características de produto, valores de negócio, priorização e definição do MVP.
+Além disso, a equipe encontrou dificuldades para manter coerência entre a classificação MoSCoW, o valor de negócio, a complexidade técnica e o posicionamento dos requisitos nos quadrantes da matriz.
+Para resolver esses problemas, foram realizadas revisões incrementais e verificações cruzadas entre os artefatos, garantindo alinhamento entre requisitos, tabelas e justificativas metodológicas. A definição de critérios objetivos também ajudou a tornar as decisões de priorização mais consistentes.</p>
+<ul>
+<li><strong>Manutenção da rastreabilidade entre os artefatos</strong></li>
+</ul>
+<p>À medida que o documento evoluiu, tornou-se mais difícil manter alinhamento entre objetivos específicos, características de produto, requisitos funcionais, requisitos não funcionais e regras de negócio. Pequenas alterações em uma seção frequentemente exigiam ajustes em várias outras partes do documento.
+Como forma de reduzir inconsistências, a equipe passou a utilizar identificadores padronizados e revisões integradas entre os artefatos, facilitando a manutenção da rastreabilidade e a validação das relações entre os elementos do projeto.</p>
+<h2 id="versionamento">Versionamento</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Data</strong></th>
+<th>Versão</th>
+<th>Descrição</th>
+<th>Autor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>12/04/2026</td>
+<td>1.0</td>
+<td>Criação, elaboração e repasse do documento.</td>
+<td><a href="https://github.com/AnnaBeatrizAraujo">Ana Beatriz</a>, <a href="https://github.com/arturalvesfn">Artur Fernandes</a>, <a href="https://github.com/youngburny">Bruno Souza</a>, <a href="https://github.com/cadumotta">Carlos Eduardo</a> e <a href="https://github.com/Luizz97">Luiz Henrique</a></td>
+</tr>
+<tr>
+<td>12/04/2026</td>
+<td>1.1</td>
+<td>Adiciona a seção 5 (Cronograma).</td>
+<td><a href="https://github.com/AnnaBeatrizAraujo">Ana Beatriz</a>, <a href="https://github.com/youngburny">Bruno Souza</a></td>
+</tr>
+<tr>
+<td>13/04/2026</td>
+<td>1.2</td>
+<td>Adiciona seção 4.0, 4.1, 4.2 e 6.4.</td>
+<td><a href="https://github.com/youngburny">Bruno Souza</a></td>
+</tr>
+<tr>
+<td>13/04/2026</td>
+<td>1.3</td>
+<td>Correções nas seções 3.1, 3.2, 3.3, 4.1 e 4.2.</td>
+<td><a href="https://github.com/youngburny">Bruno Souza</a></td>
+</tr>
+<tr>
+<td>13/04/2026</td>
+<td>1.4</td>
+<td>Correção de formatação na tabela da seção 4.2.</td>
+<td><a href="https://github.com/youngburny">Bruno Souza</a></td>
+</tr>
+<tr>
+<td>05/05/2026</td>
+<td>1.5</td>
+<td>Correção nas seções 2.1, 2.2 e 2.3.</td>
+<td><a href="https://github.com/youngburny">Bruno Souza</a></td>
+</tr>
+<tr>
+<td>06/05/2026</td>
+<td>1.6</td>
+<td>Correção nas seções 4.2, 5 e 6.1.</td>
+<td><a href="https://github.com/youngburny">Bruno Souza</a></td>
+</tr>
+<tr>
+<td>06/05/2026</td>
+<td>1.7</td>
+<td>Correção nas seções 1.4, 3.1, 3.2 e 3.3</td>
+<td><a href="https://github.com/youngburny">Bruno Souza</a></td>
+</tr>
+<tr>
+<td>12/05/2026</td>
+<td>1.8</td>
+<td>Correção nas seções 2.2 e 2.3.</td>
+<td><a href="https://github.com/youngburny">Bruno Souza</a></td>
+</tr>
+<tr>
+<td>13/05/2026</td>
+<td>1.9</td>
+<td>Correção na seção 3 e 5, e adição das seções 7, 7.1, 7.2, 7.3, 8, 8.1 e 8.2.</td>
+<td><a href="https://github.com/youngburny">Bruno Souza</a></td>
+</tr>
+<tr>
+<td>15/05/2026</td>
+<td>1.10</td>
+<td>Correção na enumeração das seções.</td>
+<td><a href="https://github.com/youngburny">Bruno Souza</a></td>
+</tr>
+<tr>
+<td>18/05/2026</td>
+<td>2.0</td>
+<td>Adiciona seção 10 (Backlog) e respectivas subseções, seção 11.2 e 2.6.1., e corrige seção 8.1 e 8.2.</td>
+<td><a href="https://github.com/youngburny">Bruno Souza</a></td>
+</tr>
+<tr>
+<td>18/05/2026</td>
+<td>2.1</td>
+<td>Correção na seção 10, e realocação da Matriz de Priorização.</td>
+<td><a href="https://github.com/youngburny">Bruno Souza</a></td>
+</tr>
+<tr>
+<td>18/05/2026</td>
+<td>2.2</td>
+<td>Correção na seção 8.1, 9, 9.1, 9.2, 10, 10.1.2, 10.1.5, 10.2.4, 10.2.5 e 10.2.6.</td>
+<td><a href="https://github.com/youngburny">Bruno Souza</a></td>
+</tr>
+<tr>
+<td>18/05/2026</td>
+<td>2.2.1</td>
+<td>Correção na seção 10.2.2 e 11.2.</td>
+<td><a href="https://github.com/youngburny">Bruno Souza</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
