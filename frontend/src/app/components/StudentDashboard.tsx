@@ -1,0 +1,163 @@
+import { Link } from 'react-router';
+import { BookOpen, Puzzle, Trophy, Brain, LogOut, User, Check, X, History } from 'lucide-react';
+import { Logo } from './Logo';
+import { useAppState } from '../state/AppState';
+
+export function StudentDashboard() {
+  const { history, currentStudentId, students } = useAppState();
+  const student = students.find((s) => s.id === currentStudentId);
+  const studentName = student?.name ?? 'Aluno';
+
+  const myHistory = history.filter((h) => h.studentId === currentStudentId);
+  const totalAnswered = myHistory.length;
+  const correct = myHistory.filter((h) => h.correct).length;
+  const progress = totalAnswered ? Math.round((correct / totalAnswered) * 100) : 0;
+  const points = correct * 50;
+  const level = Math.max(1, Math.floor(correct / 3) + 1);
+  const recent = [...myHistory].reverse().slice(0, 6);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-yellow-50 to-red-50">
+      <header className="bg-white/90 backdrop-blur border-b border-border sticky top-0 z-10">
+        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <Logo size="md" />
+            <h1 className="text-2xl">Morfoblocos Digital</h1>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="text-right hidden sm:block">
+              <div className="text-sm text-muted-foreground">Olá,</div>
+              <div>{studentName}</div>
+            </div>
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white shadow">
+              <User className="w-5 h-5" />
+            </div>
+            <Link to="/login" className="text-muted-foreground hover:text-foreground">
+              <LogOut className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </header>
+
+      <main className="max-w-7xl mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-blue-600 hover:shadow-xl transition-shadow">
+            <div className="flex items-center justify-between">
+              <div>
+                <div className="text-sm text-muted-foreground mb-1">Nível Atual</div>
+                <div className="text-3xl">Nível {level}</div>
+              </div>
+              <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center">
+                <Trophy className="w-7 h-7 text-blue-600" />
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-yellow-400 hover:shadow-xl transition-shadow">
+            <div className="flex items-center justify-between">
+              <div>
+                <div className="text-sm text-muted-foreground mb-1">Pontos</div>
+                <div className="text-3xl">{points}</div>
+              </div>
+              <div className="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center">
+                <Trophy className="w-7 h-7 text-yellow-600" />
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-red-500 hover:shadow-xl transition-shadow">
+            <div className="flex items-center justify-between">
+              <div>
+                <div className="text-sm text-muted-foreground mb-1">Aproveitamento</div>
+                <div className="text-3xl">{progress}%</div>
+              </div>
+              <div className="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center">
+                <Brain className="w-7 h-7 text-red-600" />
+              </div>
+            </div>
+            <div className="mt-4 bg-gray-200 rounded-full h-2 overflow-hidden">
+              <div className="bg-gradient-to-r from-red-500 to-yellow-400 h-full" style={{ width: `${progress}%` }} />
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Link
+              to="/aluno/perguntas"
+              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all group border-2 border-transparent hover:border-blue-600"
+            >
+              <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <BookOpen className="w-7 h-7 text-white" />
+              </div>
+              <h2 className="text-xl mb-2">Responder Perguntas</h2>
+              <p className="text-muted-foreground text-sm">Teste seus conhecimentos sobre morfologia</p>
+            </Link>
+
+            <Link
+              to="/aluno/blocos"
+              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all group border-2 border-transparent hover:border-yellow-500"
+            >
+              <div className="w-14 h-14 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <Puzzle className="w-7 h-7 text-white" />
+              </div>
+              <h2 className="text-xl mb-2">Junção de Blocos</h2>
+              <p className="text-muted-foreground text-sm">Monte palavras combinando blocos morfológicos</p>
+            </Link>
+
+            <Link
+              to="/aluno/aprendizagem"
+              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all group border-2 border-transparent hover:border-red-500 md:col-span-2"
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Brain className="w-7 h-7 text-white" />
+                </div>
+                <div>
+                  <h2 className="text-xl mb-1">Área de Aprendizagem</h2>
+                  <p className="text-muted-foreground text-sm">Estude conceitos e revise conteúdos</p>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-5 flex items-center gap-3">
+              <History className="w-6 h-6" />
+              <div>
+                <h3 className="text-lg">Histórico de Questões</h3>
+                <div className="text-xs opacity-90">Seu desempenho recente</div>
+              </div>
+            </div>
+            <div className="p-4 max-h-96 overflow-y-auto">
+              {recent.length === 0 ? (
+                <div className="text-center text-muted-foreground py-8 text-sm">
+                  Você ainda não respondeu nenhuma questão.
+                </div>
+              ) : (
+                <ul className="space-y-2">
+                  {recent.map((h) => (
+                    <li key={h.id} className={`p-3 rounded-lg border-l-4 ${h.correct ? 'bg-green-50 border-green-500' : 'bg-red-50 border-red-500'}`}>
+                      <div className="flex items-start gap-2">
+                        <div className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 ${h.correct ? 'bg-green-500' : 'bg-red-500'}`}>
+                          {h.correct ? <Check className="w-4 h-4 text-white" /> : <X className="w-4 h-4 text-white" />}
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <div className="text-sm truncate">{h.question}</div>
+                          <div className="flex items-center gap-2 mt-1">
+                            <span className="text-xs px-2 py-0.5 bg-white rounded-full text-muted-foreground">{h.topic}</span>
+                            <span className="text-xs text-muted-foreground">{h.date}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  );
+}
