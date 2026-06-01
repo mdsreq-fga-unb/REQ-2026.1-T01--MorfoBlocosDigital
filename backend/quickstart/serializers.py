@@ -1,27 +1,39 @@
-from django.contrib.auth.models import Group, User
-from quickstart.models import Book
 from rest_framework import serializers
 
+from .models import (
+    Morfema,
+    PalavraValida,
+    PalavraMorfema,
+    Tentativa,
+    TentativaMorfema,
+)
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+
+class MorfemaSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
-        fields = ["url", "username", "email", "groups"]
+        model = Morfema
+        fields = "__all__"
 
 
-class GroupSerializer(serializers.HyperlinkedModelSerializer):
+class PalavraValidaSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Group
-        fields = ["url", "name"]  
+        model = PalavraValida
+        fields = "__all__"
 
-class BookSerializer(serializers.HyperlinkedModelSerializer):
+
+class PalavraMorfemaSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Book
-        fields = [  "title",
-                    "author",
-                    "published_date",
-                    "isbn",
-                    "pages",
-                    "cover",
-                    "language"
-                ]
+        model = PalavraMorfema
+        fields = "__all__"
+
+
+class TentativaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tentativa
+        fields = "__all__"
+
+
+class TentativaMorfemaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TentativaMorfema
+        fields = "__all__"

@@ -1,34 +1,42 @@
-from django.contrib.auth.models import Group, User
-from quickstart.models import Book
-from rest_framework import permissions, viewsets
+from rest_framework import viewsets
 
-from quickstart.serializers import GroupSerializer, UserSerializer, BookSerializer
+from .models import (
+    Morfema,
+    PalavraValida,
+    PalavraMorfema,
+    Tentativa,
+    TentativaMorfema,
+)
+
+from .serializers import (
+    MorfemaSerializer,
+    PalavraValidaSerializer,
+    PalavraMorfemaSerializer,
+    TentativaSerializer,
+    TentativaMorfemaSerializer,
+)
 
 
-class UserViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows users to be viewed or edited.
-    """
-
-    queryset = User.objects.all().order_by("-date_joined")
-    serializer_class = UserSerializer
-    permission_classes = [permissions.IsAuthenticated]
+class MorfemaViewSet(viewsets.ModelViewSet):
+    queryset = Morfema.objects.all()
+    serializer_class = MorfemaSerializer
 
 
-class GroupViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows groups to be viewed or edited.
-    """
+class PalavraValidaViewSet(viewsets.ModelViewSet):
+    queryset = PalavraValida.objects.all()
+    serializer_class = PalavraValidaSerializer
 
-    queryset = Group.objects.all().order_by("name")
-    serializer_class = GroupSerializer
-    permission_classes = [permissions.IsAuthenticated]
 
-class BookViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows groups to be viewed or edited.
-    """
+class PalavraMorfemaViewSet(viewsets.ModelViewSet):
+    queryset = PalavraMorfema.objects.all()
+    serializer_class = PalavraMorfemaSerializer
 
-    queryset = Book.objects.all().order_by("title")
-    serializer_class = BookSerializer
-    permission_classes = [permissions.IsAuthenticated]
+
+class TentativaViewSet(viewsets.ModelViewSet):
+    queryset = Tentativa.objects.all()
+    serializer_class = TentativaSerializer
+
+
+class TentativaMorfemaViewSet(viewsets.ModelViewSet):
+    queryset = TentativaMorfema.objects.all()
+    serializer_class = TentativaMorfemaSerializer
