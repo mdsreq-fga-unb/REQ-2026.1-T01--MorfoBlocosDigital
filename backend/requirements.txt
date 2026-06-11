@@ -13,3 +13,4 @@ python-decouple==3.8
 pytokens==0.4.1
 ruff==0.15.14
 sqlparse==0.5.5
+djangorestframework-simplejwt==5.4.0
