@@ -1,21 +1,45 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router';
-import { Mail, Lock, Eye, EyeOff, User, GraduationCap } from 'lucide-react';
+import { Mail, Lock, Eye, EyeOff, User, GraduationCap, Loader2 } from 'lucide-react';
 import { Logo } from './Logo';
+import { useAppState } from '../state/AppState';
 
 export function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [userType, setUserType] = useState<'aluno' | 'professor'>('aluno');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
+  const { login } = useAppState();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (userType === 'professor') {
-      navigate('/professor/dashboard');
-    } else {
-      navigate('/aluno/dashboard');
+    setError(null);
+    setLoading(true);
+    try {
+      // O "tipo" que decide o redirect vem do backend (/auth/me/),
+      // não do seletor Aluno/Professor do formulário.
+      const usuario = await login(email, password);
+      if (usuario.tipo === 'professor') {
+        navigate('/professor/dashboard');
+      } else {
+        navigate('/aluno/dashboard');
+      }
+    } catch (err: unknown) {
+      // 401 = credenciais inválidas; qualquer outra coisa = falha genérica.
+      const status =
+        typeof err === 'object' && err !== null && 'response' in err
+          ? (err as { response?: { status?: number } }).response?.status
+          : undefined;
+      if (status === 401) {
+        setError('Email ou senha incorretos.');
+      } else {
+        setError('Não foi possível entrar. Tente novamente.');
+      }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -111,11 +135,19 @@ export function Login() {
               </Link>
             </div>
 
+            {error && (
+              <div className="p-3 bg-red-50 border-l-4 border-red-500 rounded-lg text-sm text-red-700">
+                {error}
+              </div>
+            )}
+
             <button
               type="submit"
-              className="w-full py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+              disabled={loading}
+              className="w-full py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
             >
-              Entrar
+              {loading && <Loader2 className="w-5 h-5 animate-spin" />}
+              {loading ? 'Entrando...' : 'Entrar'}
             </button>
           </form>
 

@@ -1,5 +1,22 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
+import {
+  api,
+  setTokens,
+  clearAuth,
+  getAccessToken,
+  STORAGE_KEYS,
+  AUTH_EXPIRED_EVENT,
+} from '../../lib/api';
+
+export type TipoUsuario = 'aluno' | 'professor';
+
+export type Usuario = {
+  id: number;
+  email: string;
+  username: string;
+  tipo: TipoUsuario;
+};
 
 export type Topic = 'Prefixos' | 'Radicais' | 'Sufixos' | 'Composição' | 'Derivação';
 
@@ -27,6 +44,13 @@ export type Turma = {
 };
 
 type State = {
+  // --- Autenticação ---
+  usuario: Usuario | null;
+  token: string | null;
+  isAuthenticated: boolean;
+  login: (email: string, password: string) => Promise<Usuario>;
+  logout: () => void;
+  // --- Dados de aplicação (já existentes) ---
   currentStudentId: string;
   professorId: string;
   turmas: Turma[];
@@ -69,7 +93,57 @@ const seedHistory: HistoryItem[] = [
 
 const Ctx = createContext<State | null>(null);
 
+// Lê o usuário salvo no localStorage de forma segura (dado corrompido não
+// pode derrubar a inicialização do app).
+function readStoredUsuario(): Usuario | null {
+  const raw = localStorage.getItem(STORAGE_KEYS.usuario);
+  if (!raw) return null;
+  try {
+    return JSON.parse(raw) as Usuario;
+  } catch {
+    return null;
+  }
+}
+
 export function AppStateProvider({ children }: { children: ReactNode }) {
+  // --- Estado de autenticação (restaurado do localStorage na carga) ---
+  const [usuario, setUsuario] = useState<Usuario | null>(() => readStoredUsuario());
+  const [token, setToken] = useState<string | null>(() => getAccessToken());
+
+  const login = async (email: string, password: string): Promise<Usuario> => {
+    // 1. Obtém os tokens. Precisam ser salvos ANTES do /auth/me/ porque o
+    //    interceptor de request lê o access token do localStorage.
+    const { data } = await api.post('/token/', { email, password });
+    setTokens(data.access, data.refresh);
+
+    // 2. Descobre quem é o usuário e, principalmente, o "tipo" — é ele que
+    //    decide o redirect (não o seletor do formulário de login).
+    const me = await api.get<Usuario>('/auth/me/');
+    localStorage.setItem(STORAGE_KEYS.usuario, JSON.stringify(me.data));
+
+    setToken(data.access);
+    setUsuario(me.data);
+    return me.data;
+  };
+
+  const logout = () => {
+    clearAuth();
+    setToken(null);
+    setUsuario(null);
+  };
+
+  // Quando o interceptor do api.ts não conseguir renovar a sessão, ele dispara
+  // AUTH_EXPIRED_EVENT. Aqui apenas refletimos isso no estado React.
+  useEffect(() => {
+    const handler = () => {
+      setToken(null);
+      setUsuario(null);
+    };
+    window.addEventListener(AUTH_EXPIRED_EVENT, handler);
+    return () => window.removeEventListener(AUTH_EXPIRED_EVENT, handler);
+  }, []);
+
+  // --- Dados de aplicação (já existentes) ---
   const [turmas, setTurmas] = useState<Turma[]>(seedTurmas);
   const [students, setStudents] = useState<Student[]>(seedStudents);
   const [history, setHistory] = useState<HistoryItem[]>(seedHistory);
@@ -90,7 +164,23 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <Ctx.Provider value={{ currentStudentId, professorId, turmas, students, history, addTurma, addStudent, addHistory }}>
+    <Ctx.Provider
+      value={{
+        usuario,
+        token,
+        isAuthenticated: !!token,
+        login,
+        logout,
+        currentStudentId,
+        professorId,
+        turmas,
+        students,
+        history,
+        addTurma,
+        addStudent,
+        addHistory,
+      }}
+    >
       {children}
     </Ctx.Provider>
   );
