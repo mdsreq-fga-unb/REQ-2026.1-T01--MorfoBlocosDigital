@@ -16,6 +16,14 @@ theme:
         name: Mudar para modo claro
 
 nav:
-  - Início: index.md
-  - Visão do Produto e Projeto: visao_produto.md
-  - Registro de Reuniões: reunioes.md
+  - 'Unidade II':
+    - 'Início': 'v1/index.md'
+    - 'Reuniões': 'v1/reunioes.md'
+    - 'Visão do Produto': 'v1/visao_produto.md'
+  - 'Unidade III':
+    - 'Início': 'v2/index.md'
+    - 'Sprints':
+      - 'Sprint 1': 'v2/sprints/sprint1.md'
+      - 'Sprint 2': 'v2/sprints/sprint2.md'
+      - 'Sprint 3': 'v2/sprints/sprint3.md'      
+      - 'Sprint 4': 'v2/sprints/sprint4.md'      
