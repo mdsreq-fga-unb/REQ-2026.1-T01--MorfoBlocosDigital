@@ -1,3 +1,4 @@
+site_url: https://mdsreq-fga-unb.github.io/REQ-2026.1-T01--MorfoBlocosDigital/
 site_name: MorfoBlocos Digital
 site_description: Documentação do projeto MorfoBlocos Digital - Engenharia de Software
 site_author: Equipe G4
@@ -16,6 +17,7 @@ theme:
         name: Mudar para modo claro
 
 nav:
+  - 'Início': 'v1/index.md'
   - 'Unidade II':
     - 'Início': 'v1/index.md'
     - 'Reuniões': 'v1/reunioes.md'
