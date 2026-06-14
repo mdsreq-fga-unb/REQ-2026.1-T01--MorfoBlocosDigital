@@ -18,3 +18,31 @@ class Usuario(AbstractUser):
 
     def __str__(self):
         return self.email
+
+
+class Morfema(models.Model):
+    PREFIXO = "prefixo"
+    RADICAL = "radical"
+    SUFIXO = "sufixo"
+    TIPO_CHOICES = [
+        (PREFIXO, "Prefixo"),
+        (RADICAL, "Radical"),
+        (SUFIXO, "Sufixo"),
+    ]
+
+    texto = models.CharField(max_length=50)
+    tipo = models.CharField(max_length=10, choices=TIPO_CHOICES)
+    cor = models.CharField(max_length=20, blank=True)
+
+    def __str__(self):
+        return f"{self.texto} ({self.tipo})"
+    
+
+
+class PalavraValida(models.Model):
+    texto = models.CharField(max_length=100, unique=True)
+    processo_morfologico = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.texto
+
