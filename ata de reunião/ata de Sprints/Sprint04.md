@@ -1,5 +1,5 @@
 📌 Ata de Reunião - MorfoBlocos (Sprint 04)
-Data: 12/06/2026
+Data: 27/05/2026
 
 Participantes:
 Artur Fernandes
@@ -9,24 +9,26 @@ Carlos Eduardo
 Ana Beatriz
 
 🎯 Objetivo(s) da Reunião
-Consolidar o sistema eliminando falhas existentes, vedar a adição de quaisquer novas funcionalidades (code freeze) e estruturar a estratégia de apresentação técnica e funcional diante da banca examinadora.
+Planejar as atividades da Sprint 4, unindo a entrega técnica do núcleo do jogo à consolidação da documentação de requisitos. O objetivo central é desenvolver a lógica do validador e a mecânica de movimentação de blocos, garantindo a integração completa entre frontend e backend, e simultaneamente atualizar a rastreabilidade e levantar as evidências do processo.
 
 📋 Pautas e Definições
-Pauta 1: Code Freeze e Estabilidade Geral
-Definição: Fica terminantemente proibido o desenvolvimento ou inserção de novas features no ecossistema do projeto. O foco exclusivo da engenharia nesta reta final está voltado para a correção de bugs de layout no frontend, revisão fina de APIs, consistência do banco de dados e estabilização da suite de testes.
+Pauta 1: Lógica do Validador e Alomorfia (Backend)
+Definição: Prioridade absoluta no backend. O sistema receberá os blocos do front, concatenará as grafias na ordem exata e fará a consulta na tabela PalavraValida. Para a alomorfia, ficou definido um suporte simples via banco (ex: cadastrar "in-" e "im-" separadamente). Serão exigidos testes backend obrigatórios (login, register e validador).
 
-Pauta 2: Estruturação da Apresentação e Alinhamento do Roteiro
-Definição: O formato da apresentação foi definido, dividindo o tempo entre a contextualização do problema, a fundamentação técnica das decisões arquiteturais e uma demonstração prática ao vivo (live demo). Ficou acordado que a demo será exaustivamente ensaiada previamente para mitigar riscos de falhas em tempo de execução.
+Pauta 2: Área de Montagem e Modal de Feedback (Frontend)
+Definição: O frontend focará em implementar a biblioteca de drag and drop para a montagem das palavras. Os blocos devem ser renderizados com cores distintas por tipo. A integração exigirá o envio da combinação via POST e a exibição de um Modal de Feedback dinâmico, mostrando se a palavra é válida ou inválida com base no retorno da API.
 
-Pauta 3: Simulado de Sabatina Técnica
-Definição: Alinhamento das respostas para os principais questionamentos previsíveis da banca examinadora. A equipe revisou a fundamentação sobre o uso do ScrumXP na prática (plannings, reviews, refinamentos e XP), a lógica interna exata adotada para a concatenação e validação morfológica das palavras no backend (incluindo o tratamento simplificado de alomorfia) e a estratégia e relevância dos testes automatizados desenvolvidos.
+Pauta 3: Documentação e Rastreabilidade (Requisitos)
+Definição: Em paralelo ao código, a equipe atualizará o Backlog do Produto e refinará os contratos de qualidade (DoR e DoD). Será iniciada a "Rastreabilidade Atualizada", garantindo que a lógica desenvolvida no validador e os testes implementados estejam corretamente mapeados aos Requisitos Funcionais e Não Funcionais originais.
+
+Pauta 4: Evidências ScrumXP e Foco da Sprint
+Definição: A regra de ouro desta sprint é: "Funcionar > ficar bonito". Será feito o levantamento formal de evidências de execução do ScrumXP (screenshots do board, commits, PRs obrigatórios e reviews) e as "Evidências do MVP" (prints do sistema operando). O objetivo da Sprint Review será mostrar o protótipo funcional totalmente integrado.
 
 ✅ Ações / Próximos Passos
-[Artur Fernandes & Bruno Souza]: Concluir a varredura e correção de pequenos bugs de API ou banco, rodar a suite de testes final e preparar os insumos explicativos sobre a arquitetura do validador.
-[Luiz Henrique & Ana Beatriz]: Corrigir os últimos detalhes visuais de layout e responsividade, garantindo que o fluxo do usuário na demo ocorra sem gargalos estéticos.
-[Carlos Eduardo]: Finalizar o roteiro escrito da apresentação, consolidar os slides de apoio e gerenciar os horários dos ensaios coletivos.
-[Todos]: Participar das simulações de apresentação e ensaiar o roteiro da demo ao vivo para fixar os argumentos técnicos do projeto.
+[Artur Fernandes & Bruno Souza]: Construir os endpoints /morfemas e /validar-palavra, implementar a regra de alomorfia simples no banco e escrever a suíte de testes obrigatórios do backend.
+[Luiz Henrique & Ana Beatriz]: Aplicar o drag and drop, integrar o envio da combinação ao backend e acoplar a resposta da API aos estados visuais do Modal de Feedback (verde/vermelho).
+[Carlos Eduardo]: Consolidar o Backlog Atualizado, revisar o texto de DoR e DoD, estruturar a matriz de Rastreabilidade Atualizada e coletar as evidências do processo ScrumXP.
+[Todos]: Garantir a integração completa entre frontend e backend até o encerramento do ciclo. Todo o grupo deve saber explicar de cor como a concatenação e a validação funcionam.
 
 📝 Observações
-
-O foco total da equipe nesta reta final deve se concentrar em demonstrar de forma clara e segura o funcionamento fluido do MVP, demonstrando o domínio pleno sobre a arquitetura e as decisões ágeis tomadas ao longo das sprints.
+Esta é a Sprint mais importante do projeto. Se o núcleo de validação morfológica e a integração não estiverem funcionando, o sistema trava. O foco deve ser resolver a comunicação das APIs; o refinamento visual da interface ficará para o próximo ciclo.

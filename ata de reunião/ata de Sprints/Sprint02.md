@@ -1,5 +1,5 @@
-📌 Ata de Reunião - MorfoBlocos (Sprint 02)
-Data: 29/05/2026
+📌 Ata de Reunião - Sprint Planning MorfoBlocos (Sprint 02)
+Data: 29/04/2026
 
 Participantes:
 Artur Fernandes
@@ -9,28 +9,26 @@ Carlos Eduardo
 Ana Beatriz
 
 🎯 Objetivo(s) da Reunião
-Desenvolver e consolidar o núcleo funcional (core) do jogo MorfoBlocos, focando na mecânica de movimentação de blocos (drag and drop), lógica do validador morfológico no backend e integração completa dos componentes.
+Planejar as atividades da Sprint 2, focando na consolidação da Engenharia de Requisitos. O objetivo é elencar e atomizar os Requisitos Funcionais (RFs) e Não Funcionais (RNFs), estabelecer os contratos de qualidade (DoR e DoD), rascunhar os primeiros protótipos de interface e definir o escopo do Produto Mínimo Viável (MVP) para a entrega da Unidade 2.
 
 📋 Pautas e Definições
-Pauta 1: Lógica do Validador Morfológico e Alomorfia
-Definição: O backend disponibilizará o endpoint /morfemas (listagem) e o endpoint /validar-palavra. A lógica consistirá em receber a sequência de blocos do frontend, concatenar as grafias na ordem recebida e consultar a tabela PalavraValida. Para a alomorfia, adotou-se uma abordagem simplificada de cadastro direto no banco (ex: "in-" e "im-" como registros independentes). Toda a equipe deve estar alinhada e apta a explicar essa arquitetura de consulta.
+Pauta 1: Atomização de Requisitos e Classificação URPS+
+Definição: Ficou acordado que os requisitos de manutenção de catálogo (morfemas, palavras e atividades) serão desmembrados em operações atômicas de CRUD (Cadastrar, Editar, Remover e Listar) para facilitar a rastreabilidade. Os Requisitos Não Funcionais serão classificados segundo o modelo URPS+, devendo conter descrições e métodos de validação mensuráveis.
 
-Pauta 2: Área de Montagem e Feedback Visual (Frontend)
-Definição: O frontend focará na implementação da área de jogo contendo a mecânica de drag and drop para manipulação dos blocos, com cores distintas baseadas no tipo de morfema. Após a ação de envio da combinação para a API, um modal de feedback deve exibir de forma clara se a palavra é válida ou inválida, exibindo o processo morfológico correspondente retornado pelo backend.
+Pauta 2: Criação de Protótipos de Baixa Fidelidade
+Definição: Para tangibilizar a experiência do estudante (Espaço de Construção) e do professor (Painel de Monitoramento), a equipe de frontend iniciará o desenho de wireframes no Figma. Esses rascunhos servirão de base para validar fluxos visuais e usabilidade com a cliente antes da codificação.
 
-Pauta 3: Testes Automatizados e Qualidade
-Definição: Tornou-se obrigatória a criação de testes iniciais no backend para validar o fluxo de login, o registro de novos usuários e, principalmente, o comportamento do validador de palavras sob cenários de sucesso e falha.
+Pauta 3: Contratos de Qualidade (DoR e DoD) e Intervenção Social
+Definição: A equipe formalizará a Definition of Ready (DoR), garantindo que as histórias só entrem em desenvolvimento se estiverem maduras, e a Definition of Done (DoD), estabelecendo critérios rígidos de qualidade (como testes e code review) para considerar um item pronto. Em paralelo, será redigido o texto avaliando os impactos do projeto na sociedade (Intervenção Social).
 
-Pauta 4: Rituais de Fechamento ScrumXP
-Definição: Condução da Sprint Review com foco na validação do protótipo funcional e Sprint Retrospective para levantar gargalos de desenvolvimento e refatorar trechos de código duplicados identificados durante o desenvolvimento da mecânica central.
+Pauta 4: Priorização do Backlog e Definição do MVP
+Definição: Utilizaremos a técnica MoSCoW combinada à Matriz de Valor de Negócio × Complexidade Técnica para priorizar o backlog. O cruzamento dessas métricas definirá oficialmente quais requisitos farão parte do escopo do MVP, excluindo funcionalidades secundárias nesta primeira fase.
 
 ✅ Ações / Próximos Passos
-[Artur Fernandes & Bruno Souza]: Construir os endpoints de listagem e validação morfológica, implementar o suporte simplificado a alomorfia via banco e escrever os testes automatizados obrigatórios.
-[Luiz Henrique & Ana Beatriz]: Implementar a biblioteca de drag and drop no front, renderizar os blocos coloridos por tipo e construir os modais de feedback integrados aos retornos da API.
-[Carlos Eduardo]: Apoiar na revisão das rotas da API, garantir a execução dos testes e documentar os pontos levantados na retrospectiva.
-[Todos]: Manter o foco estrito na entrega funcional da mecânica do jogo, priorizando o funcionamento correto da lógica sobre o refinamento estético visual nesta etapa.
+[Artur Fernandes & Bruno Souza]: Levantar, atomizar e rastrear os RFs e RNFs (URPS+), definindo métricas testáveis de desempenho, segurança e suportabilidade arquitetural.
+[Luiz Henrique & Ana Beatriz]: Desenhar os protótipos de baixa fidelidade (wireframes) das telas principais, garantindo que os fluxos visuais atendam aos critérios de usabilidade mapeados.
+[Carlos Eduardo]: Redigir o documento de Intervenção Social, consolidar as matrizes de priorização, formalizar os textos de DoR e DoD e organizar o compilado final da Unidade 2.
+[Todos]: Revisar a definição do MVP e participar da reunião de validação dos protótipos e requisitos levantados com a Profª. Pilar (PO).
 
 📝 Observações
-
-O lema desta sprint é "funcionar primeiro, ficar bonito depois". Ao final deste ciclo, o jogo precisa estar totalmente integrado e validando palavras de forma consistente.
-
+Todo o material produzido nesta Sprint tem como prazo de entrega institucional a Unidade 2 (até o dia 18/05). A validação final do MVP e dos protótipos com a cliente precisa ocorrer antes dessa data limite para viabilizar eventuais correções sem atrasar o cronograma.

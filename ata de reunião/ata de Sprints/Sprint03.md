@@ -1,5 +1,5 @@
-📌 Ata de Reunião - MorfoBlocos (Sprint 03)
-Data: 05/06/2026
+📌 Ata de Reunião - Sprint Planning MorfoBlocos (Sprint 03)
+Data: 13/05/2026
 
 Participantes:
 Artur Fernandes
@@ -9,24 +9,26 @@ Carlos Eduardo
 Ana Beatriz
 
 🎯 Objetivo(s) da Reunião
-Refinar e estabilizar o MVP do MorfoBlocos, adicionando persistência de histórico de partidas, melhorias de usabilidade (UX), ampliação da cobertura de testes e atualização detalhada de toda a documentação do projeto.
+Planejar as atividades da Sprint 3, que marca a transição estratégica da engenharia de requisitos documental para o início do desenvolvimento (código) e do design de interface. O foco será realizar o setup dos ambientes (Frontend e Backend), iniciar o fluxo base de autenticação, finalizar os protótipos de alta fidelidade e detalhar as User Stories com seus respectivos Critérios de Aceitação.
 
 📋 Pautas e Definições
-Pauta 1: Histórico, Pontuação e Robustez do Backend
-Definição: O backend passará a persistir o histórico de tentativas de cada usuário, incluindo a pontuação obtida e o resultado de cada validação. Serão implementados tratamentos de erro mais robustos para evitar quebras no sistema e garantir mensagens de erro mais informativas e amigáveis, além de testes adicionais para JWT e cenários alternativos de validação.
+Pauta 1: Setup do Ambiente e Arquitetura Base (Código)
+Definição: Ficou decidido o início oficial da codificação. O backend será inicializado utilizando Django e PostgreSQL, com a configuração do Django REST Framework (DRF). O frontend será estruturado com React, Vite, TypeScript e Tailwind CSS, garantindo a fundação técnica do projeto.
 
-Pauta 2: UX, Responsividade e Alinhamento de Protótipos
-Definição: O frontend receberá melhorias de responsividade com foco em dispositivos móveis, resolvendo quebras de layout e problemas de overflow. Serão adicionados estados visuais de carregamento (loading placeholders) e feedbacks textuais mais polidos. Os protótipos de tela finais devem ser atualizados e alinhados rigorosamente com o que foi efetivamente codificado.
+Pauta 2: Autenticação e Modelagem Inicial
+Definição: A equipe de backend priorizará a codificação dos models iniciais (Usuário e Morfema) e a implementação da segurança via SimpleJWT. O frontend configurará o Axios e o React Router para consumir o login e armazenar o token, estabelecendo a primeira comunicação real entre as camadas.
 
-Pauta 3: Mutirão de Documentação Técnica e Evidências
-Definição: Dedicação coletiva para atualizar todos os artefatos exigidos: Product Backlog, Sprint Backlog, User Story Map (USM), Requisitos Funcionais (RFs) e a arquitetura de software atualizada. Adicionalmente, devem ser coletadas e organizadas as evidências de uso do ScrumXP (prints do board de tarefas, histórico de commits, pull requests aprovados e code reviews realizados).
+Pauta 3: Protótipos de Alta Fidelidade (UI/UX)
+Definição: Como optamos por não utilizar protótipos de baixa fidelidade, a equipe de design irá direto para a construção das telas de alta fidelidade no Figma. Serão desenhadas as telas de Login, o Tabuleiro de jogo (área de montagem) e os Modais de Feedback, já com as cores, tipografia e espaçamentos definitivos.
+
+Pauta 4: User Stories e Critérios de Aceitação
+Definição: Os Requisitos Funcionais do MVP serão transformados em Histórias de Usuário ágeis. O foco será redigir Critérios de Aceitação rigorosos para o validador morfológico e aplicar a Definition of Ready (DoR) para garantir que nenhuma task vá para o código com dúvidas de negócio.
 
 ✅ Ações / Próximos Passos
-[Artur Fernandes & Bruno Souza]: Desenvolver o modelo e as rotas de histórico/pontuação, incrementar os testes de validação/erros e refinar as mensagens de retorno do servidor.
-[Luiz Henrique & Ana Beatriz]: Ajustar o layout para telas menores (mobile básico), tratar overflows na área de montagem dos blocos e atualizar as telas finais conforme o protótipo ajustado.
-[Carlos Eduardo]: Liderar a consolidação da documentação técnica e arquitetural, cobrando e organizando as capturas de tela que comprovam a vivência das práticas ágeis.
-[Todos]: Revisar e atualizar os artefatos de engenharia de requisitos (Backlog, USM e RFs) para estarem em total conformidade com a entrega atual do sistema.
+[Artur Fernandes & Bruno Souza]: Criar o repositório backend, configurar banco de dados, rodar as migrations iniciais e liberar a primeira rota de login via JWT.
+[Luiz Henrique & Ana Beatriz]: Desenhar os protótipos de alta fidelidade no Figma, inicializar o repositório frontend e codificar a estrutura base de UI para a autenticação.
+[Carlos Eduardo]: Gerenciar a criação das User Stories no quadro ágil, redigir os Critérios de Aceitação e garantir o vínculo entre as histórias e as telas desenhadas no Figma.
+[Todos]: Revisar se o código inicial e os protótipos refletem o MVP e preparar o material para a reunião de validação com a Profª. Pilar (PO) ao final da sprint.
 
 📝 Observações
-
-A professora e a banca costumam valorizar expressivamente as evidências práticas do ScrumXP e o rastreamento dos requisitos. Nenhum artefato de documentação deve ser deixado desatualizado.
+Esta sprint é o momento de virada de chave do projeto. A sincronia entre a equipe que está codificando a infraestrutura e a equipe que está desenhando o layout de alta fidelidade deve ser diária para não gerar retrabalho nas Sprints seguintes. A validação das telas e das histórias com a cliente ocorrerá no encerramento deste ciclo (26/05).

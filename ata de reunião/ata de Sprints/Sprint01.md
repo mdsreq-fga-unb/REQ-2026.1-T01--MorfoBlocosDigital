@@ -1,5 +1,5 @@
-📌 Ata de Reunião - MorfoBlocos (Sprint 01)
-Data: 22/05/2026
+📌 Ata de Reunião - Sprint Planning MorfoBlocos (Sprint 01)
+Data: 14/04/2026
 
 Participantes:
 Artur Fernandes
@@ -9,27 +9,26 @@ Carlos Eduardo
 Ana Beatriz
 
 🎯 Objetivo(s) da Reunião
-Estabelecer a fundação inicial do sistema MorfoBlocos Digital, garantindo a configuração dos ambientes de desenvolvimento, a modelagem inicial do banco de dados, o fluxo de autenticação e a integração inicial entre o frontend e o backend.
+Planejar as atividades da Sprint 1, focando exclusivamente na Engenharia de Requisitos (Elicitação Inicial). O objetivo central é compreender o cenário atual do jogo físico, mapear os primeiros morfemas, desenhar o fluxo de interação (Rich Picture) e preparar o Backlog Inicial para validação com a cliente (Profª. Pilar).
 
 📋 Pautas e Definições
-Pauta 1: Setup do Projeto e Arquitetura Inicial (Backend e Banco de Dados)
-Definição: Ficou definido o setup estrutural utilizando Django com PostgreSQL. Serão configuradas as variáveis de ambiente (.env) e instaladas as dependências essenciais: Django REST Framework (DRF), SimpleJWT para segurança, e corsheaders para permitir a comunicação com o frontend.
+Pauta 1: Análise do Cenário Atual e Documentação Base
+Definição: Ficou definido que o primeiro passo da equipe será a leitura e análise do relatório final do projeto original do MorfoBlocos. Essa etapa é essencial para absorver o vocabulário pedagógico e entender os gargalos da correção manual no modelo físico atual.
 
-Pauta 2: Modelagem do Banco e Autenticação
-Definição: Definiu-se o modelo inicial contendo as tabelas Usuário, Morfema, PalavraValida e Tentativa. O fluxo de autenticação contará com os endpoints de login e register gerando tokens JWT válidos. O Django Admin será utilizado imediatamente para o cadastro rápido e testes de CRUD de morfemas e palavras válidas.
+Pauta 2: Mapeamento Preliminar de Morfemas e Regras
+Definição: A equipe técnica de backend iniciará o mapeamento das peças do jogo (radicais, prefixos e sufixos) e o levantamento de dúvidas sobre processos complexos (como derivação parassintética e alomorfia) para levar à cliente, preparando a base estrutural do futuro validador.
 
-Pauta 3: Estrutura do Frontend e Integração Base
-Definição: O ambiente frontend será iniciado utilizando React + Vite + TypeScript, com estilização em Tailwind CSS e gerenciamento de rotas via React Router. A comunicação com a API será feita via Axios, priorizando o desenvolvimento das telas de Login, Cadastro e um Dashboard básico capaz de armazenar o JWT e realizar o redirecionamento do usuário.
+Pauta 3: Construção do Rich Picture (AS-IS / TO-BE)
+Definição: Para representar a transição do físico para o digital de forma clara, será elaborado o diagrama Rich Picture. Ele deve evidenciar os atores (professor e aluno), as limitações do contexto de sala de aula e como o sistema digital atuará fornecendo feedback imediato.
 
-Pauta 4: Processo ScrumXP
-Definição: Realização do Sprint Planning para divisão clara das tarefas e estimativas de esforço. Dailies serão adotadas para acompanhamento de impedimentos, e o fluxo de desenvolvimento exigirá a abertura de Pull Requests (PRs) obrigatórios com code review simplificado antes de qualquer merge na branch principal.
+Pauta 4: Estruturação do Backlog e Reunião com a PO
+Definição: Definiu-se a necessidade de rascunhar os primeiros Épicos e Objetivos (OE1 a OE4) do sistema. O fechamento da sprint ocorrerá por meio de uma reunião síncrona gravada com a Profª. Pilar para apresentar essas definições e colher o aceite formal do escopo inicial.
 
 ✅ Ações / Próximos Passos
-[Artur Fernandes & Bruno Souza]: Realizar o setup do Django, configuração do PostgreSQL, migrações iniciais e estruturação dos endpoints de autenticação e tabelas base.
-[Luiz Henrique & Ana Beatriz]: Criar a estrutura do projeto em React com Vite/TS, implementar o Tailwind, criar as telas de login/cadastro e integrar a retenção do JWT via Axios.
-[Carlos Eduardo]: Validar os relacionamentos, constraints e tipos das tabelas do banco de dados, além de organizar o quadro de tarefas do ScrumXP.
-[Todos]: Garantir o funcionamento integrado de ponta a ponta (login injetando token e frontend respondendo) até o término da sprint.
+[Artur Fernandes & Bruno Souza]: Ler a documentação base do jogo físico, realizar o mapeamento preliminar dos morfemas e listar as dúvidas pedagógicas que impactarão a futura modelagem do banco.
+[Luiz Henrique & Ana Beatriz]: Elaborar, revisar e digitalizar a primeira versão do diagrama Rich Picture e organizar os canais de comunicação e pastas do projeto.
+[Carlos Eduardo]: Configurar o quadro de tarefas (board) da sprint, rascunhar o Backlog Inicial e agendar a primeira reunião oficial com a cliente via Google Meet.
+[Todos]: Participar ativamente da reunião de elicitação e validação com a Profª. Pilar ao final da sprint.
 
 📝 Observações
-
-A integração total precisa estar funcional até o dia 28/05. Caso o fluxo básico de login e banco não esteja operável nesta data, o cronograma geral do projeto entrará em risco.
+O foco estrito desta Sprint é a Engenharia de Requisitos. Nenhuma linha de código ou setup de ambiente deve ser realizada até que a Visão do Produto e o Backlog Inicial sejam formalmente validados e aprovados pela cliente no dia 28/04.
