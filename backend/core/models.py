@@ -46,3 +46,14 @@ class PalavraValida(models.Model):
     def __str__(self):
         return self.texto
 
+
+
+class Tentativa(models.Model):
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name="tentativas")
+    palavra = models.CharField(max_length=100)
+    acertou = models.BooleanField()
+    data = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        resultado = "acertou" if self.acertou else "errou"
+        return f"{self.usuario.email} - {self.palavra} ({resultado})"
