@@ -1,0 +1,24 @@
+:root {
+    --md-primary-fg-color: #1565C0;
+    --md-accent-fg-color: #E53935;
+}
+
+.md-header {
+    box-shadow: 0 3px 10px rgba(0,0,0,.15);
+}
+
+.md-typeset h1 {
+    color: #1565C0;
+}
+
+.md-typeset h2 {
+    color: #1565C0;
+}
+
+.md-typeset h3 {
+    color: #E53935;
+}
+
+.md-nav__title {
+    font-weight: bold;
+}

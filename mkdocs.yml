@@ -1,20 +1,49 @@
-site_url: https://mdsreq-fga-unb.github.io/REQ-2026.1-T01--MorfoBlocosDigital/
+site_url: https://mdsreq-fga-unb.github.io/REQ-2026.1-T01--MorfoBlocosDigital/v2/
 site_name: MorfoBlocos Digital
 site_description: Documentação do projeto MorfoBlocos Digital - Engenharia de Software
 site_author: Equipe G4
 
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+
 theme:
   name: material
+
+  language: pt-BR
+
   palette:
-    # Opção de alternar entre tema claro e escuro
     - scheme: default
+      primary: blue
+      accent: red
+
       toggle:
-        icon: material/brightness-7 
-        name: Mudar para modo escuro 
+        icon: material/weather-night
+        name: Modo escuro
+
     - scheme: slate
+      primary: blue
+      accent: yellow
+
       toggle:
-        icon: material/brightness-4
-        name: Mudar para modo claro
+        icon: material/weather-sunny
+        name: Modo claro
+
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.expand
+    - navigation.indexes
+    - toc.follow
+    - search.highlight
+    - search.suggest
+    - content.code.copy
 
 nav:
   - 'Início': 'v1/index.md'
@@ -24,8 +53,24 @@ nav:
     - 'Visão do Produto': 'v1/visao_produto.md'
   - 'Unidade III':
     - 'Início': 'v2/index.md'
+    - 'Visão do Produto': 'v2/visao-produto/cenario-atual.md'
+    - 'Solução Proposta': 'v2/visao-produto/solucao-proposta.md'
+    - 'Intervenção Social': 'v2/visao-produto/intervencao-social.md'
+    - 'Estratégias de Engenharia de Software': 'v2/visao-produto/estrategias-esw.md'
+    - 'Engenharia de Requisitos': 'v2/visao-produto/eng-requisitos.md'
+    - 'Cronograma': 'v2/visao-produto/cronograma.md'
+    - 'Interação entre a Equipe e Cliente': 'v2/visao-produto/interacao-eqp-cliente.md'
+    - 'Requisitos de Software': 'v2/visao-produto/requisitos.md'
+    - 'Definition of Ready (DoR) e Definition of Done (DoD)': 'v2/visao-produto/dor-dod.md'
+
+    - 'Lições Aprendidas': 'v2/visao-produto/licoes-aprendidas.md'
     - 'Sprints':
       - 'Sprint 1': 'v2/sprints/sprint1.md'
       - 'Sprint 2': 'v2/sprints/sprint2.md'
       - 'Sprint 3': 'v2/sprints/sprint3.md'      
-      - 'Sprint 4': 'v2/sprints/sprint4.md'      
+      - 'Sprint 4': 'v2/sprints/sprint4.md'   
+    - 'Reuniões': 'v2/reunioes.md'
+
+
+copyright: |
+  © 2026 Equipe G4 • Engenharia de Software - FGA/UnB
