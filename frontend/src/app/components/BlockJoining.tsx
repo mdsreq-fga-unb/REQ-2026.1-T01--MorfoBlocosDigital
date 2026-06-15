@@ -1,29 +1,38 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router';
-import { ArrowLeft, RotateCcw, Check } from 'lucide-react';
+import { ArrowLeft, RotateCcw, Check, Loader2 } from 'lucide-react';
+import { api } from '../../lib/api';
 
 type Block = { id: string; text: string; type: 'prefix' | 'root' | 'suffix'; color: string };
 
-const availableBlocks: Block[] = [
-  { id: '1', text: 'in', type: 'prefix', color: 'bg-red-500' },
-  { id: '2', text: 'des', type: 'prefix', color: 'bg-red-500' },
-  { id: '3', text: 're', type: 'prefix', color: 'bg-red-500' },
-  { id: '4', text: 'feliz', type: 'root', color: 'bg-blue-600' },
-  { id: '5', text: 'leal', type: 'root', color: 'bg-blue-600' },
-  { id: '6', text: 'fazer', type: 'root', color: 'bg-blue-600' },
-  { id: '7', text: 'amor', type: 'root', color: 'bg-blue-600' },
-  { id: '8', text: 'mente', type: 'suffix', color: 'bg-yellow-500' },
-  { id: '9', text: 'inho', type: 'suffix', color: 'bg-yellow-500' },
-  { id: '10', text: 'oso', type: 'suffix', color: 'bg-yellow-500' },
-];
+// Formato cru vindo do backend (GET /api/morfemas/).
+type Morfema = { id: number; texto: string; tipo: 'prefixo' | 'radical' | 'sufixo'; cor: string };
 
-const validWords = ['infeliz', 'desleal', 'refazer', 'amorinho', 'felizmente', 'amoroso', 'infelizmente'];
+// Conversores entre o vocabulário do frontend (prefix/root/suffix) e o do
+// backend (prefixo/radical/sufixo).
+const tipoToFrontend: Record<Morfema['tipo'], Block['type']> = {
+  prefixo: 'prefix',
+  radical: 'root',
+  sufixo: 'suffix',
+};
+const tipoToBackend: Record<Block['type'], Morfema['tipo']> = {
+  prefix: 'prefixo',
+  root: 'radical',
+  suffix: 'sufixo',
+};
 
 type DragSource = { kind: 'palette'; block: Block } | { kind: 'assembled'; idx: number; block: Block };
 
 export function BlockJoining() {
+  const [availableBlocks, setAvailableBlocks] = useState<Block[]>([]);
+  const [loadingBlocks, setLoadingBlocks] = useState(true);
+  const [blocksError, setBlocksError] = useState<string | null>(null);
+
   const [assembled, setAssembled] = useState<Block[]>([]);
   const [feedback, setFeedback] = useState<'success' | 'error' | null>(null);
+  const [processo, setProcesso] = useState<string | null>(null);
+  const [checking, setChecking] = useState(false);
+  const [requestError, setRequestError] = useState<string | null>(null);
   const [drag, setDrag] = useState<{ source: DragSource; x: number; y: number } | null>(null);
   const [hoverZone, setHoverZone] = useState<'assembly' | 'palette' | null>(null);
 
@@ -31,18 +40,71 @@ export function BlockJoining() {
   const paletteRef = useRef<HTMLDivElement>(null);
   const scrollTimer = useRef<number | null>(null);
 
+  // Carrega os blocos da paleta a partir do backend.
+  useEffect(() => {
+    let active = true;
+    setLoadingBlocks(true);
+    setBlocksError(null);
+    api
+      .get<Morfema[]>('/morfemas/')
+      .then(({ data }) => {
+        if (!active) return;
+        setAvailableBlocks(
+          data.map((m) => ({
+            id: String(m.id),
+            text: m.texto,
+            type: tipoToFrontend[m.tipo] ?? 'root',
+            color: m.cor,
+          })),
+        );
+      })
+      .catch((err) => {
+        console.error('Falha ao carregar morfemas:', err);
+        if (active) setBlocksError('Não foi possível carregar os blocos. Recarregue a página.');
+      })
+      .finally(() => {
+        if (active) setLoadingBlocks(false);
+      });
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  // Limpa qualquer resultado/erro anterior quando a montagem muda.
+  const clearResult = () => {
+    setFeedback(null);
+    setProcesso(null);
+    setRequestError(null);
+  };
+
   const handleAddBlock = (block: Block) => {
     setAssembled((a) => [...a, block]);
-    setFeedback(null);
+    clearResult();
   };
   const handleRemoveBlock = (idx: number) => {
     setAssembled((a) => a.filter((_, i) => i !== idx));
-    setFeedback(null);
+    clearResult();
   };
-  const handleReset = () => { setAssembled([]); setFeedback(null); };
-  const handleCheck = () => {
-    const word = assembled.map((b) => b.text).join('').toLowerCase();
-    setFeedback(validWords.includes(word) ? 'success' : 'error');
+  const handleReset = () => {
+    setAssembled([]);
+    clearResult();
+  };
+  const handleCheck = async () => {
+    setChecking(true);
+    setRequestError(null);
+    try {
+      const blocos = assembled.map((b) => ({ texto: b.text, tipo: tipoToBackend[b.type] }));
+      const { data } = await api.post('/validar-palavra/', { blocos });
+      setProcesso(data.processo_morfologico ?? null);
+      setFeedback(data.valida ? 'success' : 'error');
+    } catch (err) {
+      console.error('Falha ao validar palavra:', err);
+      setFeedback(null);
+      setProcesso(null);
+      setRequestError('Não foi possível validar a palavra. Tente novamente.');
+    } finally {
+      setChecking(false);
+    }
   };
 
   const dragStartPos = useRef<{ x: number; y: number } | null>(null);
@@ -208,6 +270,12 @@ export function BlockJoining() {
                   <span className="text-muted-foreground">=</span>
                   <span className="px-3 py-1 bg-gray-100 rounded-md text-sm">{currentWord}</span>
                 </div>
+                {processo && (
+                  <div className="mt-3 pt-3 border-t border-green-100 text-sm">
+                    <span className="text-muted-foreground">Processo morfológico: </span>
+                    <span>{processo}</span>
+                  </div>
+                )}
               </div>
             </div>
           )}
@@ -215,6 +283,11 @@ export function BlockJoining() {
             <div className="p-4 bg-red-50 border-l-4 border-red-500 rounded-xl mb-4">
               <div>Palavra não reconhecida</div>
               <div className="text-sm text-muted-foreground">Tente outra combinação!</div>
+            </div>
+          )}
+          {requestError && (
+            <div className="p-4 bg-orange-50 border-l-4 border-orange-500 rounded-xl mb-4 text-sm text-orange-700">
+              {requestError}
             </div>
           )}
 
@@ -227,10 +300,11 @@ export function BlockJoining() {
             </button>
             <button
               onClick={handleCheck}
-              disabled={assembled.length === 0}
-              className="flex-1 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors disabled:opacity-50"
+              disabled={assembled.length === 0 || checking}
+              className="flex-1 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
             >
-              Verificar Palavra
+              {checking && <Loader2 className="w-5 h-5 animate-spin" />}
+              {checking ? 'Verificando...' : 'Verificar Palavra'}
             </button>
           </div>
         </div>
@@ -242,6 +316,17 @@ export function BlockJoining() {
           }`}
         >
           <h3 className="mb-4">Blocos Disponíveis</h3>
+          {loadingBlocks && (
+            <div className="flex items-center justify-center gap-2 py-6 text-muted-foreground">
+              <Loader2 className="w-5 h-5 animate-spin" /> Carregando blocos...
+            </div>
+          )}
+          {blocksError && (
+            <div className="p-4 bg-red-50 border-l-4 border-red-500 rounded-xl text-sm text-red-700">
+              {blocksError}
+            </div>
+          )}
+          {!loadingBlocks && !blocksError && (
           <div className="space-y-4">
             {(['prefix', 'root', 'suffix'] as const).map((type) => (
               <div key={type}>
@@ -262,6 +347,7 @@ export function BlockJoining() {
               </div>
             ))}
           </div>
+          )}
         </div>
       </div>
 
