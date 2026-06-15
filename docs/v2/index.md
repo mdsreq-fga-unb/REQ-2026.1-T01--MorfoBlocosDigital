@@ -54,3 +54,4 @@ O jogo é composto por peças coloridas que representam morfemas — raízes (ou
 | **Data**       | Versão | Descrição                                           | Autor              |
 | ---------------| -------| ----------------------------------------------------| -------------------|
 | 14/06/2026 | 1.0 | Estruturação inicial para entrega da Unidade III. | [Bruno Souza](https://github.com/youngburny) |
+| 15/06/2026 | 1.1 | Ajustes na home e na estilização do GitPages. | [Bruno Souza](https://github.com/youngburny) |

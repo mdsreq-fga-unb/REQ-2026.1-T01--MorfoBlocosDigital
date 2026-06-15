@@ -1,10 +1,33 @@
 :root {
-    --md-primary-fg-color: #1565C0;
+    --md-primary-fg-color: #1976D2;
     --md-accent-fg-color: #E53935;
 }
 
+.md-header,
+.md-tabs {
+    background: linear-gradient(
+        135deg,
+        #0D47A1 0%,
+        #1565C0 35%,
+        #1E88E5 100%
+    );
+}
+
 .md-header {
-    box-shadow: 0 3px 10px rgba(0,0,0,.15);
+    box-shadow:
+        0 0 12px rgba(255,0,0,.4),
+        0 0 20px rgba(255,0,0,.15);
+}
+
+.md-tabs__link:hover {
+    transform: translateY(-2px);
+    transition: 0.2s ease;
+}
+
+.md-header {
+    border-bottom: 2px solid #FDD835;
+    box-shadow:
+        0 3px 12px rgba(255,0,0,.5);
 }
 
 .md-typeset h1 {
@@ -12,13 +35,14 @@
 }
 
 .md-typeset h2 {
-    color: #1565C0;
+    color: #E53935;
 }
 
 .md-typeset h3 {
-    color: #E53935;
+    color: #decc04;
 }
 
 .md-nav__title {
     font-weight: bold;
 }
+
