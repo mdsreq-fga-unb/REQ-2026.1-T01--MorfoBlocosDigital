@@ -53,3 +53,20 @@ Para resolver esses problemas, foram realizadas revisões incrementais e verific
 
 À medida que o documento evoluiu, tornou-se mais difícil manter alinhamento entre objetivos específicos, características de produto, requisitos funcionais, requisitos não funcionais e regras de negócio. Pequenas alterações em uma seção frequentemente exigiam ajustes em várias outras partes do documento.
 Como forma de reduzir inconsistências, a equipe passou a utilizar identificadores padronizados e revisões integradas entre os artefatos, facilitando a manutenção da rastreabilidade e a validação das relações entre os elementos do projeto.
+
+### **11.3 Unidade III**
+
+* **Organização do fluxo de trabalho e controle de prazos**
+
+A dependência entre tarefas, somada à ocorrência de imprevistos, acabou gerando acúmulo de atividades próximo às datas de entrega. 
+Para resolver, a distribuição de tarefas foi ajustada entre os membros da equipe e o escopo passou por adequações para se alinhar ao tempo disponível.
+
+* **Estrutura de desenvolvimento e organização das entregas**
+
+Falhas nas fases iniciais acabaram impactando etapas posteriores, o que resultou em um acúmulo de esforço concentrado na reta final do desenvolvimento.
+O trabalho foi reorganizado em partes menores e, com isso, as prioridades passaram a focar nas funcionalidades essenciais, garantindo maior estabilidade no avanço do sistema.
+
+* **Processo de validação com a cliente**
+
+A realização das validações apenas no final da sprint reduziu o tempo disponível para ajustes, o que aumentou a quantidade de retrabalho antes da entrega.
+Passou-se a realizar validações de forma antecipada, utilizando protótipos e representações de fluxo ainda nas fases iniciais. Essa mudança possibilitou identificar inconsistências mais cedo e reduzir correções em etapas avançadas.

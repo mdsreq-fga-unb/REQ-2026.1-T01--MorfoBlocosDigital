@@ -38,7 +38,6 @@ theme:
   - navigation.tabs
   - navigation.tabs.sticky
   - navigation.top
-  - navigation.expand
   - toc.follow
   - content.code.copy
   - search.highlight
@@ -56,23 +55,26 @@ nav:
     - 'Visão do Produto': 'v1/visao_produto.md'
   - 'Unidade III':
     - 'Início': 'v2/index.md'
-    - 'Visão do Produto': 'v2/visao-produto/cenario-atual.md'
-    - 'Solução Proposta': 'v2/visao-produto/solucao-proposta.md'
-    - 'Intervenção Social': 'v2/visao-produto/intervencao-social.md'
-    - 'Estratégias de Engenharia de Software': 'v2/visao-produto/estrategias-esw.md'
-    - 'Engenharia de Requisitos': 'v2/visao-produto/eng-requisitos.md'
-    - 'Cronograma': 'v2/visao-produto/cronograma.md'
-    - 'Interação entre a Equipe e Cliente': 'v2/visao-produto/interacao-eqp-cliente.md'
-    - 'Requisitos de Software': 'v2/visao-produto/requisitos.md'
-    - 'Definition of Ready (DoR) e Definition of Done (DoD)': 'v2/visao-produto/dor-dod.md'
+    - 'Visão do Produto': 
+      - 'Cenário Atual do Cliente e do Negócio': v2/visao-produto/cenario-atual.md
+      - 'Solução Proposta': 'v2/visao-produto/solucao-proposta.md'
+      - 'Intervenção Social': 'v2/visao-produto/intervencao-social.md'
+      - 'Estratégias de Engenharia de Software': 'v2/visao-produto/estrategias-esw.md'
+      - 'Engenharia de Requisitos': 'v2/visao-produto/eng-requisitos.md'
+      - 'Cronograma': 'v2/visao-produto/cronograma.md'
+      - 'Interação entre a Equipe e Cliente': 'v2/visao-produto/interacao-eqp-cliente.md'
+      - 'Requisitos de Software': 'v2/visao-produto/requisitos.md'
+      - 'Definition of Ready (DoR) e Definition of Done (DoD)': 'v2/visao-produto/dor-dod.md'
+      - 'Backlog': 'v2/visao-produto/backlog.md'
 
-    - 'Lições Aprendidas': 'v2/visao-produto/licoes-aprendidas.md'
+      - 'Lições Aprendidas': 'v2/visao-produto/licoes-aprendidas.md'
     - 'Sprints':
       - 'Sprint 1': 'v2/sprints/sprint1.md'
       - 'Sprint 2': 'v2/sprints/sprint2.md'
       - 'Sprint 3': 'v2/sprints/sprint3.md'      
       - 'Sprint 4': 'v2/sprints/sprint4.md'   
     - 'Reuniões': 'v2/reunioes.md'
+    - 'Status do projeto': 'v2/status-projeto.md'
 
 
 copyright: |

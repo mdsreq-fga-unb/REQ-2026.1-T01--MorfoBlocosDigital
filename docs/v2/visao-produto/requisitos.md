@@ -24,13 +24,13 @@ Esta seção detalha as especificações fundamentais para a concepção e o des
 | **RF16** | Realizar atividades pedagógicas disponíveis no sistema. | CP3 - Espaço de Construção | Must Have | É a funcionalidade central do produto — sem ela o sistema não tem propósito. |
 | **RF17** | Movimentar blocos de morfemas na área de montagem. | CP3 - Espaço de Construção | Must Have | É a mecânica principal para a montagem/processo de formação das palavras. |
 | **RF18** | Submeter a combinação de blocos para validação. | CP3 - Espaço de Construção | Must Have | Mecânica importante, sem a submissão não há validação, logo o aluno não recebe feedback para evolução nas atividades. |
-| **RF10** | Consultar explicações sobre conteúdos morfológicos relacionados às atividades. | CP3 - Espaço de Construção | Could Have | Desejável pedagogicamente mas o MVP funciona sem material de apoio. |
-| **RF11** | Consultar o resultado da validação da combinação de blocos submetida. | CP4 - Validador de Estruturas | Must Have | Permite ao estudante acompanhar sua própria evolução ao longo do tempo. |
-| **RF12** | Consultar o processo de formação morfológica da palavra validada. | CP4 - Validação de Estruturas | Must Have | Garante o objetivo didático do sistema, permitindo que o estudante compreenda a estrutura e a regra por trás da palavra que acabou de validar. |
-| **RF13** | Consultar o histórico de pontuações individuais. | CP5 - Portfólio de Progresso | Must Have | Fundamental para a gamificação e engajamento, permitindo que o estudante acompanhe seu próprio progresso ao longo do tempo.
-| **RF14** | Consultar os detalhes de uma atividade realizada. | CP5 - Portfólio de Progresso | Should Have | Importante para que o estudante revise seus erros e acertos passados, mas o MVP funciona apenas com a exibição do histórico de notas/pontos. |
-| **RF15** | Acessar relatório de desempenho consolidado da turma. | CP6 - Painel de Monitoramento | Must Have | Permite ao professor identificar dificuldades e orientar intervenções pedagógicas. |
-| **RF16** | Consultar os erros morfológicos mais frequentes dos estudantes. | CP6 - Painel de Monitoramento | Should Have | Agrega valor ao monitoramento, mas o painel funciona sem esse detalhamento. |
+| **RF19** | Consultar explicações sobre conteúdos morfológicos relacionados às atividades. | CP3 - Espaço de Construção | Could Have | Desejável pedagogicamente mas o MVP funciona sem material de apoio. |
+| **RF20** | Consultar o resultado da validação da combinação de blocos submetida. | CP4 - Validador de Estruturas | Must Have | Permite ao estudante acompanhar sua própria evolução ao longo do tempo. |
+| **RF21** | Consultar o processo de formação morfológica da palavra validada. | CP4 - Validação de Estruturas | Must Have | Garante o objetivo didático do sistema, permitindo que o estudante compreenda a estrutura e a regra por trás da palavra que acabou de validar. |
+| **RF22** | Consultar o histórico de pontuações individuais. | CP5 - Portfólio de Progresso | Must Have | Fundamental para a gamificação e engajamento, permitindo que o estudante acompanhe seu próprio progresso ao longo do tempo.
+| **RF23** | Consultar os detalhes de uma atividade realizada. | CP5 - Portfólio de Progresso | Should Have | Importante para que o estudante revise seus erros e acertos passados, mas o MVP funciona apenas com a exibição do histórico de notas/pontos. |
+| **RF24** | Acessar relatório de desempenho consolidado da turma. | CP6 - Painel de Monitoramento | Must Have | Permite ao professor identificar dificuldades e orientar intervenções pedagógicas. |
+| **RF25** | Consultar os erros morfológicos mais frequentes dos estudantes. | CP6 - Painel de Monitoramento | Should Have | Agrega valor ao monitoramento, mas o painel funciona sem esse detalhamento. |
 
 ## **8.2 Lista de Requisitos Não Funcionais**
 
