@@ -46,11 +46,14 @@ export function BlockJoining() {
     setLoadingBlocks(true);
     setBlocksError(null);
     api
-      .get<Morfema[]>('/morfemas/')
+      .get<Morfema[] | { results: Morfema[] }>('/morfemas/')
       .then(({ data }) => {
         if (!active) return;
+        // O DRF pagina a resposta: { count, next, previous, results: [...] }.
+        // Usamos data.results; com fallback para array direto, por robustez.
+        const lista: Morfema[] = Array.isArray(data) ? data : (data?.results ?? []);
         setAvailableBlocks(
-          data.map((m) => ({
+          lista.map((m) => ({
             id: String(m.id),
             text: m.texto,
             type: tipoToFrontend[m.tipo] ?? 'root',
