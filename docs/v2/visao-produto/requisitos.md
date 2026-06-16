@@ -32,7 +32,7 @@ Esta seção detalha as especificações fundamentais para a concepção e o des
 | **RF24** | Acessar relatório de desempenho consolidado da turma. | CP6 - Painel de Monitoramento | Must Have | Permite ao professor identificar dificuldades e orientar intervenções pedagógicas. |
 | **RF25** | Consultar os erros morfológicos mais frequentes dos estudantes. | CP6 - Painel de Monitoramento | Should Have | Agrega valor ao monitoramento, mas o painel funciona sem esse detalhamento. |
 
-## **8.2 Lista de Requisitos Não Funcionais**
+### **8.2 Lista de Requisitos Não Funcionais**
 
 | ID | Categoria (URPS+) | Descrição Mensurável para Teste | Método de Validação / Teste |
 | :--- | :--- | :--- | :--- |

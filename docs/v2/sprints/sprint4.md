@@ -18,13 +18,13 @@
 
 ---
 
-## 🎯 Objetivo(s) da Reunião
+##  Objetivo(s) da Reunião
 
 Planejar as atividades da Sprint 4, unindo a entrega técnica do núcleo do jogo à consolidação da documentação de requisitos. O objetivo central é desenvolver a lógica do validador e a mecânica de movimentação de blocos, garantindo a integração completa entre frontend e backend, e simultaneamente atualizar a rastreabilidade e levantar as evidências do processo.
 
 ---
 
-## 📋 Pautas e Definições
+##  Pautas e Definições
 
 ### Pauta 1: Lógica do Validador e Alomorfia (Backend)
 
@@ -44,35 +44,35 @@ Planejar as atividades da Sprint 4, unindo a entrega técnica do núcleo do jogo
 
 ---
 
-## ✅ Ações / Próximos Passos
+##  Ações / Próximos Passos
 
-### Artur Fernandes & Bruno Souza
+**Artur Fernandes & Bruno Souza**
 
 * Construir os endpoints `/morfemas` e `/validar-palavra`;
 * Implementar a regra de alomorfia simples no banco;
 * Escrever a suíte de testes obrigatórios do backend.
 
-### Luiz Henrique & Ana Beatriz
+**Luiz Henrique & Ana Beatriz**
 
 * Aplicar o drag and drop;
 * Integrar o envio da combinação ao backend;
 * Acoplar a resposta da API aos estados visuais do Modal de Feedback (verde/vermelho).
 
-### Carlos Eduardo
+**Carlos Eduardo**
 
 * Consolidar o Backlog Atualizado;
 * Revisar o texto de DoR e DoD;
 * Estruturar a matriz de Rastreabilidade Atualizada;
 * Coletar as evidências do processo ScrumXP.
 
-### Todos
+**Todos**
 
 * Garantir a integração completa entre frontend e backend até o encerramento do ciclo;
 * Todo o grupo deve saber explicar de cor como a concatenação e a validação funcionam.
 
 ---
 
-## 📝 Observações
+##  Observações
 
 > Esta é a Sprint mais importante do projeto.
 >

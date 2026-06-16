@@ -18,7 +18,7 @@
 
 ---
 
-## 🎯 Objetivos da Reunião
+##  Objetivos da Reunião
 
 Planejar as atividades da **Sprint 02**, com foco na consolidação da **Engenharia de Requisitos**.
 
@@ -31,7 +31,7 @@ Os objetivos principais definidos foram:
 
 ---
 
-## 📋 Pautas e Definições
+##  Pautas e Definições
 
 ### 1. Atomização de Requisitos e Classificação URPS+
 
@@ -111,29 +111,29 @@ Definir oficialmente o escopo do MVP, concentrando os esforços nas funcionalida
 
 ---
 
-## ✅ Ações e Próximos Passos
+##  Ações e Próximos Passos
 
-### Artur Fernandes e Bruno Souza
+**Artur Fernandes e Bruno Souza**
 
 * Levantar e atomizar os Requisitos Funcionais (RFs);
 * Classificar e documentar os Requisitos Não Funcionais (RNFs) utilizando URPS+;
 * Definir métricas testáveis relacionadas a desempenho, segurança e suportabilidade arquitetural;
 * Garantir a rastreabilidade entre requisitos e objetivos do projeto.
 
-### Luiz Henrique e Ana Beatriz
+**Luiz Henrique e Ana Beatriz**
 
 * Desenvolver os wireframes das principais telas do sistema;
 * Estruturar os fluxos visuais do estudante e do professor;
 * Revisar os protótipos de acordo com os critérios de usabilidade definidos.
 
-### Carlos Eduardo
+**Bruno Souza/Carlos Eduardo**
 
 * Redigir o documento de Intervenção Social;
 * Consolidar as matrizes de priorização;
 * Formalizar os documentos de DoR e DoD;
 * Organizar a documentação final referente à Unidade 2.
 
-### Todos os Integrantes
+**Todos os Integrantes**
 
 * Revisar a definição do MVP;
 * Participar da reunião de validação dos requisitos e protótipos com a Prof.ª Pilar;
@@ -141,7 +141,7 @@ Definir oficialmente o escopo do MVP, concentrando os esforços nas funcionalida
 
 ---
 
-## 📝 Observações
+##  Observações
 
 > **Importante:** Todo o material produzido nesta sprint compõe a entrega institucional da **Unidade 2**, prevista para **18/05/2026**.
 >
@@ -159,7 +159,7 @@ Definir oficialmente o escopo do MVP, concentrando os esforços nas funcionalida
 
 ## Bruno
 - **Ontem:** Ontem validamos o escopo inicial.
-- **Hoje:** Rascunho os RFs do Espaço de Construção (CP3) e do Validador de Estruturas (CP4).
+- **Hoje:** Rascunho os RFs do Espaço de Construção (CP3) e do Validador de Estruturas (CP4) e inicio a estruturação da documentação.
 - **Impedimentos:** Nenhum.
 
 ## Luiz
@@ -174,7 +174,7 @@ Definir oficialmente o escopo do MVP, concentrando os esforços nas funcionalida
 
 ## Carlos
 - **Ontem:** Ontem encerrei a ata.
-- **Hoje:** Estruturo o esqueleto principal do documento de Requisitos de Software.
+- **Hoje:** Estruturo o esqueleto principal do documento de Requisitos de Software junto com o Bruno.
 - **Impedimentos:** Nenhum.
 
 ---

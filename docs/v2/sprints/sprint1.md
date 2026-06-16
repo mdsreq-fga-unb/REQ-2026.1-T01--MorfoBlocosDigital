@@ -18,7 +18,7 @@
 
 ---
 
-## 🎯 Objetivos da Reunião
+##  Objetivos da Reunião
 
 Planejar as atividades da **Sprint 01**, com foco exclusivo na etapa de **Engenharia de Requisitos (Elicitação Inicial)**.
 
@@ -31,7 +31,7 @@ Os objetivos principais definidos foram:
 
 ---
 
-## 📋 Pautas e Definições
+##  Pautas e Definições
 
 ### 1. Análise do Cenário Atual e Documentação Base
 
@@ -99,34 +99,34 @@ Será realizada uma reunião síncrona gravada com a **Prof.ª Pilar**, com o ob
 
 ---
 
-## ✅ Ações e Próximos Passos
+##  Ações e Próximos Passos
 
-### Artur Fernandes e Bruno Souza
+**Artur Fernandes e Bruno Souza**
 
 * Ler a documentação do jogo físico;
 * Realizar o mapeamento preliminar dos morfemas;
 * Levantar dúvidas pedagógicas relevantes para a modelagem do banco de dados.
 
-### Luiz Henrique e Ana Beatriz
+**Luiz Henrique e Ana Beatriz**
 
 * Elaborar a primeira versão do Rich Picture;
 * Revisar e digitalizar o diagrama;
 * Organizar canais de comunicação e estrutura de pastas do projeto.
 
-### Carlos Eduardo
+**Carlos Eduardo**
 
 * Configurar o quadro de tarefas da sprint;
 * Estruturar o Backlog Inicial;
 * Agendar a primeira reunião oficial com a cliente via Google Meet.
 
-### Todos os Integrantes
+**Todos os Integrantes**
 
 * Participar da reunião de elicitação e validação com a Prof.ª Pilar;
 * Contribuir com a consolidação dos requisitos levantados.
 
 ---
 
-## 📝 Observações
+##  Observações
 
 > **Importante:** O foco desta sprint está restrito às atividades de **Engenharia de Requisitos**.
 >

@@ -82,7 +82,7 @@ Antes de a equipe começar a codificar o painel administrativo e a mecânica de 
 | O esforço foi estimado conjuntamente? | Concluído | A equipe discutiu os desafios de integração do banco de dados relacional e a escolha da biblioteca de Drag & Drop para o React. |
 | Resolução de dependências validada? | Concluído | A paleta de cores dos morfemas (raiz = vermelho, prefixo = verde, etc.) já havia sido aprovada pela Profª Pilar na Reunião #2. |
 
-# 9.3.4 Verificação do Definition of Done (DoD) V4.0 - Catálogo e Espaço de Construção
+#### 9.3.4 Verificação do Definition of Done (DoD) V4.0 - Catálogo e Espaço de Construção
 
 Após a finalização da integração entre React, Django e PostgreSQL, a entrega foi submetida ao checklist de integridade.
 

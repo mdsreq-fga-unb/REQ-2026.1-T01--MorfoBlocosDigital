@@ -169,7 +169,7 @@ Os CAs foram declarados com calibração proporcional à complexidade de cada US
 * Quando um CA depende de um RNF ou RN específico para sua verificação, a referência é declarada entre colchetes ao final do enunciado.
 * Quando um CA depende de outra US (dependência funcional), a referência também é declarada entre colchetes.
 
-# Característica de Produto 1 — Controle de Acesso
+### **_Característica de Produto 1 — Controle de Acesso_**
 
 **US01 — Como usuário, quero solicitar credenciais de acesso ao sistema, para que minha conta seja criada e eu possa entrar na plataforma.**
 
@@ -194,7 +194,7 @@ Os CAs foram declarados com calibração proporcional à complexidade de cada US
 | CA-US03-01 | O sistema deve enviar um link de redefinição de senha (e não a senha em texto puro) para o e-mail cadastrado do usuário, mediante solicitação na tela de login.                      |
 | CA-US03-02 | O link de redefinição deve ter validade limitada de no máximo 24 horas e ser invalidado após o primeiro uso, exibindo mensagem específica caso o usuário tente reutilizá-lo [RNF04]. |
 
-# Característica de Produto 2 — Administração de Conteúdo
+### **_Característica de Produto 2 — Administração de Conteúdo_**
 
 **US04 — Como administrador, quero cadastrar morfemas no catálogo do sistema, para disponibilizar peças para a montagem de palavras pelos estudantes.**
 
@@ -290,7 +290,7 @@ Os CAs foram declarados com calibração proporcional à complexidade de cada US
 | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | CA-US15-01 | A listagem deve exibir, no mínimo, título da atividade, nível de dificuldade e quantidade de morfemas associados, permitindo ordenação e busca textual [RNF06]. |
 
-# Característica de Produto 3 — Espaço de Construção
+### **_Característica de Produto 3 — Espaço de Construção_**
 
 **US16 — Como estudante, quero realizar atividades pedagógicas disponíveis no sistema, para praticar e desenvolver minha compreensão sobre morfologia.**
 
@@ -326,7 +326,7 @@ Os CAs foram declarados com calibração proporcional à complexidade de cada US
 | CA-US19-01 | O sistema deve disponibilizar explicações textuais relacionadas aos conceitos morfológicos abordados na atividade atual, acessíveis sem interromper a realização da atividade. |
 | CA-US19-02 | As explicações devem apresentar profundidade compatível com o nível de dificuldade da atividade, utilizando linguagem adequada ao público-alvo do ensino básico [RNF01].       |
 
-# Característica de Produto 4 — Validador de Estruturas
+### **_Característica de Produto 4 — Validador de Estruturas_**
 
 **US20 — Como estudante, quero que minha combinação de blocos seja validada com base no catálogo de palavras válidas, para receber um resultado correto sobre a palavra formada.**
 
@@ -345,7 +345,7 @@ Os CAs foram declarados com calibração proporcional à complexidade de cada US
 | CA-US21-01 | Após a validação bem-sucedida de uma palavra, o sistema deve permitir ao estudante visualizar uma explicação contendo a palavra formada, os morfemas utilizados e a descrição do processo de formação morfológica associado ao registro cadastrado [RNF01]. |
 | CA-US21-02 | Caso a combinação submetida seja inválida, o sistema não deve exibir processo de formação inexistente, apresentando apenas uma mensagem informativa indicando que a palavra não foi reconhecida pelo catálogo [RNF01].                                      |
 
-# Característica de Produto 5 — Portfólio de Progresso
+### **_Característica de Produto 5 — Portfólio de Progresso_**
 
 **US22 — Como estudante, quero consultar o histórico das minhas pontuações individuais, para acompanhar minha evolução ao longo do tempo.**
 
@@ -363,7 +363,7 @@ Os CAs foram declarados com calibração proporcional à complexidade de cada US
 | CA-US23-01 | Ao selecionar uma atividade presente no histórico, o sistema deve exibir os detalhes da execução, incluindo as tentativas realizadas, palavras submetidas, resultado de cada submissão e pontuação obtida na atividade.              |
 | CA-US23-02 | Para cada tentativa válida registrada, o estudante deve poder consultar novamente o processo de formação morfológica associado, reutilizando as informações armazenadas no histórico sem necessidade de nova validação [RN05, RN08]. |
 
-# Característica de Produto 6 — Painel de Monitoramento
+### **_Característica de Produto 6 — Painel de Monitoramento_**
 
 **US24 — Como professor, quero acessar o relatório de desempenho consolidado da turma, para monitorar o progresso coletivo dos estudantes.**
 

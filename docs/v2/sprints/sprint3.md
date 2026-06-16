@@ -18,13 +18,13 @@
 
 ---
 
-## 🎯 Objetivo(s) da Reunião
+##  Objetivo(s) da Reunião
 
 Planejar as atividades da Sprint 3, que marca a transição estratégica da engenharia de requisitos documental para o início do desenvolvimento (código) e do design de interface. O foco será realizar o setup dos ambientes (Frontend e Backend), iniciar o fluxo base de autenticação, finalizar os protótipos de alta fidelidade e detalhar as User Stories com seus respectivos Critérios de Aceitação.
 
 ---
 
-## 📋 Pautas e Definições
+##  Pautas e Definições
 
 ### Pauta 1: Setup do Ambiente e Arquitetura Base (Código)
 
@@ -44,35 +44,35 @@ Planejar as atividades da Sprint 3, que marca a transição estratégica da enge
 
 ---
 
-## ✅ Ações / Próximos Passos
+##  Ações / Próximos Passos
 
-### Artur Fernandes & Bruno Souza
+**Artur Fernandes & Bruno Souza**
 
 * Criar o repositório backend;
 * Configurar banco de dados;
 * Rodar as migrations iniciais;
 * Liberar a primeira rota de login via JWT.
 
-### Luiz Henrique & Ana Beatriz
+**Luiz Henrique & Ana Beatriz**
 
 * Desenhar os protótipos de alta fidelidade no Figma;
 * Inicializar o repositório frontend;
 * Codificar a estrutura base de UI para a autenticação.
 
-### Carlos Eduardo
+**Carlos Eduardo**
 
 * Gerenciar a criação das User Stories no quadro ágil;
 * Redigir os Critérios de Aceitação;
 * Garantir o vínculo entre as histórias e as telas desenhadas no Figma.
 
-### Todos
+**Todos**
 
 * Revisar se o código inicial e os protótipos refletem o MVP;
 * Preparar o material para a reunião de validação com a Profª. Pilar (PO) ao final da sprint.
 
 ---
 
-## 📝 Observações
+##  Observações
 
 > Esta sprint é o momento de virada de chave do projeto.
 >

@@ -56,3 +56,4 @@ O jogo é composto por peças coloridas que representam morfemas — raízes (ou
 | 14/06/2026 | 1.0 | Estruturação inicial para entrega da Unidade III. | [Bruno Souza](https://github.com/youngburny) |
 | 15/06/2026 | 1.1 | Ajustes na home e na estilização do GitPages. | [Bruno Souza](https://github.com/youngburny) |
 | 15/06/2026 | 1.2 | Atualizações nas seções 6, 8, 9, 10 e 11 da Visão de Produto e adição do painel Figma com o status do projeto. | [Bruno Souza](https://github.com/youngburny) |
+| 15/06/2026 | 1.3 | Corrige algumas formatações nas sprints e seções 8, 9 e 10. | [Bruno Souza](https://github.com/youngburny) |
