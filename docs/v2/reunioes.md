@@ -140,6 +140,36 @@ Reunião realizada via Teams (13/05/2026)
 
 Reunião feita via Teams (18/05/2026).
 
+## **Monitoria #04**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sxeEuwaOeJA?si=ImgEYo594g6f8d31" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Reunião realizada via Teams (20/05/2026)
+
+## **Monitoria #05**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/r_k_Ucb_ccY?si=BNlAOF0qArPJ_RS6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Reunião realizada via Teams (27/05/2026)
+
+## **Monitoria #06**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/e8abqUYQT10?si=-eRqGru0yDteaMYO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Reunião realizada via Teams (02/06/2026)
+
+## **Monitoria #07**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/r9xP0tlypeM?si=nojhaL1FLIkP1df3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Reunião realizada via Teams (10/06/2026)
+
+## **Gravação da apresentação para a Unidade III**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9_Mh7zA5Qlc?si=MUf6_zo7OYpIJaRN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Reunião realizada via Teams (15/06/2026)
+
 ##  Versionamento
 
 | **Data**       | Versão | Descrição                                           | Autor              |
@@ -151,3 +181,4 @@ Reunião feita via Teams (18/05/2026).
 | 18/05/2026 | 1.4   | Adiciona vídeos da Monitoria #3 e Reunião com cliente #2. |    [Bruno Souza](https://github.com/youngburny)   |
 | 18/05/2026 | 1.5   | Adiciona vídeo da apresentação para a Unidade II. |    [Bruno Souza](https://github.com/youngburny)   |
 | 15/06/2026 | 1.6  | Remove formatação de áudio não-funcional e adiciona link para consulta deles para a Reunião com Cliente 2.  |    [Bruno Souza](https://github.com/youngburny)   |
+| 15/06/2026 | 1.7   | Adiciona vídeos das Monitorias 4, 5, 6 e 7 e vídeo da apresentação para a Unidade III. |    [Bruno Souza](https://github.com/youngburny)   |
