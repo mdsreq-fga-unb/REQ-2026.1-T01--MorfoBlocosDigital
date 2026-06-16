@@ -68,3 +68,32 @@ Após a fase de codificação, a entrega funcional do login foi submetida ao nos
 | **Validação dos Critérios de Aceitação:** Todos os CAs declarados foram testados? | Sim | O `CA-US02-03` foi validado: o sistema emite o token JWT com sucesso e retorna as claims corretas (id, email, tipo de usuário).  |
 | **Garantia das Regras de Negócio:** Atende às políticas invariantes? | Sim | O backend bloqueia acessos a rotas privadas caso o token JWT seja inválido ou inexistente, garantindo a `RN01`.  |
 | **Validação de RNFs Transversais:** Todos os requisitos de qualidade de tela e usabilidade foram cumpridos? | Não (Pendente) | **Bloqueio de DoD:** A lógica de estado e requisição da interface web está concluída, porém a readequação de layout para telas de 360px (`RNF11`) não foi implementada. A US02 não pode ser movida para "Done". |
+
+#### 9.3.3 Verificação do Definition of Ready (DoR) V4.0 - Catálogo e Espaço de Construção
+
+Antes de a equipe começar a codificar o painel administrativo e a mecânica de arrastar blocos, estas histórias foram auditadas:
+
+| Critério de DoR V4.0 (Scrum/XP) | Situação | Evidência / Link de Rastreabilidade |
+|---------------------------------|----------|-------------------------------------|
+| A User Story é atômica e clara? | Concluído | As operações de catálogo foram desmembradas (US04 a US11) e a mecânica de movimentar blocos isolada na US17, sem épicos genéricos. |
+| Possui Critérios de Aceitação explícitos? | Concluído | Foram definidos os CA-US04-01 e CA-US08-01 (exigindo grafia, tipo e cor no cadastro) e o CA-US17-01 (eventos nativos de mouse/touch). |
+| Há rastreabilidade de restrições (RNFs) e Regras de Negócio (RNs)? | Concluído | Mapeado explicitamente para respeitar o RNF06 (uso obrigatório do Django Admin para cadastros) e a RN03 (apenas administradores alteram catálogo). |
+| A prioridade está coerente e justificada? | Concluído | Todas classificadas como Must Have. A US17 possui a Complexidade Técnica mais alta do sistema (CT 5), justificando planejamento prévio cuidadoso. |
+| O esforço foi estimado conjuntamente? | Concluído | A equipe discutiu os desafios de integração do banco de dados relacional e a escolha da biblioteca de Drag & Drop para o React. |
+| Resolução de dependências validada? | Concluído | A paleta de cores dos morfemas (raiz = vermelho, prefixo = verde, etc.) já havia sido aprovada pela Profª Pilar na Reunião #2. |
+
+# 9.3.4 Verificação do Definition of Done (DoD) V4.0 - Catálogo e Espaço de Construção
+
+Após a finalização da integração entre React, Django e PostgreSQL, a entrega foi submetida ao checklist de integridade.
+
+> **Observação Técnica da Auditoria:** O trabalho entregou duas características distintas (CP2 e CP3). O módulo administrativo (CP2) foi totalmente aprovado, pois o Django Admin já é responsivo por natureza. No entanto, o front-end do aluno (CP3) esbarrou na restrição visual.
+
+| Pergunta Fundamental do DoD V4.0 | Status | Evidência de Implementação e Qualidade |
+|----------------------------------|--------|----------------------------------------|
+| Implementação Arquitetural e Tecnológica: Respeita as restrições transversais e versões mínimas? | Sim | O PostgreSQL 15+ está integrado perfeitamente ao Django 4.2+ (Backend) e ao React 18+ (Frontend), garantindo o fluxo de dados. |
+| Operações Administrativas (RNF06): Cadastros foram feitos no local correto? | Sim | As US04 a US11 foram implementadas de forma nativa no Django Admin, cumprindo a restrição de não criar telas de cadastro no React. |
+| Garantia das Regras de Negócio e Banco de Dados: Atende às políticas invariantes? | Sim | O catálogo garante que as peças tenham seus atributos obrigatórios e respeita a RN03, além do PostgreSQL manter a integridade (RNF04). |
+| Validação dos Critérios de Aceitação: Todos os CAs declarados foram testados? | Sim | O CA-US17-01 foi validado na lógica: os blocos de morfemas carregados do banco podem ser selecionados, arrastados e soltos na área de montagem. |
+| Testes e Qualidade (Práticas XP): A lógica passou por testes unitários e de integração? | Sim | A persistência dos morfemas e a mecânica base de concatenação dos blocos no frontend passaram pela validação técnica local da equipe. |
+| Revisão de Código e CI: Passou por Code Review e foi integrado sem quebras? | Sim | Todo o código de integração do banco e dos eventos do React foi revisado e consolidado na branch principal sem gerar regressões. |
+| Validação de RNFs Transversais: Todos os requisitos de qualidade de tela e usabilidade foram cumpridos? | Não (Pendente) | **Bloqueio Parcial do DoD:** As User Stories do Django Admin (US04 a US11) estão Done. Porém, a US17 (Arrastar blocos) foi retida. A lógica funciona, mas a interface React ainda não adequa seus elementos em telas a partir de 360px (RNF11). A US17 só será liberada para homologação da Profª Pilar após este ajuste visual. |

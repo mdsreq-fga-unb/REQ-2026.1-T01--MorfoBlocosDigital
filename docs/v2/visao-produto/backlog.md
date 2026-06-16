@@ -91,7 +91,7 @@ Esta versão do catálogo incorpora dois ajustes acordados na Unidade III:
 
 A versão anterior deste documento declarava no RNF05 uma exigência de comunicação exclusivamente por APIs, que entrava em conflito direto com o RNF06, que prescreve o uso do Django Admin para manutenção de catálogo.
 
-A V&V externa conduzida pelo Grupo Dionísio identificou corretamente essa contradição. A reescrita acima delimita o escopo de cada requisito:
+A V&V externa conduzida pelo Grupo V identificou corretamente essa contradição. A reescrita acima delimita o escopo de cada requisito:
 
 * O **RNF05** rege a comunicação entre os clientes do produto (frontend de estudantes e professores) e o backend.
 * O **RNF06** rege a ferramenta administrativa interna, operada apenas pelo Administrador, fora do fluxo cliente-aplicação principal.
@@ -117,7 +117,7 @@ Diferentemente dos RFs (que descrevem o que o sistema faz) e dos RNFs (que descr
 
 A tabela a seguir apresenta cada RF declarado utilizando a técnica de User Story no formato **"Como [ator], quero [objetivo], para [benefício]"**, conforme proposto por Cohn (2004) e adotado pela equipe como prática de Declaração de Requisitos (seção 4.1).
 
-Após a V&V externa conduzida pelo Grupo Dionísio, as User Stories que agrupavam múltiplas operações sob uma mesma estimativa (épicos) foram desmembradas em itens atômicos. Cada User Story corresponde agora a exatamente um RF, totalizando 25 User Stories rastreáveis.
+Após a V&V externa conduzida pelo Grupo V, as User Stories que agrupavam múltiplas operações sob uma mesma estimativa (épicos) foram desmembradas em itens atômicos. Cada User Story corresponde agora a exatamente um RF, totalizando 25 User Stories rastreáveis.
 
 A coluna **RNFs Relacionados** estabelece a rastreabilidade entre as histórias e os requisitos não funcionais aplicáveis. Os Critérios de Aceitação correspondentes a cada US estão declarados na subseção 10.1.5.
 
@@ -159,7 +159,7 @@ Embora não estejam repetidos linha a linha, devem ser considerados válidos e o
 
 Esta subseção declara os Critérios de Aceitação (CA) associados a cada User Story do backlog. Os CAs estabelecem as condições objetivas e verificáveis que devem ser satisfeitas para que uma US seja considerada concluída e aceita pelo Product Owner, conforme proposto por Cohn (2004) e Pichler (2010). 
 
-Sua declaração explícita responde diretamente à lacuna apontada pela V&V externa conduzida pelo Grupo Dionísio, que identificou ausência de critérios formais como principal limitação da testabilidade das User Stories anteriores.
+Sua declaração explícita responde diretamente à lacuna apontada pela V&V externa conduzida pelo Grupo V, que identificou ausência de critérios formais como principal limitação da testabilidade das User Stories anteriores.
 
 Os CAs foram declarados com calibração proporcional à complexidade de cada US: operações CRUD simples receberam um único critério essencial (focado nos campos obrigatórios da operação e na rastreabilidade com RNs/RNFs aplicáveis); operações de consulta receberam dois critérios (campos exibidos e regras de ordenação/filtragem); operações críticas do núcleo do produto, com regras de negócio relevantes ou dependências entre US, receberam dois ou três critérios. A formulação dos CAs incorpora as decisões registradas nas reuniões com a Profª. Pilar (PO), em especial as decisões sobre fluxo de jogo, padrão de blocos por cor e modalização do feedback de erro, registradas na Reunião #2 (07/05/2026).
 
