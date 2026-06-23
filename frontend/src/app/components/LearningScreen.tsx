@@ -54,19 +54,19 @@ export function LearningScreen() {
   const [expanded, setExpanded] = useState<number | null>(1);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-yellow-50 to-red-50 p-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-yellow-50 to-red-50 p-3 sm:p-4">
       <div className="max-w-5xl mx-auto">
-        <div className="flex items-center justify-between mb-6">
-          <Link to="/aluno/dashboard" className="flex items-center gap-2 text-muted-foreground hover:text-foreground">
-            <ArrowLeft className="w-5 h-5" /> Voltar
+        <div className="flex items-center justify-between mb-4 sm:mb-6 gap-2">
+          <Link to="/aluno/dashboard" className="flex items-center gap-1 sm:gap-2 text-muted-foreground hover:text-foreground shrink-0">
+            <ArrowLeft className="w-5 h-5" /> <span className="hidden sm:inline">Voltar</span>
           </Link>
-          <h1 className="text-2xl">Área de Aprendizagem</h1>
-          <div className="w-20" />
+          <h1 className="text-lg sm:text-2xl text-center">Área de Aprendizagem</h1>
+          <div className="w-8 sm:w-20" />
         </div>
 
-        <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-2xl p-6 mb-6 shadow-xl">
-          <h2 className="text-2xl mb-2">Trilha de Aprendizagem</h2>
-          <p className="opacity-90 mb-4">Domine a morfologia em 5 módulos completos</p>
+        <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl sm:rounded-2xl p-4 sm:p-6 mb-4 sm:mb-6 shadow-xl">
+          <h2 className="text-xl sm:text-2xl mb-2">Trilha de Aprendizagem</h2>
+          <p className="text-sm sm:text-base opacity-90 mb-3 sm:mb-4">Domine a morfologia em 5 módulos completos</p>
           <div className="flex items-center gap-4">
             <div className="flex-1 bg-white/20 rounded-full h-3 overflow-hidden">
               <div className="bg-yellow-400 h-full" style={{ width: '40%' }} />
@@ -75,31 +75,31 @@ export function LearningScreen() {
           </div>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {modules.map((mod) => (
-            <div key={mod.id} className="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div key={mod.id} className="bg-white rounded-xl sm:rounded-2xl shadow-lg overflow-hidden">
               <button
                 onClick={() => setExpanded(expanded === mod.id ? null : mod.id)}
-                className="w-full p-6 flex items-center gap-4 hover:bg-gray-50 transition-colors text-left"
+                className="w-full p-3 sm:p-6 flex items-center gap-3 sm:gap-4 hover:bg-gray-50 transition-colors text-left"
               >
-                <div className={`w-14 h-14 ${mod.color} rounded-xl flex items-center justify-center flex-shrink-0`}>
+                <div className={`w-10 h-10 sm:w-14 sm:h-14 ${mod.color} rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0`}>
                   {mod.completed ? (
-                    <CheckCircle className="w-7 h-7 text-white" />
+                    <CheckCircle className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
                   ) : (
-                    <BookOpen className="w-7 h-7 text-white" />
+                    <BookOpen className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
                   )}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-sm text-muted-foreground">Módulo {mod.id}</span>
+                  <div className="flex items-center gap-2 mb-0.5 sm:mb-1">
+                    <span className="text-xs sm:text-sm text-muted-foreground">Módulo {mod.id}</span>
                     {mod.completed && (
                       <span className="text-xs px-2 py-0.5 bg-green-100 text-green-700 rounded-full">
                         Concluído
                       </span>
                     )}
                   </div>
-                  <h3 className="text-xl mb-1">{mod.title}</h3>
-                  <p className="text-muted-foreground text-sm">{mod.description}</p>
+                  <h3 className="text-base sm:text-xl mb-0.5 sm:mb-1">{mod.title}</h3>
+                  <p className="text-muted-foreground text-xs sm:text-sm line-clamp-2">{mod.description}</p>
                 </div>
                 <div className="text-right hidden sm:block">
                   <div className="text-sm text-muted-foreground">{mod.duration}</div>
@@ -107,18 +107,18 @@ export function LearningScreen() {
               </button>
 
               {expanded === mod.id && (
-                <div className="border-t border-border p-6 bg-gray-50">
-                  <h4 className="mb-3">Aulas deste módulo:</h4>
-                  <div className="space-y-2 mb-4">
+                <div className="border-t border-border p-3 sm:p-6 bg-gray-50">
+                  <h4 className="text-sm sm:text-base mb-2 sm:mb-3">Aulas deste módulo:</h4>
+                  <div className="space-y-2 mb-3 sm:mb-4">
                     {mod.lessons.map((lesson, idx) => (
-                      <div key={idx} className="flex items-center gap-3 p-3 bg-white rounded-lg">
-                        <PlayCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                        <span className="flex-1">{lesson}</span>
-                        <span className="text-sm text-muted-foreground">~5 min</span>
+                      <div key={idx} className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-white rounded-lg">
+                        <PlayCircle className="w-4 h-4 sm:w-5 sm:h-5 text-primary flex-shrink-0" />
+                        <span className="flex-1 text-sm sm:text-base">{lesson}</span>
+                        <span className="text-xs sm:text-sm text-muted-foreground">~5 min</span>
                       </div>
                     ))}
                   </div>
-                  <button className={`px-6 py-3 ${mod.color} text-white rounded-lg hover:opacity-90 transition-opacity`}>
+                  <button className={`px-4 sm:px-6 py-2 sm:py-3 ${mod.color} text-white rounded-lg hover:opacity-90 transition-opacity text-sm sm:text-base`}>
                     {mod.completed ? 'Revisar Módulo' : 'Iniciar Módulo'}
                   </button>
                 </div>

@@ -19,117 +19,125 @@ export function StudentDashboard() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-yellow-50 to-red-50">
       <header className="bg-white/90 backdrop-blur border-b border-border sticky top-0 z-10">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Logo size="md" />
-            <h1 className="text-2xl">Morfoblocos Digital</h1>
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 py-3 sm:py-4 flex items-center justify-between">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+            <Logo size="sm" />
+            <h1 className="text-lg sm:text-2xl truncate">Morfoblocos Digital</h1>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4 shrink-0">
             <div className="text-right hidden sm:block">
               <div className="text-sm text-muted-foreground">Olá,</div>
               <div>{studentName}</div>
             </div>
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white shadow">
-              <User className="w-5 h-5" />
+            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white shadow">
+              <User className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
             <Link to="/login" className="text-muted-foreground hover:text-foreground">
-              <LogOut className="w-5 h-5" />
+              <LogOut className="w-4 h-4 sm:w-5 sm:h-5" />
             </Link>
           </div>
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-blue-600 hover:shadow-xl transition-shadow">
+      <main className="max-w-7xl mx-auto px-3 sm:px-4 py-4 sm:py-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 mb-4 sm:mb-8">
+          <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border-l-4 border-blue-600 hover:shadow-xl transition-shadow">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-sm text-muted-foreground mb-1">Nível Atual</div>
-                <div className="text-3xl">Nível {level}</div>
+                <div className="text-xs sm:text-sm text-muted-foreground mb-1">Nível Atual</div>
+                <div className="text-2xl sm:text-3xl">Nível {level}</div>
               </div>
-              <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center">
-                <Trophy className="w-7 h-7 text-blue-600" />
+              <div className="w-10 h-10 sm:w-14 sm:h-14 bg-blue-100 rounded-full flex items-center justify-center">
+                <Trophy className="w-5 h-5 sm:w-7 sm:h-7 text-blue-600" />
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-yellow-400 hover:shadow-xl transition-shadow">
+          <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border-l-4 border-yellow-400 hover:shadow-xl transition-shadow">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-sm text-muted-foreground mb-1">Pontos</div>
-                <div className="text-3xl">{points}</div>
+                <div className="text-xs sm:text-sm text-muted-foreground mb-1">Pontos</div>
+                <div className="text-2xl sm:text-3xl">{points}</div>
               </div>
-              <div className="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center">
-                <Trophy className="w-7 h-7 text-yellow-600" />
+              <div className="w-10 h-10 sm:w-14 sm:h-14 bg-yellow-100 rounded-full flex items-center justify-center">
+                <Trophy className="w-5 h-5 sm:w-7 sm:h-7 text-yellow-600" />
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-red-500 hover:shadow-xl transition-shadow">
+          <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border-l-4 border-red-500 hover:shadow-xl transition-shadow">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-sm text-muted-foreground mb-1">Aproveitamento</div>
-                <div className="text-3xl">{progress}%</div>
+                <div className="text-xs sm:text-sm text-muted-foreground mb-1">Aproveitamento</div>
+                <div className="text-2xl sm:text-3xl">{progress}%</div>
               </div>
-              <div className="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center">
-                <Brain className="w-7 h-7 text-red-600" />
+              <div className="w-10 h-10 sm:w-14 sm:h-14 bg-red-100 rounded-full flex items-center justify-center">
+                <Brain className="w-5 h-5 sm:w-7 sm:h-7 text-red-600" />
               </div>
             </div>
-            <div className="mt-4 bg-gray-200 rounded-full h-2 overflow-hidden">
+            <div className="mt-3 sm:mt-4 bg-gray-200 rounded-full h-2 overflow-hidden">
               <div className="bg-gradient-to-r from-red-500 to-yellow-400 h-full" style={{ width: `${progress}%` }} />
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-6">
+          <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6">
             <Link
               to="/aluno/perguntas"
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all group border-2 border-transparent hover:border-blue-600"
+              className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all group border-2 border-transparent hover:border-blue-600"
             >
-              <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <BookOpen className="w-7 h-7 text-white" />
+              <div className="flex sm:block items-center gap-3">
+                <div className="w-10 h-10 sm:w-14 sm:h-14 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl sm:rounded-2xl flex items-center justify-center sm:mb-4 group-hover:scale-110 transition-transform shrink-0">
+                  <BookOpen className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
+                </div>
+                <div>
+                  <h2 className="text-base sm:text-xl mb-0.5 sm:mb-2">Responder Perguntas</h2>
+                  <p className="text-muted-foreground text-xs sm:text-sm">Teste seus conhecimentos sobre morfologia</p>
+                </div>
               </div>
-              <h2 className="text-xl mb-2">Responder Perguntas</h2>
-              <p className="text-muted-foreground text-sm">Teste seus conhecimentos sobre morfologia</p>
             </Link>
 
             <Link
               to="/aluno/blocos"
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all group border-2 border-transparent hover:border-yellow-500"
+              className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all group border-2 border-transparent hover:border-yellow-500"
             >
-              <div className="w-14 h-14 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Puzzle className="w-7 h-7 text-white" />
+              <div className="flex sm:block items-center gap-3">
+                <div className="w-10 h-10 sm:w-14 sm:h-14 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-xl sm:rounded-2xl flex items-center justify-center sm:mb-4 group-hover:scale-110 transition-transform shrink-0">
+                  <Puzzle className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
+                </div>
+                <div>
+                  <h2 className="text-base sm:text-xl mb-0.5 sm:mb-2">Junção de Blocos</h2>
+                  <p className="text-muted-foreground text-xs sm:text-sm">Monte palavras combinando blocos morfológicos</p>
+                </div>
               </div>
-              <h2 className="text-xl mb-2">Junção de Blocos</h2>
-              <p className="text-muted-foreground text-sm">Monte palavras combinando blocos morfológicos</p>
             </Link>
 
             <Link
               to="/aluno/aprendizagem"
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all group border-2 border-transparent hover:border-red-500 md:col-span-2"
+              className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all group border-2 border-transparent hover:border-red-500 sm:col-span-2"
             >
-              <div className="flex items-center gap-4">
-                <div className="w-14 h-14 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Brain className="w-7 h-7 text-white" />
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className="w-10 h-10 sm:w-14 sm:h-14 bg-gradient-to-br from-red-500 to-red-600 rounded-xl sm:rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                  <Brain className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
                 </div>
                 <div>
-                  <h2 className="text-xl mb-1">Área de Aprendizagem</h2>
-                  <p className="text-muted-foreground text-sm">Estude conceitos e revise conteúdos</p>
+                  <h2 className="text-base sm:text-xl mb-0.5 sm:mb-1">Área de Aprendizagem</h2>
+                  <p className="text-muted-foreground text-xs sm:text-sm">Estude conceitos e revise conteúdos</p>
                 </div>
               </div>
             </Link>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-            <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-5 flex items-center gap-3">
-              <History className="w-6 h-6" />
+          <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg overflow-hidden">
+            <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-3 sm:p-5 flex items-center gap-3">
+              <History className="w-5 h-5 sm:w-6 sm:h-6" />
               <div>
-                <h3 className="text-lg">Histórico de Questões</h3>
+                <h3 className="text-base sm:text-lg">Histórico de Questões</h3>
                 <div className="text-xs opacity-90">Seu desempenho recente</div>
               </div>
             </div>
-            <div className="p-4 max-h-96 overflow-y-auto">
+            <div className="p-3 sm:p-4 max-h-72 sm:max-h-96 overflow-y-auto">
               {recent.length === 0 ? (
                 <div className="text-center text-muted-foreground py-8 text-sm">
                   Você ainda não respondeu nenhuma questão.
