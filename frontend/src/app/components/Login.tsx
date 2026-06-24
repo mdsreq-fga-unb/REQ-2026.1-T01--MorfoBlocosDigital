@@ -46,42 +46,42 @@ export function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-yellow-50 to-red-50 p-4">
       <div className="w-full max-w-md">
-        <div className="bg-white rounded-2xl shadow-xl p-8">
-          <div className="text-center mb-8">
-            <div className="flex justify-center mb-6">
+        <div className="bg-white rounded-2xl shadow-xl p-5 sm:p-8">
+          <div className="text-center mb-6 sm:mb-8">
+            <div className="flex justify-center mb-4 sm:mb-6">
               <Logo size="cover" />
             </div>
-            <h1 className="text-3xl mb-2">Morfoblocos Digital</h1>
-            <p className="text-muted-foreground">Entre para continuar sua aprendizagem</p>
+            <h1 className="text-2xl sm:text-3xl mb-2">Morfoblocos Digital</h1>
+            <p className="text-sm sm:text-base text-muted-foreground">Entre para continuar sua aprendizagem</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block mb-3">Tipo de Conta</label>
-              <div className="grid grid-cols-2 gap-3">
+              <label className="block mb-2 sm:mb-3 text-sm sm:text-base">Tipo de Conta</label>
+              <div className="grid grid-cols-2 gap-2 sm:gap-3">
                 <button
                   type="button"
                   onClick={() => setUserType('aluno')}
-                  className={`p-4 rounded-lg border-2 transition-all ${
+                  className={`p-3 sm:p-4 rounded-lg border-2 transition-all ${
                     userType === 'aluno'
                       ? 'border-primary bg-blue-50'
                       : 'border-border hover:border-primary/50'
                   }`}
                 >
-                  <User className="w-6 h-6 mx-auto mb-2 text-primary" />
-                  <div className="text-sm">Aluno</div>
+                  <User className="w-5 h-5 sm:w-6 sm:h-6 mx-auto mb-1 sm:mb-2 text-primary" />
+                  <div className="text-xs sm:text-sm">Aluno</div>
                 </button>
                 <button
                   type="button"
                   onClick={() => setUserType('professor')}
-                  className={`p-4 rounded-lg border-2 transition-all ${
+                  className={`p-3 sm:p-4 rounded-lg border-2 transition-all ${
                     userType === 'professor'
                       ? 'border-primary bg-blue-50'
                       : 'border-border hover:border-primary/50'
                   }`}
                 >
-                  <GraduationCap className="w-6 h-6 mx-auto mb-2 text-primary" />
-                  <div className="text-sm">Professor</div>
+                  <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6 mx-auto mb-1 sm:mb-2 text-primary" />
+                  <div className="text-xs sm:text-sm">Professor</div>
                 </button>
               </div>
             </div>

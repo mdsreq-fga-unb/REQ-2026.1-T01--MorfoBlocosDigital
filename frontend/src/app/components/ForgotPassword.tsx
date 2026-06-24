@@ -16,11 +16,11 @@ export function ForgotPassword() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-yellow-50 to-red-50 p-4">
         <div className="w-full max-w-md">
-          <div className="bg-white rounded-2xl shadow-xl p-8 text-center">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-6">
-              <CheckCircle className="w-10 h-10 text-green-600" />
+          <div className="bg-white rounded-2xl shadow-xl p-5 sm:p-8 text-center">
+            <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-green-100 rounded-full mb-4 sm:mb-6">
+              <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-green-600" />
             </div>
-            <h1 className="text-3xl mb-3">Email Enviado!</h1>
+            <h1 className="text-2xl sm:text-3xl mb-3">Email Enviado!</h1>
             <p className="text-muted-foreground mb-8">
               Enviamos instruções para recuperação de senha para <strong>{email}</strong>.
               Verifique sua caixa de entrada e spam.
@@ -41,11 +41,11 @@ export function ForgotPassword() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-yellow-50 to-red-50 p-4">
       <div className="w-full max-w-md">
-        <div className="bg-white rounded-2xl shadow-xl p-8">
-          <div className="text-center mb-8">
-            <div className="flex justify-center mb-6"><Logo size="cover" /></div>
-            <h1 className="text-3xl mb-2">Esqueceu a Senha?</h1>
-            <p className="text-muted-foreground">
+        <div className="bg-white rounded-2xl shadow-xl p-5 sm:p-8">
+          <div className="text-center mb-6 sm:mb-8">
+            <div className="flex justify-center mb-4 sm:mb-6"><Logo size="cover" /></div>
+            <h1 className="text-2xl sm:text-3xl mb-2">Esqueceu a Senha?</h1>
+            <p className="text-sm sm:text-base text-muted-foreground">
               Sem problemas! Digite seu email e enviaremos instruções para recuperá-la.
             </p>
           </div>
