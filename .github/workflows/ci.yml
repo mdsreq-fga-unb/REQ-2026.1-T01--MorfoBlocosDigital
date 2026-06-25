@@ -29,5 +29,7 @@ jobs:
         pip install -r requirements.txt
         
     - name: Rodar Testes Automatizados (TDD)
+      env:
+        SECRET_KEY: 'chave-falsa-so-para-o-robo-testar'
       run: |
         python manage.py test
