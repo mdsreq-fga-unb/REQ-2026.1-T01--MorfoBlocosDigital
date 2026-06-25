@@ -31,5 +31,6 @@ jobs:
     - name: Rodar Testes Automatizados (TDD)
       env:
         SECRET_KEY: 'chave-falsa-so-para-o-robo-testar'
+        DEBUG: 'True'
       run: |
         python manage.py test
