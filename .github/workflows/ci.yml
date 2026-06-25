@@ -21,14 +21,13 @@ jobs:
     - name: Configurar Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.11'
+        python-version: '3.12'  # 📌 Mudei de 3.11 para 3.12 aqui!
         
     - name: Instalar dependências
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         
-    - name: Configurar Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.12'  
+    - name: Rodar Testes Automatizados (TDD)
+      run: |
+        python manage.py test
