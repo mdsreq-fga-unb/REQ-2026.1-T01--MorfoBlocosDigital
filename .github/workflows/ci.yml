@@ -32,5 +32,10 @@ jobs:
       env:
         SECRET_KEY: 'chave-falsa-so-para-o-robo-testar'
         DEBUG: 'True'
+        DB_NAME: 'db_teste'
+        DB_USER: 'user_teste'
+        DB_PASSWORD: '123'
+        DB_HOST: 'localhost'
+        DB_PORT: '5432'
       run: |
         python manage.py test
