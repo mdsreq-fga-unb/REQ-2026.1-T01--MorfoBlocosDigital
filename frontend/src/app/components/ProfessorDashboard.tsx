@@ -12,7 +12,7 @@ import type { Topic } from '../state/AppState';
 const TOPICS: Topic[] = ['Prefixos', 'Radicais', 'Sufixos', 'Composição', 'Derivação'];
 
 export function ProfessorDashboard() {
-  const { turmas, students, history, professorId, addTurma, addStudent } = useAppState();
+  const { turmas, students, history, professorId, addTurma, addStudent, usuario } = useAppState();
   const myTurmas = turmas.filter((t) => t.professorId === professorId);
   const [selectedClassId, setSelectedClassId] = useState<string>(myTurmas[0]?.id ?? '');
   const [showTurmaModal, setShowTurmaModal] = useState(false);
@@ -98,7 +98,7 @@ export function ProfessorDashboard() {
           <div className="flex items-center gap-2 sm:gap-4 shrink-0">
             <div className="text-right hidden sm:block">
               <div className="text-sm text-muted-foreground">Prof.</div>
-              <div>Carlos Mendes</div>
+              <div>{usuario?.username}</div>
             </div>
             <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white shadow">
               <User className="w-4 h-4 sm:w-5 sm:h-5" />
