@@ -144,3 +144,11 @@ STATIC_ROOT = BASE_DIR / 'staticfiles' # ✅ Adicionado: Pasta onde o Railway va
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'core.Usuario'
+
+# ✅ Adicionado: Configurações de segurança para o proxy do Railway
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# ✅ Adicionado: Lista VIP de domínios que podem fazer login no sistema
+CSRF_TRUSTED_ORIGINS = [
+    'https://req-20261-t01-morfoblocosdigital-production.up.railway.app',
+]
