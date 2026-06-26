@@ -19,6 +19,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', cast=bool)
 
+# ✅ Alterado: Permitindo que o Railway rode a aplicação
 ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
@@ -47,8 +48,8 @@ REST_FRAMEWORK = {
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
-
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', # ✅ Adicionado: Whitenoise logo abaixo do Security
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -89,7 +90,28 @@ DATABASES = {
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    config('FRONTEND_URL', default="http://localhost:5173"), # ✅ Adicionado: Preparando para o frontend em produção
 ]
+
+# ---- Email (reset password) ----------------------------------------------
+# Para o modo mais simples que "funciona sempre" em desenvolvimento,
+# usamos console backend por padrão (loga o email no terminal).
+EMAIL_BACKEND = config(
+    'EMAIL_BACKEND',
+    default='django.core.mail.backends.console.EmailBackend',
+)
+
+EMAIL_HOST = config('EMAIL_HOST', default='localhost')
+EMAIL_PORT = config('EMAIL_PORT', cast=int, default=1025)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool, default=False)
+EMAIL_USE_SSL = config('EMAIL_USE_SSL', cast=bool, default=False)
+
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='no-reply@example.com')
+
+# Link do front para reset (pode ser ajustado).
+FRONTEND_RESET_URL = config('FRONTEND_RESET_URL', default='http://localhost:5173/reset-senha')
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
@@ -109,7 +131,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'America/Sao_Paulo'
@@ -118,6 +139,7 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles' # ✅ Adicionado: Pasta onde o Railway vai colocar o CSS/JS na nuvem
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

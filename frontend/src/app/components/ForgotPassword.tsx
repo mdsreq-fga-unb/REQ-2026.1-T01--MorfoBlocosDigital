@@ -1,15 +1,27 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
-import { Mail, ArrowLeft, CheckCircle } from 'lucide-react';
+import { Mail, ArrowLeft, CheckCircle, Loader2 } from 'lucide-react';
 import { Logo } from './Logo';
+import { api } from '../../lib/api';
 
 export function ForgotPassword() {
   const [email, setEmail] = useState('');
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    setError(null);
+    setLoading(true);
+    try {
+      await api.post('/auth/forgot-password/', { email });
+      setSent(true);
+    } catch {
+      setError('Não foi possível enviar as instruções. Tente novamente.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (sent) {
@@ -67,11 +79,19 @@ export function ForgotPassword() {
               </div>
             </div>
 
+            {error && (
+              <div className="p-3 bg-red-50 border-l-4 border-red-500 rounded-lg text-sm text-red-700">
+                {error}
+              </div>
+            )}
+
             <button
               type="submit"
-              className="w-full py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+              disabled={loading}
+              className="w-full py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
             >
-              Enviar Instruções
+              {loading && <Loader2 className="w-5 h-5 animate-spin" />}
+              {loading ? 'Enviando...' : 'Enviar Instruções'}
             </button>
           </form>
 
@@ -86,3 +106,4 @@ export function ForgotPassword() {
     </div>
   );
 }
+

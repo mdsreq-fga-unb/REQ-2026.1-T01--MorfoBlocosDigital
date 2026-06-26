@@ -27,8 +27,12 @@ export function Register() {
         password,
         tipo: userType,
       });
-      // Sucesso: manda para o login para o usuário entrar com a conta nova.
+      // Sucesso: popup simples e depois redireciona para login.
+      // (o projeto não tinha modal/toast pronto aqui, então usamos window.alert
+      // para garantir que funciona do jeito mais simples possível)
+      window.alert('Conta criada com sucesso!');
       navigate('/login');
+
     } catch (err: unknown) {
       console.error('Falha no cadastro:', err);
       // O DRF retorna 400 com erros por campo: { email: [...], username: [...] }.
