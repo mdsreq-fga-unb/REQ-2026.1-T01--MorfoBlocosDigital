@@ -4,9 +4,9 @@ import { Logo } from './Logo';
 import { useAppState } from '../state/AppState';
 
 export function StudentDashboard() {
-  const { history, currentStudentId, students } = useAppState();
+  const { history, currentStudentId, students, usuario } = useAppState();
   const student = students.find((s) => s.id === currentStudentId);
-  const studentName = student?.name ?? 'Aluno';
+  const studentName = usuario?.username ?? 'Aluno';
 
   const myHistory = history.filter((h) => h.studentId === currentStudentId);
   const totalAnswered = myHistory.length;
