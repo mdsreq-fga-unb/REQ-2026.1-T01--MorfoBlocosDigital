@@ -724,3 +724,5 @@ export {
   SidebarTrigger,
   useSidebar,
 };
+
+// Sincronizando tipagem para o deploy na Vercel
