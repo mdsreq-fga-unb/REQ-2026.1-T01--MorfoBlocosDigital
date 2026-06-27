@@ -4,7 +4,7 @@ import { Logo } from './Logo';
 import { useAppState } from '../state/AppState';
 
 export function StudentDashboard() {
-  const { history, currentStudentId, students, usuario } = useAppState();
+  const { history, currentStudentId, usuario } = useAppState();
   // const student = students.find((s) => s.id === currentStudentId);
   const studentName = usuario?.username ?? 'Aluno';
 
