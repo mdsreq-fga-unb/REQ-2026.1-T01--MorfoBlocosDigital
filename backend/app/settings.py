@@ -90,18 +90,16 @@ DATABASES = {
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
-    "http://127.0.0.1:5173", # ✅ Adicionado: Permite o acesso via IP local
+    "http://127.0.0.1:5173",
     config('FRONTEND_URL', default="http://localhost:5173"), 
-    
-    # ✅ Adicionado: Link gerado neste deploy específico da Vercel
-    "https://req-2026-1-t01-morfo-blocos-digital-jjwn-3k75fdzlc-morfoblocos.vercel.app",
-    
-    # ✅ Adicionado: Link de produção oficial (substitua pelo link principal se for diferente)
+    # Link de produção oficial (o domínio fixo que a Vercel gera)
     "https://req-2026-1-t01-morfo-blocos-digital.vercel.app",
 ]
-# ---- Email (reset password) ----------------------------------------------
-# Para o modo mais simples que "funciona sempre" em desenvolvimento,
-# usamos console backend por padrão (loga o email no terminal).
+
+# ✅ ADICIONADO: Nova regra para aceitar links dinâmicos da Vercel
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https://req-2026-1-t01-morfo-blocos-digital-.*\.vercel\.app$",
+]
 EMAIL_BACKEND = config(
     'EMAIL_BACKEND',
     default='django.core.mail.backends.console.EmailBackend',
