@@ -21,9 +21,10 @@ export function Register() {
     setLoading(true);
     try {
       await api.post('/auth/registro/', {
-        email,
-        username: name,
-        password,
+        email: email,
+        username: email, // Resolve o problema de nomes repetidos usando o email
+        first_name: name, // Envia o nome real para o campo correto do banco
+        password: password,
         tipo: userType,
       });
 
@@ -48,10 +49,10 @@ export function Register() {
         typeof err === 'object' && err !== null && 'response' in err
           ? (err as { response?: { data?: Record<string, unknown> } }).response?.data
           : undefined;
-      if (data?.email) {
-        setError('Este email já está cadastrado.');
-      } else if (data?.username) {
-        setError('Este nome já está em uso. Tente outro.');
+      
+      // Ajuste na mensagem de erro para abranger tanto email quanto username duplicado
+      if (data?.email || data?.username) {
+        setError('Este email já está cadastrado no sistema.');
       } else if (data?.password) {
         setError('A senha precisa ter pelo menos 6 caracteres.');
       } else {
