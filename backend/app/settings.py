@@ -90,9 +90,9 @@ DATABASES = {
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
-    config('FRONTEND_URL', default="http://localhost:5173"), # ✅ Adicionado: Preparando para o frontend em produção
+    "http://127.0.0.1:5173", # ✅ Adicionado: Permite o acesso via IP local
+    config('FRONTEND_URL', default="http://localhost:5173"), 
 ]
-
 # ---- Email (reset password) ----------------------------------------------
 # Para o modo mais simples que "funciona sempre" em desenvolvimento,
 # usamos console backend por padrão (loga o email no terminal).
