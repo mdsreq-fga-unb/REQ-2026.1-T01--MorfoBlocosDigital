@@ -92,6 +92,12 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173", # ✅ Adicionado: Permite o acesso via IP local
     config('FRONTEND_URL', default="http://localhost:5173"), 
+    
+    # ✅ Adicionado: Link gerado neste deploy específico da Vercel
+    "https://req-2026-1-t01-morfo-blocos-digital-jjwn-3k75fdzlc-morfoblocos.vercel.app",
+    
+    # ✅ Adicionado: Link de produção oficial (substitua pelo link principal se for diferente)
+    "https://req-2026-1-t01-morfo-blocos-digital.vercel.app",
 ]
 # ---- Email (reset password) ----------------------------------------------
 # Para o modo mais simples que "funciona sempre" em desenvolvimento,
