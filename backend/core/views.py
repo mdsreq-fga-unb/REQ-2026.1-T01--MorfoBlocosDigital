@@ -4,13 +4,15 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.generics import ListAPIView, CreateAPIView
 from rest_framework import status
 
+from urllib.parse import urlsplit
+
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.core.mail import send_mail
 from django.db.models import Count
 from django.utils.encoding import force_bytes
-from django.utils.http import urlsafe_base64_encode
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 
 from core.models import Morfema, PalavraValida, Tentativa, Usuario
 from core.serializers import (
@@ -164,9 +166,14 @@ class ForgotPasswordView(APIView):
                 token = token_generator.make_token(user)
                 uid = urlsafe_base64_encode(force_bytes(user.pk))
 
-                # Link simples (não implementamos a página de reset ainda).
-                # O importante aqui é "mandar o email".
-                reset_url = f"{getattr(settings, 'FRONTEND_RESET_URL', 'http://localhost:5173/reset-senha')}?uid={uid}&token={token}"
+                # Monta o link como hash-route (/#/reset-senha?...). O hash nunca
+                # é enviado ao servidor, então a hospedagem estática (SPA) sempre
+                # serve a raiz e o frontend lê o token no boot — sem necessidade de
+                # rewrite no servidor.
+                base = getattr(settings, "FRONTEND_RESET_URL", "http://localhost:5173/reset-senha")
+                parts = urlsplit(base)
+                caminho = parts.path or "/reset-senha"
+                reset_url = f"{parts.scheme}://{parts.netloc}/#{caminho}?uid={uid}&token={token}"
 
                 subject = "Recuperação de senha"
                 message = (
@@ -185,4 +192,46 @@ class ForgotPasswordView(APIView):
                 )
 
         return Response({"ok": ok, "detail": "Se o email existir, você receberá instruções."}, status=status.HTTP_200_OK)
+
+
+class ResetPasswordConfirmView(APIView):
+    """Confirma a redefinição de senha a partir do link enviado por email.
+
+    Recebe uid + token (gerados na solicitação) e a nova senha. O token do
+    Django é temporário e deixa de ser válido após a troca de senha, atendendo
+    ao requisito de validade limitada e uso único (CA-US03-02).
+    """
+
+    permission_classes = [AllowAny]
+
+    def post(self, request):
+        uid = request.data.get("uid") or ""
+        token = request.data.get("token") or ""
+        password = request.data.get("password") or ""
+
+        User = get_user_model()
+        try:
+            user_pk = urlsafe_base64_decode(uid).decode()
+            user = User.objects.get(pk=user_pk)
+        except (ValueError, TypeError, OverflowError, User.DoesNotExist):
+            user = None
+
+        if user is None or not PasswordResetTokenGenerator().check_token(user, token):
+            return Response(
+                {"detail": "Link inválido ou expirado. Solicite uma nova redefinição."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        if len(password) < 6:
+            return Response(
+                {"detail": "A senha precisa ter pelo menos 6 caracteres."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        user.set_password(password)
+        user.save()
+        return Response(
+            {"detail": "Senha redefinida com sucesso."},
+            status=status.HTTP_200_OK,
+        )
 
