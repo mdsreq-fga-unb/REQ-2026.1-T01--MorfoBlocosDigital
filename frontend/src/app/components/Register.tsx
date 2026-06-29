@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router';
 import { Mail, Lock, User, Eye, EyeOff, GraduationCap, Loader2 } from 'lucide-react';
 import { Logo } from './Logo';
 import { api } from '../../lib/api';
+import Swal from 'sweetalert2';
 
 export function Register() {
   const [showPassword, setShowPassword] = useState(false);
@@ -19,31 +20,39 @@ export function Register() {
     setError(null);
     setLoading(true);
     try {
-      // O backend espera {email, username, password, tipo}. O "Nome Completo"
-      // do formulário é usado como username.
       await api.post('/auth/registro/', {
-        email,
-        username: name,
-        password,
+        email: email,
+        username: email, // Resolve o problema de nomes repetidos usando o email
+        first_name: name, // Envia o nome real para o campo correto do banco
+        password: password,
         tipo: userType,
       });
-      // Sucesso: popup simples e depois redireciona para login.
-      // (o projeto não tinha modal/toast pronto aqui, então usamos window.alert
-      // para garantir que funciona do jeito mais simples possível)
-      window.alert('Conta criada com sucesso!');
+
+      // Pop-up do SweetAlert2 aguardando a interação do usuário
+      await Swal.fire({
+        title: 'Bem-vindo(a)!',
+        text: 'Conta criada com sucesso no Morfoblocos Digital.',
+        icon: 'success',
+        confirmButtonText: 'Ir para o Login',
+        confirmButtonColor: '#2563eb', // Cor azul combinando com o Tailwind do projeto
+        customClass: {
+          popup: 'rounded-2xl' // Arredonda as bordas do modal
+        }
+      });
+      
+      // Só navega para o login DEPOIS que o usuário clica no botão do pop-up
       navigate('/login');
 
     } catch (err: unknown) {
       console.error('Falha no cadastro:', err);
-      // O DRF retorna 400 com erros por campo: { email: [...], username: [...] }.
       const data =
         typeof err === 'object' && err !== null && 'response' in err
           ? (err as { response?: { data?: Record<string, unknown> } }).response?.data
           : undefined;
-      if (data?.email) {
-        setError('Este email já está cadastrado.');
-      } else if (data?.username) {
-        setError('Este nome já está em uso. Tente outro.');
+      
+      // Ajuste na mensagem de erro para abranger tanto email quanto username duplicado
+      if (data?.email || data?.username) {
+        setError('Este email já está cadastrado no sistema.');
       } else if (data?.password) {
         setError('A senha precisa ter pelo menos 6 caracteres.');
       } else {

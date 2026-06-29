@@ -80,22 +80,26 @@ WSGI_APPLICATION = 'app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT'),
+        'NAME': config('DB_NAME', default=''),
+        'USER': config('DB_USER', default=''),
+        'PASSWORD': config('DB_PASSWORD', default=''),
+        'HOST': config('DB_HOST', default='localhost'),
+        'PORT': config('DB_PORT', default='5432'),
     }
 }
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
-    config('FRONTEND_URL', default="http://localhost:5173"), # ✅ Adicionado: Preparando para o frontend em produção
+    "http://127.0.0.1:5173",
+    config('FRONTEND_URL', default="http://localhost:5173"), 
+    # Link de produção oficial (o domínio fixo que a Vercel gera)
+    "https://req-2026-1-t01-morfo-blocos-digital.vercel.app",
 ]
 
-# ---- Email (reset password) ----------------------------------------------
-# Para o modo mais simples que "funciona sempre" em desenvolvimento,
-# usamos console backend por padrão (loga o email no terminal).
+# ✅ ADICIONADO: Nova regra para aceitar links dinâmicos da Vercel
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https://req-2026-1-t01-morfo-blocos-digital-.*\.vercel\.app$",
+]
 EMAIL_BACKEND = config(
     'EMAIL_BACKEND',
     default='django.core.mail.backends.console.EmailBackend',
@@ -144,3 +148,11 @@ STATIC_ROOT = BASE_DIR / 'staticfiles' # ✅ Adicionado: Pasta onde o Railway va
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'core.Usuario'
+
+# ✅ Adicionado: Configurações de segurança para o proxy do Railway
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# ✅ Adicionado: Lista VIP de domínios que podem fazer login no sistema
+CSRF_TRUSTED_ORIGINS = [
+    'https://req-20261-t01-morfoblocosdigital-production.up.railway.app',
+]

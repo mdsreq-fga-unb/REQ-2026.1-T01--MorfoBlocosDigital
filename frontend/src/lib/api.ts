@@ -9,8 +9,12 @@ export const STORAGE_KEYS = {
   usuario: 'mb_usuario',
 } as const;
 
-// Lê a baseURL da env do Vite (frontend/.env -> VITE_API_URL).
-const baseURL = import.meta.env.VITE_API_URL ?? 'http://localhost:8000/api';
+// ✅ CORREÇÃO: Lê a URL da env do Vite e remove a barra final (se houver).
+const envUrl = (import.meta.env.VITE_API_URL || 'http://localhost:8000').replace(/\/$/, '');
+
+// ✅ CORREÇÃO: Forçamos a adição do `/api` no final. 
+// Agora, tanto localhost quanto Railway vão apontar corretamente para as rotas do Django.
+const baseURL = envUrl.endsWith('/api') ? envUrl : `${envUrl}/api`;
 
 export const api = axios.create({ baseURL });
 
@@ -58,6 +62,8 @@ api.interceptors.request.use((config: InternalAxiosRequestConfig) => {
 
 // Cliente axios "cru" (sem interceptors) para chamar o refresh sem cair em
 // recursão infinita caso o próprio refresh retorne 401.
+// 💡 DICA: Como consertamos a baseURL lá em cima, esse rawAxios já sabe que deve
+// usar o /api. O comando rawAxios.post('/token/refresh/') vai bater certinho no Django!
 const rawAxios = axios.create({ baseURL });
 
 // Marca para não tentar refazer o refresh mais de uma vez por request.
