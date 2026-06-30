@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
-import { ArrowLeft, Check, X, Trophy, Sparkles, Loader2 } from 'lucide-react';
+import { ArrowLeft, Check, X, Trophy, Sparkles, Loader2, BookOpen } from 'lucide-react';
 import { api } from '../../lib/api';
 
 type Question = { question: string; topic: string; options: string[]; correct: number; explanation: string };
 
 // Formatos crus vindos do backend.
-type AtividadeResumo = { id: number; tipo: string; nivel: number };
+type AtividadeResumo = { id: number; titulo: string; tipo: string; nivel: number };
 type PerguntaApi = {
   id: number;
   enunciado: string;
@@ -15,22 +15,25 @@ type PerguntaApi = {
   explicacao: string;
   topico: string;
 };
-type AtividadeDetalhe = { id: number; perguntas: PerguntaApi[] };
+type AtividadeDetalhe = { id: number; titulo: string; perguntas: PerguntaApi[] };
 
 export function QuestionsScreen() {
-  const [level, setLevel] = useState<1 | 2>(1);
+  const navigate = useNavigate();
+
+  const [atividades, setAtividades] = useState<AtividadeResumo[]>([]);
+  const [atividadesProntas, setAtividadesProntas] = useState(false);
+
+  // Quiz selecionado (null = tela de seleção).
+  const [selectedId, setSelectedId] = useState<number | null>(null);
+  const [questions, setQuestions] = useState<Question[]>([]);
+  // Id da atividade à qual "questions" corresponde (null = nada carregado).
+  const [questionsFor, setQuestionsFor] = useState<number | null>(null);
+
   const [current, setCurrent] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
-  const navigate = useNavigate();
-
-  const [atividades, setAtividades] = useState<AtividadeResumo[]>([]);
-  const [atividadesProntas, setAtividadesProntas] = useState(false);
-  const [questions, setQuestions] = useState<Question[]>([]);
-  // Nível ao qual o "questions" carregado corresponde (null = nada carregado).
-  const [questionsLevel, setQuestionsLevel] = useState<number | null>(null);
 
   // Lista as atividades do tipo quiz uma vez.
   useEffect(() => {
@@ -49,14 +52,12 @@ export function QuestionsScreen() {
     };
   }, []);
 
-  const atividadeDoNivel = atividades.find((a) => a.nivel === level);
-
-  // Carrega as perguntas da atividade do nível selecionado.
+  // Carrega as perguntas do quiz selecionado.
   useEffect(() => {
-    if (!atividadeDoNivel) return;
+    if (selectedId === null) return;
     let active = true;
     api
-      .get<AtividadeDetalhe>(`/atividades/${atividadeDoNivel.id}/`)
+      .get<AtividadeDetalhe>(`/atividades/${selectedId}/`)
       .then(({ data }) => {
         if (!active) return;
         setQuestions(
@@ -68,29 +69,44 @@ export function QuestionsScreen() {
             explanation: p.explicacao,
           })),
         );
-        setQuestionsLevel(level);
+        setQuestionsFor(selectedId);
       })
       .catch((err) => console.error('Falha ao carregar perguntas:', err));
     return () => {
       active = false;
     };
-  }, [level, atividadeDoNivel]);
+  }, [selectedId]);
 
-  // Loading e disponibilidade derivados (sem setState em efeito).
-  const carregando = !atividadesProntas || (!!atividadeDoNivel && questionsLevel !== level);
-  const semQuiz =
-    atividadesProntas &&
-    (!atividadeDoNivel || (questionsLevel === level && questions.length === 0));
-
-  const q = questions[current];
-  const reset = (nextLevel: 1 | 2) => {
-    setLevel(nextLevel);
+  const escolherQuiz = (id: number) => {
+    setSelectedId(id);
     setCurrent(0);
     setSelected(null);
     setShowResult(false);
     setScore(0);
     setFinished(false);
   };
+
+  const voltarSelecao = () => {
+    setSelectedId(null);
+    setFinished(false);
+    setCurrent(0);
+    setSelected(null);
+    setShowResult(false);
+    setScore(0);
+  };
+
+  const tentarNovamente = () => {
+    setCurrent(0);
+    setSelected(null);
+    setShowResult(false);
+    setScore(0);
+    setFinished(false);
+  };
+
+  const q = questions[current];
+  const quizAtual = atividades.find((a) => a.id === selectedId);
+  const carregandoPerguntas = selectedId !== null && questionsFor !== selectedId;
+  const quizVazio = selectedId !== null && questionsFor === selectedId && questions.length === 0;
 
   const handleSelect = (idx: number) => {
     if (showResult || !q) return;
@@ -110,8 +126,53 @@ export function QuestionsScreen() {
     }
   };
 
-  // Estados de carregamento / quiz indisponível para o nível.
-  if (!finished && carregando) {
+  // -------- Tela de seleção de quiz --------
+  if (selectedId === null) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-yellow-50 to-red-50 p-3 sm:p-4">
+        <div className="max-w-3xl mx-auto">
+          <div className="flex items-center justify-between mb-4 sm:mb-6 gap-2">
+            <Link to="/aluno/dashboard" className="flex items-center gap-1 sm:gap-2 text-muted-foreground hover:text-foreground shrink-0">
+              <ArrowLeft className="w-5 h-5" /> <span className="hidden sm:inline">Voltar</span>
+            </Link>
+            <h1 className="text-lg sm:text-2xl text-center">Escolha um Quiz</h1>
+            <div className="w-8 sm:w-20" />
+          </div>
+
+          {!atividadesProntas ? (
+            <div className="flex items-center justify-center gap-2 py-20 text-muted-foreground">
+              <Loader2 className="w-6 h-6 animate-spin" /> Carregando quizzes...
+            </div>
+          ) : atividades.length === 0 ? (
+            <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 text-center">
+              <p className="text-sm sm:text-base text-muted-foreground">Nenhum quiz cadastrado ainda.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              {atividades.map((a) => (
+                <button
+                  key={a.id}
+                  onClick={() => escolherQuiz(a.id)}
+                  className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all text-left border-2 border-transparent hover:border-blue-600 flex items-center gap-3"
+                >
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center shrink-0">
+                    <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  </div>
+                  <div className="min-w-0">
+                    <h2 className="text-base sm:text-lg truncate">{a.titulo}</h2>
+                    <span className="text-xs px-2 py-0.5 bg-blue-50 text-blue-700 rounded-full">Nível {a.nivel}</span>
+                  </div>
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  // -------- Carregando perguntas do quiz escolhido --------
+  if (!finished && carregandoPerguntas) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-yellow-50 to-red-50 flex items-center justify-center p-4">
         <div className="flex items-center gap-2 text-muted-foreground">
@@ -121,86 +182,59 @@ export function QuestionsScreen() {
     );
   }
 
-  if (!finished && semQuiz) {
+  // -------- Quiz sem perguntas --------
+  if (!finished && quizVazio) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-yellow-50 to-red-50 flex items-center justify-center p-4">
         <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 max-w-md w-full text-center">
-          <h2 className="text-xl sm:text-2xl mb-2">Nenhuma pergunta disponível</h2>
+          <h2 className="text-xl sm:text-2xl mb-2">Quiz sem perguntas</h2>
           <p className="text-sm sm:text-base text-muted-foreground mb-6">
-            Ainda não há um quiz cadastrado para o Nível {level}.
+            Este quiz ainda não tem perguntas cadastradas.
           </p>
-          <div className="flex flex-col gap-3">
-            {level === 2 && (
-              <button onClick={() => reset(1)} className="w-full py-3 bg-yellow-400 text-white rounded-xl hover:bg-yellow-500 transition-colors">
-                Voltar ao Nível 1
-              </button>
-            )}
-            <button onClick={() => navigate('/aluno/dashboard')} className="w-full py-3 bg-primary text-white rounded-xl hover:bg-primary/90 transition-colors">
-              Voltar
-            </button>
-          </div>
+          <button onClick={voltarSelecao} className="w-full py-3 bg-primary text-white rounded-xl hover:bg-primary/90 transition-colors">
+            Escolher outro quiz
+          </button>
         </div>
       </div>
     );
   }
 
+  // -------- Tela de resultado --------
   if (finished) {
     const pct = (score / questions.length) * 100;
-    const unlockedLevel2 = level === 1 && pct >= 80;
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-yellow-50 to-red-50 flex items-center justify-center p-3 sm:p-4">
         <div className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl p-5 sm:p-8 max-w-md w-full text-center">
-          <div className="w-18 h-18 sm:w-24 sm:h-24 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-xl" style={{ width: 'clamp(4.5rem, 15vw, 6rem)', height: 'clamp(4.5rem, 15vw, 6rem)' }}>
+          <div className="bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-xl" style={{ width: 'clamp(4.5rem, 15vw, 6rem)', height: 'clamp(4.5rem, 15vw, 6rem)' }}>
             <Trophy className="w-8 h-8 sm:w-12 sm:h-12 text-white" />
           </div>
           <h2 className="text-2xl sm:text-3xl mb-2">Parabéns!</h2>
-          <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">Você concluiu o Nível {level}</p>
+          <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">Você concluiu "{quizAtual?.titulo}"</p>
           <div className="bg-gradient-to-br from-blue-50 to-yellow-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 mb-4 sm:mb-6">
             <div className="text-4xl sm:text-5xl text-blue-600 mb-2">{score}/{questions.length}</div>
             <div className="text-sm sm:text-base text-muted-foreground">acertos ({pct.toFixed(0)}%)</div>
           </div>
-          {unlockedLevel2 && (
-            <div className="bg-gradient-to-r from-yellow-100 to-red-100 border-2 border-yellow-400 rounded-2xl p-4 mb-4">
-              <div className="text-yellow-700 mb-1">🔓 Nível 2 desbloqueado!</div>
-              <div className="text-xs text-muted-foreground">Você atingiu mais de 80% de acertos.</div>
-            </div>
-          )}
-          {level === 1 && !unlockedLevel2 && (
-            <div className="bg-blue-50 border border-blue-200 rounded-xl p-3 mb-4 text-sm text-muted-foreground">
-              Atinja 80% de acertos para desbloquear o Nível 2.
-            </div>
-          )}
           <div className="flex flex-col gap-3">
-            {unlockedLevel2 && (
-              <button
-                onClick={() => reset(2)}
-                className="w-full py-3 bg-gradient-to-r from-red-500 to-yellow-500 text-white rounded-xl hover:opacity-90 transition shadow-md"
-              >
-                Avançar para o Nível 2 →
-              </button>
-            )}
             <div className="flex gap-3">
               <button
-                onClick={() => reset(level)}
+                onClick={tentarNovamente}
                 className="flex-1 py-3 bg-yellow-400 text-white rounded-xl hover:bg-yellow-500 transition-colors shadow-md"
               >
                 Tentar Novamente
               </button>
               <button
-                onClick={() => navigate('/aluno/dashboard')}
+                onClick={voltarSelecao}
                 className="flex-1 py-3 bg-primary text-white rounded-xl hover:bg-primary/90 transition-colors shadow-md"
               >
-                Voltar
+                Outro Quiz
               </button>
             </div>
-            {level === 2 && (
-              <button
-                onClick={() => reset(1)}
-                className="w-full py-2 text-sm text-muted-foreground hover:text-foreground"
-              >
-                Voltar ao Nível 1
-              </button>
-            )}
+            <button
+              onClick={() => navigate('/aluno/dashboard')}
+              className="w-full py-2 text-sm text-muted-foreground hover:text-foreground"
+            >
+              Voltar ao início
+            </button>
           </div>
         </div>
       </div>
@@ -213,24 +247,11 @@ export function QuestionsScreen() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-yellow-50 to-red-50 p-3 sm:p-4">
       <div className="max-w-3xl mx-auto">
         <div className="flex items-center justify-between mb-4 sm:mb-6 gap-2">
-          <Link to="/aluno/dashboard" className="flex items-center gap-1 sm:gap-2 text-muted-foreground hover:text-foreground shrink-0">
-            <ArrowLeft className="w-5 h-5" /> <span className="hidden sm:inline">Voltar</span>
-          </Link>
-          <div className="flex items-center gap-2 sm:gap-3 text-sm">
-            <div className="flex rounded-full overflow-hidden border border-border bg-white shadow-sm">
-              <button
-                onClick={() => reset(1)}
-                className={`px-2 sm:px-3 py-1 transition-colors text-xs sm:text-sm ${level === 1 ? 'bg-blue-100 text-blue-700' : 'text-muted-foreground hover:bg-blue-50'}`}
-              >
-                Nível 1
-              </button>
-              <button
-                onClick={() => reset(2)}
-                className={`px-2 sm:px-3 py-1 transition-colors text-xs sm:text-sm ${level === 2 ? 'bg-red-100 text-red-700' : 'text-muted-foreground hover:bg-red-50'}`}
-              >
-                Nível 2
-              </button>
-            </div>
+          <button onClick={voltarSelecao} className="flex items-center gap-1 sm:gap-2 text-muted-foreground hover:text-foreground shrink-0">
+            <ArrowLeft className="w-5 h-5" /> <span className="hidden sm:inline">Quizzes</span>
+          </button>
+          <div className="flex items-center gap-2 sm:gap-3 text-sm min-w-0">
+            <span className="text-xs sm:text-sm text-muted-foreground truncate hidden sm:inline">{quizAtual?.titulo}</span>
             <span className="text-xs sm:text-sm text-muted-foreground whitespace-nowrap">
               {current + 1}/{questions.length}
             </span>
