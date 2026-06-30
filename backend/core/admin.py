@@ -1,14 +1,20 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from core.models import Usuario, Morfema, PalavraValida
+from core.models import Usuario, Morfema, PalavraValida, Turma
 
 
 @admin.register(Usuario)
 class UsuarioAdmin(UserAdmin):
-    list_display = ("email", "username", "tipo", "is_staff")
-    list_filter = ("tipo", "is_staff", "is_active")
+    list_display = ("email", "username", "tipo", "turma", "is_staff")
+    list_filter = ("tipo", "turma", "is_staff", "is_active")
     search_fields = ("email", "username")
     ordering = ("email",)
+
+
+@admin.register(Turma)
+class TurmaAdmin(admin.ModelAdmin):
+    list_display = ("nome", "serie", "professor", "criada_em")
+    search_fields = ("nome",)
 
 
 @admin.register(Morfema)

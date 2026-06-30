@@ -12,12 +12,34 @@ class Usuario(AbstractUser):
 
     email = models.EmailField(unique=True)
     tipo = models.CharField(max_length=10, choices=TIPO_CHOICES, default=ALUNO)
+    # Turma à qual o aluno pertence (RF23). Nulo para professores/admins.
+    turma = models.ForeignKey(
+        "Turma",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="alunos",
+    )
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["username"]
 
     def __str__(self):
         return self.email
+
+
+class Turma(models.Model):
+    nome = models.CharField(max_length=100)
+    serie = models.CharField(max_length=50, blank=True)
+    professor = models.ForeignKey(
+        Usuario,
+        on_delete=models.CASCADE,
+        related_name="turmas_lecionadas",
+    )
+    criada_em = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.nome
 
 
 class Morfema(models.Model):
