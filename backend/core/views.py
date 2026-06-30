@@ -78,6 +78,33 @@ class ValidarPalavraView(APIView):
         })
 
 
+class HistoricoAlunoView(APIView):
+    """Histórico de pontuações/tentativas do próprio aluno (US21)."""
+
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        tentativas = Tentativa.objects.filter(usuario=request.user).order_by("-data")
+        total = tentativas.count()
+        acertos = tentativas.filter(acertou=True).count()
+        itens = [
+            {
+                "id": t.id,
+                "palavra": t.palavra,
+                "acertou": t.acertou,
+                "data": t.data.isoformat(),
+            }
+            for t in tentativas[:50]
+        ]
+        return Response(
+            {
+                "total": total,
+                "acertos": acertos,
+                "itens": itens,
+            }
+        )
+
+
 class RelatorioProfessorView(APIView):
     """Relatório consolidado de desempenho para o professor (US24/US25).
 

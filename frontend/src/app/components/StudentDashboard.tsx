@@ -1,20 +1,42 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import { BookOpen, Puzzle, Trophy, Brain, LogOut, User, Check, X, History } from 'lucide-react';
 import { Logo } from './Logo';
 import { useAppState } from '../state/AppState';
+import { api } from '../../lib/api';
+
+// Formato cru vindo do backend (GET /api/historico/).
+type Tentativa = { id: number; palavra: string; acertou: boolean; data: string };
+type Historico = { total: number; acertos: number; itens: Tentativa[] };
 
 export function StudentDashboard() {
-  const { history, currentStudentId, usuario } = useAppState();
+  const { usuario } = useAppState();
   // Exibe o nome real (first_name); cai para username/email só se vazio.
   const studentName = usuario?.first_name?.trim() || usuario?.username || 'Aluno';
 
-  const myHistory = history.filter((h) => h.studentId === currentStudentId);
-  const totalAnswered = myHistory.length;
-  const correct = myHistory.filter((h) => h.correct).length;
+  const [historico, setHistorico] = useState<Historico | null>(null);
+
+  useEffect(() => {
+    let active = true;
+    api
+      .get<Historico>('/historico/')
+      .then(({ data }) => {
+        if (active) setHistorico(data);
+      })
+      .catch((err) => {
+        console.error('Falha ao carregar histórico:', err);
+      });
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const totalAnswered = historico?.total ?? 0;
+  const correct = historico?.acertos ?? 0;
   const progress = totalAnswered ? Math.round((correct / totalAnswered) * 100) : 0;
   const points = correct * 50;
   const level = Math.max(1, Math.floor(correct / 3) + 1);
-  const recent = [...myHistory].reverse().slice(0, 6);
+  const recent = (historico?.itens ?? []).slice(0, 6);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-yellow-50 to-red-50">
@@ -133,28 +155,30 @@ export function StudentDashboard() {
             <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-3 sm:p-5 flex items-center gap-3">
               <History className="w-5 h-5 sm:w-6 sm:h-6" />
               <div>
-                <h3 className="text-base sm:text-lg">Histórico de Questões</h3>
+                <h3 className="text-base sm:text-lg">Histórico de Tentativas</h3>
                 <div className="text-xs opacity-90">Seu desempenho recente</div>
               </div>
             </div>
             <div className="p-3 sm:p-4 max-h-72 sm:max-h-96 overflow-y-auto">
               {recent.length === 0 ? (
                 <div className="text-center text-muted-foreground py-8 text-sm">
-                  Você ainda não respondeu nenhuma questão.
+                  Você ainda não fez nenhuma tentativa.
                 </div>
               ) : (
                 <ul className="space-y-2">
                   {recent.map((h) => (
-                    <li key={h.id} className={`p-3 rounded-lg border-l-4 ${h.correct ? 'bg-green-50 border-green-500' : 'bg-red-50 border-red-500'}`}>
+                    <li key={h.id} className={`p-3 rounded-lg border-l-4 ${h.acertou ? 'bg-green-50 border-green-500' : 'bg-red-50 border-red-500'}`}>
                       <div className="flex items-start gap-2">
-                        <div className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 ${h.correct ? 'bg-green-500' : 'bg-red-500'}`}>
-                          {h.correct ? <Check className="w-4 h-4 text-white" /> : <X className="w-4 h-4 text-white" />}
+                        <div className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 ${h.acertou ? 'bg-green-500' : 'bg-red-500'}`}>
+                          {h.acertou ? <Check className="w-4 h-4 text-white" /> : <X className="w-4 h-4 text-white" />}
                         </div>
                         <div className="min-w-0 flex-1">
-                          <div className="text-sm truncate">{h.question}</div>
+                          <div className="text-sm truncate">{h.palavra}</div>
                           <div className="flex items-center gap-2 mt-1">
-                            <span className="text-xs px-2 py-0.5 bg-white rounded-full text-muted-foreground">{h.topic}</span>
-                            <span className="text-xs text-muted-foreground">{h.date}</span>
+                            <span className="text-xs px-2 py-0.5 bg-white rounded-full text-muted-foreground">
+                              {h.acertou ? 'Válida' : 'Inválida'}
+                            </span>
+                            <span className="text-xs text-muted-foreground">{h.data.slice(0, 10)}</span>
                           </div>
                         </div>
                       </div>
