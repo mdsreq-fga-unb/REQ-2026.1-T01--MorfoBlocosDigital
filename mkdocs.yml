@@ -75,7 +75,29 @@ nav:
       - 'Sprint 4': 'v2/sprints/sprint4.md'   
     - 'Reuniões': 'v2/reunioes.md'
     - 'Status do projeto': 'v2/status-projeto.md'
+  - 'Unidade IV':
+    - 'Início': 'v3/index.md'
+    - 'Visão do Produto': 
+      - 'Cenário Atual do Cliente e do Negócio': v3/visao-produto/cenario-atual.md
+      - 'Solução Proposta': 'v3/visao-produto/solucao-proposta.md'
+      - 'Intervenção Social': 'v3/visao-produto/intervencao-social.md'
+      - 'Estratégias de Engenharia de Software': 'v3/visao-produto/estrategias-esw.md'
+      - 'Engenharia de Requisitos': 'v3/visao-produto/eng-requisitos.md'
+      - 'Cronograma': 'v3/visao-produto/cronograma.md'
+      - 'Interação entre a Equipe e Cliente': 'v3/visao-produto/interacao-eqp-cliente.md'
+      - 'Requisitos de Software': 'v3/visao-produto/requisitos.md'
+      - 'Definition of Ready (DoR) e Definition of Done (DoD)': 'v3/visao-produto/dor-dod.md'
+      - 'Backlog': 'v3/visao-produto/backlog.md'
 
+      - 'Lições Aprendidas': 'v3/visao-produto/licoes-aprendidas.md'
+    - 'Planejamento': 'docs/v3/planejamento.md'
+    - 'Sprints':
+      - 'Sprint 1': 'v3/sprints/sprint1.md'
+      - 'Sprint 2': 'v3/sprints/sprint2.md'
+      - 'Sprint 3': 'v3/sprints/sprint3.md'      
+      - 'Sprint 4': 'v3/sprints/sprint4.md'   
+    - 'Reuniões': 'v3/reunioes.md'
+    
 
 copyright: |
   © 2026 Equipe G4 • Engenharia de Software - FGA/UnB
