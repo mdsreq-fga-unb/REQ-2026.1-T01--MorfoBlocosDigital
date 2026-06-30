@@ -10,6 +10,8 @@ from core.views import (
     RelatorioProfessorView,
     TurmaListCreateView,
     AdicionarAlunoTurmaView,
+    AtividadeListView,
+    AtividadeDetailView,
 )
 
 urlpatterns = [
@@ -19,6 +21,8 @@ urlpatterns = [
     path("auth/reset-password/", ResetPasswordConfirmView.as_view(), name="reset-password"),
     path("morfemas/", MorfemaListView.as_view(), name="morfemas"),
     path("validar-palavra/", ValidarPalavraView.as_view(), name="validar-palavra"),
+    path("atividades/", AtividadeListView.as_view(), name="atividades"),
+    path("atividades/<int:pk>/", AtividadeDetailView.as_view(), name="atividade-detalhe"),
     path("historico/", HistoricoAlunoView.as_view(), name="historico-aluno"),
     path("professor/relatorio/", RelatorioProfessorView.as_view(), name="relatorio-professor"),
     path("professor/turmas/", TurmaListCreateView.as_view(), name="turmas"),

@@ -70,6 +70,42 @@ class PalavraValida(models.Model):
 
 
 
+class Atividade(models.Model):
+    QUIZ = "quiz"
+    MONTAGEM = "montagem"
+    TIPO_CHOICES = [
+        (QUIZ, "Quiz"),
+        (MONTAGEM, "Montagem de palavras"),
+    ]
+
+    titulo = models.CharField(max_length=120)
+    tipo = models.CharField(max_length=10, choices=TIPO_CHOICES, default=QUIZ)
+    nivel = models.PositiveIntegerField(default=1)
+    ativa = models.BooleanField(default=True)
+    criada_em = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.titulo} (nível {self.nivel})"
+
+
+class Pergunta(models.Model):
+    atividade = models.ForeignKey(
+        Atividade,
+        on_delete=models.CASCADE,
+        related_name="perguntas",
+    )
+    enunciado = models.CharField(max_length=300)
+    # Lista de strings com as alternativas.
+    alternativas = models.JSONField(default=list)
+    # Índice (0-based) da alternativa correta dentro de "alternativas".
+    correta = models.PositiveIntegerField(default=0)
+    explicacao = models.CharField(max_length=500, blank=True)
+    topico = models.CharField(max_length=50, blank=True)
+
+    def __str__(self):
+        return self.enunciado[:50]
+
+
 class Tentativa(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name="tentativas")
     palavra = models.CharField(max_length=100)

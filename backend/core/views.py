@@ -1,7 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny, BasePermission
-from rest_framework.generics import ListAPIView, CreateAPIView, ListCreateAPIView
+from rest_framework.generics import ListAPIView, CreateAPIView, ListCreateAPIView, RetrieveAPIView
 from rest_framework import status
 
 from urllib.parse import urlsplit
@@ -14,13 +14,15 @@ from django.db.models import Count
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 
-from core.models import Morfema, PalavraValida, Tentativa, Usuario, Turma
+from core.models import Morfema, PalavraValida, Tentativa, Usuario, Turma, Atividade
 from core.serializers import (
     UsuarioSerializer,
     MorfemaSerializer,
     ValidarPalavraSerializer,
     RegistroSerializer,
     TurmaSerializer,
+    AtividadeSerializer,
+    AtividadeDetailSerializer,
 )
 
 
@@ -88,6 +90,29 @@ class ValidarPalavraView(APIView):
             "palavra": palavra,
             "processo_morfologico": processo,
         })
+
+
+class AtividadeListView(ListAPIView):
+    """Lista atividades ativas (RF16). Filtra por ?tipo=quiz|montagem."""
+
+    serializer_class = AtividadeSerializer
+    permission_classes = [IsAuthenticated]
+    pagination_class = None
+
+    def get_queryset(self):
+        qs = Atividade.objects.filter(ativa=True).order_by("nivel", "titulo")
+        tipo = self.request.query_params.get("tipo")
+        if tipo:
+            qs = qs.filter(tipo=tipo)
+        return qs
+
+
+class AtividadeDetailView(RetrieveAPIView):
+    """Detalha uma atividade com suas perguntas (RF16)."""
+
+    queryset = Atividade.objects.filter(ativa=True)
+    serializer_class = AtividadeDetailSerializer
+    permission_classes = [IsAuthenticated]
 
 
 class HistoricoAlunoView(APIView):

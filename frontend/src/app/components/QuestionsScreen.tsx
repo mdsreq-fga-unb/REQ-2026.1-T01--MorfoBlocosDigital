@@ -1,86 +1,21 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
-import { ArrowLeft, Check, X, Trophy, Sparkles } from 'lucide-react';
-import { useAppState } from '../state/AppState';
-import type { Topic } from '../state/AppState';
+import { ArrowLeft, Check, X, Trophy, Sparkles, Loader2 } from 'lucide-react';
+import { api } from '../../lib/api';
 
-type Question = { question: string; topic: Topic; options: string[]; correct: number; explanation: string };
+type Question = { question: string; topic: string; options: string[]; correct: number; explanation: string };
 
-const questionsLevel2: Question[] = [
-  {
-    question: 'A palavra "infelizmente" é formada por:',
-    topic: 'Derivação',
-    options: ['Prefixo + Radical', 'Radical + Sufixo', 'Prefixo + Radical + Sufixo', 'Dois Radicais + Sufixo'],
-    correct: 2,
-    explanation: '"in-" (prefixo) + "feliz" (radical) + "-mente" (sufixo). É derivação prefixal e sufixal.',
-  },
-  {
-    question: 'Qual palavra abaixo é formada por composição por aglutinação?',
-    topic: 'Composição',
-    options: ['guarda-chuva', 'planalto', 'passatempo', 'beija-flor'],
-    correct: 1,
-    explanation: '"Planalto" (plano + alto) é aglutinação, pois há fusão e perda fonética. As demais são justaposição.',
-  },
-  {
-    question: 'O morfema "-ável" em "amável" é classificado como:',
-    topic: 'Sufixos',
-    options: ['Sufixo nominal', 'Sufixo verbal', 'Sufixo adjetival', 'Desinência'],
-    correct: 2,
-    explanation: 'O sufixo "-ável" forma adjetivos a partir de verbos, indicando possibilidade.',
-  },
-  {
-    question: 'Em "desencanto", quantos morfemas existem?',
-    topic: 'Prefixos',
-    options: ['1', '2', '3', '4'],
-    correct: 2,
-    explanation: '"des-" (prefixo) + "en-" (prefixo) + "canto" (radical) = 3 morfemas.',
-  },
-  {
-    question: 'A vogal temática de "cantar" é:',
-    topic: 'Radicais',
-    options: ['c', 'a', 'n', 'r'],
-    correct: 1,
-    explanation: 'A vogal temática "a" indica que o verbo pertence à 1ª conjugação.',
-  },
-];
-
-const questionsLevel1: Question[] = [
-  {
-    question: 'Qual é o prefixo da palavra "infeliz"?',
-    topic: 'Prefixos',
-    options: ['in-', 'feliz', '-iz', 'fel-'],
-    correct: 0,
-    explanation: 'O prefixo "in-" indica negação, transformando "feliz" em "infeliz".',
-  },
-  {
-    question: 'A palavra "amorzinho" possui qual sufixo?',
-    topic: 'Sufixos',
-    options: ['-or', '-inho', 'amor-', '-zi'],
-    correct: 1,
-    explanation: 'O sufixo "-inho" indica diminutivo ou afetividade.',
-  },
-  {
-    question: 'Qual é o radical da palavra "pedreiro"?',
-    topic: 'Radicais',
-    options: ['-eiro', 'pe-', 'pedr-', '-dre'],
-    correct: 2,
-    explanation: 'O radical "pedr-" é a parte que carrega o significado básico da palavra.',
-  },
-  {
-    question: 'A palavra "desleal" é formada por:',
-    topic: 'Derivação',
-    options: ['Prefixo + Radical', 'Radical + Sufixo', 'Só Radical', 'Dois Radicais'],
-    correct: 0,
-    explanation: 'O prefixo "des-" indica negação somado ao radical "leal".',
-  },
-  {
-    question: 'A palavra "guarda-chuva" é um exemplo de:',
-    topic: 'Composição',
-    options: ['Derivação', 'Composição', 'Prefixação', 'Sufixação'],
-    correct: 1,
-    explanation: 'A composição une duas palavras independentes para formar uma nova.',
-  },
-];
+// Formatos crus vindos do backend.
+type AtividadeResumo = { id: number; tipo: string; nivel: number };
+type PerguntaApi = {
+  id: number;
+  enunciado: string;
+  alternativas: string[];
+  correta: number;
+  explicacao: string;
+  topico: string;
+};
+type AtividadeDetalhe = { id: number; perguntas: PerguntaApi[] };
 
 export function QuestionsScreen() {
   const [level, setLevel] = useState<1 | 2>(1);
@@ -90,9 +25,63 @@ export function QuestionsScreen() {
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
   const navigate = useNavigate();
-  const { addHistory } = useAppState();
 
-  const questions = level === 1 ? questionsLevel1 : questionsLevel2;
+  const [atividades, setAtividades] = useState<AtividadeResumo[]>([]);
+  const [atividadesProntas, setAtividadesProntas] = useState(false);
+  const [questions, setQuestions] = useState<Question[]>([]);
+  // Nível ao qual o "questions" carregado corresponde (null = nada carregado).
+  const [questionsLevel, setQuestionsLevel] = useState<number | null>(null);
+
+  // Lista as atividades do tipo quiz uma vez.
+  useEffect(() => {
+    let active = true;
+    api
+      .get<AtividadeResumo[]>('/atividades/?tipo=quiz')
+      .then(({ data }) => {
+        if (active) setAtividades(Array.isArray(data) ? data : []);
+      })
+      .catch((err) => console.error('Falha ao carregar atividades:', err))
+      .finally(() => {
+        if (active) setAtividadesProntas(true);
+      });
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const atividadeDoNivel = atividades.find((a) => a.nivel === level);
+
+  // Carrega as perguntas da atividade do nível selecionado.
+  useEffect(() => {
+    if (!atividadeDoNivel) return;
+    let active = true;
+    api
+      .get<AtividadeDetalhe>(`/atividades/${atividadeDoNivel.id}/`)
+      .then(({ data }) => {
+        if (!active) return;
+        setQuestions(
+          data.perguntas.map((p) => ({
+            question: p.enunciado,
+            topic: p.topico,
+            options: p.alternativas,
+            correct: p.correta,
+            explanation: p.explicacao,
+          })),
+        );
+        setQuestionsLevel(level);
+      })
+      .catch((err) => console.error('Falha ao carregar perguntas:', err));
+    return () => {
+      active = false;
+    };
+  }, [level, atividadeDoNivel]);
+
+  // Loading e disponibilidade derivados (sem setState em efeito).
+  const carregando = !atividadesProntas || (!!atividadeDoNivel && questionsLevel !== level);
+  const semQuiz =
+    atividadesProntas &&
+    (!atividadeDoNivel || (questionsLevel === level && questions.length === 0));
+
   const q = questions[current];
   const reset = (nextLevel: 1 | 2) => {
     setLevel(nextLevel);
@@ -104,12 +93,11 @@ export function QuestionsScreen() {
   };
 
   const handleSelect = (idx: number) => {
-    if (showResult) return;
+    if (showResult || !q) return;
     const isCorrect = idx === q.correct;
     setSelected(idx);
     setShowResult(true);
     if (isCorrect) setScore(score + 1);
-    addHistory({ question: q.question, topic: q.topic, correct: isCorrect });
   };
 
   const handleNext = () => {
@@ -121,6 +109,40 @@ export function QuestionsScreen() {
       setShowResult(false);
     }
   };
+
+  // Estados de carregamento / quiz indisponível para o nível.
+  if (!finished && carregando) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-yellow-50 to-red-50 flex items-center justify-center p-4">
+        <div className="flex items-center gap-2 text-muted-foreground">
+          <Loader2 className="w-6 h-6 animate-spin" /> Carregando perguntas...
+        </div>
+      </div>
+    );
+  }
+
+  if (!finished && semQuiz) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-yellow-50 to-red-50 flex items-center justify-center p-4">
+        <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 max-w-md w-full text-center">
+          <h2 className="text-xl sm:text-2xl mb-2">Nenhuma pergunta disponível</h2>
+          <p className="text-sm sm:text-base text-muted-foreground mb-6">
+            Ainda não há um quiz cadastrado para o Nível {level}.
+          </p>
+          <div className="flex flex-col gap-3">
+            {level === 2 && (
+              <button onClick={() => reset(1)} className="w-full py-3 bg-yellow-400 text-white rounded-xl hover:bg-yellow-500 transition-colors">
+                Voltar ao Nível 1
+              </button>
+            )}
+            <button onClick={() => navigate('/aluno/dashboard')} className="w-full py-3 bg-primary text-white rounded-xl hover:bg-primary/90 transition-colors">
+              Voltar
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (finished) {
     const pct = (score / questions.length) * 100;

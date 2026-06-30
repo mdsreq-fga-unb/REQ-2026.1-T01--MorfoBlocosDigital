@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from core.models import Usuario, Morfema, Turma
+from core.models import Usuario, Morfema, Turma, Atividade, Pergunta
 
 
 class UsuarioSerializer(serializers.ModelSerializer):
@@ -22,6 +22,28 @@ class TurmaSerializer(serializers.ModelSerializer):
         model = Turma
         fields = ["id", "nome", "serie", "criada_em", "total_alunos"]
         read_only_fields = ["id", "criada_em", "total_alunos"]
+
+
+class AtividadeSerializer(serializers.ModelSerializer):
+    """Resumo da atividade para listagem."""
+
+    class Meta:
+        model = Atividade
+        fields = ["id", "titulo", "tipo", "nivel"]
+
+
+class PerguntaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Pergunta
+        fields = ["id", "enunciado", "alternativas", "correta", "explicacao", "topico"]
+
+
+class AtividadeDetailSerializer(serializers.ModelSerializer):
+    perguntas = PerguntaSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Atividade
+        fields = ["id", "titulo", "tipo", "nivel", "perguntas"]
 
 
 class BlocoSerializer(serializers.Serializer):

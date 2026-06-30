@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from core.models import Usuario, Morfema, PalavraValida, Turma
+from core.models import Usuario, Morfema, PalavraValida, Turma, Atividade, Pergunta
 
 
 @admin.register(Usuario)
@@ -15,6 +15,19 @@ class UsuarioAdmin(UserAdmin):
 class TurmaAdmin(admin.ModelAdmin):
     list_display = ("nome", "serie", "professor", "criada_em")
     search_fields = ("nome",)
+
+
+class PerguntaInline(admin.TabularInline):
+    model = Pergunta
+    extra = 1
+
+
+@admin.register(Atividade)
+class AtividadeAdmin(admin.ModelAdmin):
+    list_display = ("titulo", "tipo", "nivel", "ativa", "criada_em")
+    list_filter = ("tipo", "nivel", "ativa")
+    search_fields = ("titulo",)
+    inlines = [PerguntaInline]
 
 
 @admin.register(Morfema)
