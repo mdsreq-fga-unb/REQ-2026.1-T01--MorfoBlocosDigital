@@ -1,9 +1,13 @@
+<a id="reuniao-com-cliente-01-validacao-da-visao-inicial-e-alinhamento-pedagogico"></a>
+
 ## **Reunião com cliente #01: Validação da Visão Inicial e Alinhamento Pedagógico**
 Data: 08/04/2026
 
 Participantes: Profª. María del Pilar (Cliente/PO) e Equipe G4.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/C7Dr-yUB4tE?si=SRtIBxgFyLBVjwHH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<a id="reuniao-com-cliente-02-alinhamento-para-inicio-do-desenvolvimento-do-backlog"></a>
 
 ## **Reunião com cliente #02: Alinhamento para início do desenvolvimento do BackLog.**
 
@@ -97,6 +101,8 @@ Pontos a detalhar:
 > Os áudios para evidência podem ser consultados no [link do Google Drive](https://drive.google.com/drive/folders/1PRefVJaY94p-EKgPtUDB_b8X0BNzP0hr?usp=sharing) destacado.
 
 Reunião realizada via Google Meet (07/05/2026)
+
+<a id="feedback-sobre-o-prototipo-aprovado-para-o-morfoblocos-digital"></a>
 
 ## **Feedback sobre o protótipo aprovado para o MorfoBlocos Digital**
 
