@@ -75,5 +75,47 @@ A lógica de back-end (Django), incluindo o controle de acesso baseado em funç�
 
 As funcionalidades referentes ao CRUD administrativo de morfemas, palavras e atividades, que serão geridas através do painel nativo do Django Admin, encontram-se mapeadas para a Sprint 4 e ainda não possuem evidências funcionais de integração.
 
+## Feedback da PO por Sprint e por US
+
+Esta seção consolida o registro de todos os feedbacks recebidos da Product Owner (Profª. María del Pilar Tobar Acosta — IFB) ao longo das sprints do projeto MorfoBlocos Digital, conforme exigido pelo processo de validação incremental com a cliente.
+
+---
+
+## Tabela Consolidada de Feedback da PO
+
+| Data | Sprint | US/RF Apresentado | Tipo de Feedback | Feedback da PO | Decisão | Ajuste Realizado | Status |
+| :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
+| 08/04/2026 | Sprint 1 — Unidade 2 | Visão do Produto (Seções 1.1–2.3) | Visão | Aprovou o conteúdo geral. Reforçou que o app deve ser **complemento** do jogo físico, não substituto. Destacou a necessidade de tratar Alomorfia no validador. | Manter app como aliado pedagógico do jogo físico. Registrar Alomorfia como requisito técnico a endereçar. | Seção de Visão ajustada para deixar explícita a complementaridade com o jogo físico. Alomorfia registrada como pendência técnica do validador. | ✅ Aprovado com ressalvas |
+| 08/04/2026 | Sprint 1 — Unidade 2 | Decisão de plataforma (mobile vs. web) | Visão | Recomendou foco em aplicação mobile, considerando o público (estudantes do ensino básico) e facilidade de acesso. | Direcionar desenvolvimento como app com prioridade mobile-first. | Stack definida com frontend responsivo (React \+ Tailwind); RNF11 estabelece breakpoint mínimo de 360px. | ✅ Aprovado |
+| 08/04/2026 | Sprint 1 — Unidade 2 | RNF de Acessibilidade (deficientes visuais) | Visão / Regras pedagógicas | Definiu que recursos de acessibilidade para deficientes visuais ficam para desdobramentos futuros, fora do escopo do MVP. | Excluir do MVP. | RNF de acessibilidade avançada classificado como "Won't Have" no MoSCoW. | ✅ Aprovado |
+| 07/05/2026 | Sprint 2 — Unidade 2 | RF16/RF17 — Fluxo de montagem de blocos (US17) | Protótipo / Regras pedagógicas | Confirmou que a interface deve seguir o modelo de blocos do jogo físico ("caixa de lego"), com codificação por cor (prefixo, radical, sufixo) e diferentes níveis de dificuldade. | Manter fidelidade visual ao jogo físico. Implementar codificação por cor nos blocos. | CA-US17-01 redigido para refletir drag-and-drop com codificação de cores. Protótipo de alta fidelidade validado com a PO. | ✅ Aprovado |
+| 07/05/2026 | Sprint 2 — Unidade 2 | RF16 — Seleção de nível de dificuldade (US16) | Regras pedagógicas | Definiu que o **estudante deve escolher o nível livremente** (não o sistema com base em desempenho). Nomenclatura: "Iniciante/Básico" e "Avançado/Ensino Superior". | Estudante escolhe o nível sem restrições de desbloqueio. | CA-US16-01 ajustado para refletir escolha livre do nível pelo estudante. | ✅ Aprovado |
+| 07/05/2026 | Sprint 2 — Unidade 2 | RF04–RF11 — Catálogo de morfemas e palavras válidas | Software funcional / Dados | Informou que enviaria a carga inicial de dados (lista de morfemas classificada por categoria, em formato de etiquetas a converter em planilha). | Aguardar planilha da PO para popular o catálogo completo. Usar conjunto reduzido inicial para viabilizar testes. | Migration de dados criada com conjunto inicial (10 morfemas, 7 palavras válidas). Expansão para 100+ morfemas em andamento. | ⚠️ Aprovado com ressalvas (dados completos pendentes) |
+| 07/05/2026 | Sprint 2 — Unidade 2 | RF20/RF21 — Regras do validador morfológico (US19/US20) | Regras pedagógicas | Esclareceu que não há "exceções" no sentido estrito — há **padrões linguísticos regulares**. Destacou a "pegadinha" da vogal temática alterando o significado. Indicou que a Alomorfia (ex: "in-/im-") é um padrão a tratar. | Modelar o validador por padrões regulares em primeira versão. Alomorfia fica para v2.0. | Validador implementado como: junta blocos → consulta tabela de palavras válidas → retorna resultado e processo morfológico. Alomorfia registrada como pendência para versão 2.0. | ✅ Aprovado com ressalvas |
+| 07/05/2026 | Sprint 2 — Unidade 2 | RF19/CA-US21 — Profundidade da explicação morfológica | Regras pedagógicas | Definiu que as **regras de validação NÃO mudam por nível** — o que muda é o grau de explicação (básico: nome do morfema; avançado: explicação teórica com referência bibliográfica). | Regra única de validação para todos os níveis. Profundidade da explicação varia por nível. | CA-US21-01/02 redigidos para refletir validação única com explicação variável. | ✅ Aprovado |
+| 30/06/2026 | Sprint 6 — Unidade 4 (Homologação final) | US01, US02, US16, US17, US18, US19, US20, US21, US23, US24 — MVP completo | Software funcional / Homologação | Avaliou **positivamente** a interface e a agilidade do desenvolvimento. Observou que faltam especificidades morfológicas mais avançadas (tipos de sufixos, desinências verbais) em comparação ao jogo analógico original. Consultou sobre continuidade do projeto (versão 2.0) e solicitou documentação/manual do produto. | Equipe se reunirá para discutir compartilhamento de manuais e continuidade com a cliente para versão 2.0. Especificidades morfológicas avançadas ficam para versão 2.0. | MVP homologado com aprovação da PO. Integração de 100+ morfemas em andamento. Documentação/manual a ser preparado para transição à versão 2.0. | ✅ Aprovado com ressalvas (especificidades morfológicas avançadas para v2.0) |
+
+---
+
+## Registros e Evidências
+
+| Reunião | Data | Registro |
+| :---- | :---- | :---- |
+| Reunião com Cliente \#01 | 08/04/2026 | [🎥 Vídeo no YouTube](https://www.youtube.com/embed/C7Dr-yUB4tE) |
+| Reunião com Cliente \#02 | 07/05/2026 | [🔊 Áudios no Google Drive](https://drive.google.com/drive/folders/1PRefVJaY94p-EKgPtUDB_b8X0BNzP0hr) |
+| Apresentação Unidade III | 15/06/2026 | [🎥 Vídeo no YouTube](https://www.youtube.com/embed/9_Mh7zA5Qlc) |
+| Homologação Final — Unidade 4 | 30/06/2026 | [🎥 Gravação no Google Drive](https://drive.google.com/file/d/18bTOFZvCwoyXtdKJIO5x6UVfeFijIVDb/view?usp=sharing) |
+
+---
+
+## Legenda de Status
+
+| Símbolo | Significado |
+| :---- | :---- |
+| ✅ Aprovado | PO aprovou sem ressalvas |
+| ⚠️ Aprovado com ressalvas | PO aprovou com pendências a resolver |
+| ❌ Rejeitado | PO rejeitou — requer revisão completa |
+
+
 
 
