@@ -9,7 +9,24 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
+    # Banco de teste: o manage.py test precisa de um PostgreSQL acessível.
+    # As credenciais batem com as variáveis de ambiente do passo de testes.
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: db_teste
+          POSTGRES_USER: user_teste
+          POSTGRES_PASSWORD: '123'
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
     # 📌 A MÁGICA ESTÁ AQUI: Avisa o GitHub para rodar tudo dentro da pasta backend
     defaults:
       run:
