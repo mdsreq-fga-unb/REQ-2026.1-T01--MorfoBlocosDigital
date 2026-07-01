@@ -77,6 +77,7 @@ nav:
     - 'Status do projeto': 'v2/status-projeto.md'
   - 'Unidade IV':
     - 'Início': 'v3/index.md'
+    - 'Planejamento e Organização': 'v3/planejamento.md'
     - 'Visão do Produto': 
       - 'Cenário Atual do Cliente e do Negócio': v3/visao-produto/cenario-atual.md
       - 'Solução Proposta': 'v3/visao-produto/solucao-proposta.md'
@@ -88,15 +89,17 @@ nav:
       - 'Requisitos de Software': 'v3/visao-produto/requisitos.md'
       - 'Definition of Ready (DoR) e Definition of Done (DoD)': 'v3/visao-produto/dor-dod.md'
       - 'Backlog': 'v3/visao-produto/backlog.md'
-
+      - 'User Stories': 'v3/userstories.md'
       - 'Lições Aprendidas': 'v3/visao-produto/licoes-aprendidas.md'
-    - 'Planejamento': 'docs/v3/planejamento.md'
     - 'Sprints':
       - 'Sprint 1': 'v3/sprints/sprint1.md'
       - 'Sprint 2': 'v3/sprints/sprint2.md'
       - 'Sprint 3': 'v3/sprints/sprint3.md'      
       - 'Sprint 4': 'v3/sprints/sprint4.md'   
-    - 'Reuniões': 'v3/reunioes.md'
+    - 'Reuniões':
+      - 'Monitorias': 'v3/reunioes/monitorias.md'
+      - 'Cliente': 'v3/reunioes/cliente.md'
+      - 'Entrega das Unidades': 'v3/reunioes/videos-unidades.md'
     
 
 copyright: |

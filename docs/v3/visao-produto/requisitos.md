@@ -15,20 +15,20 @@ Esta seção detalha as especificações fundamentais para a concepção e o des
 | **RF07** | Listar morfemas cadastrados no catálogo do sistema. | CP2 - Admin de Conteúdo | Must Have | Necessário para que o administrador gerencie o catálogo existente. |
 | **RF08** | Cadastrar palavras válidas no catálogo do sistema. | CP2 - Admin de Conteúdo | Must Have | Sem palavras válidas o validador não tem base para funcionar. |
 | **RF09** | Editar palavras válidas existentes no catálogo do sistema. | CP2 - Admin de Conteúdo | Must Have | Necessário para correção de palavras cadastradas incorretamente. |
-| **RF010** | Remover palavras válidas do catálogo do sistema. | CP2 - Admin de Conteúdo | Must Have | Necessário para exclusão de palavras inválidas ou duplicadas. |
-| **RF011** | Listar palavras válidas cadastradas no catálogo do sistema. | CP2 - Admin de Conteúdo | Must Have | Necessário para que o administrador gerencie o catálogo existente. |
-| **RF012** | Cadastrar atividades pedagógicas no sistema. | CP2 - Admin de Conteúdo | Must Have | Sem atividades cadastradas o estudante não tem o que realizar. |
-| **RF013** | Editar atividades pedagógicas existentes no sistema. | CP2 - Admin de Conteúdo | Must Have | Necessário para atualização e correção de atividades já criadas. |
+| **RF10** | Remover palavras válidas do catálogo do sistema. | CP2 - Admin de Conteúdo | Must Have | Necessário para exclusão de palavras inválidas ou duplicadas. |
+| **RF11** | Listar palavras válidas cadastradas no catálogo do sistema. | CP2 - Admin de Conteúdo | Must Have | Necessário para que o administrador gerencie o catálogo existente. |
+| **RF12** | Cadastrar atividades pedagógicas no sistema. | CP2 - Admin de Conteúdo | Must Have | Sem atividades cadastradas o estudante não tem o que realizar. |
+| **RF13** | Editar atividades pedagógicas existentes no sistema. | CP2 - Admin de Conteúdo | Must Have | Necessário para atualização e correção de atividades já criadas. |
 | **RF14** | Remover atividades pedagógicas do sistema. | CP2 - Admin de Conteúdo | Must Have | Necessário para exclusão de atividades obsoletas ou incorretas. |
 | **RF15** | Listar atividades pedagógicas cadastradas no sistema. | CP2 - Admin de Conteúdo | Must Have | Necessário para que o administrador gerencie as atividades disponíveis. |
 | **RF16** | Realizar atividades pedagógicas do tipo Quiz. | CP3 - Espaço de Construção | Must Have | Permite ao estudante responder a questões de múltipla escolha sobre conceitos morfológicos teóricos. |
 | **RF17** | Realizar atividades pedagógicas de montagem de palavras. | CP3 - Espaço de Construção | Must Have | É o núcleo interativo do jogo: o estudante manipula os blocos na tela (drag-and-drop) para formar palavras e submete o conjunto para o validador. |
-| **RF18** | Submeter a combinação de blocos para validação. | CP3 - Espaço de Construção | Must Have | Mecânica importante, sem a submissão não há validação, logo o aluno não recebe feedback para evolução nas atividades. |
-| **RF19** | Consultar explicações sobre conteúdos morfológicos relacionados às atividades. | CP3 - Espaço de Construção | Could Have | Desejável pedagogicamente mas o MVP funciona sem material de apoio. |
-| **RF20** | Consultar o resultado da validação da combinação de blocos submetida. | CP4 - Validador de Estruturas | Must Have | Permite ao estudante acompanhar sua própria evolução ao longo do tempo. |
-| **RF21** | Consultar o processo de formação morfológica da palavra validada. | CP4 - Validação de Estruturas | Must Have | Garante o objetivo didático do sistema, permitindo que o estudante compreenda a estrutura e a regra por trás da palavra que acabou de validar. |
-| **RF22** | Consultar o histórico de pontuações individuais. | CP5 - Portfólio de Progresso | Must Have | Fundamental para a gamificação e engajamento, permitindo que o estudante acompanhe seu próprio progresso ao longo do tempo.
-| **RF23** | Consultar os detalhes de uma atividade realizada. | CP5 - Portfólio de Progresso | Should Have | Importante para que o estudante revise seus erros e acertos passados, mas o MVP funciona apenas com a exibição do histórico de notas/pontos. |
+| **RF18** | Consultar explicações sobre conteúdos morfológicos. | CP3 - Espaço de Construção | Could Have | Desejável pedagogicamente mas o MVP funciona sem material de apoio. |
+| **RF19** | Consultar o resultado da validação da combinação. | CP4 - Validador de Estruturas | Must Have | Permite ao estudante acompanhar sua própria evolução ao longo do tempo. |
+| **RF20** | Consultar o processo de formação morfológica da palavra validada. | CP4 - Validação de Estruturas | Must Have | Garante o objetivo didático do sistema, permitindo que o estudante compreenda a estrutura e a regra por trás da palavra que acabou de validar. |
+| **RF21** | Consultar o histórico de pontuações individuais. | CP5 - Portfólio de Progresso | Must Have | Fundamental para a gamificação e engajamento, permitindo que o estudante acompanhe seu próprio progresso ao longo do tempo. |
+| **RF22** | Consultar os detalhes de uma atividade realizada. | CP5 - Portfólio de Progresso | Should Have | Importante para que o estudante revise seus erros e acertos passados, mas o MVP funciona apenas com a exibição do histórico de notas/pontos. |
+| **RF23** | Cadastrar novas turmas no sistema | CP6 - Painel de Monitoramenteo | Must Have | Necessário para que exista o acesso ao desempenho das turmas e erros frequentes. |
 | **RF24** | Acessar relatório de desempenho consolidado da turma. | CP6 - Painel de Monitoramento | Must Have | Permite ao professor identificar dificuldades e orientar intervenções pedagógicas. |
 | **RF25** | Consultar os erros morfológicos mais frequentes dos estudantes. | CP6 - Painel de Monitoramento | Should Have | Agrega valor ao monitoramento, mas o painel funciona sem esse detalhamento. |
 

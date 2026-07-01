@@ -15,6 +15,8 @@ Esta versão da seção incorpora ajustes acordados ao longo das três Unidades 
 
 * Quebra das User Stories que agrupavam múltiplas operações em itens atômicos (uma User Story por RF), eliminando as quatro US do tipo épico identificadas na avaliação externa (operações CRUD agrupadas).
 
+* Incorporação do feedback direto da Product Owner (Profª. María del Pilar) obtido nas reuniões da Unidade III. Os ajustes incluem nível de dificuldade definido pelo estudante, validação morfológica fixa, feedback de erro mais acolhedor e registro de tentativas no histórico.
+
 ### **10.1 Backlog Geral**
 
 
@@ -171,21 +173,23 @@ Os CAs foram declarados com calibração proporcional à complexidade de cada US
 
 ### **_Característica de Produto 1 — Controle de Acesso_**
 
-**US01 — Como usuário, quero solicitar credenciais de acesso ao sistema, para que minha conta seja criada e eu possa entrar na plataforma.**
+**US01 — Como usuário, quero efetuar login no sistema utilizando e-mail e senha, para acessar minha conta na plataforma de forma segura**
 
 | ID         | Critério de Aceitação                                                                                                                                                         |
 | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| CA-US01-01 | O sistema deve solicitar como campos obrigatórios: Nome Completo, E-mail, Senha e Confirmação de Senha, recusando o cadastro caso qualquer um esteja em branco.               |
-| CA-US01-02 | O sistema não deve permitir o cadastro de um e-mail já existente na base de dados, exibindo mensagem de erro específica e mantendo os demais campos preenchidos pelo usuário. |
-| CA-US01-03 | A senha deve ser armazenada de forma criptografada no banco de dados, jamais em texto puro [RNF04].                                                                           |
+| CA-US01-01 | O sistema deve exigir um e-mail válido e a senha correta; o acesso só é liberado se os dados coincidirem exatamente com o banco de dados.              |
+| CA-US01-02 | Se a senha ou o e-mail estiverem incorretos, o sistema exibe uma mensagem de erro geral ("E-mail ou senha incorretos") por motivos de segurança. |
+| CA-US01-03 | Após o login bem-sucedido, o sistema gera uma sessão segura por até 1 hora e direciona o usuário automaticamente para a sua tela inicial. |
 
-**US02 — Como usuário, quero autenticar meu acesso ao sistema utilizando minhas credenciais, para entrar na plataforma de forma segura.**
+**US02 — Como usuário, quero cadastrar uma nova conta no sistema inserindo meus dados, para que meu perfil seja criado e eu possa começar a usar a plataforma.**
 
 | ID         | Critério de Aceitação                                                                                                                                                                                               |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| CA-US02-01 | O usuário deve fornecer e-mail válido e senha correspondente para acessar o sistema; o login somente é considerado bem-sucedido quando ambos os dados coincidirem com um registro persistido no banco.              |
-| CA-US02-02 | Caso as credenciais estejam incorretas, o sistema deve exibir uma mensagem de erro genérica (por exemplo, "E-mail ou senha incorretos"), sem indicar qual dos dois campos está incorreto, por motivos de segurança. |
-| CA-US02-03 | Após login bem-sucedido, o sistema deve emitir um token de autenticação (JWT) e redirecionar o usuário para a tela inicial correspondente ao seu perfil (estudante, professor ou administrador) [RN01, RNF03].      |
+| CA-US02-01 | O sistema exige obrigatoriamente e-mail, senha e a escolha do perfil (se é Estudante ou Professor), bloqueando o envio de campos vazios.            |
+| CA-US02-02 | O sistema impede o cadastro de um e-mail que já esteja previamente registrado na base de dados. |
+| CA-US02-03 | O sistema deve validar o formato estrutural do e-mail (ex: nome@dominio.com), exibindo um alerta visual em caso de erro.      |
+| CA-US02-04 | O sistema exige que o campo de senha e a confirmação de senha sejam rigorosamente iguais. |
+| CA-US02-05 | A interface da tela de cadastro deve ser totalmente responsiva em ecrãs/telas a partir de 360px de largura, sem qualquer sobreposição de textos, campos desalinhados ou surgimento de barra de rolagem horizontal (scroll lateral). |
 
 **US03 — Como usuário, quero recuperar meu acesso mediante envio de um link de redefinição de senha, para retomar o uso da plataforma caso esqueça minha senha.**
 
@@ -232,7 +236,7 @@ Os CAs foram declarados com calibração proporcional à complexidade de cada US
 
 | ID         | Critério de Aceitação                                                                                                                                                                                                                                                            |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| CA-US08-01 | O cadastro de uma palavra válida deve exigir, obrigatoriamente, sua grafia completa, os morfemas que a compõem e a descrição do processo de formação morfológica correspondente, recusando o salvamento caso qualquer uma dessas informações esteja ausente [RN03, RN04, RNF06]. |
+| CA-US08-01 | O cadastro de uma palavra válida deve exigir, obrigatoriamente, sua grafia completa, os morfemas que a compõem e a descrição do processo de formação morfológica correspondente, recusando o salvamento caso qualquer uma dessas informações esteja ausente [RNF03, RNF04, RNF06]. |
 
 ---
 
@@ -240,7 +244,7 @@ Os CAs foram declarados com calibração proporcional à complexidade de cada US
 
 | ID         | Critério de Aceitação                                                                                                                                                                                            |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| CA-US09-01 | A edição deve permitir alterar a grafia da palavra, sua composição morfológica e a descrição do processo de formação associado, mantendo a consistência das referências utilizadas pelo validador [RN03, RNF06]. |
+| CA-US09-01 | A edição deve permitir alterar a grafia da palavra, sua composição morfológica e a descrição do processo de formação associado, mantendo a consistência das referências utilizadas pelo validador [RNF03, RNF06]. |
 
 ---
 
@@ -248,7 +252,7 @@ Os CAs foram declarados com calibração proporcional à complexidade de cada US
 
 | ID         | Critério de Aceitação                                                                                                                                                                    |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| CA-US10-01 | O sistema deve impedir a exclusão de palavras válidas que estejam vinculadas a atividades pedagógicas ativas, exibindo mensagem informativa sobre a dependência existente [RN03, RNF06]. |
+| CA-US10-01 | O sistema deve impedir a exclusão de palavras válidas que estejam vinculadas a atividades pedagógicas ativas, exibindo mensagem informativa sobre a dependência existente [RNF03, RNF06]. |
 
 ---
 
@@ -292,85 +296,78 @@ Os CAs foram declarados com calibração proporcional à complexidade de cada US
 
 ### **_Característica de Produto 3 — Espaço de Construção_**
 
-**US16 — Como estudante, quero realizar atividades pedagógicas disponíveis no sistema, para praticar e desenvolver minha compreensão sobre morfologia.**
+**US16 — Como estudante, quero realizar atividades pedagógicas do tipo Quiz, para responder a questões de múltipla escolha sobre conceitos morfológicos teóricos.**
 
 | ID         | Critério de Aceitação                                                                                                                                                                                               |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| CA-US16-01 | O sistema deve apresentar ao estudante apenas as atividades compatíveis com seu nível de progressão atual, bloqueando visualmente atividades ainda não liberadas conforme as regras de progressão definidas [RN07]. |
-| CA-US16-02 | Ao selecionar uma atividade, o sistema deve carregar o enunciado, os blocos de morfemas disponíveis e a área de montagem em tempo compatível com o RNF03, sem exigir recarregamento manual da página [RNF03].       |
+| CA-US16-01 | O sistema deve carregar e exibir sequencialmente as perguntas de múltipla escolha associadas a uma atividade pedagógica teórica, computar a resposta selecionada pelo estudante entre as alternativas disponíveis e exibir o feedback imediato ou pontuação final após a conclusão do envio. |
 
 ---
 
-**US17 — Como estudante, quero movimentar blocos de morfemas na área de montagem, para combinar prefixos, radicais e sufixos livremente.**
+**US17 — Como estudante, quero realizar atividades pedagógicas de montagem de palavras, manipulando os blocos na tela, para formar palavras e submetê-las para a validação.**
 
 | ID         | Critério de Aceitação                                                                                                                                                                         |
 | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| CA-US17-01 | O estudante deve conseguir selecionar, arrastar e soltar blocos de morfemas utilizando mouse em computadores e toque em dispositivos móveis, sem falhas de interação ou renderização [RNF02]. |
-| CA-US17-02 | O sistema deve permitir reordenar livremente os blocos já posicionados na área de montagem antes da submissão, atualizando visualmente a sequência formada em tempo real [RNF01, RNF02].      |
+| CA-US17-01 | O estudante consegue arrastar, soltar e reordenar livremente os blocos de morfemas na área de construção usando o toque (mobile) ou o mouse. |
+| CA-US17-02 | O botão de "Enviar Resposta" (ou "Verificar Palavra") só fica ativo e clicável se houver pelo menos um bloco posicionado na área de montagem.     |
+| CA-US17-03 | A área de construção e os blocos de morfemas devem adaptar-se dinamicamente ao limite mínimo de 360px de largura. Os blocos devem empilhar-se ou redimensionar-se automaticamente, sendo expressamente proibido que fiquem cortados ou forcem uma barra de rolagem horizontal. |
 
 ---
 
-**US18 — Como estudante, quero submeter a combinação de blocos para validação, para verificar se a palavra formada está correta.**
+**US18 — Como estudante, quero consultar explicações sobre conteúdos morfológicos relacionados às atividades, para aprender enquanto pratico.**
 
 | ID         | Critério de Aceitação                                                                                                                                                                        |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| CA-US18-01 | O botão de submissão deve permanecer desabilitado enquanto não houver pelo menos um bloco posicionado na área de montagem.                                                                   |
-| CA-US18-02 | Ao acionar a submissão, o sistema deve concatenar os morfemas conforme a ordem definida pelo estudante e encaminhar a palavra formada para o processo de validação descrito na US20 [RNF03]. |
+| CA-US18-01 | Ao acionar o botão de envio na área de montagem, o back-end deve processar a sequência de IDs dos blocos, verificar a compatibilidade linguística com o dicionário de palavras válidas e retornar se a combinação está correta ou incorreta, aplicando a pontuação correspondente.           |
 
 ---
 
-**US19 — Como estudante, quero visualizar explicações sobre conteúdos morfológicos relacionados às atividades, para aprender enquanto pratico.**
+**US19 — Como estudante, quero consultar o resultado da validação da combinação de blocos submetida, para saber se acertei a estrutura da palavra.**
 
 | ID         | Critério de Aceitação                                                                                                                                                          |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| CA-US19-01 | O sistema deve disponibilizar explicações textuais relacionadas aos conceitos morfológicos abordados na atividade atual, acessíveis sem interromper a realização da atividade. |
-| CA-US19-02 | As explicações devem apresentar profundidade compatível com o nível de dificuldade da atividade, utilizando linguagem adequada ao público-alvo do ensino básico [RNF01].       |
+| CA-US19-01 | O motor do sistema testa a sequência de blocos enviada contra o banco de dados de palavras válidas e exibe um feedback instantâneo e claro de "Acertou" ou "Errou". |
 
 ### **_Característica de Produto 4 — Validador de Estruturas_**
 
-**US20 — Como estudante, quero que minha combinação de blocos seja validada com base no catálogo de palavras válidas, para receber um resultado correto sobre a palavra formada.**
+**US20 — Como estudante, quero consultar o processo de formação morfológica da palavra validada, para compreender como os morfemas se combinam.**
 
 | ID         | Critério de Aceitação                                                                                                                                                                                                                                                                                 |
 | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| CA-US20-01 | O sistema deve validar a palavra formada consultando exclusivamente o catálogo de palavras válidas previamente cadastrado, considerando inválida qualquer combinação inexistente nesse catálogo [RN04].                                                                                               |
-| CA-US20-02 | Quando a combinação submetida corresponder a uma palavra válida cadastrada, o sistema deve retornar feedback positivo ao estudante, apresentando a palavra reconhecida e disponibilizando as informações necessárias para consulta do processo de formação morfológica correspondente [RNF03, RNF04]. |
-| CA-US20-03 | Toda submissão realizada pelo estudante, independentemente de resultar em palavra válida ou inválida, deve ser registrada no histórico da atividade, preservando a rastreabilidade das tentativas para posterior consulta individual e análise pelo professor [RN05, RN08].                           |
+| CA-US20-01 | Em caso de acerto na montagem, o sistema abre uma explicação detalhada e textual do processo morfológico daquela palavra específica (ex: prefixação, sufixação).                |
 
 ---
 
-**US21 — Como estudante, quero consultar o processo de formação morfológica da palavra validada, para compreender como os morfemas se combinam.**
+**US21 — Como estudante, quero consultar o histórico de pontuações individuais, para acompanhar minha evolução ao longo do tempo.**
 
 | ID         | Critério de Aceitação                                                                                                                                                                                                                                       |
 | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| CA-US21-01 | Após a validação bem-sucedida de uma palavra, o sistema deve permitir ao estudante visualizar uma explicação contendo a palavra formada, os morfemas utilizados e a descrição do processo de formação morfológica associado ao registro cadastrado [RNF01]. |
-| CA-US21-02 | Caso a combinação submetida seja inválida, o sistema não deve exibir processo de formação inexistente, apresentando apenas uma mensagem informativa indicando que a palavra não foi reconhecida pelo catálogo [RNF01].                                      |
+| CA-US21-01 | O ecrã/tela de portfólio deve expor uma listagem cronológica contendo o nome de cada atividade realizada, a data da tentativa e a nota alcançada pelo aluno. |
 
 ### **_Característica de Produto 5 — Portfólio de Progresso_**
 
-**US22 — Como estudante, quero consultar o histórico das minhas pontuações individuais, para acompanhar minha evolução ao longo do tempo.**
+**US22 — Como estudante, quero consultar o histórico das minhas pontuações individuais, para acompanhar minha evolução ao longo do tempo..**
 
 | ID         | Critério de Aceitação                                                                                                                                                                                                                             |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| CA-US22-01 | O histórico deve apresentar, para cada atividade concluída pelo estudante, no mínimo: nome da atividade, data de realização, pontuação obtida e resultado final da tentativa, ordenados cronologicamente [RNF01, RN08].                           |
+| CA-US22-01 | O histórico deve apresentar, para cada atividade concluída pelo estudante, no mínimo: nome da atividade, data de realização, pontuação obtida e resultado final da tentativa, ordenados cronologicamente [RNF01, RN08].                    |
 | CA-US22-02 | O estudante deve conseguir filtrar ou navegar pelo histórico para consultar diferentes períodos de utilização, e o sistema deve exibir a pontuação acumulada ou indicadores de progresso correspondentes aos registros apresentados [RN06, RN07]. |
 
 ---
 
-**US23 — Como estudante, quero consultar os detalhes de uma atividade que já realizei, para revisar quais blocos utilizei, quais palavras formei e onde acertei ou errei.**
+**US23 — Como professor, quero cadastrar novas turmas no sistema, para agrupar meus estudantes e gerenciar seus acessos de forma organizada.**
 
 | ID         | Critério de Aceitação                                                                                                                                                                                                                |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| CA-US23-01 | Ao selecionar uma atividade presente no histórico, o sistema deve exibir os detalhes da execução, incluindo as tentativas realizadas, palavras submetidas, resultado de cada submissão e pontuação obtida na atividade.              |
-| CA-US23-02 | Para cada tentativa válida registrada, o estudante deve poder consultar novamente o processo de formação morfológica associado, reutilizando as informações armazenadas no histórico sem necessidade de nova validação [RN05, RN08]. |
+| CA-US23-01 | O cadastro da turma exige um identificador único (Nome/Código) e o ano letivo corrente, bloqueando o acesso a esta rota para quem tiver perfil de estudante..              |
 
 ### **_Característica de Produto 6 — Painel de Monitoramento_**
 
-**US24 — Como professor, quero acessar o relatório de desempenho consolidado da turma, para monitorar o progresso coletivo dos estudantes.**
+**US24 — Como professor, quero acessar o relatório de desempenho consolidado da turma, para identificar dificuldades e orientar..**
 
 | ID         | Critério de Aceitação                                                                                                                                                                                                                                                                                   |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| CA-US24-01 | O relatório deve apresentar indicadores consolidados da turma, incluindo no mínimo: quantidade de atividades realizadas, média de pontuação dos estudantes, taxa de acertos e distribuição de desempenho por atividade, sendo acessível apenas a usuários com perfil de professor [RN02, RNF01, RNF04]. |
-| CA-US24-02 | O relatório deve oferecer filtro por intervalo de tempo (últimos 7 dias, últimos 30 dias, semestre) e por atividade específica, com atualização da apresentação dos dados conforme os filtros aplicados [RNF03].                                                                                        |
+| CA-US24-01 | Se a turma selecionada for nova e os alunos ainda não tiverem realizado nenhum exercício, os gráficos e tabelas não podem quebrar; o sistema deve exibir uma mensagem clara. |
 
 ---
 
@@ -378,7 +375,7 @@ Os CAs foram declarados com calibração proporcional à complexidade de cada US
 
 | ID         | Critério de Aceitação                                                                                                                                                                                                                          |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| CA-US25-01 | A análise de erros deve listar as palavras inválidas mais frequentemente submetidas pela turma no período selecionado, em ranking decrescente, com indicação da quantidade de ocorrências e dos estudantes envolvidos [RN02, RN05].            |
+| CA-US25-01 | A análise de erros deve listar as palavras inválidas mais frequentemente submetidas pela turma no período selecionado, em ranking decrescente, com indicação da quantidade de ocorrências e dos estudantes envolvidos [RN02, RN05].         |
 | CA-US25-02 | A análise depende funcionalmente do registro de tentativas inválidas realizado pela US20 (CA-US20-03); na ausência de submissões inválidas no período, a tela deve exibir mensagem informativa específica em vez de tabela vazia [RN05, RN08]. |
 | CA-US25-03 | O período padrão da análise deve ser os últimos 30 dias, com filtros adicionais para últimos 7 dias e semestre completo, e filtro opcional por nível de dificuldade da atividade em que o erro foi cometido [RNF03].                           |
 
@@ -517,9 +514,9 @@ Esta consolidação reflete o refinamento do escopo do Administrador (focado est
 | **RF19** | Consultar o resultado da validação da combinação. | Must Have | 5 | 4 | Q2 | Sim |
 | **RF20** | Consultar o processo de formação morfológica. | Must Have | 5 | 3 | Q2 | Sim |
 | **RF21** | Consultar o histórico de pontuações individuais. | Must Have | 5 | 2 | Q1 | Sim |
-| **RF23** | Cadastrar novas turmas no sistema. | Must Have | 5 | 2 | Q1 | Sim |
-| **RF24** | Acessar relatório de desempenho consolidado da turma. | Must Have | 5 | 4 | Q2 | Sim |
-| **RF22** | Consultar os detalhes de uma atividade realizada. | Should Have | 3 | 3 | Q4 | Não |
+| **RF22** | Consultar os detalhes de uma atividade realizada. | Must Have | 5 | 2 | Q1 | Sim |
+| **RF23** | Cadastrar novas turmas no sistema. | Must Have | 5 | 4 | Q2 | Sim |
+| **RF24** | Acessar relatório de desempenho consolidado da turma. | Should Have | 3 | 3 | Q4 | Não |
 | **RF25** | Consultar os erros morfológicos mais frequentes. | Should Have | 3 | 4 | Q4 | Não |
 
 #### 10.2.6 Definição do MVP
