@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
-import { Users, TrendingUp, Award, AlertCircle, LogOut, User, Loader2 } from 'lucide-react';
+import { Users, TrendingUp, Award, AlertCircle, LogOut, User, Loader2, Plus, GraduationCap, X } from 'lucide-react';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell,
 } from 'recharts';
@@ -8,7 +8,7 @@ import { Logo } from './Logo';
 import { useAppState } from '../state/AppState';
 import { api } from '../../lib/api';
 
-// Formato cru vindo do backend (GET /api/professor/relatorio/).
+// Formatos crus vindos do backend.
 type PalavraErrada = { palavra: string; ocorrencias: number };
 type AlunoRelatorio = {
   id: number;
@@ -27,6 +27,7 @@ type Relatorio = {
   palavras_mais_erradas: PalavraErrada[];
   alunos: AlunoRelatorio[];
 };
+type Turma = { id: number; nome: string; serie: string; criada_em: string; total_alunos: number };
 
 // Classifica o status do aluno a partir do aproveitamento.
 function statusDoAluno(respondidas: number, pct: number) {
@@ -43,10 +44,40 @@ export function ProfessorDashboard() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  const [turmas, setTurmas] = useState<Turma[]>([]);
+  // null = visão geral (todas as turmas).
+  const [selectedTurma, setSelectedTurma] = useState<number | null>(null);
+  // Incrementado após criar turma / adicionar aluno para forçar recarga.
+  const [reloadTick, setReloadTick] = useState(0);
+
+  const [showTurmaModal, setShowTurmaModal] = useState(false);
+  const [showAlunoModal, setShowAlunoModal] = useState(false);
+  const [turmaNome, setTurmaNome] = useState('');
+  const [turmaSerie, setTurmaSerie] = useState('');
+  const [alunoEmail, setAlunoEmail] = useState('');
+  const [modalError, setModalError] = useState<string | null>(null);
+  const [saving, setSaving] = useState(false);
+
+  // Carrega as turmas do professor.
   useEffect(() => {
     let active = true;
     api
-      .get<Relatorio>('/professor/relatorio/')
+      .get<Turma[]>('/professor/turmas/')
+      .then(({ data }) => {
+        if (active) setTurmas(Array.isArray(data) ? data : []);
+      })
+      .catch((err) => console.error('Falha ao carregar turmas:', err));
+    return () => {
+      active = false;
+    };
+  }, [reloadTick]);
+
+  // Carrega o relatório (geral ou da turma selecionada).
+  useEffect(() => {
+    let active = true;
+    const url = selectedTurma ? `/professor/relatorio/?turma=${selectedTurma}` : '/professor/relatorio/';
+    api
+      .get<Relatorio>(url)
       .then(({ data }) => {
         if (active) setRelatorio(data);
       })
@@ -60,7 +91,45 @@ export function ProfessorDashboard() {
     return () => {
       active = false;
     };
-  }, []);
+  }, [selectedTurma, reloadTick]);
+
+  const handleCriarTurma = async () => {
+    if (!turmaNome.trim()) return;
+    setSaving(true);
+    setModalError(null);
+    try {
+      await api.post('/professor/turmas/', { nome: turmaNome.trim(), serie: turmaSerie.trim() });
+      setTurmaNome('');
+      setTurmaSerie('');
+      setShowTurmaModal(false);
+      setReloadTick((t) => t + 1);
+    } catch (err) {
+      console.error('Falha ao criar turma:', err);
+      setModalError('Não foi possível criar a turma. Tente novamente.');
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const handleAdicionarAluno = async () => {
+    if (!alunoEmail.trim() || !selectedTurma) return;
+    setSaving(true);
+    setModalError(null);
+    try {
+      await api.post(`/professor/turmas/${selectedTurma}/alunos/`, { email: alunoEmail.trim() });
+      setAlunoEmail('');
+      setShowAlunoModal(false);
+      setReloadTick((t) => t + 1);
+    } catch (err: unknown) {
+      const detail =
+        typeof err === 'object' && err !== null && 'response' in err
+          ? (err as { response?: { data?: { detail?: string } } }).response?.data?.detail
+          : undefined;
+      setModalError(detail ?? 'Não foi possível adicionar o aluno.');
+    } finally {
+      setSaving(false);
+    }
+  };
 
   const alunos = relatorio?.alunos ?? [];
   const palavrasErradas = relatorio?.palavras_mais_erradas ?? [];
@@ -95,6 +164,55 @@ export function ProfessorDashboard() {
       </header>
 
       <main className="max-w-7xl mx-auto px-3 sm:px-4 py-4 sm:py-8">
+        {/* Seletor de turma + ações */}
+        <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-3 sm:p-5 mb-4 sm:mb-6 flex flex-col gap-3 sm:gap-4 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+            <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
+            <span className="text-sm sm:text-base text-muted-foreground">Turma:</span>
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => setSelectedTurma(null)}
+                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl transition-all text-sm ${
+                  selectedTurma === null
+                    ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-md'
+                    : 'bg-gray-100 hover:bg-gray-200'
+                }`}
+              >
+                Geral
+              </button>
+              {turmas.map((t) => (
+                <button
+                  key={t.id}
+                  onClick={() => setSelectedTurma(t.id)}
+                  className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl transition-all text-sm ${
+                    selectedTurma === t.id
+                      ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-md'
+                      : 'bg-gray-100 hover:bg-gray-200'
+                  }`}
+                >
+                  {t.nome} ({t.total_alunos})
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="flex gap-2">
+            <button
+              onClick={() => { setModalError(null); setShowTurmaModal(true); }}
+              className="px-3 sm:px-4 py-2 bg-yellow-400 text-white rounded-xl hover:bg-yellow-500 transition-colors flex items-center gap-1.5 sm:gap-2 shadow-md text-sm sm:text-base"
+            >
+              <Plus className="w-4 h-4" /> Nova Turma
+            </button>
+            <button
+              onClick={() => { setModalError(null); setShowAlunoModal(true); }}
+              disabled={!selectedTurma}
+              title={!selectedTurma ? 'Selecione uma turma para adicionar alunos' : undefined}
+              className="px-3 sm:px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors flex items-center gap-1.5 sm:gap-2 shadow-md disabled:opacity-50 text-sm sm:text-base"
+            >
+              <Plus className="w-4 h-4" /> <span className="hidden sm:inline">Adicionar</span> Aluno
+            </button>
+          </div>
+        </div>
+
         {loading && (
           <div className="flex items-center justify-center gap-2 py-20 text-muted-foreground">
             <Loader2 className="w-6 h-6 animate-spin" /> Carregando relatório...
@@ -197,7 +315,7 @@ export function ProfessorDashboard() {
               <h3 className="text-base sm:text-xl mb-3 sm:mb-4">Acompanhamento dos Alunos</h3>
               {alunos.length === 0 ? (
                 <div className="text-center text-muted-foreground py-6 sm:py-8 text-sm">
-                  Nenhum aluno cadastrado ainda.
+                  {selectedTurma ? 'Nenhum aluno nesta turma ainda. Use "Adicionar Aluno".' : 'Nenhum aluno cadastrado ainda.'}
                 </div>
               ) : (
                 <>
@@ -279,6 +397,91 @@ export function ProfessorDashboard() {
           </>
         )}
       </main>
+
+      {/* Modal Nova Turma */}
+      {showTurmaModal && (
+        <Modal title="Criar Nova Turma" onClose={() => setShowTurmaModal(false)}>
+          <div className="space-y-4">
+            <div>
+              <label className="block mb-2 text-sm">Nome da Turma</label>
+              <input
+                value={turmaNome}
+                onChange={(e) => setTurmaNome(e.target.value)}
+                placeholder="Ex: 8º Ano C"
+                className="w-full px-4 py-3 bg-input-background rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+            </div>
+            <div>
+              <label className="block mb-2 text-sm">Série (opcional)</label>
+              <input
+                value={turmaSerie}
+                onChange={(e) => setTurmaSerie(e.target.value)}
+                placeholder="Ex: 8º Ano"
+                className="w-full px-4 py-3 bg-input-background rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+            </div>
+            {modalError && (
+              <div className="p-3 bg-red-50 border-l-4 border-red-500 rounded-lg text-sm text-red-700">{modalError}</div>
+            )}
+            <button
+              onClick={handleCriarTurma}
+              disabled={saving || !turmaNome.trim()}
+              className="w-full py-3 bg-primary text-white rounded-xl hover:bg-primary/90 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
+            >
+              {saving && <Loader2 className="w-5 h-5 animate-spin" />}
+              Criar Turma
+            </button>
+          </div>
+        </Modal>
+      )}
+
+      {/* Modal Adicionar Aluno */}
+      {showAlunoModal && (
+        <Modal title="Adicionar Aluno à Turma" onClose={() => setShowAlunoModal(false)}>
+          <div className="space-y-4">
+            <p className="text-sm text-muted-foreground">
+              Informe o email de um aluno já cadastrado para incluí-lo na turma selecionada.
+            </p>
+            <div>
+              <label className="block mb-2 text-sm">Email do aluno</label>
+              <input
+                type="email"
+                value={alunoEmail}
+                onChange={(e) => setAlunoEmail(e.target.value)}
+                placeholder="aluno@email.com"
+                className="w-full px-4 py-3 bg-input-background rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+            </div>
+            {modalError && (
+              <div className="p-3 bg-red-50 border-l-4 border-red-500 rounded-lg text-sm text-red-700">{modalError}</div>
+            )}
+            <button
+              onClick={handleAdicionarAluno}
+              disabled={saving || !alunoEmail.trim()}
+              className="w-full py-3 bg-primary text-white rounded-xl hover:bg-primary/90 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
+            >
+              {saving && <Loader2 className="w-5 h-5 animate-spin" />}
+              Adicionar Aluno
+            </button>
+          </div>
+        </Modal>
+      )}
+    </div>
+  );
+}
+
+function Modal({ title, onClose, children }: { title: string; onClose: () => void; children: React.ReactNode }) {
+  return (
+    <div className="fixed inset-0 bg-black/50 flex items-end sm:items-center justify-center sm:p-4 z-50" onClick={onClose}>
+      <div className="bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl p-5 sm:p-6 max-w-md w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-lg sm:text-xl">{title}</h3>
+          <button onClick={onClose} className="text-muted-foreground hover:text-foreground">
+            <X className="w-5 h-5" />
+          </button>
+        </div>
+        {children}
+      </div>
     </div>
   );
 }

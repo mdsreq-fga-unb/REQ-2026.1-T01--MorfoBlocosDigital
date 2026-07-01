@@ -1,7 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated, AllowAny
-from rest_framework.generics import ListAPIView, CreateAPIView
+from rest_framework.permissions import IsAuthenticated, AllowAny, BasePermission
+from rest_framework.generics import ListAPIView, CreateAPIView, ListCreateAPIView, RetrieveAPIView
 from rest_framework import status
 
 from urllib.parse import urlsplit
@@ -14,13 +14,27 @@ from django.db.models import Count
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 
-from core.models import Morfema, PalavraValida, Tentativa, Usuario
+from core.models import Morfema, PalavraValida, Tentativa, Usuario, Turma, Atividade
 from core.serializers import (
     UsuarioSerializer,
     MorfemaSerializer,
     ValidarPalavraSerializer,
     RegistroSerializer,
+    TurmaSerializer,
+    AtividadeSerializer,
+    AtividadeDetailSerializer,
 )
+
+
+class IsProfessor(BasePermission):
+    """Permite acesso apenas a usuários autenticados com perfil de professor."""
+
+    def has_permission(self, request, view):
+        return bool(
+            request.user
+            and request.user.is_authenticated
+            and getattr(request.user, "tipo", None) == Usuario.PROFESSOR
+        )
 
 
 class MeView(APIView):
@@ -78,24 +92,123 @@ class ValidarPalavraView(APIView):
         })
 
 
-class RelatorioProfessorView(APIView):
-    """Relatório consolidado de desempenho para o professor (US24/US25).
+class AtividadeListView(ListAPIView):
+    """Lista atividades ativas (RF16). Filtra por ?tipo=quiz|montagem."""
 
-    Agrega dados reais das Tentativas registradas. Visão geral (todos os
-    alunos), pois o domínio ainda não modela turmas.
-    """
+    serializer_class = AtividadeSerializer
+    permission_classes = [IsAuthenticated]
+    pagination_class = None
+
+    def get_queryset(self):
+        qs = Atividade.objects.filter(ativa=True).order_by("nivel", "titulo")
+        tipo = self.request.query_params.get("tipo")
+        if tipo:
+            qs = qs.filter(tipo=tipo)
+        return qs
+
+
+class AtividadeDetailView(RetrieveAPIView):
+    """Detalha uma atividade com suas perguntas (RF16)."""
+
+    queryset = Atividade.objects.filter(ativa=True)
+    serializer_class = AtividadeDetailSerializer
+    permission_classes = [IsAuthenticated]
+
+
+class HistoricoAlunoView(APIView):
+    """Histórico de pontuações/tentativas do próprio aluno (US21)."""
 
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        # RN02: apenas professores podem acessar relatórios consolidados.
-        if getattr(request.user, "tipo", None) != Usuario.PROFESSOR:
+        tentativas = Tentativa.objects.filter(usuario=request.user).order_by("-data")
+        total = tentativas.count()
+        acertos = tentativas.filter(acertou=True).count()
+        itens = [
+            {
+                "id": t.id,
+                "palavra": t.palavra,
+                "acertou": t.acertou,
+                "data": t.data.isoformat(),
+            }
+            for t in tentativas[:50]
+        ]
+        return Response(
+            {
+                "total": total,
+                "acertos": acertos,
+                "itens": itens,
+            }
+        )
+
+
+class TurmaListCreateView(ListCreateAPIView):
+    """Lista e cria turmas do professor logado (RF23)."""
+
+    serializer_class = TurmaSerializer
+    permission_classes = [IsProfessor]
+    pagination_class = None
+
+    def get_queryset(self):
+        return Turma.objects.filter(professor=self.request.user).order_by("nome")
+
+    def perform_create(self, serializer):
+        serializer.save(professor=self.request.user)
+
+
+class AdicionarAlunoTurmaView(APIView):
+    """Vincula um aluno (por email) a uma turma do professor (RF23)."""
+
+    permission_classes = [IsProfessor]
+
+    def post(self, request, turma_id):
+        try:
+            turma = Turma.objects.get(pk=turma_id, professor=request.user)
+        except Turma.DoesNotExist:
             return Response(
-                {"detail": "Apenas professores podem acessar o relatório."},
-                status=status.HTTP_403_FORBIDDEN,
+                {"detail": "Turma não encontrada."},
+                status=status.HTTP_404_NOT_FOUND,
             )
 
+        email = (request.data.get("email") or "").strip().lower()
+        try:
+            aluno = Usuario.objects.get(email=email, tipo=Usuario.ALUNO)
+        except Usuario.DoesNotExist:
+            return Response(
+                {"detail": "Nenhum aluno encontrado com esse email."},
+                status=status.HTTP_404_NOT_FOUND,
+            )
+
+        aluno.turma = turma
+        aluno.save(update_fields=["turma"])
+        return Response(
+            {
+                "detail": "Aluno adicionado à turma.",
+                "aluno": {
+                    "id": aluno.id,
+                    "nome": aluno.first_name or aluno.username,
+                    "email": aluno.email,
+                },
+            }
+        )
+
+
+class RelatorioProfessorView(APIView):
+    """Relatório consolidado de desempenho para o professor (US24/US25).
+
+    Agrega dados reais das Tentativas. Aceita ?turma=<id> para filtrar por
+    turma; sem o filtro, considera todos os alunos (visão geral).
+    """
+
+    permission_classes = [IsProfessor]
+
+    def get(self, request):
+        turma_id = request.query_params.get("turma")
+
         tentativas = Tentativa.objects.all()
+        if turma_id:
+            tentativas = tentativas.filter(usuario__turma_id=turma_id)
+
         total = tentativas.count()
         acertos = tentativas.filter(acertou=True).count()
         erros = total - acertos
@@ -110,9 +223,10 @@ class RelatorioProfessorView(APIView):
         )
 
         # US24 — desempenho individual de cada aluno.
-        alunos = Usuario.objects.filter(tipo=Usuario.ALUNO).order_by(
-            "first_name", "username"
-        )
+        alunos_qs = Usuario.objects.filter(tipo=Usuario.ALUNO)
+        if turma_id:
+            alunos_qs = alunos_qs.filter(turma_id=turma_id)
+        alunos = alunos_qs.order_by("first_name", "username")
         por_aluno = []
         for aluno in alunos:
             do_aluno = tentativas.filter(usuario=aluno)
