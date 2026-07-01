@@ -56,3 +56,4 @@ O jogo é composto por peças coloridas que representam morfemas — raízes (ou
 | 30/06/2026 | 1.0 | Estruturação inicial e atualizações para entrega da Unidade IV. | [Bruno Souza](https://github.com/youngburny) |
 | 01/06/2026 | 1.1 | Atualizações em: Requisitos, Backlog, Cronograma; criação da aba de 'Planejamento e Organização'; separação dos tipos de reunião/gravação.| [Bruno Souza](https://github.com/youngburny) |
 | 01/06/2026 | 1.2 | Atualizações nas USs, adição das sprints 5 e 6. | [Bruno Souza](https://github.com/youngburny) |
+| 01/06/2026 | 1.3 | Atualizações no Backlog, na Engenharia de Requisitos e Cronograma. | [Bruno Souza](https://github.com/youngburny) |

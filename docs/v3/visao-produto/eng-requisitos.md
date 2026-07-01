@@ -2,65 +2,51 @@
 
 ### __5.1 Atividades  e Técnicas de ER__
 
-**Elicitação e descoberta**
+## **5.1 Atividades e Técnicas de ER**
 
-* **Entrevistas semiestruturadas**: encontros periódicos com a cliente para compreender o jogo físico, seus princípios pedagógicos, o corpus de morfemas e as expectativas em relação à versão digital, identificando tanto requisitos declarados quanto requisitos latentes.
+O processo de Engenharia de Requisitos (ER) para o desenvolvimento do MorfoBlocos Digital foi conduzido de forma iterativa e incremental. A tabela a seguir detalha cada técnica proposta ou executada no projeto, seu respectivo status de execução ao final da Unidade 3 e os links de evidências ou justificativas de engenharia.
 
-* **Análise documental**: estudo do relatório final do projeto original, do material didático e das peças físicas do jogo, para reconstruir o vocabulário pedagógico e a identidade visual do MorfoBlocos.
+| Atividade de ER | Técnica Proposta / Aplicada | Status | Evidência Técnica / Justificativa de Engenharia |
+| :---- | :---- | :---- | :---- |
+| Elicitação e Descoberta | Entrevistas semiestruturadas | Realizada | Reuniões síncronas gravadas e registradas nas atas de alinhamento com a cliente (PO) para mapeamento do jogo físico. |
+| Elicitação e Descoberta | Análise documental | Realizada | Estudo detalhado das regras e do manual do jogo físico original para extração do catálogo base de morfemas. |
+| Elicitação e Descoberta | Observação de contexto real | Não realizada | Justificativa: Retirada do escopo executado devido à incompatibilidade de horários escolares e restrições de tempo do semestre letivo. |
+| Elicitação e Descoberta | Triangulação de fontes | Parcial | Executada através do cruzamento entre a análise documental das regras físicas e as entrevistas de validação com a PO. |
+| Análise e Consenso | Priorização MoSCoW | Realizada | Matriz de Priorização do MVP utilizada para blindar o escopo das histórias da Unidade 3\. |
+| Análise e Consenso | Matriz Técnica × Valor | Realizada | Ferramenta utilizada e atualizada em conjunto com a cliente para estruturar o plano de sustentabilidade a longo prazo. |
+| Análise e Consenso | Negociação de conflitos | Realizada | Registro de decisão técnica de arquitetura que optou por adiar os CRUDs visuais para focar no motor de jogo. |
+| Declaração de Requisitos | Histórias de Usuário | Realizada | Mapeamento de User Stories estruturadas nos eixos de Persona, Intenção e Valor de Negócio. |
+| Declaração de Requisitos | Critérios Given/When/Then | Não realizada | Justificativa: Retirada do escopo por decisão metodológica da equipe, optando por critérios de aceitação tradicionais/descritivos para melhor adequação ao modelo de validação adotado. |
+| Declaração de Requisitos | Catálogos de RFs e RNFs | Realizada | Especificação de Requisitos URPS+ padronizada segundo as diretrizes de Engenharia da disciplina. |
+| Representação de Requisitos | Rich Picture | Realizada | Rich Picture do Fluxo de Trabalhocontrastando o ambiente físico com o tabuleiro digital na Vercel. |
+| Representação de Requisitos | Diagrama de Ishikawa  | Realizada | Diagrama de Causa e Efeito detalhando as perdas pedagógicas e limitações do material impresso. |
+| Representação de Requisitos | Mapa de Stakeholders | Realizada | Mapa de stakeholders homologada para gerenciamento de expectativas da cliente. |
+| Representação de Requisitos | Protótipos e Storyboards | Parcial | Protótipos do Figma homologados para US. |
+| Verificação e Validação | Revisão interna da equipe | Realizada | Sprints plannings e reuniões técnicas semanais de checagem de consistência de código das USs. |
+| Verificação e Validação | Validação com a cliente | Realizada | Demonstrações homologadas de incremento de software rodando em produção ao final de cada ciclo de Sprint. |
+| Verificação e Validação | Filtros DoR e DoD | Realizada | Aplicação dos critérios de **DoR** (Definition of Ready) e **DoD** (Definition of Done) para mapear a prontidão das US e validar a qualidade dos incrementos entregues.  |
+| Verificação e Validação | Testes de aceitação (G/W/T) | Não realizada | Justificativa: Não aplicável, dado que a equipe não adotou a abordagem BDD. As validações de entrega foram realizadas por meio de testes funcionais manuais descritivos. |
+| Organização e Atualização | Product Backlog Único | Realizada | Utilização de um Product Backlog unificado, onde as histórias de usuário e os débitos técnicos foram centralizados em uma única lista priorizada para evitar a dispersão de requisitos.  |
+| Organização e Atualização | Refinamento contínuo | Realizada | Reuniões de Refinamento realizadas no meio de cada Sprint para quebra de complexidade. |
+| Organização e Atualização | Princípio DEEP | Realizada | Backlog mantido dinâmico, estimado em Story Points e com as tarefas do topo detalhadas de forma adequada. |
+| Organização e Atualização | Controle de versões | Realizada | Histórico de Commits e Versionamento de Artefatos mantidos sob controle no Git do projeto. |
+| Organização e Atualização | Matriz de Rastreabilidade | Realizada | Mapeamento estruturado cruzando as metas de negócio aos IDs das histórias desenvolvidas. |
 
-* **Observação do contexto real de uso**: acompanhamento da aplicação do jogo físico em sala de aula, quando possível, para capturar requisitos latentes que emergem do uso real e dificilmente apareceriam em entrevistas.
+**1. Workshops de Requisitos**
 
-* **Triangulação de fontes de informação**: cruzamento sistemático entre entrevistas, análise documental e observação, de modo a confrontar percepções e consolidar um entendimento compartilhado sobre o problema e suas causas.
+* **Justificativa para não ter feito:** Considerando o tamanho reduzido da equipe de desenvolvimento e a facilidade de comunicação direta com os stakeholders, optou-se por reuniões e entrevistas rápidas em vez de Workshops. Para o escopo de um MVP, dinâmicas de workshop demandariam um tempo de alinhamento que foi otimizado por meio de sessões diretas de alinhamento pedagógico.
 
-**Análise e Consenso**
+**2. Narrativas Descritivas**
 
-* **Priorização MoSCoW**: classificação das funcionalidades em Must have, Should have, Could have e Won't have for now, junto à cliente, para definir o escopo do MVP e registrar desejáveis para evolução futura.
+* **Justificativa para não ter feito:** Como a equipe adotou as User Stories como padrão oficial para a declaração e especificação de requisitos (seção 10.1.4), o uso de narrativas descritivas longas tornou-se redundante. As histórias de usuário, combinadas com seus critérios de aceitação, cumpriram o papel de detalhar o comportamento do sistema de forma ágil e objetiva.
 
-* **Matriz Avaliação Técnica × Valor de Negócio**: posicionamento das características de produto em uma matriz que cruza valor percebido pela cliente com esforço técnico estimado, orientando a sequência de entregas.
+**3. Catálogo de Regras de Negócio**
 
-* **Negociação e resolução de conflitos**: mediação estruturada de divergências entre requisitos — por exemplo, entre fidelidade ao jogo físico e viabilidade no prazo do semestre — com registro das decisões e suas justificativas.
-Declaração de Requisitos
+* **Justificativa para não ter feito:** As regras de negócio do sistema (como os critérios de validação de morfemas e regras de pontuação) são simples e focadas no núcleo do jogo. Por esse motivo, elas foram mapeadas e documentadas diretamente nas justificativas dos requisitos funcionais e nos critérios de aceitação das User Stories, eliminando a necessidade de manter um documento separado apenas para o catálogo de regras.
 
-**Declaração de Requisitos**
+**4. Fluxos de Navegação e de Estados Conceituais**
 
-* **Histórias de usuário**: declaração dos requisitos de usuário no formato "Como <ator>, quero <objetivo>, para <benefício>", organizadas em backlog de produto e utilizadas no planejamento das sprints.
-
-* **Critérios de aceitação Given/When/Then**: cada história de usuário será acompanhada por critérios de aceitação em formato estruturado, explicitando condição inicial, ação e resultado esperado de forma verificável.
-
-* **Catálogos de RFs e RNFs**: os requisitos funcionais serão declarados no padrão "verbo no infinitivo + objeto" (por exemplo, "Combinar morfemas para formar palavras"); os requisitos não funcionais serão organizados segundo o modelo URPS+, conforme orientação do template da disciplina.
-
-**Representação de Requisitos**
-
-* **Rich Picture no formato AS-IS / TO-BE**: representação sistêmica (contextual) utilizada na seção 1.3 para contrastar o cenário atual do jogo físico com o cenário proposto para a solução digital, capturando atores, fluxos e limitações do contexto.
-
-* **Diagrama de Ishikawa (6M's)**: utilizado na seção 1.4 para organizar a análise das causas do problema identificado, distribuindo os fatores contribuintes pelos eixos Método, Máquina, Mão de Obra, Material, Medida e Meio Ambiente.
-
-* **Mapa de Stakeholders e Matriz Poder × Interesse**: representações sistêmicas (contextuais) utilizadas na seção 1.6 para classificar os stakeholders conforme sua influência e interesse, orientando a estratégia de comunicação da equipe ao longo do projeto.
-
-* **Protótipos de baixa fidelidade e storyboards**: produzidos durante as sprints para apoiar a validação de fluxos de uso com a cliente antes da implementação, mantendo-se no escopo da ER conforme a delimitação do SWEBOK v4.0.
-
-
-**Verificação e Validação de Requisitos**
-
-* **Revisão interna pela equipe**: antes de cada sprint, os requisitos refinados serão revisados pelos membros da equipe para verificar clareza, consistência, completude e testabilidade.
-
-* **Validação com a cliente ao final de cada sprint**: nas reuniões de revisão de sprint, a cliente avaliará o incremento entregue, confirmando que os requisitos implementados atendem a suas expectativas pedagógicas e ao problema declarado na seção 1.4.
-
-* **Definition of Ready (DoR) e Definition of Done (DoD)**: o DoR define as condições mínimas para um item entrar em sprint; o DoD define as condições para considerá-lo concluído. Atuam como filtros de qualidade antes e depois do desenvolvimento.
-
-* **Testes de aceitação baseados em critérios declarados**: cada história de usuário será testada contra seus critérios de aceitação no formato Given/When/Then, tornando a validação objetiva e rastreável.
-
-**Organização e Atualização de Requisitos**
-
-* **Product Backlog único**: histórias de usuário, RFs, RNFs e regras de negócio serão mantidos em um backlog único, priorizado pela Product Owner (a cliente) e continuamente refinado.
-
-* **Refinamento contínuo do backlog**: ao longo de cada sprint, equipe e cliente revisarão o backlog, atualizando prioridades, detalhando itens para as próximas sprints e ajustando o escopo conforme o aprendizado adquirido.
-
-* **Aplicação do princípio DEEP**: o backlog será mantido Detalhado adequadamente, Estimado, Emergente e Priorizado, conforme prática consolidada no desenvolvimento ágil.
-
-* **Controle de versões dos artefatos de requisitos**: a visão do produto, o backlog e os demais artefatos serão mantidos em repositório versionado, preservando histórico de decisões e rastreabilidade de mudanças.
-
-* **Matriz de rastreabilidade**: matriz que conecta objetivos específicos, características de produto, requisitos funcionais e não funcionais, regras de negócio e critérios de aceitação, assegurando que cada decisão técnica permaneça ligada ao problema declarado na seção 1.4.
+* **Justificativa para não ter feito:** A arquitetura de telas do sistema segue um fluxo linear e direto (Login \-\> Dashboard/Seleção de Atividades \-\> Tela do Jogo/Quiz \-\> Feedback). Por ser uma interface enxuta e de baixa complexidade de navegação, a equipe priorizou o desenvolvimento direto de protótipos de interface, poupando o esforço de modelagem de diagramas de estados conceituais.
 
 ### __5.2 Engenharia de Requisitos e o XP__
 

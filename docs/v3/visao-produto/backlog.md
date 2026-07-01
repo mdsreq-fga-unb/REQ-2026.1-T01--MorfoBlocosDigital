@@ -567,6 +567,45 @@ Todos os 12 RNFs declarados no catálogo de requisitos são considerados válido
 | **RF22** | Consultar os detalhes de uma atividade realizada. | Classificado como Should Have. O estudante terá o histórico macro de suas pontuações no MVP, mas a revisão analítica bloco a bloco de tentativas passadas ficou para a próxima versão. |
 | **RF25** | Consultar os erros morfológicos mais frequentes dos estudantes. | Classificado como Should Have. O professor monitorará o desempenho coletivo pelas médias da turma, mas o algoritmo analítico de agrupamento e ranking de erros frequentes foi postergado. |
 
+### **10.3 Rastreabilidade e Comprovação de Implementação do MVP**
+
+#### **10.3.1 Atualização e Definição do Escopo do MVP**
+
+Embora o catálogo geral contemple 25 Requisitos Funcionais (RFs), a implementação inicial não abrange a totalidade destes itens. Aplicando rigorosamente a matriz de priorização MoSCoW e a matriz de Valor de Negócio vs. Complexidade Técnica, os requisitos classificados como *Should Have* e *Won't Have* foram postergados ou readequados.
+
+Portanto, o Produto Mínimo Viável (MVP) real do MorfoBlocos Digital é composto estritamente por 16 Requisitos Funcionais (*Must Have* e *Should Have* essenciais), focados no fluxo de autenticação, mecânica central de jogo (Quiz e Montagem), validação de regras morfológicas e gestão administrativa/docente. A tabela a seguir comprova o status de implementação atualizado item a item, com as funcionalidades validadas no ambiente de produção oficial ([https://req-2026-1-t01-morfo-blocos-digital.vercel.app/](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/)).
+
+| RF | US | Critérios de Aceitação (CA) | Status | Sprint | Evidência | Status DoD / PO |
+| :---: | :---: | ----- | :---: | :---: | :---: | :---: |
+| RF01 | US01 | CA-US01-01 a 03 | Impl. | S1 | [Acessar Vercel](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/) | Concluído / Validado |
+| RF02 | US02 | CA-US02-01 a 05 | Impl. | S1 | [Acessar Vercel](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/) | Concluído / Validado |
+| RF04 | US04 | CA-US04-01 | Impl. | S4 | [Acessar Vercel](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/) | Concluído / Validado |
+| RF06 | US06 | CA-US06-01 | Impl. | S4 | [Acessar Vercel](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/) | Concluído / Validado |
+| RF08 | US08 | CA-US08-01 | Impl. | S4 | [Acessar Vercel](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/) | Concluído / Validado |
+| RF10 | US10 | CA-US10-01 | Impl. | S4 | [Acessar Vercel](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/) | Concluído / Validado |
+| RF12 | US12 | CA-US12-01 | Impl. | S4 | [Acessar Vercel](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/) | Concluído / Validado |
+| RF14 | US14 | CA-US14-01 | Impl. | S4 | [Acessar Vercel](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/) | Concluído / Validado |
+| RF16 | US16 | CA-US16-01 | Impl. | S2 | [Acessar Vercel](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/) | Concluído / Validado |
+| RF17 | US17 | CA-US17-01 a 04 | Impl. | S2 | [Acessar Vercel](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/) | Concluído / Validado |
+| RF18 | US18 | CA-US18-01 | Impl. | S2 | [Acessar Vercel](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/) | Concluído / Validado |
+| RF19 | US19 | CA-US19-01 | Impl. | S3 | [Acessar Vercel](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/) | Concluído / Validado |
+| RF20 | US20 | CA-US20-01 | Impl. | S3 | [Acessar Vercel](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/) | Concluído / Validado |
+| RF21 | US21 | CA-US21-01 | Impl. | S3 | [Acessar Vercel](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/) | Concluído / Validado |
+| RF23 | US23 | CA-US23-01 | Impl. | S4 | [Acessar Vercel](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/) | Concluído / Validado |
+
+#### **10.3.3 Relatório de Resolução de Impedimentos e Pendências de Artefatos**
+
+Para assegurar a transparência do processo de Engenharia de Requisitos e o cumprimento rigoroso da *Definition of Done* (DoD), os impedimentos mapeados em iterações anteriores foram solucionados, restando apenas pendências de atualização documental:
+
+* **RF17 (Montagem de Blocos) \- Status: RESOLVIDO.**  
+  O impedimento técnico anterior relacionado à responsividade (RNF11) foi sanado. O *container* da área de montagem foi refatorado utilizando *flexbox* adaptativo, garantindo o empilhamento correto dos blocos em resoluções mínimas de 360px sem forçar barra de rolagem lateral ou sobreposição de componentes.  
+* **Gestão de Conteúdo Administrativo (RF04 a RF14) \- Status: RESOLVIDO.**  
+  As funcionalidades referentes ao CRUD de morfemas, palavras válidas e atividades, anteriormente não iniciadas, foram integralmente implementadas. A gestão foi centralizada diretamente na interface gráfica do próprio sistema (via ambiente de produção na Vercel), descartando a dependência do painel nativo do Django Admin. As operações contam com as devidas travas de segurança e integridade referencial (proteção contra exclusão em cascata), mantendo o rigoroso controle de acesso baseado em funções (RBAC) para garantir que apenas administradores autenticados manipulem o catálogo (RN03).  
+* **RF23 e RF24 (Painel do Professor) \- Pendência Documental (Artefatos).**  
+  A lógica arquitetural (Django), o controle de acesso (RBAC) e as interfaces gráficas (React) para gestão de turmas e relatórios de desempenho foram integralmente codificadas, testadas na *pipeline* de CI e validadas pela cliente (PO). O *status* da implementação foi promovido a "Concluído". Contudo, registra-se a ausência dos artefatos de protótipo de alta fidelidade (Figma) na documentação oficial dessas *User Stories*, que constam atualmente como "FALTANTES" e necessitam de atualização para fechar o ciclo de rastreabilidade visual.
+
+
+
 
 
 
