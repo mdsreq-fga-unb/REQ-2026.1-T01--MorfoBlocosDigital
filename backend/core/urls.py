@@ -2,7 +2,10 @@ from django.urls import path
 from core.views import (
     MeView,
     RegistroView,
-    MorfemaListView,
+    MorfemaListCreateView,
+    MorfemaDestroyView,
+    PalavraValidaListCreateView,
+    PalavraValidaDestroyView,
     ValidarPalavraView,
     ForgotPasswordView,
     ResetPasswordConfirmView,
@@ -10,8 +13,8 @@ from core.views import (
     RelatorioProfessorView,
     TurmaListCreateView,
     AdicionarAlunoTurmaView,
-    AtividadeListView,
-    AtividadeDetailView,
+    AtividadeListCreateView,
+    AtividadeRetrieveDestroyView,
 )
 
 urlpatterns = [
@@ -19,13 +22,15 @@ urlpatterns = [
     path("auth/registro/", RegistroView.as_view(), name="registro"),
     path("auth/forgot-password/", ForgotPasswordView.as_view(), name="forgot-password"),
     path("auth/reset-password/", ResetPasswordConfirmView.as_view(), name="reset-password"),
-    path("morfemas/", MorfemaListView.as_view(), name="morfemas"),
+    path("morfemas/", MorfemaListCreateView.as_view(), name="morfemas"),
+    path("morfemas/<int:pk>/", MorfemaDestroyView.as_view(), name="morfema-remover"),
+    path("palavras/", PalavraValidaListCreateView.as_view(), name="palavras"),
+    path("palavras/<int:pk>/", PalavraValidaDestroyView.as_view(), name="palavra-remover"),
     path("validar-palavra/", ValidarPalavraView.as_view(), name="validar-palavra"),
-    path("atividades/", AtividadeListView.as_view(), name="atividades"),
-    path("atividades/<int:pk>/", AtividadeDetailView.as_view(), name="atividade-detalhe"),
+    path("atividades/", AtividadeListCreateView.as_view(), name="atividades"),
+    path("atividades/<int:pk>/", AtividadeRetrieveDestroyView.as_view(), name="atividade-detalhe"),
     path("historico/", HistoricoAlunoView.as_view(), name="historico-aluno"),
     path("professor/relatorio/", RelatorioProfessorView.as_view(), name="relatorio-professor"),
     path("professor/turmas/", TurmaListCreateView.as_view(), name="turmas"),
     path("professor/turmas/<int:turma_id>/alunos/", AdicionarAlunoTurmaView.as_view(), name="turma-add-aluno"),
 ]
-

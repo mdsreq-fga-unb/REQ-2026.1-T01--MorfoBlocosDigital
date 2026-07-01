@@ -1,7 +1,7 @@
 from rest_framework import status
 from rest_framework.test import APITestCase
 
-from core.models import Usuario, PalavraValida, Tentativa
+from core.models import Usuario, Morfema, PalavraValida, Tentativa, Atividade, Pergunta
 
 
 def criar_usuario(email, tipo=Usuario.ALUNO, senha="senha123", nome=""):
@@ -112,6 +112,80 @@ class ValidadorTests(APITestCase):
         self.assertTrue(
             Tentativa.objects.filter(usuario=self.aluno, palavra="xyz", acertou=False).exists()
         )
+
+
+class ConteudoAdminTests(APITestCase):
+    """RF04/06/08/10/12/14 — professor gerencia o catálogo; aluno é bloqueado."""
+
+    def setUp(self):
+        self.professor = criar_usuario("prof.adm@x.com", tipo=Usuario.PROFESSOR)
+        self.aluno = criar_usuario("aluno.adm@x.com", tipo=Usuario.ALUNO)
+
+    def test_professor_cria_e_remove_morfema(self):
+        self.client.force_authenticate(self.professor)
+        resp = self.client.post(
+            "/api/morfemas/", {"texto": "sub", "tipo": "prefixo", "cor": "bg-red-500"}, format="json"
+        )
+        self.assertEqual(resp.status_code, status.HTTP_201_CREATED)
+        mid = resp.data["id"]
+        self.assertTrue(Morfema.objects.filter(id=mid).exists())
+
+        resp = self.client.delete(f"/api/morfemas/{mid}/")
+        self.assertEqual(resp.status_code, status.HTTP_204_NO_CONTENT)
+        self.assertFalse(Morfema.objects.filter(id=mid).exists())
+
+    def test_aluno_nao_cria_nem_remove_morfema(self):
+        self.client.force_authenticate(self.aluno)
+        resp = self.client.post(
+            "/api/morfemas/", {"texto": "x", "tipo": "prefixo", "cor": "bg-red-500"}, format="json"
+        )
+        self.assertEqual(resp.status_code, status.HTTP_403_FORBIDDEN)
+        # mas o aluno PODE listar (jogo)
+        self.assertEqual(self.client.get("/api/morfemas/").status_code, status.HTTP_200_OK)
+
+    def test_professor_gerencia_palavra_valida_e_aluno_bloqueado(self):
+        self.client.force_authenticate(self.aluno)
+        self.assertEqual(self.client.get("/api/palavras/").status_code, status.HTTP_403_FORBIDDEN)
+
+        self.client.force_authenticate(self.professor)
+        resp = self.client.post(
+            "/api/palavras/", {"texto": "descristalizar", "processo_morfologico": "des + cristal + iz + ar"}, format="json"
+        )
+        self.assertEqual(resp.status_code, status.HTTP_201_CREATED)
+        pid = resp.data["id"]
+        self.assertEqual(self.client.delete(f"/api/palavras/{pid}/").status_code, status.HTTP_204_NO_CONTENT)
+
+    def test_professor_cria_atividade_com_perguntas_e_remove(self):
+        self.client.force_authenticate(self.professor)
+        payload = {
+            "titulo": "Quiz Teste",
+            "tipo": "quiz",
+            "nivel": 1,
+            "perguntas": [
+                {
+                    "enunciado": "Prefixo de infeliz?",
+                    "alternativas": ["in-", "feliz", "-iz", "fel-"],
+                    "correta": 0,
+                    "explicacao": "in- indica negação.",
+                    "topico": "Prefixos",
+                }
+            ],
+        }
+        resp = self.client.post("/api/atividades/", payload, format="json")
+        self.assertEqual(resp.status_code, status.HTTP_201_CREATED)
+        aid = resp.data["id"]
+        self.assertEqual(Pergunta.objects.filter(atividade_id=aid).count(), 1)
+
+        resp = self.client.delete(f"/api/atividades/{aid}/")
+        self.assertEqual(resp.status_code, status.HTTP_204_NO_CONTENT)
+        self.assertFalse(Atividade.objects.filter(id=aid).exists())
+
+    def test_aluno_nao_cria_atividade(self):
+        self.client.force_authenticate(self.aluno)
+        resp = self.client.post(
+            "/api/atividades/", {"titulo": "x", "tipo": "quiz", "nivel": 1}, format="json"
+        )
+        self.assertEqual(resp.status_code, status.HTTP_403_FORBIDDEN)
 
 
 class RelatorioPermissaoTests(APITestCase):
