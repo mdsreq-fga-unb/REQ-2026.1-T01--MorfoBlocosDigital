@@ -10,6 +10,7 @@ import { QuestionsScreen } from './components/QuestionsScreen';
 import { BlockJoining } from './components/BlockJoining';
 import { LearningScreen } from './components/LearningScreen';
 import { ProfessorDashboard } from './components/ProfessorDashboard';
+import { ManageContent } from './components/ManageContent';
 
 // Guarda de rota: só renderiza o conteúdo se houver sessão (token).
 // Quando a sessão expira, o AppState (que ouve AUTH_EXPIRED_EVENT) zera o
@@ -86,6 +87,14 @@ export default function App() {
             element={
               <PrivateRoute>
                 <ProfessorDashboard />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/professor/conteudo"
+            element={
+              <PrivateRoute>
+                <ManageContent />
               </PrivateRoute>
             }
           />

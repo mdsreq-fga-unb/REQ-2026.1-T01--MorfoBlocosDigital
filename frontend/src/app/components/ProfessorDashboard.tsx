@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
-import { Users, TrendingUp, Award, AlertCircle, LogOut, User, Loader2, Plus, GraduationCap, X } from 'lucide-react';
+import { Users, TrendingUp, Award, AlertCircle, LogOut, User, Loader2, Plus, GraduationCap, X, Settings } from 'lucide-react';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell,
 } from 'recharts';
@@ -149,7 +149,13 @@ export function ProfessorDashboard() {
             </div>
           </div>
           <div className="flex items-center gap-2 sm:gap-4 shrink-0">
-            <div className="text-right hidden sm:block">
+            <Link
+              to="/professor/conteudo"
+              className="flex items-center gap-1.5 px-2 sm:px-3 py-1.5 sm:py-2 bg-gray-100 hover:bg-gray-200 rounded-xl text-xs sm:text-sm transition-colors"
+            >
+              <Settings className="w-4 h-4" /> <span className="hidden sm:inline">Gerenciar Conteúdo</span>
+            </Link>
+            <div className="text-right hidden md:block">
               <div className="text-sm text-muted-foreground">Prof.</div>
               <div>{usuario?.first_name?.trim() || usuario?.username}</div>
             </div>
