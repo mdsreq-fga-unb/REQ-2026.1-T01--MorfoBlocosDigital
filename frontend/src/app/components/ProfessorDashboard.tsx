@@ -1,88 +1,141 @@
-import { useState, useMemo } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
-import { Users, TrendingUp, Award, AlertCircle, LogOut, User, Plus, GraduationCap, X } from 'lucide-react';
+import { Users, TrendingUp, Award, AlertCircle, LogOut, User, Loader2, Plus, GraduationCap, X } from 'lucide-react';
 import {
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
-  LineChart, Line, Legend, Cell,
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell,
 } from 'recharts';
 import { Logo } from './Logo';
 import { useAppState } from '../state/AppState';
-import type { Topic } from '../state/AppState';
+import { api } from '../../lib/api';
 
-const TOPICS: Topic[] = ['Prefixos', 'Radicais', 'Sufixos', 'Composição', 'Derivação'];
+// Formatos crus vindos do backend.
+type PalavraErrada = { palavra: string; ocorrencias: number };
+type AlunoRelatorio = {
+  id: number;
+  nome: string;
+  email: string;
+  respondidas: number;
+  acertos: number;
+  aproveitamento: number;
+};
+type Relatorio = {
+  total_alunos: number;
+  total_tentativas: number;
+  acertos: number;
+  erros: number;
+  taxa_acerto: number;
+  palavras_mais_erradas: PalavraErrada[];
+  alunos: AlunoRelatorio[];
+};
+type Turma = { id: number; nome: string; serie: string; criada_em: string; total_alunos: number };
+
+// Classifica o status do aluno a partir do aproveitamento.
+function statusDoAluno(respondidas: number, pct: number) {
+  if (respondidas === 0) return { status: 'Sem dados', color: 'bg-gray-200 text-gray-700', barColor: 'bg-gray-400' };
+  if (pct >= 80) return { status: 'Excelente', color: 'bg-blue-100 text-blue-700', barColor: 'bg-blue-600' };
+  if (pct >= 65) return { status: 'Bom', color: 'bg-yellow-100 text-yellow-700', barColor: 'bg-yellow-500' };
+  if (pct >= 50) return { status: 'Regular', color: 'bg-orange-100 text-orange-700', barColor: 'bg-orange-500' };
+  return { status: 'Precisa Ajuda', color: 'bg-red-100 text-red-700', barColor: 'bg-red-500' };
+}
 
 export function ProfessorDashboard() {
-  const { turmas, students, history, professorId, addTurma, addStudent, usuario } = useAppState();
-  const myTurmas = turmas.filter((t) => t.professorId === professorId);
-  const [selectedClassId, setSelectedClassId] = useState<string>(myTurmas[0]?.id ?? '');
+  const { usuario } = useAppState();
+  const [relatorio, setRelatorio] = useState<Relatorio | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const [turmas, setTurmas] = useState<Turma[]>([]);
+  // null = visão geral (todas as turmas).
+  const [selectedTurma, setSelectedTurma] = useState<number | null>(null);
+  // Incrementado após criar turma / adicionar aluno para forçar recarga.
+  const [reloadTick, setReloadTick] = useState(0);
+
   const [showTurmaModal, setShowTurmaModal] = useState(false);
   const [showAlunoModal, setShowAlunoModal] = useState(false);
-
-  const [turmaName, setTurmaName] = useState('');
+  const [turmaNome, setTurmaNome] = useState('');
   const [turmaSerie, setTurmaSerie] = useState('');
-  const [alunoName, setAlunoName] = useState('');
   const [alunoEmail, setAlunoEmail] = useState('');
-  const [alunoClassId, setAlunoClassId] = useState(selectedClassId);
+  const [modalError, setModalError] = useState<string | null>(null);
+  const [saving, setSaving] = useState(false);
 
-  const classStudents = useMemo(
-    () => students.filter((s) => s.classId === selectedClassId),
-    [students, selectedClassId]
-  );
-  const classStudentIds = classStudents.map((s) => s.id);
-  const classHistory = useMemo(
-    () => history.filter((h) => classStudentIds.includes(h.studentId)),
-    [history, classStudentIds]
-  );
+  // Carrega as turmas do professor.
+  useEffect(() => {
+    let active = true;
+    api
+      .get<Turma[]>('/professor/turmas/')
+      .then(({ data }) => {
+        if (active) setTurmas(Array.isArray(data) ? data : []);
+      })
+      .catch((err) => console.error('Falha ao carregar turmas:', err));
+    return () => {
+      active = false;
+    };
+  }, [reloadTick]);
 
-  // Métricas
-  const totalStudents = classStudents.length;
-  const totalAnswers = classHistory.length;
-  const correctAnswers = classHistory.filter((h) => h.correct).length;
-  const avgPct = totalAnswers ? Math.round((correctAnswers / totalAnswers) * 100) : 0;
-  const concluidos = classStudents.filter((s) => {
-    const sh = classHistory.filter((h) => h.studentId === s.id);
-    return sh.length >= 3 && sh.filter((h) => h.correct).length / sh.length >= 0.8;
-  }).length;
-  const precisamAjuda = classStudents.filter((s) => {
-    const sh = classHistory.filter((h) => h.studentId === s.id);
-    return sh.length > 0 && sh.filter((h) => h.correct).length / sh.length < 0.5;
-  }).length;
+  // Carrega o relatório (geral ou da turma selecionada).
+  useEffect(() => {
+    let active = true;
+    const url = selectedTurma ? `/professor/relatorio/?turma=${selectedTurma}` : '/professor/relatorio/';
+    api
+      .get<Relatorio>(url)
+      .then(({ data }) => {
+        if (active) setRelatorio(data);
+      })
+      .catch((err) => {
+        console.error('Falha ao carregar relatório:', err);
+        if (active) setError('Não foi possível carregar o relatório. Tente novamente.');
+      })
+      .finally(() => {
+        if (active) setLoading(false);
+      });
+    return () => {
+      active = false;
+    };
+  }, [selectedTurma, reloadTick]);
 
-  // Gráfico de erros (ordenado decrescente)
-  const errorsByTopic = TOPICS.map((topic) => {
-    const items = classHistory.filter((h) => h.topic === topic);
-    const erros = items.filter((h) => !h.correct).length;
-    const acertos = items.filter((h) => h.correct).length;
-    return { topico: topic, erros, acertos, total: items.length };
-  })
-    .filter((t) => t.total > 0)
-    .sort((a, b) => b.erros - a.erros);
-
-  const maxErros = Math.max(...errorsByTopic.map((e) => e.erros), 1);
-
-  // Evolução semanal (mock baseado em datas)
-  const evolutionData = (() => {
-    const sorted = [...classHistory].sort((a, b) => a.date.localeCompare(b.date));
-    const buckets: Record<string, { acertos: number; erros: number }> = {};
-    sorted.forEach((h) => {
-      buckets[h.date] = buckets[h.date] ?? { acertos: 0, erros: 0 };
-      if (h.correct) buckets[h.date].acertos++;
-      else buckets[h.date].erros++;
-    });
-    return Object.entries(buckets).map(([date, v]) => ({ date: date.slice(5), ...v }));
-  })();
-
-  const handleCreateTurma = () => {
-    if (!turmaName.trim()) return;
-    addTurma(turmaName, turmaSerie || 'Não definido');
-    setTurmaName(''); setTurmaSerie(''); setShowTurmaModal(false);
+  const handleCriarTurma = async () => {
+    if (!turmaNome.trim()) return;
+    setSaving(true);
+    setModalError(null);
+    try {
+      await api.post('/professor/turmas/', { nome: turmaNome.trim(), serie: turmaSerie.trim() });
+      setTurmaNome('');
+      setTurmaSerie('');
+      setShowTurmaModal(false);
+      setReloadTick((t) => t + 1);
+    } catch (err) {
+      console.error('Falha ao criar turma:', err);
+      setModalError('Não foi possível criar a turma. Tente novamente.');
+    } finally {
+      setSaving(false);
+    }
   };
 
-  const handleCreateAluno = () => {
-    if (!alunoName.trim() || !alunoClassId) return;
-    addStudent(alunoName, alunoEmail, alunoClassId);
-    setAlunoName(''); setAlunoEmail(''); setShowAlunoModal(false);
+  const handleAdicionarAluno = async () => {
+    if (!alunoEmail.trim() || !selectedTurma) return;
+    setSaving(true);
+    setModalError(null);
+    try {
+      await api.post(`/professor/turmas/${selectedTurma}/alunos/`, { email: alunoEmail.trim() });
+      setAlunoEmail('');
+      setShowAlunoModal(false);
+      setReloadTick((t) => t + 1);
+    } catch (err: unknown) {
+      const detail =
+        typeof err === 'object' && err !== null && 'response' in err
+          ? (err as { response?: { data?: { detail?: string } } }).response?.data?.detail
+          : undefined;
+      setModalError(detail ?? 'Não foi possível adicionar o aluno.');
+    } finally {
+      setSaving(false);
+    }
   };
+
+  const alunos = relatorio?.alunos ?? [];
+  const palavrasErradas = relatorio?.palavras_mais_erradas ?? [];
+  const altoDesempenho = alunos.filter((a) => a.respondidas >= 3 && a.aproveitamento >= 80).length;
+  const precisamAjuda = alunos.filter((a) => a.respondidas > 0 && a.aproveitamento < 50).length;
+  const maxOcorrencias = Math.max(...palavrasErradas.map((p) => p.ocorrencias), 1);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-yellow-50 to-red-50">
@@ -98,7 +151,7 @@ export function ProfessorDashboard() {
           <div className="flex items-center gap-2 sm:gap-4 shrink-0">
             <div className="text-right hidden sm:block">
               <div className="text-sm text-muted-foreground">Prof.</div>
-              <div>{usuario?.username}</div>
+              <div>{usuario?.first_name?.trim() || usuario?.username}</div>
             </div>
             <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white shadow">
               <User className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -111,56 +164,75 @@ export function ProfessorDashboard() {
       </header>
 
       <main className="max-w-7xl mx-auto px-3 sm:px-4 py-4 sm:py-8">
-        {/* Seletor de Turma + Ações */}
+        {/* Seletor de turma + ações */}
         <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-3 sm:p-5 mb-4 sm:mb-6 flex flex-col gap-3 sm:gap-4 md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
             <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
-            <span className="text-sm sm:text-base text-muted-foreground">Turma selecionada:</span>
-            {myTurmas.length === 0 ? (
-              <span className="text-muted-foreground italic">Nenhuma turma criada</span>
-            ) : (
-              <div className="flex flex-wrap gap-2">
-                {myTurmas.map((t) => (
-                  <button
-                    key={t.id}
-                    onClick={() => setSelectedClassId(t.id)}
-                    className={`px-4 py-2 rounded-xl transition-all ${
-                      selectedClassId === t.id
-                        ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-md'
-                        : 'bg-gray-100 hover:bg-gray-200'
-                    }`}
-                  >
-                    {t.name}
-                  </button>
-                ))}
-              </div>
-            )}
+            <span className="text-sm sm:text-base text-muted-foreground">Turma:</span>
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => setSelectedTurma(null)}
+                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl transition-all text-sm ${
+                  selectedTurma === null
+                    ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-md'
+                    : 'bg-gray-100 hover:bg-gray-200'
+                }`}
+              >
+                Geral
+              </button>
+              {turmas.map((t) => (
+                <button
+                  key={t.id}
+                  onClick={() => setSelectedTurma(t.id)}
+                  className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl transition-all text-sm ${
+                    selectedTurma === t.id
+                      ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-md'
+                      : 'bg-gray-100 hover:bg-gray-200'
+                  }`}
+                >
+                  {t.nome} ({t.total_alunos})
+                </button>
+              ))}
+            </div>
           </div>
           <div className="flex gap-2">
             <button
-              onClick={() => setShowTurmaModal(true)}
+              onClick={() => { setModalError(null); setShowTurmaModal(true); }}
               className="px-3 sm:px-4 py-2 bg-yellow-400 text-white rounded-xl hover:bg-yellow-500 transition-colors flex items-center gap-1.5 sm:gap-2 shadow-md text-sm sm:text-base"
             >
-              <Plus className="w-4 h-4" /> <span className="hidden xs:inline">Nova</span> Turma
+              <Plus className="w-4 h-4" /> Nova Turma
             </button>
             <button
-              onClick={() => { setAlunoClassId(selectedClassId); setShowAlunoModal(true); }}
-              disabled={myTurmas.length === 0}
+              onClick={() => { setModalError(null); setShowAlunoModal(true); }}
+              disabled={!selectedTurma}
+              title={!selectedTurma ? 'Selecione uma turma para adicionar alunos' : undefined}
               className="px-3 sm:px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors flex items-center gap-1.5 sm:gap-2 shadow-md disabled:opacity-50 text-sm sm:text-base"
             >
-              <Plus className="w-4 h-4" /> <span className="hidden sm:inline">Cadastrar</span> Aluno
+              <Plus className="w-4 h-4" /> <span className="hidden sm:inline">Adicionar</span> Aluno
             </button>
           </div>
         </div>
 
-        {selectedClassId ? (
+        {loading && (
+          <div className="flex items-center justify-center gap-2 py-20 text-muted-foreground">
+            <Loader2 className="w-6 h-6 animate-spin" /> Carregando relatório...
+          </div>
+        )}
+
+        {!loading && error && (
+          <div className="p-4 bg-red-50 border-l-4 border-red-500 rounded-xl text-sm text-red-700">
+            {error}
+          </div>
+        )}
+
+        {!loading && !error && relatorio && (
           <>
             {/* Stats */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 mb-4 sm:mb-8">
               {[
-                { icon: Users, label: 'Alunos na Turma', value: String(totalStudents), bg: 'bg-blue-100', text: 'text-blue-600', border: 'border-blue-600' },
-                { icon: TrendingUp, label: 'Média da Turma', value: `${avgPct}%`, bg: 'bg-yellow-100', text: 'text-yellow-600', border: 'border-yellow-400' },
-                { icon: Award, label: 'Alto Desempenho', value: String(concluidos), bg: 'bg-green-100', text: 'text-green-600', border: 'border-green-500' },
+                { icon: Users, label: 'Alunos', value: String(relatorio.total_alunos), bg: 'bg-blue-100', text: 'text-blue-600', border: 'border-blue-600' },
+                { icon: TrendingUp, label: 'Taxa de Acerto', value: `${relatorio.taxa_acerto}%`, bg: 'bg-yellow-100', text: 'text-yellow-600', border: 'border-yellow-400' },
+                { icon: Award, label: 'Alto Desempenho', value: String(altoDesempenho), bg: 'bg-green-100', text: 'text-green-600', border: 'border-green-500' },
                 { icon: AlertCircle, label: 'Precisam Ajuda', value: String(precisamAjuda), bg: 'bg-red-100', text: 'text-red-600', border: 'border-red-500' },
               ].map((stat, i) => (
                 <div key={i} className={`bg-white rounded-xl sm:rounded-2xl p-3 sm:p-5 shadow-lg border-l-4 ${stat.border} hover:shadow-xl transition-shadow`}>
@@ -177,128 +249,98 @@ export function ProfessorDashboard() {
               ))}
             </div>
 
-            {/* Gráficos */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-6 mb-4 sm:mb-8">
-              {/* Gráfico de erros — destaque para o que mais erram */}
+            {/* Gráfico + Resumo */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-6 mb-4 sm:mb-8">
+              {/* Palavras mais erradas (US25) */}
               <div className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-6 shadow-lg lg:col-span-2">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-3 sm:mb-4 gap-2">
                   <div>
-                    <h3 className="text-base sm:text-xl">Onde os alunos mais erram</h3>
-                    <p className="text-xs sm:text-sm text-muted-foreground">Tópicos ordenados pelo número de erros</p>
+                    <h3 className="text-base sm:text-xl">Palavras que os alunos mais erram</h3>
+                    <p className="text-xs sm:text-sm text-muted-foreground">Combinações inválidas mais submetidas</p>
                   </div>
                   <div className="px-2 sm:px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs sm:text-sm self-start sm:self-auto">
                     Foco em revisão
                   </div>
                 </div>
-                {errorsByTopic.length === 0 ? (
-                  <div className="text-center text-muted-foreground py-12">
-                    Esta turma ainda não respondeu nenhuma questão.
+                {palavrasErradas.length === 0 ? (
+                  <div className="text-center text-muted-foreground py-12 text-sm">
+                    Os alunos ainda não submeteram combinações inválidas.
                   </div>
                 ) : (
-                  <ResponsiveContainer width="100%" height={250}>
-                    <BarChart data={errorsByTopic} layout="vertical" margin={{ left: 0, right: 10 }}>
+                  <ResponsiveContainer width="100%" height={260}>
+                    <BarChart data={palavrasErradas} layout="vertical" margin={{ left: 0, right: 10 }}>
                       <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-                      <XAxis type="number" />
-                      <YAxis type="category" dataKey="topico" width={100} />
+                      <XAxis type="number" allowDecimals={false} />
+                      <YAxis type="category" dataKey="palavra" width={100} />
                       <Tooltip />
-                      <Legend />
-                      <Bar dataKey="erros" name="Erros" radius={[0, 8, 8, 0]}>
-                        {errorsByTopic.map((entry, idx) => {
-                          const intensity = entry.erros / maxErros;
+                      <Bar dataKey="ocorrencias" name="Ocorrências" radius={[0, 8, 8, 0]}>
+                        {palavrasErradas.map((entry, idx) => {
+                          const intensity = entry.ocorrencias / maxOcorrencias;
                           const color = intensity > 0.7 ? '#ef4444' : intensity > 0.4 ? '#fbbf24' : '#3b82f6';
                           return <Cell key={idx} fill={color} />;
                         })}
                       </Bar>
-                      <Bar dataKey="acertos" name="Acertos" fill="#86efac" radius={[0, 8, 8, 0]} />
                     </BarChart>
                   </ResponsiveContainer>
                 )}
               </div>
 
-              <div className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-6 shadow-lg">
-                <h3 className="text-base sm:text-xl mb-3 sm:mb-4">Evolução por Data</h3>
-                {evolutionData.length === 0 ? (
-                  <div className="text-center text-muted-foreground py-8 sm:py-12 text-sm">Sem dados ainda</div>
-                ) : (
-                  <ResponsiveContainer width="100%" height={220}>
-                    <LineChart data={evolutionData}>
-                      <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-                      <XAxis dataKey="date" />
-                      <YAxis />
-                      <Tooltip />
-                      <Legend />
-                      <Line type="monotone" dataKey="acertos" stroke="#2563eb" strokeWidth={3} name="Acertos" />
-                      <Line type="monotone" dataKey="erros" stroke="#ef4444" strokeWidth={3} name="Erros" />
-                    </LineChart>
-                  </ResponsiveContainer>
-                )}
-              </div>
-
+              {/* Resumo geral */}
               <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg">
-                <h3 className="text-base sm:text-xl mb-3 sm:mb-4">Resumo da Turma</h3>
+                <h3 className="text-base sm:text-xl mb-3 sm:mb-4">Resumo Geral</h3>
                 <div className="space-y-4">
                   <div>
-                    <div className="flex justify-between mb-1"><span>Questões respondidas</span><span>{totalAnswers}</span></div>
+                    <div className="flex justify-between mb-1"><span>Tentativas registradas</span><span>{relatorio.total_tentativas}</span></div>
                     <div className="bg-white/20 rounded-full h-2 overflow-hidden">
-                      <div className="bg-yellow-400 h-full" style={{ width: `${Math.min(100, totalAnswers * 5)}%` }} />
+                      <div className="bg-yellow-400 h-full" style={{ width: `${Math.min(100, relatorio.total_tentativas * 5)}%` }} />
                     </div>
                   </div>
                   <div>
-                    <div className="flex justify-between mb-1"><span>Taxa de acerto</span><span>{avgPct}%</span></div>
+                    <div className="flex justify-between mb-1"><span>Taxa de acerto</span><span>{relatorio.taxa_acerto}%</span></div>
                     <div className="bg-white/20 rounded-full h-2 overflow-hidden">
-                      <div className="bg-yellow-400 h-full" style={{ width: `${avgPct}%` }} />
+                      <div className="bg-yellow-400 h-full" style={{ width: `${relatorio.taxa_acerto}%` }} />
                     </div>
                   </div>
                   <div className="pt-2 text-sm opacity-90">
-                    {errorsByTopic[0]
-                      ? `📌 O tópico "${errorsByTopic[0].topico}" é o que mais precisa de atenção.`
-                      : '📌 Aguardando respostas dos alunos.'}
+                    {palavrasErradas[0]
+                      ? `📌 A palavra "${palavrasErradas[0].palavra}" é a que mais gera erros.`
+                      : '📌 Aguardando submissões dos alunos.'}
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Lista de alunos */}
+            {/* Lista de alunos (US24) */}
             <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-3 sm:p-6">
               <h3 className="text-base sm:text-xl mb-3 sm:mb-4">Acompanhamento dos Alunos</h3>
-              {classStudents.length === 0 ? (
+              {alunos.length === 0 ? (
                 <div className="text-center text-muted-foreground py-6 sm:py-8 text-sm">
-                  Nenhum aluno cadastrado nesta turma. Use o botão "Cadastrar Aluno".
+                  {selectedTurma ? 'Nenhum aluno nesta turma ainda. Use "Adicionar Aluno".' : 'Nenhum aluno cadastrado ainda.'}
                 </div>
               ) : (
                 <>
                   {/* Mobile: cards */}
                   <div className="sm:hidden space-y-3">
-                    {classStudents.map((s) => {
-                      const sh = classHistory.filter((h) => h.studentId === s.id);
-                      const total = sh.length;
-                      const c = sh.filter((h) => h.correct).length;
-                      const pct = total ? Math.round((c / total) * 100) : 0;
-                      let status = 'Sem dados', color = 'bg-gray-200 text-gray-700', barColor = 'bg-gray-400';
-                      if (total > 0) {
-                        if (pct >= 80) { status = 'Excelente'; color = 'bg-blue-100 text-blue-700'; barColor = 'bg-blue-600'; }
-                        else if (pct >= 65) { status = 'Bom'; color = 'bg-yellow-100 text-yellow-700'; barColor = 'bg-yellow-500'; }
-                        else if (pct >= 50) { status = 'Regular'; color = 'bg-orange-100 text-orange-700'; barColor = 'bg-orange-500'; }
-                        else { status = 'Precisa Ajuda'; color = 'bg-red-100 text-red-700'; barColor = 'bg-red-500'; }
-                      }
+                    {alunos.map((a) => {
+                      const { status, color, barColor } = statusDoAluno(a.respondidas, a.aproveitamento);
                       return (
-                        <div key={s.id} className="border border-border rounded-xl p-3">
+                        <div key={a.id} className="border border-border rounded-xl p-3">
                           <div className="flex items-center gap-3 mb-2">
                             <div className={`w-9 h-9 ${barColor} rounded-full flex items-center justify-center text-white text-sm`}>
-                              {s.name.charAt(0)}
+                              {a.nome.charAt(0).toUpperCase()}
                             </div>
                             <div className="min-w-0 flex-1">
-                              <div className="text-sm truncate">{s.name}</div>
-                              <div className="text-xs text-muted-foreground truncate">{s.email}</div>
+                              <div className="text-sm truncate">{a.nome}</div>
+                              <div className="text-xs text-muted-foreground truncate">{a.email}</div>
                             </div>
                             <span className={`text-xs px-2 py-0.5 rounded-full shrink-0 ${color}`}>{status}</span>
                           </div>
                           <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                            <span>{total} resp.</span>
+                            <span>{a.respondidas} resp.</span>
                             <div className="flex-1 bg-gray-200 rounded-full h-1.5 overflow-hidden">
-                              <div className={`${barColor} h-full`} style={{ width: `${pct}%` }} />
+                              <div className={`${barColor} h-full`} style={{ width: `${a.aproveitamento}%` }} />
                             </div>
-                            <span>{pct}%</span>
+                            <span>{a.aproveitamento}%</span>
                           </div>
                         </div>
                       );
@@ -316,38 +358,28 @@ export function ProfessorDashboard() {
                         </tr>
                       </thead>
                       <tbody>
-                        {classStudents.map((s) => {
-                          const sh = classHistory.filter((h) => h.studentId === s.id);
-                          const total = sh.length;
-                          const c = sh.filter((h) => h.correct).length;
-                          const pct = total ? Math.round((c / total) * 100) : 0;
-                          let status = 'Sem dados', color = 'bg-gray-200 text-gray-700', barColor = 'bg-gray-400';
-                          if (total > 0) {
-                            if (pct >= 80) { status = 'Excelente'; color = 'bg-blue-100 text-blue-700'; barColor = 'bg-blue-600'; }
-                            else if (pct >= 65) { status = 'Bom'; color = 'bg-yellow-100 text-yellow-700'; barColor = 'bg-yellow-500'; }
-                            else if (pct >= 50) { status = 'Regular'; color = 'bg-orange-100 text-orange-700'; barColor = 'bg-orange-500'; }
-                            else { status = 'Precisa Ajuda'; color = 'bg-red-100 text-red-700'; barColor = 'bg-red-500'; }
-                          }
+                        {alunos.map((a) => {
+                          const { status, color, barColor } = statusDoAluno(a.respondidas, a.aproveitamento);
                           return (
-                            <tr key={s.id} className="border-b border-border last:border-0">
+                            <tr key={a.id} className="border-b border-border last:border-0">
                               <td className="py-4">
                                 <div className="flex items-center gap-3">
                                   <div className={`w-10 h-10 ${barColor} rounded-full flex items-center justify-center text-white`}>
-                                    {s.name.charAt(0)}
+                                    {a.nome.charAt(0).toUpperCase()}
                                   </div>
                                   <div>
-                                    <div>{s.name}</div>
-                                    <div className="text-xs text-muted-foreground">{s.email}</div>
+                                    <div>{a.nome}</div>
+                                    <div className="text-xs text-muted-foreground">{a.email}</div>
                                   </div>
                                 </div>
                               </td>
-                              <td className="py-4">{total}</td>
+                              <td className="py-4">{a.respondidas}</td>
                               <td className="py-4">
                                 <div className="flex items-center gap-3 min-w-40">
                                   <div className="flex-1 bg-gray-200 rounded-full h-2 overflow-hidden">
-                                    <div className={`${barColor} h-full`} style={{ width: `${pct}%` }} />
+                                    <div className={`${barColor} h-full`} style={{ width: `${a.aproveitamento}%` }} />
                                   </div>
-                                  <span className="text-sm w-10">{pct}%</span>
+                                  <span className="text-sm w-10">{a.aproveitamento}%</span>
                                 </div>
                               </td>
                               <td className="py-4">
@@ -363,20 +395,6 @@ export function ProfessorDashboard() {
               )}
             </div>
           </>
-        ) : (
-          <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-8 sm:p-12 text-center">
-            <GraduationCap className="w-12 h-12 sm:w-16 sm:h-16 text-blue-600 mx-auto mb-3 sm:mb-4" />
-            <h3 className="text-lg sm:text-xl mb-2">Crie sua primeira turma</h3>
-            <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
-              Você ainda não tem turmas. Clique em "Nova Turma" para começar.
-            </p>
-            <button
-              onClick={() => setShowTurmaModal(true)}
-              className="px-5 sm:px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors inline-flex items-center gap-2 text-sm sm:text-base"
-            >
-              <Plus className="w-5 h-5" /> Criar Turma
-            </button>
-          </div>
         )}
       </main>
 
@@ -387,14 +405,14 @@ export function ProfessorDashboard() {
             <div>
               <label className="block mb-2 text-sm">Nome da Turma</label>
               <input
-                value={turmaName}
-                onChange={(e) => setTurmaName(e.target.value)}
+                value={turmaNome}
+                onChange={(e) => setTurmaNome(e.target.value)}
                 placeholder="Ex: 8º Ano C"
                 className="w-full px-4 py-3 bg-input-background rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
             <div>
-              <label className="block mb-2 text-sm">Série</label>
+              <label className="block mb-2 text-sm">Série (opcional)</label>
               <input
                 value={turmaSerie}
                 onChange={(e) => setTurmaSerie(e.target.value)}
@@ -402,31 +420,30 @@ export function ProfessorDashboard() {
                 className="w-full px-4 py-3 bg-input-background rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
+            {modalError && (
+              <div className="p-3 bg-red-50 border-l-4 border-red-500 rounded-lg text-sm text-red-700">{modalError}</div>
+            )}
             <button
-              onClick={handleCreateTurma}
-              className="w-full py-3 bg-primary text-white rounded-xl hover:bg-primary/90 transition-colors"
+              onClick={handleCriarTurma}
+              disabled={saving || !turmaNome.trim()}
+              className="w-full py-3 bg-primary text-white rounded-xl hover:bg-primary/90 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
             >
+              {saving && <Loader2 className="w-5 h-5 animate-spin" />}
               Criar Turma
             </button>
           </div>
         </Modal>
       )}
 
-      {/* Modal Cadastrar Aluno */}
+      {/* Modal Adicionar Aluno */}
       {showAlunoModal && (
-        <Modal title="Cadastrar Aluno" onClose={() => setShowAlunoModal(false)}>
+        <Modal title="Adicionar Aluno à Turma" onClose={() => setShowAlunoModal(false)}>
           <div className="space-y-4">
+            <p className="text-sm text-muted-foreground">
+              Informe o email de um aluno já cadastrado para incluí-lo na turma selecionada.
+            </p>
             <div>
-              <label className="block mb-2 text-sm">Nome Completo</label>
-              <input
-                value={alunoName}
-                onChange={(e) => setAlunoName(e.target.value)}
-                placeholder="Nome do aluno"
-                className="w-full px-4 py-3 bg-input-background rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-            </div>
-            <div>
-              <label className="block mb-2 text-sm">Email</label>
+              <label className="block mb-2 text-sm">Email do aluno</label>
               <input
                 type="email"
                 value={alunoEmail}
@@ -435,23 +452,16 @@ export function ProfessorDashboard() {
                 className="w-full px-4 py-3 bg-input-background rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
-            <div>
-              <label className="block mb-2 text-sm">Turma</label>
-              <select
-                value={alunoClassId}
-                onChange={(e) => setAlunoClassId(e.target.value)}
-                className="w-full px-4 py-3 bg-input-background rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary"
-              >
-                {myTurmas.map((t) => (
-                  <option key={t.id} value={t.id}>{t.name}</option>
-                ))}
-              </select>
-            </div>
+            {modalError && (
+              <div className="p-3 bg-red-50 border-l-4 border-red-500 rounded-lg text-sm text-red-700">{modalError}</div>
+            )}
             <button
-              onClick={handleCreateAluno}
-              className="w-full py-3 bg-primary text-white rounded-xl hover:bg-primary/90 transition-colors"
+              onClick={handleAdicionarAluno}
+              disabled={saving || !alunoEmail.trim()}
+              className="w-full py-3 bg-primary text-white rounded-xl hover:bg-primary/90 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
             >
-              Cadastrar Aluno
+              {saving && <Loader2 className="w-5 h-5 animate-spin" />}
+              Adicionar Aluno
             </button>
           </div>
         </Modal>

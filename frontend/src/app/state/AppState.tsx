@@ -15,6 +15,7 @@ export type Usuario = {
   id: number;
   email: string;
   username: string;
+  first_name: string;
   tipo: TipoUsuario;
 };
 
