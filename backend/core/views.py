@@ -1,7 +1,14 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny, BasePermission
-from rest_framework.generics import ListAPIView, CreateAPIView, ListCreateAPIView, RetrieveAPIView
+from rest_framework.generics import (
+    ListAPIView,
+    CreateAPIView,
+    ListCreateAPIView,
+    RetrieveAPIView,
+    DestroyAPIView,
+    RetrieveDestroyAPIView,
+)
 from rest_framework import status
 
 from urllib.parse import urlsplit
@@ -18,11 +25,13 @@ from core.models import Morfema, PalavraValida, Tentativa, Usuario, Turma, Ativi
 from core.serializers import (
     UsuarioSerializer,
     MorfemaSerializer,
+    PalavraValidaSerializer,
     ValidarPalavraSerializer,
     RegistroSerializer,
     TurmaSerializer,
     AtividadeSerializer,
     AtividadeDetailSerializer,
+    AtividadeCreateSerializer,
 )
 
 
@@ -50,15 +59,45 @@ class RegistroView(CreateAPIView):
     permission_classes = [AllowAny]
 
 
-class MorfemaListView(ListAPIView):
+class MorfemaListCreateView(ListCreateAPIView):
     queryset = Morfema.objects.all().order_by("tipo", "texto")
     serializer_class = MorfemaSerializer
-    permission_classes = [IsAuthenticated]
     # A paleta de blocos precisa SEMPRE do catálogo completo de morfemas.
     # Sem isto, a paginação global do DRF (PAGE_SIZE=10) corta a lista; como os
     # sufixos ficam por último na ordenação (prefixo < radical < sufixo), eles
     # desaparecem assim que o catálogo passa de 10 itens.
     pagination_class = None
+
+    def get_permissions(self):
+        # Alunos listam (jogo); apenas professores cadastram (RF04).
+        if self.request.method == "POST":
+            return [IsProfessor()]
+        return [IsAuthenticated()]
+
+
+class MorfemaDestroyView(DestroyAPIView):
+    """Remove um morfema do catálogo (RF06)."""
+
+    queryset = Morfema.objects.all()
+    serializer_class = MorfemaSerializer
+    permission_classes = [IsProfessor]
+
+
+class PalavraValidaListCreateView(ListCreateAPIView):
+    """Lista e cadastra palavras válidas (RF08). Restrito a professores."""
+
+    queryset = PalavraValida.objects.all().order_by("texto")
+    serializer_class = PalavraValidaSerializer
+    permission_classes = [IsProfessor]
+    pagination_class = None
+
+
+class PalavraValidaDestroyView(DestroyAPIView):
+    """Remove uma palavra válida do catálogo (RF10)."""
+
+    queryset = PalavraValida.objects.all()
+    serializer_class = PalavraValidaSerializer
+    permission_classes = [IsProfessor]
 
 
 class ValidarPalavraView(APIView):
@@ -92,11 +131,13 @@ class ValidarPalavraView(APIView):
         })
 
 
-class AtividadeListView(ListAPIView):
-    """Lista atividades ativas (RF16). Filtra por ?tipo=quiz|montagem."""
+class AtividadeListCreateView(ListCreateAPIView):
+    """Lista atividades ativas (RF16) e cadastra novas (RF12).
 
-    serializer_class = AtividadeSerializer
-    permission_classes = [IsAuthenticated]
+    GET: qualquer usuário autenticado (o aluno lista para jogar).
+    POST: apenas professor, com as perguntas aninhadas.
+    """
+
     pagination_class = None
 
     def get_queryset(self):
@@ -106,13 +147,28 @@ class AtividadeListView(ListAPIView):
             qs = qs.filter(tipo=tipo)
         return qs
 
+    def get_serializer_class(self):
+        return AtividadeCreateSerializer if self.request.method == "POST" else AtividadeSerializer
 
-class AtividadeDetailView(RetrieveAPIView):
-    """Detalha uma atividade com suas perguntas (RF16)."""
+    def get_permissions(self):
+        if self.request.method == "POST":
+            return [IsProfessor()]
+        return [IsAuthenticated()]
 
-    queryset = Atividade.objects.filter(ativa=True)
+
+class AtividadeRetrieveDestroyView(RetrieveDestroyAPIView):
+    """Detalha uma atividade com perguntas (RF16) e permite removê-la (RF14).
+
+    GET: qualquer autenticado. DELETE: apenas professor.
+    """
+
+    queryset = Atividade.objects.all()
     serializer_class = AtividadeDetailSerializer
-    permission_classes = [IsAuthenticated]
+
+    def get_permissions(self):
+        if self.request.method == "DELETE":
+            return [IsProfessor()]
+        return [IsAuthenticated()]
 
 
 class HistoricoAlunoView(APIView):

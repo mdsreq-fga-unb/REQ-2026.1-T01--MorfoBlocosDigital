@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from core.models import Usuario, Morfema, Turma, Atividade, Pergunta
+from core.models import Usuario, Morfema, PalavraValida, Turma, Atividade, Pergunta
 
 
 class UsuarioSerializer(serializers.ModelSerializer):
@@ -13,6 +13,12 @@ class MorfemaSerializer(serializers.ModelSerializer):
         model = Morfema
         fields = ["id", "texto", "tipo", "cor"]
 
+
+
+class PalavraValidaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PalavraValida
+        fields = ["id", "texto", "processo_morfologico"]
 
 
 class TurmaSerializer(serializers.ModelSerializer):
@@ -44,6 +50,30 @@ class AtividadeDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Atividade
         fields = ["id", "titulo", "tipo", "nivel", "perguntas"]
+
+
+class PerguntaWriteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Pergunta
+        fields = ["enunciado", "alternativas", "correta", "explicacao", "topico"]
+
+
+class AtividadeCreateSerializer(serializers.ModelSerializer):
+    """Criação de atividade com perguntas aninhadas (RF12)."""
+
+    perguntas = PerguntaWriteSerializer(many=True, required=False)
+
+    class Meta:
+        model = Atividade
+        fields = ["id", "titulo", "tipo", "nivel", "ativa", "perguntas"]
+        read_only_fields = ["id"]
+
+    def create(self, validated_data):
+        perguntas = validated_data.pop("perguntas", [])
+        atividade = Atividade.objects.create(**validated_data)
+        for p in perguntas:
+            Pergunta.objects.create(atividade=atividade, **p)
+        return atividade
 
 
 class BlocoSerializer(serializers.Serializer):
