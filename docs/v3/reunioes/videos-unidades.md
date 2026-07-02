@@ -14,3 +14,8 @@ Reunião feita via Teams (18/05/2026).
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9_Mh7zA5Qlc?si=MUf6_zo7OYpIJaRN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Reunião realizada via Teams (15/06/2026)
+
+## **Entrega - Unidade IV**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wHIhAKuo3tE?si=Q3dyZuttW2nvYYQd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
