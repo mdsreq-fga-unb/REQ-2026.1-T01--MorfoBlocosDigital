@@ -1,0 +1,5391 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentação do projeto MorfoBlocos Digital - Engenharia de Software">
+      
+      
+        <meta name="author" content="Equipe G4">
+      
+      
+        <link rel="canonical" href="https://mdsreq-fga-unb.github.io/REQ-2026.1-T01--MorfoBlocosDigital/v3/userstories/">
+      
+      
+        <link rel="prev" href="../visao-produto/backlog/">
+      
+      
+        <link rel="next" href="../visao-produto/licoes-aprendidas/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>User Stories - MorfoBlocos Digital</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#documento-de-historias-de-usuario-user-stories-e-criterios-de-aceitacao" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="MorfoBlocos Digital" class="md-header__button md-logo" aria-label="MorfoBlocos Digital" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MorfoBlocos Digital
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              User Stories
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="red"  aria-label="Modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="yellow"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../v1/" class="md-tabs__link">
+          
+  
+  
+  Unidade II
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../v2/" class="md-tabs__link">
+          
+  
+  
+  Unidade III
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Unidade IV
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MorfoBlocos Digital" class="md-nav__button md-logo" aria-label="MorfoBlocos Digital" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MorfoBlocos Digital
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade II
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidade II
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1/reunioes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reuniões
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v1/visao_produto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão do Produto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade III
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidade III
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão do Produto
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Visão do Produto
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v2/visao-produto/cenario-atual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cenário Atual do Cliente e do Negócio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v2/visao-produto/solucao-proposta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solução Proposta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v2/visao-produto/intervencao-social/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intervenção Social
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v2/visao-produto/estrategias-esw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estratégias de Engenharia de Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v2/visao-produto/eng-requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engenharia de Requisitos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v2/visao-produto/cronograma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cronograma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v2/visao-produto/interacao-eqp-cliente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interação entre a Equipe e Cliente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v2/visao-produto/requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requisitos de Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v2/visao-produto/dor-dod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Definition of Ready (DoR) e Definition of Done (DoD)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v2/visao-produto/backlog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backlog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v2/visao-produto/licoes-aprendidas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lições Aprendidas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprints
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sprints
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v2/sprints/sprint1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v2/sprints/sprint2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v2/sprints/sprint3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v2/sprints/sprint4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v2/reunioes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reuniões
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../v2/status-projeto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Status do projeto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade IV
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidade IV
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../planejamento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Planejamento e Organização
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão do Produto
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Visão do Produto
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visao-produto/cenario-atual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cenário Atual do Cliente e do Negócio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visao-produto/solucao-proposta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solução Proposta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visao-produto/intervencao-social/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intervenção Social
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visao-produto/estrategias-esw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estratégias de Engenharia de Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visao-produto/eng-requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engenharia de Requisitos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visao-produto/cronograma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cronograma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visao-produto/interacao-eqp-cliente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interação entre a Equipe e Cliente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visao-produto/requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requisitos de Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visao-produto/dor-dod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Definition of Ready (DoR) e Definition of Done (DoD)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visao-produto/backlog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backlog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Stories
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Stories
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#us01-autenticacao-de-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US01 - Autenticação de Usuário
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us02-cadastro-de-nova-conta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US02 — Cadastro de Nova Conta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us03-recuperacao-de-senha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US03 - Recuperação de Senha
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us04-cadastro-de-morfemas-no-catalogo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US04 — Cadastro de Morfemas no Catálogo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us05-edicao-de-morfemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US05 — Edição de Morfemas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us06-remocao-de-morfemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US06 — Remoção de Morfemas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us07-listagem-de-morfemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US07 — Listagem de Morfemas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us08-cadastro-de-palavras-validas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US08 — Cadastro de Palavras Válidas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us09-edicao-de-palavras-validas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US09 — Edição de Palavras Válidas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us10-remocao-de-palavras-valida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US10 — Remoção de Palavras Válida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us11-listagem-de-palavras-validas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US11 — Listagem de Palavras Válidas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us12-cadastro-de-atividades-pedagogicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US12 — Cadastro de Atividades Pedagógicas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us13-edicao-de-atividades-pedagogicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US13 — Edição de Atividades Pedagógicas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us14-remocao-de-atividades-pedagogicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US14 — Remoção de Atividades Pedagógicas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us15-listagem-de-atividades-pedagogicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US15 — Listagem de Atividades Pedagógicas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us16-atividades-pedagogicas-do-tipo-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US16 — Atividades Pedagógicas do Tipo Quiz
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us17-atividades-pedagogicas-de-montagem-de-palavras-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US17 — Atividades Pedagógicas de Montagem de Palavras (Interface)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us18-consulta-de-conteudos-morfologicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US18 - Consulta de Conteúdos Morfológicos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us19-resultado-da-validacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US19 — Resultado da Validação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us20-feedback-pedagogico-estrutural" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US20 — Feedback Pedagógico Estrutural
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us21-historico-de-desempenho-do-estudante" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US21 — Histórico de Desempenho do Estudante
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us22-historico-de-pontuacoes-do-estudante" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US22 — Histórico de Pontuações do Estudante
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us23-criacao-de-turmas-visao-do-professor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US23 — Criação de Turmas (Visão do Professor)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us24-relatorio-analitico-consolidado-da-turma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US24 — Relatório Analítico Consolidado da Turma
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us25-analise-de-erros-frequentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US25 — Análise de Erros Frequentes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visao-produto/licoes-aprendidas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lições Aprendidas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprints
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sprints
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/sprint1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/sprint2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/sprint3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/sprint4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/sprint5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprints/sprint6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reuniões
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reuniões
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reunioes/monitorias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monitorias
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reunioes/cliente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cliente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reunioes/videos-unidades/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entrega das Unidades
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#us01-autenticacao-de-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US01 - Autenticação de Usuário
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us02-cadastro-de-nova-conta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US02 — Cadastro de Nova Conta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us03-recuperacao-de-senha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US03 - Recuperação de Senha
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us04-cadastro-de-morfemas-no-catalogo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US04 — Cadastro de Morfemas no Catálogo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us05-edicao-de-morfemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US05 — Edição de Morfemas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us06-remocao-de-morfemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US06 — Remoção de Morfemas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us07-listagem-de-morfemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US07 — Listagem de Morfemas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us08-cadastro-de-palavras-validas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US08 — Cadastro de Palavras Válidas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us09-edicao-de-palavras-validas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US09 — Edição de Palavras Válidas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us10-remocao-de-palavras-valida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US10 — Remoção de Palavras Válida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us11-listagem-de-palavras-validas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US11 — Listagem de Palavras Válidas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us12-cadastro-de-atividades-pedagogicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US12 — Cadastro de Atividades Pedagógicas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us13-edicao-de-atividades-pedagogicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US13 — Edição de Atividades Pedagógicas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us14-remocao-de-atividades-pedagogicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US14 — Remoção de Atividades Pedagógicas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us15-listagem-de-atividades-pedagogicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US15 — Listagem de Atividades Pedagógicas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us16-atividades-pedagogicas-do-tipo-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US16 — Atividades Pedagógicas do Tipo Quiz
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us17-atividades-pedagogicas-de-montagem-de-palavras-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US17 — Atividades Pedagógicas de Montagem de Palavras (Interface)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us18-consulta-de-conteudos-morfologicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US18 - Consulta de Conteúdos Morfológicos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us19-resultado-da-validacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US19 — Resultado da Validação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us20-feedback-pedagogico-estrutural" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US20 — Feedback Pedagógico Estrutural
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us21-historico-de-desempenho-do-estudante" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US21 — Histórico de Desempenho do Estudante
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us22-historico-de-pontuacoes-do-estudante" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US22 — Histórico de Pontuações do Estudante
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us23-criacao-de-turmas-visao-do-professor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US23 — Criação de Turmas (Visão do Professor)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us24-relatorio-analitico-consolidado-da-turma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US24 — Relatório Analítico Consolidado da Turma
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us25-analise-de-erros-frequentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US25 — Análise de Erros Frequentes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const hash = window.location.hash.replace(/^#/, '');
+  if (!hash) {
+    return;
+  }
+
+  const target = document.getElementById(hash);
+  if (target && target.tagName === 'DETAILS') {
+    target.setAttribute('open', '');
+    setTimeout(function () {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 80);
+  }
+});
+
+window.addEventListener('hashchange', function () {
+  const hash = window.location.hash.replace(/^#/, '');
+  document.querySelectorAll('details.us-dropdown').forEach(function (item) {
+    item.removeAttribute('open');
+  });
+
+  const target = document.getElementById(hash);
+  if (target && target.tagName === 'DETAILS') {
+    target.setAttribute('open', '');
+  }
+});
+</script>
+
+<h1 id="documento-de-historias-de-usuario-user-stories-e-criterios-de-aceitacao">Documento de Histórias de Usuário (User Stories) e Critérios de Aceitação</h1>
+<p><em>Legenda: ✅ = Dentro do MVP / ❌ = Fora do MVP</em></p>
+<details class="us-dropdown" id="us01">
+<summary><strong>US01 — Autenticação de Usuário ✅</strong></summary>
+<h3 id="us01-autenticacao-de-usuario"><strong>US01 - Autenticação de Usuário</strong></h3>
+<blockquote>
+<p><strong>Como</strong> usuário, <strong>quero</strong> efetuar login no sistema utilizando e-mail e senha, <strong>para</strong> acessar minha conta na plataforma de forma segura.</p>
+</blockquote>
+<p><strong>Critérios de Aceitação:</strong></p>
+<ul>
+<li><strong>CA-US01-01:</strong> O sistema deve exigir um e-mail válido e a senha correta; o acesso só é liberado se os dados coincidirem exatamente com o banco de dados.</li>
+<li><strong>CA-US01-02:</strong> Se a senha ou o e-mail estiverem incorretos, o sistema exibe uma mensagem de erro geral ("E-mail ou senha incorretos") por motivos de segurança.</li>
+<li><strong>CA-US01-03:</strong> Após o login bem-sucedido, o sistema gera uma sessão segura por até 1 hora e direciona o usuário automaticamente para a sua tela inicial.</li>
+</ul>
+<p>Verificação do Definition of Ready (DoR) — US01</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pergunta de Auditoria do DoR (Scrum/XP)</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Evidência / Justificativa Técnica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>A User Story é atômica e clara?</strong></td>
+<td style="text-align: left;"><strong>Sim</strong></td>
+<td style="text-align: left;">O escopo foi totalmente isolado. A US01 trata exclusivamente do fluxo de autenticação e validação de credenciais de usuários existentes, sem carregar regras de criação de novas contas ou recuperação de acessos.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Possui Critérios de Aceitação explícitos?</strong></td>
+<td style="text-align: left;"><strong>Sim</strong></td>
+<td style="text-align: left;">Foram definidos os critérios CA-US01-01 a CA-US01-03. Eles cobrem tanto o fluxo feliz quanto o comportamento defensivo em cenários de dados inválidos.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Há rastreabilidade de restrições (RNFs) e Regras de Negócio (RNs)?</strong></td>
+<td style="text-align: left;"><strong>Sim</strong></td>
+<td style="text-align: left;">Mapeamento explícito para respeitar a <strong>RN01</strong>, <strong>RNF04</strong>, <strong>RNF05</strong> e <strong>RNF12</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A prioridade está coerente e justificada?</strong></td>
+<td style="text-align: left;"><strong>Sim</strong></td>
+<td style="text-align: left;">Classificada como <strong>Must Have</strong> via matriz MoSCoW, pois representa a porta de entrada do sistema.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>O esforço foi estimado conjuntamente?</strong></td>
+<td style="text-align: left;"><strong>Sim</strong></td>
+<td style="text-align: left;">O esforço de engenharia foi discutido e pontuado consensualmente em <strong>2 Story Points</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Resolução de dependências validada?</strong></td>
+<td style="text-align: left;"><strong>Sim</strong></td>
+<td style="text-align: left;">A estrutura de dados para verificação de credenciais e o protótipo da interface já estavam homologados antes do início do código.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Status Final:</strong> 🟢 <strong>Done</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em>Critério de Pronto (DoD V4.0)</em></th>
+<th style="text-align: left;"><em>Status</em></th>
+<th style="text-align: left;"><em>Evidência de Implementação e Qualidade</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><em>1. Implementação Arquitetural</em></strong></td>
+<td style="text-align: left;"><strong><em>Concluído</em></strong></td>
+<td style="text-align: left;"><em>Código front-end em React 18+ / TypeScript 5+ e back-end em Python 3.11+ / Django 4.2+ finalizados.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>2. Comunicação via API</em></strong></td>
+<td style="text-align: left;"><strong><em>Concluído</em></strong></td>
+<td style="text-align: left;"><em>O React consome exclusivamente os endpoints REST de geração e renovação de token JWT do Django (RNF05).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>3. Operações Django Admin</em></strong></td>
+<td style="text-align: left;"><strong><em>Não aplicável</em></strong></td>
+<td style="text-align: left;"><em>Critério não aplicável para esta história.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>4. Validação de CAs</em></strong></td>
+<td style="text-align: left;"><strong><em>Concluído</em></strong></td>
+<td style="text-align: left;"><em>Critérios CA-US01-01 a CA-US01-03 testados com sucesso.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>5. Garantia das RNs</em></strong></td>
+<td style="text-align: left;"><strong><em>Concluído</em></strong></td>
+<td style="text-align: left;"><em>O sistema emite o token JWT com as credenciais corretas e aciona a RN01.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>6. Validação de RNFs (RNF11)</em></strong></td>
+<td style="text-align: left;"><strong><em>Concluído</em></strong></td>
+<td style="text-align: left;"><em>Interface de login testada e fluida em telas de 360px.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>7. Integração Contínua (CI)</em></strong></td>
+<td style="text-align: left;"><strong><em>Concluído</em></strong></td>
+<td style="text-align: left;"><em>Código integrado à branch principal sem regressões.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>8. Homologação e Validação</em></strong></td>
+<td style="text-align: left;"><strong><em>Concluído</em></strong></td>
+<td style="text-align: left;"><em>Funcionalidade operando em ambiente de produção (Vercel) e validada com a cliente (PO).</em></td>
+</tr>
+</tbody>
+</table>
+<p>Links de Rastreabilidade e Artefatos<br />
+Link no site: <a href="https://req-2026-1-t01-morfo-blocos-digital.vercel.app/">https://req-2026-1-t01-morfo-blocos-digital.vercel.app/</a></p>
+<p><strong>Fluxo de Acesso:</strong>  </p>
+<p>a. Acesse a página inicial da aplicação.  </p>
+<p>b. Localize o formulário de autenticação centralizado na interface principal.  </p>
+<p>c. Preencha os campos obrigatórios (<em>E-mail</em> e <em>Senha</em>).  </p>
+<p>d. Clique no botão de submissão <strong>"Entrar"</strong> para validar as credenciais e iniciar a sessão.</p>
+<p><img alt="US01" src="../img/us01.png" width="35%" /></p>
+</details>
+<details class="us-dropdown" id="us02">
+<summary><strong>US02 — Cadastro de Nova Conta ✅</strong></summary>
+<h3 id="us02-cadastro-de-nova-conta">US02 — Cadastro de Nova Conta</h3>
+<blockquote>
+<p><strong>Como</strong> usuário, <strong>quero</strong> cadastrar uma nova conta no sistema inserindo meus dados, <strong>para</strong> que meu perfil seja criado e eu possa começar a usar a plataforma.</p>
+</blockquote>
+<p><strong>Critérios de Aceitação (CA)</strong></p>
+<ul>
+<li><strong>CA-US02-01:</strong> O sistema exige obrigatoriamente e-mail, senha e a escolha do perfil (se é Estudante ou Professor), bloqueando o envio de campos vazios.</li>
+<li><strong>CA-US02-02:</strong> O sistema impede o cadastro de um e-mail que já esteja previamente registrado na base de dados.</li>
+<li><strong>CA-US02-03:</strong> O sistema deve validar o formato estrutural do e-mail (ex: nome@dominio.com), exibindo um alerta visual em caso de erro.</li>
+<li><strong>CA-US02-04:</strong> O sistema exige que o campo de senha e a confirmação de senha sejam rigorosamente iguais.</li>
+<li><strong>CA-US02-05:</strong> A interface da tela de cadastro deve ser totalmente responsiva em ecrãs/telas a partir de <strong>360px</strong> de largura, sem qualquer sobreposição de textos, campos desalinhados ou surgimento de barra de rolagem horizontal (<em>scroll</em> lateral).</li>
+</ul>
+<p>Verificação do Definition of Ready (DoR) — US02</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em>Pergunta de Auditoria do DoR (Scrum/XP)</em></th>
+<th style="text-align: left;"><em>Status</em></th>
+<th style="text-align: left;"><em>Evidência / Justificativa Técnica</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><em>A User Story é atômica e clara?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>O escopo foi isolado com foco único na criação de credenciais de acesso. O fluxo de autenticação/login ficou restrito à US01, eliminando dependências cruzadas ou a criação de um Épico camuflado.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Possui Critérios de Aceitação explícitos?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Foram especificados os critérios de CA-US02-01 a CA-US02-05, cobrindo os fluxos de sucesso, validações obrigatórias de campos e a restrição de tamanho de tela.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Há rastreabilidade de restrições (RNFs) e Regras de Negócio (RNs)?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Mapeamento explícito para respeitar a RN02 (Unicidade de e-mail no banco), RNF04 (Criptografia de senhas), RNF05 (Comunicação via API REST), RNF11 (Responsividade 360px) e RNF12 (Acesso via navegador por HTTP/HTTPS).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>A prioridade está coerente e justificada?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Classificada como Must Have via matriz MoSCoW, pois a criação de perfis é um pré-requisito fundamental para que os usuários utilizem as demais funcionalidades do ecossistema.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>O esforço foi estimado conjuntamente?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>O esforço técnico para construir o formulário de cadastro, aplicar as validações de input em tempo real e criar a rota de persistência foi discutido pelo time e pontuado em 2 Story Points.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Resolução de dependências validada?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Os modelos de dados para criação de usuários e o protótipo de alta fidelidade da tela de cadastro já estavam homologados pela PO e disponíveis antes do início da codificação.</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em>Critério de Pronto (DoD)</em></th>
+<th style="text-align: left;"><em>Status</em></th>
+<th style="text-align: left;"><em>Evidência de Implementação e Qualidade</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><em>1. Implementação Arquitetural</em></strong></td>
+<td style="text-align: left;"><strong><em>Concluído</em></strong></td>
+<td style="text-align: left;"><em>Componentes do formulário criados e mapeados para persistência no banco de dados PostgreSQL 15+.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>2. Comunicação via API</em></strong></td>
+<td style="text-align: left;"><strong><em>Concluído</em></strong></td>
+<td style="text-align: left;"><em>Rota de POST consumindo o payload de criação de conta e respondendo com os códigos de status REST corretos.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>3. Operações Django Admin</em></strong></td>
+<td style="text-align: left;"><strong><em>Concluído</em></strong></td>
+<td style="text-align: left;"><em>Os novos perfis cadastrados pelo usuário são espelhados com sucesso no painel administrativo padrão do Django.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>4. Validação de CAs</em></strong></td>
+<td style="text-align: left;"><strong><em>Concluído</em></strong></td>
+<td style="text-align: left;"><em>Validação estrutural de inputs obrigatórios, formato de e-mail e checagem de senhas iguais (CA-US02-01 a CA-US02-04).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>5. Garantia das RNs</em></strong></td>
+<td style="text-align: left;"><strong><em>Concluído</em></strong></td>
+<td style="text-align: left;"><em>O banco de dados rejeita cadastros duplicados, garantindo a política invariante da RN02 (unicidade de e-mail).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>6. Validação de RNFs (RNF11)</em></strong></td>
+<td style="text-align: left;"><strong><em>Concluído</em></strong></td>
+<td style="text-align: left;"><em><strong>Resolvido:</strong> O seletor de perfil foi refatorado. Os botões adaptam-se em telas de 360px sem gerar quebras ou scroll lateral (CA-US02-05).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>7. Integração Contínua (CI)</em></strong></td>
+<td style="text-align: left;"><strong><em>Concluído</em></strong></td>
+<td style="text-align: left;"><em>Código integrado à branch principal sem regressões visuais e build de produção gerado com sucesso.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>8. Homologação e Validação</em></strong></td>
+<td style="text-align: left;"><strong><em>Concluído</em></strong></td>
+<td style="text-align: left;"><em>Interface testada no ambiente móvel, homologada internamente e validada com sucesso junto à cliente (PO).</em></td>
+</tr>
+</tbody>
+</table>
+<p>Links de Rastreabilidade e Artefatos </p>
+<p>Link no site: <a href="https://req-2026-1-t01-morfo-blocos-digital.vercel.app/">https://req-2026-1-t01-morfo-blocos-digital.vercel.app/</a></p>
+<p>Fluxo de Acesso:</p>
+<p>a. Acesse a página inicial da aplicação.<br />
+b. Clique no link ou alternador "Cadastrar-se" presente no cartão de entrada.<br />
+c. Preencha todos os campos obrigatórios (Nome Completo, E-mail, Senha)<br />
+d. Selecione o perfil de uso clicando nos botões seletores ("Estudante" ou "Professor").<br />
+e. Clique no botão de submissão para concluir e persistir o registro.</p>
+<p><img alt="US02" src="../img/us02.png" width="35%" /></p>
+</details>
+<details class="us-dropdown" id="us03">
+<summary><strong>US03 — Recuperação de Senha ❌</strong></summary>
+<h3 id="us03-recuperacao-de-senha">US03 - Recuperação de Senha</h3>
+<blockquote>
+<p><strong>Como</strong> usuário, <strong>quero</strong> recuperar meu acesso mediante envio de um link de redefinição de senha, <strong>para</strong> retomar o uso da plataforma caso esqueça minha senha.</p>
+</blockquote>
+<p><strong>Critérios de Aceitação (CA)</strong></p>
+<ul>
+<li><strong>CA-US03-01:</strong> O sistema deve enviar um link de redefinição de senha (e não a senha em texto puro) para o e-mail cadastrado do usuário, mediante solicitação na tela de login.</li>
+<li><strong>CA-US03-02:</strong> O link de redefinição deve ter validade limitada de no máximo 24 horas e ser invalidado após o primeiro uso, exibindo mensagem específica caso o usuário tente reutilizá-lo <a href="../visao-produto/requisitos/#82-lista-de-requisitos-não-funcionais">RNF04</a>.</li>
+</ul>
+<p><strong>Fora do MVP:</strong> O frontend de recuperação de senha ficou pendente por problemas de envio de e-mail no servidor de testes. No entanto, devido ao prazo e por estar no Q4 de prioridade (pequeno valor, grande esforço) foi retirada do MVP.</p>
+</details>
+<details class="us-dropdown" id="us04">
+<summary><strong>US04 — Cadastro de Morfemas no Catálogo ✅</strong></summary>
+<h3 id="us04-cadastro-de-morfemas-no-catalogo">US04 — Cadastro de Morfemas no Catálogo</h3>
+<blockquote>
+<p><strong>Como</strong> administrador, <strong>quero</strong> cadastrar novos morfemas no catálogo do sistema, <strong>para</strong> disponibilizar os blocos de construção de palavras aos estudantes.</p>
+</blockquote>
+<p><strong>Critérios de Aceitação (CA)</strong></p>
+<ul>
+<li><strong>CA-US04-01:</strong> O cadastro de morfema deve exigir os campos obrigatórios: grafia (texto do morfema) e tipo (Prefixo, Radical ou Sufixo), sendo o registro persistido no banco de dados ao confirmar a operação.</li>
+</ul>
+<p>Verificação do Definition of Ready (DoR) — US04</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Critério de DoR (Scrum/XP)</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Evidência / Link de Rastreabilidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>A User Story é atômica e clara?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Escopo restrito à operação de inserção de novos morfemas.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Possui Critérios de Aceitação explícitos?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">CA-US04-01 define os campos obrigatórios e o comportamento de persistência.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Há rastreabilidade de RNFs e RNs?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Mapeada para RN03 e RNF05.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A prioridade está coerente e justificada?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Must Have — sem morfemas cadastrados, o jogo de montagem de blocos não possui peças para funcionar.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>O esforço foi estimado conjuntamente?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Estimado em 2 Story Points, envolvendo interface de cadastro e integração com a API REST.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Resolução de dependências validada?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Modelo de dados do Morfema e endpoint da API disponíveis antes do início do desenvolvimento.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>Critério de Pronto (DoD V4.0)</em></strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em>Critério de Pronto (DoD V4.0)</em></th>
+<th style="text-align: left;"><em>Status</em></th>
+<th style="text-align: left;"><em>Evidência de Implementação e Qualidade</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><em>1. Implementação Arquitetural</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Interface de cadastro de morfemas implementada no painel do professor em React 18+ e TypeScript 5+.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>2. Comunicação via API</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>O painel envia o novo morfema via POST para a API REST, persistindo no PostgreSQL 15+ (RNF05).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>3. Operações Django Admin</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Os morfemas cadastrados pela interface são refletidos e auditáveis no painel Django Admin.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>4. Validação de CAs</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>CA-US04-01 validado: formulário exige texto e tipo; morfema inserido e exibido na listagem após confirmação.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>5. Garantia das RNs</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>RN03 garantida: rota de cadastro exige autenticação com perfil de professor/administrador.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>6. Validação de RNFs (RNF11)</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Interface validada como responsiva em telas a partir de 360px.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>7. Integração Contínua (CI)</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Código integrado ao repositório principal sem falhas na pipeline de CI.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>8. Homologação e Validação</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Funcionalidade testada no ambiente de produção (Vercel) e validada com a cliente (PO).</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Links de Rastreabilidade e Artefatos</strong></p>
+<p>Link no site: https://req-2026-1-t01-morfo-blocos-digital.vercel.app/</p>
+<p><strong>Fluxo de Acesso:</strong></p>
+<p>a. Efetue login com uma conta de Professor.</p>
+<p>b. Navegue até o Painel de Conteúdo (aba de gerenciamento).</p>
+<p>c. Selecione a aba "Morfemas".</p>
+<p>d. Preencha o campo Texto (ex: in) e selecione o tipo no dropdown (Prefixo/Radical/Sufixo).</p>
+<p>e. Clique no botão "+ Adicionar" para persistir o morfema no banco de dados.</p>
+<p><img alt="US04" src="../img/us04.png" width="80%" /></p>
+</details>
+<details class="us-dropdown" id="us05">
+<summary><strong>US05 — Edição de Morfemas ✅</strong></summary>
+<h3 id="us05-edicao-de-morfemas">US05 — Edição de Morfemas</h3>
+<blockquote>
+<p><strong>Como</strong> administrador, <strong>quero</strong> editar morfemas existentes no catálogo, <strong>para</strong> corrigir grafias, classificações ou cores associadas.</p>
+</blockquote>
+<p><strong>Critérios de Aceitação (CA):</strong></p>
+<ul>
+<li><strong>CA-US05-01:</strong> A edição de um morfema deve permitir alterar sua grafia, tipo morfológico e cor associada, refletindo as alterações imediatamente nas próximas atividades que utilizarem esse morfema [RN03, RNF06].</li>
+</ul>
+<p>Verificação do Definition of Ready (DoR) — US05</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Critério de DoR (Scrum/XP)</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Evidência / Link de Rastreabilidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>A User Story é atômica e clara?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Escopo restrito à operação de alteração de atributos de um morfema.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Possui Critérios de Aceitação explícitos?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">CA-US05-01 define o carregamento de dados e o comportamento de salvamento.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Há rastreabilidade de RNFs e RNs?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Mapeada para RN03, RNF03, RNF05 e RNF06.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A prioridade está coerente e justificada?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Must Have — essencial para correções de conteúdo sem a necessidade de exclusão.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>O esforço foi estimado conjuntamente?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Estimado em 2 Story Points, reaproveitando a estrutura do frontend.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Resolução de dependências validada?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Interface gráfica e endpoint <code>PUT/PATCH</code> da API mapeados.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>Critério de Pronto (DoD V4.0)</em></strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em>Critério de Pronto (DoD V4.0)</em></th>
+<th style="text-align: left;"><em>Status</em></th>
+<th style="text-align: left;"><em>Evidência de Implementação e Qualidade</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><em>1. Implementação Arquitetural</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Tela de formulário implementada em React/TypeScript com preenchimento reativo dos dados atuais do morfema selecionado.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>2. Comunicação via API</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>O envio do formulário dispara uma requisição PUT/PATCH para a API REST, atualizando o PostgreSQL 15+ (RNF05).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>3. Ambiente de Produção</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>A edição é realizada e refletida diretamente na interface unificada do sistema via ambiente Vercel (RNF06).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>4. Validação de CAs</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>CA-US05-01 validado: campos carregam dados prévios e salvamento atualiza as telas dos estudantes em tempo real.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>5. Garantia das RNs</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>RN03 garantida: rota de edição exige autenticação com perfil de professor/administrador.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>6. Validação de RNFs (RNF11)</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Interface validada como responsiva em telas a partir de 360px.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>7. Integração Contínua (CI)</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Código integrado ao repositório principal sem falhas na pipeline de CI.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>8. Homologação e Validação</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Funcionalidade testada no ambiente de produção (Vercel) e validada com a cliente (PO).</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Links de Rastreabilidade e Artefatos</strong></p>
+<p>Link no site: <a href="https://req-2026-1-t01-morfo-blocos-digital.vercel.app/">https://req-2026-1-t01-morfo-blocos-digital.vercel.app/</a></p>
+<p><strong>Fluxo de Acesso:</strong></p>
+<p>a. Efetue login com uma conta de Professor.</p>
+<p>b. Navegue até o Painel de Conteúdo (aba de gerenciamento).</p>
+<p>c. Selecione a aba "Morfemas".</p>
+<p>d. Localize na listagem o morfema a ser editado e clique no botão/ícone de edição.</p>
+<p>e. Altere os campos necessários no formulário e clique em "Salvar" para persistir as modificações.</p>
+<p><img alt="US05" src="../img/us05.png" width="80%" /></p>
+</details>
+<details class="us-dropdown" id="us06">
+<summary><strong>US06 — Remoção de Morfemas ✅</strong></summary>
+<h3 id="us06-remocao-de-morfemas">US06 — Remoção de Morfemas</h3>
+<blockquote>
+<p><strong>Como</strong> administrador, <strong>quero</strong> remover morfemas do catálogo do sistema, <strong>para</strong> retirar blocos que não devem mais estar disponíveis aos estudantes.</p>
+</blockquote>
+<p><strong>Critérios de Aceitação (CA)</strong></p>
+<ul>
+<li><strong>CA-US06-01:</strong> O sistema deve exibir a listagem de morfemas cadastrados com opção de remoção individual via ícone de lixeira, sendo o registro excluído do banco de dados ao confirmar a operação.</li>
+</ul>
+<p>Verificação do Definition of Ready (DoR) — US06</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Critério de DoR (Scrum/XP)</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Evidência / Link de Rastreabilidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>A User Story é atômica e clara?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Escopo restrito à operação de remoção.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Possui Critérios de Aceitação explícitos?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">CA-US06-01 define a exibição da listagem e o mecanismo de remoção por ícone de lixeira.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Há rastreabilidade de RNFs e RNs?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Mapeada para RN03 e RNF05.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A prioridade está coerente e justificada?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Must Have — necessário para manter o catálogo atualizado e íntegro.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>O esforço foi estimado conjuntamente?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Estimado em 1 Story Point, aproveitando a mesma interface da US04.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Resolução de dependências validada?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Listagem e endpoint de exclusão da API disponíveis antes do desenvolvimento.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>Critério de Pronto (DoD V4.0)</em></strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em>Critério de Pronto (DoD V4.0)</em></th>
+<th style="text-align: left;"><em>Status</em></th>
+<th style="text-align: left;"><em>Evidência de Implementação e Qualidade</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><em>1. Implementação Arquitetural</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Listagem de morfemas com ícone de lixeira implementada no painel do professor em React 18+ e TypeScript 5+.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>2. Comunicação via API</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>O clique no ícone de lixeira dispara uma requisição DELETE para a API REST, removendo do PostgreSQL 15+ (RNF05).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>3. Operações Django Admin</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>A remoção é refletida imediatamente no Django Admin após a exclusão pela interface.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>4. Validação de CAs</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>CA-US06-01 validado: listagem exibe morfemas com lixeira; ao clicar, morfema removido da lista e do banco.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>5. Garantia das RNs</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>RN03 garantida: rota de exclusão exige autenticação com perfil de professor/administrador.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>6. Validação de RNFs (RNF11)</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Interface validada como responsiva em telas a partir de 360px.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>7. Integração Contínua (CI)</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Código integrado ao repositório principal sem falhas na pipeline de CI.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>8. Homologação e Validação</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Funcionalidade testada no ambiente de produção (Vercel) e validada com a cliente (PO).</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Links de Rastreabilidade e Artefatos</strong></p>
+<p>Link no site: <a href="https://req-2026-1-t01-morfo-blocos-digital.vercel.app/">https://req-2026-1-t01-morfo-blocos-digital.vercel.app/</a></p>
+<p><strong>Fluxo de Acesso:</strong></p>
+<p>a. Efetue login com uma conta de Professor.</p>
+<p>b. Navegue até o Painel de Conteúdo (aba de gerenciamento).</p>
+<p>c. Selecione a aba "Morfemas".</p>
+<p>d. Localize na listagem o morfema a ser removido.</p>
+<p>e. Clique no ícone de lixeira (vermelho) ao lado do registro para excluí-lo do banco de dados.</p>
+<p><img alt="US06" src="../img/us06.png" width="80%" /></p>
+</details>
+<details class="us-dropdown" id="us07">
+<summary><strong>US07 — Listagem de Morfemas ✅</strong></summary>
+<h3 id="us07-listagem-de-morfemas">US07 — Listagem de Morfemas</h3>
+<blockquote>
+<p><strong>Como</strong> administrador, <strong>quero</strong> listar os morfemas cadastrados, <strong>para</strong> consultar o conteúdo atual do catálogo.</p>
+</blockquote>
+<p><strong>Critérios de Aceitação (CA)</strong></p>
+<ul>
+<li><strong>CA-US07-01:</strong> A listagem deve exibir, no mínimo, a grafia do morfema, seu tipo morfológico e a cor associada, permitindo ordenação e busca textual por grafia <a href="../visao-produto/requisitos/">RNF06</a>.</li>
+</ul>
+<p>Verificação do Definition of Ready (DoR) — US07</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Critério de DoR (Scrum/XP)</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Evidência / Link de Rastreabilidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>A User Story é atômica e clara?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Escopo restrito à exibição e filtragem do catálogo de morfemas.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Possui Critérios de Aceitação explícitos?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">CA-US07-01 detalha os campos obrigatórios e ferramentas de busca.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Há rastreabilidade de RNFs e RNs?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Mapeada para RF07, RNF03, RNF06 e RNF11.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A prioridade está coerente e justificada?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Must Have — base para a gerência, edição e exclusão de morfemas.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>O esforço foi estimado conjuntamente?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Estimado em 1 Story Point por envolver leitura e renderização de dados.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Resolução de dependências validada?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Endpoint <code>GET</code> de morfemas estruturado e testado no backend.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>Critério de Pronto (DoD V4.0)</em></strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em>Critério de Pronto (DoD V4.0)</em></th>
+<th style="text-align: left;"><em>Status</em></th>
+<th style="text-align: left;"><em>Evidência de Implementação e Qualidade</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><em>1. Implementação Arquitetural</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Grid/tabela de blocos renderizada no React com a devida identificação visual de cor por tipo (RNF07).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>2. Comunicação via API</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Interface consome o endpoint GET de morfemas populando a tabela de forma dinâmica (RNF05).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>3. Ambiente de Produção</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Listagem disponibilizada no painel administrativo hospedado na Vercel (RNF06).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>4. Validação de CAs</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>CA-US07-01 validado: listagem exibe todos os atributos; busca e filtros refinam os dados instantaneamente.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>5. Garantia das RNs</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Acesso restrito a usuários autenticados com nível de permissão adequado.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>6. Validação de RNFs (RNF11)</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Filtros e tabela testados em ambiente mobile (360px) garantindo empilhamento e vedação de scroll horizontal.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>7. Integração Contínua (CI)</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Código integrado ao repositório principal sem falhas na pipeline de CI.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>8. Homologação e Validação</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Performance de busca e filtros validada abaixo do limite de 2 segundos (RNF03) em produção na Vercel.</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Links de Rastreabilidade e Artefatos</strong></p>
+<p>Link no site: <a href="https://req-2026-1-t01-morfo-blocos-digital.vercel.app/">https://req-2026-1-t01-morfo-blocos-digital.vercel.app/</a></p>
+<p><strong>Fluxo de Acesso:</strong></p>
+<p>a. Efetue login com uma conta de Professor.</p>
+<p>b. Navegue até o Painel de Conteúdo (aba de gerenciamento).</p>
+<p>c. Selecione a aba "Morfemas" para visualizar a listagem completa.</p>
+<p>d. Utilize a barra de pesquisa ou os filtros por tipo para refinar os blocos exibidos.</p>
+<p><img alt="US07" src="../img/us07.png" width="80%" /></p>
+</details>
+</details>
+<details class="us-dropdown" id="us08">
+<summary><strong>US08 — Cadastro de Palavras Válidas ✅</strong></summary>
+<h3 id="us08-cadastro-de-palavras-validas">US08 — Cadastro de Palavras Válidas</h3>
+<blockquote>
+<p><strong>Como</strong> administrador, <strong>quero</strong> cadastrar palavras válidas no catálogo do sistema, <strong>para</strong> definir as combinações de morfemas reconhecidas pelo validador.</p>
+</blockquote>
+<p><strong>Critérios de Aceitação (CA)</strong></p>
+<ul>
+<li><strong>CA-US08-01:</strong> O cadastro deve exigir os campos obrigatórios: grafia da palavra e processo morfológico associado (ex: in + feliz + mente), sendo o registro persistido no banco de dados ao confirmar a operação.</li>
+</ul>
+<p>Verificação do Definition of Ready (DoR) — US08</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Critério de DoR (Scrum/XP)</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Evidência / Link de Rastreabilidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>A User Story é atômica e clara?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Escopo restrito à inserção de palavras válidas.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Possui Critérios de Aceitação explícitos?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">CA-US08-01 define os campos obrigatórios e o comportamento de persistência.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Há rastreabilidade de RNFs e RNs?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Mapeada para RN03, RN04 e RNF05.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A prioridade está coerente e justificada?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Must Have — sem palavras cadastradas, o validador morfológico não possui base de consulta.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>O esforço foi estimado conjuntamente?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Estimado em 2 Story Points, envolvendo dois campos de entrada e integração com a API.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Resolução de dependências validada?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Modelo PalavraValida e endpoint da API disponíveis antes do início do desenvolvimento.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>Critério de Pronto (DoD V4.0)</em></strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em>Critério de Pronto (DoD V4.0)</em></th>
+<th style="text-align: left;"><em>Status</em></th>
+<th style="text-align: left;"><em>Evidência de Implementação e Qualidade</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><em>1. Implementação Arquitetural</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Interface de cadastro de palavras válidas implementada no painel do professor em React 18+ e TypeScript 5+.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>2. Comunicação via API</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>O painel envia a nova palavra via POST para a API REST, persistindo no PostgreSQL 15+ (RNF05).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>3. Operações Django Admin</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>As palavras cadastradas pela interface são refletidas e auditáveis no Django Admin.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>4. Validação de CAs</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>CA-US08-01 validado: formulário exige grafia e processo morfológico; registro inserido e exibido na listagem.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>5. Garantia das RNs</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>RN03 e RN04 garantidas: acesso restrito ao professor e validador consulta exclusivamente palavras cadastradas.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>6. Validação de RNFs (RNF11)</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Interface validada como responsiva em telas a partir de 360px.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>7. Integração Contínua (CI)</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Código integrado ao repositório principal sem falhas na pipeline de CI.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>8. Homologação e Validação</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Funcionalidade testada no ambiente de produção (Vercel) e validada com a cliente (PO).</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Links de Rastreabilidade e Artefatos</strong></p>
+<p>Link no site: <a href="https://req-2026-1-t01-morfo-blocos-digital.vercel.app/">https://req-2026-1-t01-morfo-blocos-digital.vercel.app/</a></p>
+<p><strong>Fluxo de Acesso:</strong></p>
+<p>a. Efetue login com uma conta de Professor.</p>
+<p>b. Navegue até o Painel de Conteúdo (aba de gerenciamento).</p>
+<p>c. Selecione a aba "Palavras".</p>
+<p>d. Preencha o campo Palavra (ex: infelizmente) e o campo Processo morfológico (ex: in + feliz + mente).</p>
+<p>e. Clique no botão "+ Adicionar" para persistir a palavra válida no banco de dados.</p>
+<p><img alt="US08" src="../img/us08.png" width="80%" /></p>
+</details>
+<details class="us-dropdown" id="us09">
+<summary><strong>US09 — Edição de Palavras Válidas ✅</strong></summary>
+<h3 id="us09-edicao-de-palavras-validas">US09 — Edição de Palavras Válidas</h3>
+<blockquote>
+<p><strong>Como</strong> administrador, <strong>quero</strong> editar palavras válidas existentes, <strong>para</strong> corrigir registros ou ajustar processos morfológicos associados.</p>
+</blockquote>
+<p><strong>Critérios de Aceitação (CA)</strong></p>
+<ul>
+<li><strong>CA-US09-01:</strong> A edição deve permitir alterar a grafia da palavra, sua composição morfológica e a descrição do processo de formação associado, mantendo a consistência das referências utilizadas pelo validador [RN03, RNF06].</li>
+</ul>
+<p>Verificação do Definition of Ready (DoR) — US09</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Critério de DoR (Scrum/XP)</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Evidência / Link de Rastreabilidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>A User Story é atômica e clara?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Escopo restrito à modificação de registros textuais e composições no dicionário de validação.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Possui Critérios de Aceitação explícitos?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">CA-US09-01 detalha as permissões e restrições de salvamento.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Há rastreabilidade de RNFs e RNs?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Mapeada para RF09, RN04, RNF05 e RNF06.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A prioridade está coerente e justificada?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Must Have — essencial para refinar as palavras aceitas pelo motor do jogo.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>O esforço foi estimado conjuntamente?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Estimado em 2 Story Points dada a necessidade de validação relacional com morfemas.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Resolução de dependências validada?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Depende da existência do catálogo de morfemas populado para associação na edição.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>Critério de Pronto (DoD V4.0)</em></strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em>Critério de Pronto (DoD V4.0)</em></th>
+<th style="text-align: left;"><em>Status</em></th>
+<th style="text-align: left;"><em>Evidência de Implementação e Qualidade</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><em>1. Implementação Arquitetural</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Formulário em React/TypeScript implementado com seleção múltipla de morfemas para composição da palavra.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>2. Comunicação via API</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Requisições síncronas REST atualizam as tabelas de composição morfológica diretamente no PostgreSQL (RNF05).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>3. Ambiente de Produção</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Gestão de edição executada via interface gráfica hospedada na Vercel (RNF06).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>4. Validação de CAs</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>CA-US09-01 validado: sistema emite erros visuais se a composição violar as regras morfológicas (RN04).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>5. Garantia das RNs</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Garantido que o motor de validação do jogo passa a considerar imediatamente a estrutura atualizada da palavra.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>6. Validação de RNFs (RNF11)</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Interface de edição validada como responsiva em telas móveis.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>7. Integração Contínua (CI)</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Código integrado ao repositório principal sem quebras nas dependências do backend.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>8. Homologação e Validação</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Validado com sucesso em produção na Vercel juntamente com a PO.</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Links de Rastreabilidade e Artefatos</strong></p>
+<p>Link no site: <a href="https://req-2026-1-t01-morfo-blocos-digital.vercel.app/">https://req-2026-1-t01-morfo-blocos-digital.vercel.app/</a></p>
+<p><strong>Fluxo de Acesso:</strong></p>
+<p>a. Efetue login com uma conta de Professor.</p>
+<p>b. Navegue até o Painel de Conteúdo (aba de gerenciamento).</p>
+<p>c. Selecione a aba "Palavras Válidas".</p>
+<p>d. Localize na listagem a palavra desejada e clique em "Editar".</p>
+<p>e. Modifique os morfemas vinculados ou o processo formativo e clique em "Salvar".</p>
+<p><img alt="US09" src="../img/us09.png" width="80%" /></p>
+</details>
+<details class="us-dropdown" id="us10">
+<summary><strong>US10 — Remoção de Palavras Válidas ✅</strong></summary>
+<h3 id="us10-remocao-de-palavras-valida">US10 — Remoção de Palavras Válida</h3>
+<blockquote>
+<p><strong>Como</strong> administrador, <strong>quero</strong> remover palavras válidas do catálogo do sistema, <strong>para</strong> retirar registros que não devem mais ser aceitos pelo validador.</p>
+</blockquote>
+<p><strong>Critérios de Aceitação (CA)</strong></p>
+<p>• CA-US10-01: O sistema deve exibir a listagem de palavras válidas cadastradas com opção de remoção individual via ícone de lixeira, sendo o registro excluído do banco de dados ao confirmar a operação.</p>
+<p><strong>Verificação do Definition of Ready (DoR) — US10</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Critério de DoR (Scrum/XP)</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Evidência / Link de Rastreabilidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>A User Story é atômica e clara?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Escopo restrito à operação de remoção de palavras válidas. O cadastro foi isolado na US08.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Possui Critérios de Aceitação explícitos?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">CA-US10-01 define a listagem e o mecanismo de remoção por ícone de lixeira.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Há rastreabilidade de RNFs e RNs?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Mapeada para RN03 e RNF05.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A prioridade está coerente e justificada?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Must Have — necessário para manter a integridade e atualidade do catálogo do validador.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>O esforço foi estimado conjuntamente?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Estimado em 1 Story Point, aproveitando a mesma interface da US08.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Resolução de dependências validada?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Listagem e endpoint de exclusão da API disponíveis antes do desenvolvimento.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>Critério de Pronto (DoD V4.0)</em></strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em>Critério de Pronto (DoD V4.0)</em></th>
+<th style="text-align: left;"><em>Status</em></th>
+<th style="text-align: left;"><em>Evidência de Implementação e Qualidade</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><em>1. Implementação Arquitetural</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Listagem de palavras com ícone de lixeira implementada no painel do professor em React 18+ e TypeScript 5+.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>2. Comunicação via API</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>O clique no ícone de lixeira dispara uma requisição DELETE para a API REST, removendo do PostgreSQL 15+ (RNF05).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>3. Operações Django Admin</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>A remoção é refletida imediatamente no Django Admin após a exclusão pela interface.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>4. Validação de CAs</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>CA-US10-01 validado: listagem exibe palavras com lixeira; ao clicar, palavra removida da lista e do banco.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>5. Garantia das RNs</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>RN03 garantida: rota de exclusão exige autenticação com perfil de professor/administrador.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>6. Validação de RNFs (RNF11)</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Interface validada como responsiva em telas a partir de 360px.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>7. Integração Contínua (CI)</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Código integrado ao repositório principal sem falhas na pipeline de CI.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>8. Homologação e Validação</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Funcionalidade testada no ambiente de produção (Vercel) e validada com a cliente (PO).</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Links de Rastreabilidade e Artefatos</strong></p>
+<p>Link no site: <a href="https://req-2026-1-t01-morfo-blocos-digital.vercel.app/">https://req-2026-1-t01-morfo-blocos-digital.vercel.app/</a></p>
+<p><strong>Fluxo de Acesso:</strong></p>
+<p>a. Efetue login com uma conta de Professor.</p>
+<p>b. Navegue até o Painel de Conteúdo (aba de gerenciamento).</p>
+<p>c. Selecione a aba "Palavras".</p>
+<p>d. Localize na listagem a palavra a ser removida.</p>
+<p>e. Clique no ícone de lixeira (vermelho) ao lado do registro para excluí-la do banco de dados.</p>
+<p><img alt="US10" src="../img/us10.png" width="80%" /></p>
+</details>
+<details class="us-dropdown" id="us11">
+<summary><strong>US11 — Listagem de Palavras Válidas ✅</strong></summary>
+<h3 id="us11-listagem-de-palavras-validas">US11 — Listagem de Palavras Válidas</h3>
+<blockquote>
+<p><strong>Como</strong> administrador, <strong>quero</strong> listar as palavras válidas cadastradas, <strong>para</strong> consultar a base utilizada pelo validador morfológico.</p>
+</blockquote>
+<p><strong>Critérios de Aceitação (CA)</strong></p>
+<ul>
+<li><strong>CA-US11-01:</strong> A listagem deve exibir, no mínimo, a grafia da palavra, sua composição morfológica e o processo de formação associado, permitindo consulta e busca textual [RNF06].</li>
+</ul>
+<p>Verificação do Definition of Ready (DoR) — US11</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Critério de DoR (Scrum/XP)</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Evidência / Link de Rastreabilidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>A User Story é atômica e clara?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Escopo focado na exibição estruturada do dicionário de palavras.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Possui Critérios de Aceitação explícitos?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">CA-US11-01 determina os dados exibidos e o mecanismo de busca.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Há rastreabilidade de RNFs e RNs?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Mapeada para RF11, RNF03 e RNF06.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A prioridade está coerente e justificada?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Must Have — indispensável para auditoria do vocabulário cadastrado.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>O esforço foi estimado conjuntamente?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Estimado em 1 Story Point (leitura e renderização simples de tabelas relacionais).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Resolução de dependências validada?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Endpoint de consulta no Django homologado previamente.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>Critério de Pronto (DoD V4.0)</em></strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em>Critério de Pronto (DoD V4.0)</em></th>
+<th style="text-align: left;"><em>Status</em></th>
+<th style="text-align: left;"><em>Evidência de Implementação e Qualidade</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><em>1. Implementação Arquitetural</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Tabela em React que renderiza a palavra-chave e expande os morfemas filhos associados de forma hierárquica.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>2. Comunicação via API</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Consumo do endpoint GET de palavras válidas via chamadas REST otimizadas (RNF05).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>3. Ambiente de Produção</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Visualização centralizada no ambiente Vercel dispensando o Django Admin tradicional (RNF06).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>4. Validação de CAs</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>CA-US11-01 validado: busca textual localiza palavras instantaneamente com tempo de resposta &lt; 2s (RNF03).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>5. Garantia das RNs</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Filtros e dados protegidos contra acessos não autenticados.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>6. Validação de RNFs (RNF11)</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Tabela adaptada de forma responsiva para visualização fluida em dispositivos móveis.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>7. Integração Contínua (CI)</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Integração sutil realizada no branch principal sem conflitos de layout.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>8. Homologação e Validação</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Homologado em produção sob uma base de testes de alta volumetria de palavras.</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Links de Rastreabilidade e Artefatos</strong></p>
+<p>Link no site: <a href="https://req-2026-1-t01-morfo-blocos-digital.vercel.app/">https://req-2026-1-t01-morfo-blocos-digital.vercel.app/</a></p>
+<p><strong>Fluxo de Acesso:</strong></p>
+<p>a. Efetue login com uma conta de Professor.</p>
+<p>b. Navegue até o Painel de Conteúdo.</p>
+<p>c. Selecione a aba "Palavras Válidas".</p>
+<p>d. Utilize o campo de busca no topo da tabela para pesquisar termos específicos do dicionário.</p>
+<p><img alt="US11" src="../img/us11.png" width="80%" /></p>
+</details>
+<details class="us-dropdown" id="us12">
+<summary><strong>US12 — Cadastro de Atividades Pedagógicas ✅</strong></summary>
+<h3 id="us12-cadastro-de-atividades-pedagogicas">US12 — Cadastro de Atividades Pedagógicas</h3>
+<blockquote>
+<p><strong>Como</strong> administrador, <strong>quero</strong> cadastrar atividades pedagógicas no sistema, <strong>para</strong> disponibilizar exercícios aos estudantes.</p>
+</blockquote>
+<p><strong>Critérios de Aceitação (CA)</strong></p>
+<p>• CA-US12-01: O cadastro de atividade deve exigir os campos obrigatórios: título, tipo (Quiz ou Montagem) e nível de dificuldade, permitindo ainda a definição de perguntas com alternativas para atividades do tipo Quiz.</p>
+<p><strong>Verificação do Definition of Ready (DoR) — US12</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Critério de DoR (Scrum/XP)</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Evidência / Link de Rastreabilidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>A User Story é atômica e clara?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Escopo restrito à criação de atividades pedagógicas com suas perguntas. A remoção foi isolada na US14.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Possui Critérios de Aceitação explícitos?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">CA-US12-01 define campos obrigatórios e suporte a perguntas com alternativas para o tipo Quiz.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Há rastreabilidade de RNFs e RNs?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Mapeada para RN03 e RNF05.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A prioridade está coerente e justificada?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Must Have — sem atividades cadastradas, os estudantes não têm exercícios disponíveis na plataforma.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>O esforço foi estimado conjuntamente?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Estimado em 3 Story Points por envolver formulário dinâmico com perguntas e alternativas.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Resolução de dependências validada?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Modelos de atividade e perguntas e endpoints disponíveis antes do desenvolvimento.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>Critério de Pronto (DoD V4.0)</em></strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em>Critério de Pronto (DoD V4.0)</em></th>
+<th style="text-align: left;"><em>Status</em></th>
+<th style="text-align: left;"><em>Evidência de Implementação e Qualidade</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><em>1. Implementação Arquitetural</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Interface de cadastro de atividades implementada no painel do professor em React 18+ e TypeScript 5+, com formulário dinâmico de perguntas.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>2. Comunicação via API</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>O painel envia a atividade completa (título, tipo, nível e perguntas) via POST para a API REST, persistindo no PostgreSQL 15+ (RNF05).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>3. Operações Django Admin</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>As atividades cadastradas são refletidas e auditáveis no Django Admin.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>4. Validação de CAs</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>CA-US12-01 validado: formulário exige título, tipo e nível; suporta múltiplas perguntas com 4 alternativas; atividade criada e exibida na listagem.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>5. Garantia das RNs</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>RN03 garantida: rota de criação exige autenticação com perfil de professor.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>6. Validação de RNFs (RNF11)</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Interface do formulário validada como responsiva em telas a partir de 360px.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>7. Integração Contínua (CI)</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Código integrado ao repositório principal sem falhas na pipeline de CI.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>8. Homologação e Validação</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Funcionalidade testada no ambiente de produção (Vercel) e validada com a cliente (PO).</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Links de Rastreabilidade e Artefatos</strong></p>
+<p>Link no site: <a href="https://req-2026-1-t01-morfo-blocos-digital.vercel.app/">https://req-2026-1-t01-morfo-blocos-digital.vercel.app/</a></p>
+<p><strong>Fluxo de Acesso:</strong></p>
+<p>a. Efetue login com uma conta de Professor.</p>
+<p>b. Navegue até o Painel de Conteúdo (aba de gerenciamento).</p>
+<p>c. Selecione a aba "Atividades".</p>
+<p>d. Preencha o título, selecione o tipo (Quiz/Montagem) e o nível de dificuldade.</p>
+<p>e. Para atividades do tipo Quiz, adicione perguntas clicando em "+ Adicionar pergunta" e preencha o enunciado e as alternativas marcando a correta.</p>
+<p>f. Clique em "+ Criar Atividade" para persistir a atividade no banco de dados.</p>
+<p><img alt="US12" src="../img/us12.png" width="80%" /></p>
+</details>
+<details class="us-dropdown" id="us13">
+<summary><strong>US13 — Edição de Atividades Pedagógicas ✅</strong></summary>
+<h3 id="us13-edicao-de-atividades-pedagogicas">US13 — Edição de Atividades Pedagógicas</h3>
+<blockquote>
+<p><strong>Como</strong> administrador, <strong>quero</strong> editar atividades pedagógicas existentes no sistema, <strong>para</strong> corrigir enunciados, níveis de dificuldade ou conjuntos de morfemas associados.</p>
+</blockquote>
+<p><strong>Critérios de Aceitação (CA)</strong></p>
+<ul>
+<li><strong>CA-US13-01:</strong> A edição deve permitir alterar título, nível de dificuldade, conjunto de morfemas disponíveis e pontuação mínima para progressão, preservando o histórico das execuções já realizadas [RN03, RNF06, RNF08].</li>
+</ul>
+<p>Verificação do Definition of Ready (DoR) — US13</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Critério de DoR (Scrum/XP)</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Evidência / Link de Rastreabilidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>A User Story é atômica e clara?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Escopo isolado para modificação de metadados e blocos vinculados a um exercício.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Possui Critérios de Aceitação explícitos?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">CA-US13-01 protege os dados históricos e impõem regras de vinculação.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Há rastreabilidade de RNFs e RNs?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Mapeada para RF13, RN03, RN08 e RNF06.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A prioridade está coerente e justificada?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Must Have — necessária para o ajuste dinâmico das missões com base no feedback da turma.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>O esforço foi estimado conjuntamente?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Estimado em 3 Story Points devido à complexidade de integridade do histórico e chaves estrangeiras.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Resolução de dependências validada?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Validada a não interferência nas tabelas de progresso e tentativas antigas.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>Critério de Pronto (DoD V4.0)</em></strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em>Critério de Pronto (DoD V4.0)</em></th>
+<th style="text-align: left;"><em>Status</em></th>
+<th style="text-align: left;"><em>Evidência de Implementação e Qualidade</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><em>1. Implementação Arquitetural</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Painel de edição em React 18+ contemplando a atualização de enunciados, dificuldades e banco de morfemas disponíveis.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>2. Comunicação via API</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Uso de requisições REST via HTTPS utilizando tokens JWT para autenticar o perfil administrativo (RNF14).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>3. Ambiente de Produção</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Funcionalidade plenamente operacional no frontend unificado via Vercel (RNF06).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>4. Validação de CAs</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>CA-US13-01 validado: bloqueio de salvamento caso nenhum morfema seja selecionado; dados históricos blindados.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>5. Garantia das RNs</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Garantia das RN03 e RN08: verificado via Code Review o isolamento total das notas históricas já calculadas dos alunos.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>6. Validação de RNFs (RNF11)</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Formulários e caixas de seleção múltipla responsivos em telas a partir de 360px.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>7. Integração Contínua (CI)</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Testes automatizados cobrindo a integridade do banco de dados executados com sucesso no pipeline de CI.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>8. Homologação e Validação</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Módulo homologado e validado de ponta a ponta em produção junto à Profª Pilar.</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Links de Rastreabilidade e Artefatos</strong></p>
+<p>Link no site: <a href="https://req-2026-1-t01-morfo-blocos-digital.vercel.app/">https://req-2026-1-t01-morfo-blocos-digital.vercel.app/</a></p>
+<p><strong>Fluxo de Acesso:</strong></p>
+<p>a. Efetue login com uma conta de Professor.</p>
+<p>b. Acesse o Painel de Controle de Atividades.</p>
+<p>c. Na lista de exercícios, clique em "Editar" ao lado da atividade desejada.</p>
+<p>d. Modifique os campos textuais, ajuste o nível ou o banco de blocos e clique em "Salvar Alterações".</p>
+<p><img alt="US13" src="../img/us13.png" width="80%" />
+<img alt="US13" src="../img/us13parte2.png" width="80%" /></p>
+</details>
+<details class="us-dropdown" id="us14">
+<summary><strong>US14 — Remoção de Atividades Pedagógicas ✅</strong></summary>
+<h3 id="us14-remocao-de-atividades-pedagogicas">US14 — Remoção de Atividades Pedagógicas</h3>
+<blockquote>
+<p><strong>Como</strong> administrador, <strong>quero</strong><em> remover atividades pedagógicas do sistema, </em><em>para</em>* retirar exercícios que não devem mais estar disponíveis aos estudantes.</p>
+</blockquote>
+<p><strong>Critérios de Aceitação (CA)</strong></p>
+<ul>
+<li><strong>CA-US14-01</strong>: O sistema deve exibir a listagem de atividades cadastradas com opção de remoção individual via ícone de lixeira, sendo o registro excluído do banco de dados ao confirmar a operação.</li>
+</ul>
+<p><strong>Verificação do Definition of Ready (DoR) — US14</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Critério de DoR (Scrum/XP)</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Evidência / Link de Rastreabilidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>A User Story é atômica e clara?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Escopo restrito à operação de remoção de atividades. O cadastro foi isolado na US12.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Possui Critérios de Aceitação explícitos?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">CA-US14-01 define a listagem e o mecanismo de remoção por ícone de lixeira.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Há rastreabilidade de RNFs e RNs?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Mapeada para RN03 e RNF05.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A prioridade está coerente e justificada?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Must Have — necessário para o ciclo de vida das atividades na plataforma.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>O esforço foi estimado conjuntamente?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Estimado em 1 Story Point, aproveitando a mesma interface da US12.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Resolução de dependências validada?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Listagem e endpoint de exclusão disponíveis antes do desenvolvimento.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>Critério de Pronto (DoD V4.0)</em></strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em>Critério de Pronto (DoD V4.0)</em></th>
+<th style="text-align: left;"><em>Status</em></th>
+<th style="text-align: left;"><em>Evidência de Implementação e Qualidade</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><em>1. Implementação Arquitetural</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Listagem de atividades com ícone de lixeira implementada no painel do professor em React 18+ e TypeScript 5+.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>2. Comunicação via API</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>O clique no ícone de lixeira dispara uma requisição DELETE para a API REST, removendo do PostgreSQL 15+ (RNF05).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>3. Operações Django Admin</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>A remoção é refletida imediatamente no Django Admin após a exclusão pela interface.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>4. Validação de CAs</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>CA-US14-01 validado: listagem exibe atividades com lixeira; ao clicar, atividade removida da lista e do banco.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>5. Garantia das RNs</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>RN03 garantida: rota de exclusão exige autenticação com perfil de professor.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>6. Validação de RNFs (RNF11)</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Interface validada como responsiva em telas a partir de 360px.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>7. Integração Contínua (CI)</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Código integrado ao repositório principal sem falhas na pipeline de CI.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>8. Homologação e Validação</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Funcionalidade testada no ambiente de produção (Vercel) e validada com a cliente (PO).</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Links de Rastreabilidade e Artefatos</strong></p>
+<p>Link no site: <a href="https://req-2026-1-t01-morfo-blocos-digital.vercel.app/">https://req-2026-1-t01-morfo-blocos-digital.vercel.app/</a></p>
+<p><strong>Fluxo de Acesso:</strong></p>
+<p>a. Efetue login com uma conta de Professor.</p>
+<p>b. Navegue até o Painel de Conteúdo (aba de gerenciamento).</p>
+<p>c. Selecione a aba "Atividades".</p>
+<p>d. Localize na listagem a atividade a ser removida.</p>
+<p>e. Clique no ícone de lixeira (vermelho) ao lado do registro para excluí-la do banco de dados.</p>
+<p><img alt="US14" src="../img/us14.png" width="80%" /></p>
+</details>
+<details class="us-dropdown" id="us15">
+<summary><strong>US15 — Listagem de Atividades Pedagógicas ✅</strong></summary>
+<h3 id="us15-listagem-de-atividades-pedagogicas">US15 — Listagem de Atividades Pedagógicas</h3>
+<blockquote>
+<p><strong>Como</strong> administrador, <strong>quero</strong> listar as atividades cadastradas, <strong>para</strong> consultar o catálogo de exercícios disponíveis.</p>
+</blockquote>
+<p><strong>Critérios de Aceitação (CA)</strong></p>
+<ul>
+<li><strong>CA-US15-01:</strong> A listagem deve exibir, no mínimo, título da atividade, nível de dificuldade e quantidade de morfemas associados, permitindo ordenação e busca textual [RNF06].</li>
+</ul>
+<p>Verificação do Definition of Ready (DoR) — US15</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Critério de DoR (Scrum/XP)</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Evidência / Link de Rastreabilidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>A User Story é atômica e clara?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Escopo focado estritamente na exibição consolidada das atividades criadas.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Possui Critérios de Aceitação explícitos?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">CA-US15-01 explicita os metadados visíveis e controles de ordenação.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Há rastreabilidade de RNFs e RNs?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Mapeada para RF15, RNF06, RNF11 e RNF03.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A prioridade está coerente e justificada?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Must Have — ponto de partida para o professor acompanhar o roteiro pedagógico do sistema.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>O esforço foi estimado conjuntamente?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Estimado em 1 Story Point (padrão de listagem/cards com paginação simples).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Resolução de dependências validada?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Mapeado o correto relacionamento de contagem entre as tabelas Atividade e Morfema no banco.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>Critério de Pronto (DoD V4.0)</em></strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em>Critério de Pronto (DoD V4.0)</em></th>
+<th style="text-align: left;"><em>Status</em></th>
+<th style="text-align: left;"><em>Evidência de Implementação e Qualidade</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><em>1. Implementação Arquitetural</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Cards e linhas de listagem organizados no React 18+ trazendo informações analíticas rápidas de cada lição (RNF07).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>2. Comunicação via API</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Endpoint GET estruturado trazendo paginação reativa via API REST (RNF05).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>3. Ambiente de Produção</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Listagem disponibilizada no ambiente web da Vercel integrado ao fluxo do professor (RNF06).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>4. Validação de CAs</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>CA-US15-01 validado: paginação funcional e ordenação por nível de dificuldade executadas sem lentidão.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>5. Garantia das RNs</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Controle de acesso (RBAC) validado para garantir que apenas docentes visualizem as métricas da listagem.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>6. Validação de RNFs (RNF11)</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Alinhamento vertical e tamanho de botões validados para touch em resoluções mobile (360px).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>7. Integração Contínua (CI)</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Mudanças integradas perfeitamente ao repositório master.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>8. Homologação e Validação</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Componente carregando em produção na Vercel com tempo de resposta em conformidade com o RNF03 (&lt; 2s).</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Links de Rastreabilidade e Artefatos</strong></p>
+<p>Link no site: <a href="https://req-2026-1-t01-morfo-blocos-digital.vercel.app/">https://req-2026-1-t01-morfo-blocos-digital.vercel.app/</a></p>
+<p><strong>Fluxo de Acesso:</strong></p>
+<p>a. Efetue login com uma conta de Professor.</p>
+<p>b. No menu principal, clique em "Gerenciar Atividades".</p>
+<p>c. Visualize a listagem completa, navegue pelas páginas ou mude a ordenação padrão por nível de dificuldade.</p>
+<p><img alt="US15" src="../img/us15.png" width="80%" /></p>
+</details>
+<details class="us-dropdown" id="us16">
+<summary><strong>US16 — Atividades Pedagógicas do Tipo Quiz ✅</strong></summary>
+<h3 id="us16-atividades-pedagogicas-do-tipo-quiz">US16 — Atividades Pedagógicas do Tipo Quiz</h3>
+<ul>
+<li><strong>Sprint 4</strong></li>
+</ul>
+<blockquote>
+<p><strong>Como</strong> estudante, <strong>quero</strong> realizar atividades pedagógicas do tipo Quiz, <strong>para</strong> responder a questões de múltipla escolha sobre conceitos morfológicos teóricos.</p>
+</blockquote>
+<p>Critério de Aceitação (CA)</p>
+<p><strong>CA-US16-01:</strong> O sistema deve carregar e exibir sequencialmente as perguntas de múltipla escolha associadas a uma atividade pedagógica teórica, computar a resposta selecionada pelo estudante entre as alternativas disponíveis e exibir o feedback imediato ou pontuação final após a conclusão do envio.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em>Critério de DoR (Scrum/XP)</em></th>
+<th style="text-align: left;"><em>Situação</em></th>
+<th style="text-align: left;"><em>Evidência / Link de Rastreabilidade</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><em>A User Story é atômica e clara?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>O escopo está estritamente focado no consumo, interação e submissão de respostas do Quiz pela visão do estudante. A criação do banco de questões e o gerenciamento das atividades pelo professor foram desacoplados em outras histórias.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Possui Critérios de Aceitação explícitos?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Possui um critério de aceitação (CA-US16-01) explícito e objetivo, que estabelece o fluxo de renderização, captura de clique nas opções de múltipla escolha e computação do resultado.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Há rastreabilidade de restrições (RNFs) e Regras de Negócio (RNs)?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Mapeamento explícito para respeitar a RN01 (Acesso restrito a usuários autenticados), garantindo que apenas estudantes logados pontuem, além de herdar o RNF05 (Comunicação via API REST) e RNF12 (Execução 100% via navegador).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>A prioridade está coerente e justificada?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Classificada como Must Have via matriz MoSCoW, pois o Quiz teórico compõe um dos dois pilares fundamentais de engajamento pedagógico do MVP do sistema.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>O esforço foi estimado conjuntamente?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Por envolver controle de estado local e cálculo de acertos, o time de engenharia pontuou a história em 3 Story Points.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Resolução de dependências validada?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>O contrato da API que entrega a estrutura do Quiz foi previamente validado e o layout dos cartões de pergunta homologado pela PO.</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Critério de Pronto (DoD)</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Evidência de Implementação e Qualidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1. Implementação Arquitetural</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Telas de renderização de perguntas e controle de estado local de respostas construídas em React 18+ e TypeScript 5+.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2. Comunicação via API</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">O front-end captura dinamicamente a estrutura de questões de múltipla escolha e alternativas via requisições à API REST (RNF05).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3. Operações Django Admin</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">O banco de questões, textos e alternativas corretas do Quiz são mantidos e populados via painel administrativo do Django.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4. Validação de CAs</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">O critério CA-US16-01 foi testado com sucesso: o sistema exibe perguntas sequenciais, captura cliques e computa o feedback imediato/pontuação.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>5. Garantia das RNs</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Atendimento estrito à RN01; o sistema exige autenticação ativa via token e vincula a pontuação final unicamente ao perfil do estudante logado.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>6. Validação de RNFs (RNF11)</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Os blocos de múltipla escolha e os cartões de pergunta foram validados em resolução mobile (360px) e executam 100% via navegador (RNF12).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>7. Integração Contínua (CI)</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Código integrado à branch principal, com build automatizado executado com sucesso.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>8. Homologação &amp; Validação</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Sistema operando de forma estável no link de produção da Vercel, homologado pelo fluxo de acesso e validado junto à cliente (PO).</td>
+</tr>
+</tbody>
+</table>
+<p>Links de Rastreabilidade e Artefatos</p>
+<p>Link no site: <a href="https://req-2026-1-t01-morfo-blocos-digital.vercel.app/">https://req-2026-1-t01-morfo-blocos-digital.vercel.app/</a></p>
+<p>Fluxo de Acesso:  </p>
+<p>a. Efetue login no sistema com uma conta ativa de Estudante.  </p>
+<p>b. Na dashboard inicial, localize e selecione um exercício rotulado como "Responder Perguntas".</p>
+<p>c. Responda sequencialmente às questões de múltipla escolha clicando nas alternativas desejadas.  </p>
+<p>d. Clique no botão de envio para submeter as respostas e visualizar o resultado final.</p>
+<p><img alt="US16" src="../img/us16.png" width="80%" />
+<img alt="US16" src="../img/us16parte2.png" width="80%" /></p>
+</details>
+<details class="us-dropdown" id="us17">
+<summary><strong>US17 — Atividades Pedagógicas de Montagem de Palavras (Interface) ✅</strong></summary>
+<h3 id="us17-atividades-pedagogicas-de-montagem-de-palavras-interface">US17 — Atividades Pedagógicas de Montagem de Palavras (Interface)</h3>
+<ul>
+<li><strong>Sprint 4</strong></li>
+</ul>
+<blockquote>
+<p><strong>Como</strong> estudante, <strong>quero</strong> realizar atividades pedagógicas de montagem de palavras, manipulando os blocos na tela, <strong>para</strong> formar palavras e submetê-las para a validação.</p>
+</blockquote>
+<p>Critério de Aceitação (CA)</p>
+<ul>
+<li><strong>CA-US17-01:</strong> O estudante consegue arrastar, soltar e reordenar livremente os blocos de morfemas na área de construção usando o toque (mobile) ou o rato/mouse.</li>
+<li><strong>CA-US17-02:</strong> O botão de "Enviar Resposta" só fica ativo e clicável se houver pelo menos um bloco posicionado na área de montagem.</li>
+<li><strong>CA-US17-04:</strong> A área de construção e os blocos de morfemas devem adaptar-se dinamicamente ao limite mínimo de <strong>360px</strong> de largura. Os blocos devem empilhar-se ou redimensionar-se automaticamente, sendo expressamente proibido que fiquem cortados ou forcem uma barra de rolagem horizontal.</li>
+</ul>
+<p>Verificação do Definition of Ready (DoR) — US17</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em>Critério de DoR (Scrum/XP)</em></th>
+<th style="text-align: left;"><em>Situação</em></th>
+<th style="text-align: left;"><em>Evidência / Link de Rastreabilidade</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><em>A User Story é atômica e clara?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>O escopo está focado exclusivamente na mecânica de arrastar, soltar e ordenar os blocos na interface gráfica. A validação linguística da palavra montada foi isolada em outra história do motor de regras.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Possui Critérios de Aceitação explícitos?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Possui os critérios CA-US17-01, CA-US17-02 e CA-US17-04 detalhando o comportamento físico dos blocos.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Há rastreabilidade de restrições (RNFs) e Regras de Negócio (RNs)?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Mapeamento estrutural homologado para a RN01 e RNF12. O bloqueio anterior do RNF11 foi totalmente sanado através da refatoração do container da mesa de trabalho.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>A prioridade está coerente e justificada?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Classificada como Must Have via matriz MoSCoW, pois representa o núcleo da experiência de jogabilidade e o principal diferencial pedagógico do sistema.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>O esforço foi estimado conjuntamente?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Por exigir manipulação complexa de elementos de interface, a equipe de engenharia pontuou a história em 5 Story Points.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Resolução de dependências validada?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>O contrato técnico para carregar o catálogo de morfemas necessários para o tabuleiro já estava fechado.</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Critério de Pronto (DoD)</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Evidência de Implementação e Qualidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1. Implementação Arquitetural</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Mesa de trabalho desenvolvida em React 18+ com suporte nativo a eventos de mouse e gestos de toque em dispositivos móveis.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2. Comunicação via API</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">O catálogo de morfemas é alimentado e renderizado na tela dinamicamente via requisições HTTP para a API REST (RNF05).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3. Operações Django Admin</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">A base de blocos, morfemas e suas propriedades pedagógicas são gerenciadas e armazenadas através da retaguarda administrativa do Django.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4. Validação de CAs</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Critérios CA-US17-01 e CA-US17-02 validados: os blocos movem-se livremente e o botão de envio trava se a área de construção estiver vazia.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>5. Garantia das RNs</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Garante o cumprimento da RN01, protegendo o estado do tabuleiro de jogo e limitando o uso apenas a estudantes devidamente autenticados.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>6. Validação de RNFs (RNF11)</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;"><strong>Resolvido:</strong> O container foi refatorado com flexbox adaptativo. Os blocos empilham-se automaticamente em 360px sem sofrer cortes ou forçar scroll lateral (CA-US17-04).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>7. Integração Contínua (CI)</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Código integrado com sucesso ao repositório principal, superando os testes de regressão visual sem quebrar as folhas de estilo globais.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>8. Homologação &amp; Validação</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Interface homologada no ambiente móvel da Vercel através do fluxo de acesso e validada formalmente com a cliente (PO).</td>
+</tr>
+</tbody>
+</table>
+<p>Links de Rastreabilidade e Artefatos</p>
+<p>Link no site: <a href="https://req-2026-1-t01-morfo-blocos-digital.vercel.app/">https://req-2026-1-t01-morfo-blocos-digital.vercel.app/</a></p>
+<p>Fluxo de Acesso:  </p>
+<p>a. Efetue login no sistema com uma conta ativa de <strong>Estudante</strong>.  </p>
+<p>b. Na dashboard inicial, clique em um exercício do tipo <strong>"Junção de Blocos"</strong>.  </p>
+<p>c. Visualize o tabuleiro interativo e os blocos de morfemas disponíveis na base da tela.  </p>
+<p>d. Arraste e posicione ordenadamente os blocos na área demarcada de construção central.</p>
+<p><img alt="US17" src="../img/us17.png" width="80%" /></p>
+</details>
+<details class="us-dropdown" id="us18">
+<summary><strong>US18 - Consulta de Conteúdos Morfológicos ✅</strong></summary>
+<h3 id="us18-consulta-de-conteudos-morfologicos">US18 - Consulta de Conteúdos Morfológicos</h3>
+<ul>
+<li><strong>Sprint 4</strong></li>
+</ul>
+<blockquote>
+<p><strong>Como</strong> estudante, <strong>quero</strong> consultar explicações sobre conteúdos morfológicos relacionados às atividades, <strong>para</strong> aprender enquanto pratico.</p>
+</blockquote>
+<p>Critério de Aceitação (CA)</p>
+<ul>
+<li><strong>CA-US18-01:</strong> O sistema deve fornecer uma aba ou janela modal com textos explicativos rápidos sobre a matéria da questão atual, acessíveis diretamente na tela sem reiniciar ou apagar o progresso da atividade.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em>Critério de DoR (Scrum/XP)</em></th>
+<th style="text-align: left;"><em>Situação</em></th>
+<th style="text-align: left;"><em>Evidência / Link de Rastreabilidade</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><em>A User Story é atômica e clara?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>O escopo está focado exclusivamente na exibição de conteúdo de apoio teórico sob demanda. A interface visual de arrastar os blocos foi mantida isolada na US17.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Possui Critérios de Aceitação explícitos?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Possui um critério de aceitação (CA-US18-01) focado no comportamento do modal de ajuda sem perda de estado local.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Há rastreabilidade de restrições (RNFs) e Regras de Negócio (RNs)?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Mapeamento direto para consumo assíncrono e suporte fluido em telas responsivas.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Resolução de dependências validada?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Depende diretamente da existência da base populada via retaguarda. Os contratos de entrada e saída foram definidos.</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Critério de Pronto (DoD)</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Evidência de Implementação e Qualidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1. Implementação Arquitetural</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Interface da janela suspensa (modal) desenvolvida em React 18+ e TypeScript 5+ de forma isolada e acoplável às atividades.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2. Comunicação via API</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">O conteúdo teórico e os textos explicativos rápidos são consumidos dinamicamente da API REST com base na matéria selecionada (RNF05).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3. Operações Django Admin</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">O dicionário de conteúdos morfológicos e as explicações conceituais são cadastrados e atualizados via painel administrativo do Django.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4. Validação de CAs</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Critério CA-US18-01 validado com sucesso: a modal abre e fecha sobre a tela atual sem reiniciar o progresso ou apagar as peças da atividade.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>5. Garantia das RNs</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Preserva o fluxo pedagógico sem quebras de regras de integridade de dados.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>6. Validação de RNFs (RNF11)</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">A modal de explicação foi otimizada com rolagem interna vertical, adaptando-se perfeitamente em telas móveis de 360px de largura.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>7. Integração Contínua (CI)</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Código integrado à branch principal sem gerar vazamentos de memória ou falhas de compilação na esteira de build automatizado.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>8. Homologação &amp; Validação</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Funcionalidade testada no ambiente de produção da Vercel através do fluxo de acesso e homologada formalmente com a cliente (PO).</td>
+</tr>
+</tbody>
+</table>
+<p>Links de Rastreabilidade e Artefatos</p>
+<p>Link no site: <a href="https://req-2026-1-t01-morfo-blocos-digital.vercel.app/">https://req-2026-1-t01-morfo-blocos-digital.vercel.app/</a></p>
+<p>Fluxo de Acesso:  </p>
+<p>a. Efetue login no sistema com uma conta ativa de Estudante.  </p>
+<p>b. Na dashboard inicial, clique no botão <strong>"Trilha de Aprendizagem"</strong> ou no ícone de ajuda posicionado na tela da atividade.  </p>
+<p>c. Inspecione os textos explicativos rápidos sobre a matéria dentro da janela.</p>
+<p><img alt="US18" src="../img/us18.png" width="80%" /></p>
+</details>
+<details class="us-dropdown" id="us19">
+<summary><strong>US19 — Resultado da Validação ✅</strong></summary>
+<h3 id="us19-resultado-da-validacao">US19 — Resultado da Validação</h3>
+<blockquote>
+<p><strong>Como</strong> estudante, <strong>quero</strong> consultar o resultado da validação da combinação de blocos submetida, <strong>para</strong> saber se acertei a estrutura da palavra.</p>
+</blockquote>
+<p>Critério de Aceitação (CA)</p>
+<ul>
+<li><strong>CA-US19-01:</strong> O motor do sistema testa a sequência de blocos enviada contra o banco de dados de palavras válidas e exibe um feedback instantâneo e claro de "Palavra Válida" ou "Palavra Inválida".</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em>Critério de DoR (Scrum/XP)</em></th>
+<th style="text-align: left;"><em>Situação</em></th>
+<th style="text-align: left;"><em>Evidência / Link de Rastreabilidade</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><em>A User Story é atômica e clara?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Escopo exclusivo para a conferência algorítmica de acertos e erros e o retorno imediato do veredito.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Possui Critérios de Aceitação explícitos?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Vinculada ao critério essencial CA-US19-01.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Há rastreabilidade de restrições (RNFs)?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Rastreia a integração síncrona com o dicionário de dados e tempo de resposta ágil.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>A prioridade está coerente e justificada?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Must Have. Peça chave para o funcionamento lógico do validador.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>O esforço foi estimado conjuntamente?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Estimado em 3 Story Points devido ao casamento de strings das sequências montadas.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Resolução de dependências validada?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Base de dados contendo palavras cadastradas e ordenadas validada para testes.</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Critério de Pronto (DoD V4.0)</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Evidência de Implementação e Qualidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1. Implementação Arquitetural</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Rotas de validação síncronas implementadas com buscas otimizadas no banco de dados relacional PostgreSQL 15+.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2. Comunicação via API</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">O front-end envia o arranjo de blocos montados e recebe imediatamente a resposta booleana estruturada da API REST (RNF05).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3. Operações Django Admin</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">O cadastro de sequências morfológicas e palavras consideradas válidas para os testes é realizado na retaguarda do Django Admin.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4. Validação de CAs</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Critério CA-US19-01 validado: o motor testa a sequência enviada contra o banco de dados e emite o aviso instantâneo de "Palavra Válida" ou "Palavra Inválida".</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>5. Garantia das RNs</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Execução direta da RN05; a combinação enviada pelo estudante autenticado só é aceita se constar rigorosamente no dicionário do sistema.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>6. Validação de RNFs (RNF11)</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">O banner visual e as mensagens de feedback de acerto ou erro foram estilizados de forma fluida, sem estourar margens móveis em telas de 360px.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>7. Integração Contínua (CI)</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Código integrado à branch principal do repositório, com testes síncronos de casamento de strings executados de forma limpa.</td>
+</tr>
+</tbody>
+</table>
+<p>Links de Rastreabilidade e Artefatos</p>
+<p>Link no site: <a href="https://req-2026-1-t01-morfo-blocos-digital.vercel.app/">https://req-2026-1-t01-morfo-blocos-digital.vercel.app/</a></p>
+<p>Fluxo de Acesso:  </p>
+<p>a. Efetue login no sistema com uma conta ativa de Estudante.  </p>
+<p>b. Na dashboard inicial, clique em um exercício do tipo <strong>"Junção de Blocos"</strong>.  </p>
+<p>c. Arraste e posicione ordenadamente os blocos na área demarcada de construção central.  </p>
+<p>d. Clique no botão <strong>"Verificar Palavra"</strong>.  </p>
+<p>e. Observe o aviso visual emitido indicando o resultado (<strong>"Palavra Válida"</strong> ou <strong>"Palavra Inválida"</strong>).</p>
+<p><img alt="US19" src="../img/us19.png" width="80%" /></p>
+</details>
+<details class="us-dropdown" id="us20">
+<summary><strong>US20 — Feedback Pedagógico Estrutural ✅</strong></summary>
+<h3 id="us20-feedback-pedagogico-estrutural">US20 — Feedback Pedagógico Estrutural</h3>
+<blockquote>
+<p><strong>Como</strong> estudante, <strong>quero</strong> consultar o processo de formação morfológica da palavra validada, <strong>para</strong> compreender como os morfemas se combinam.</p>
+</blockquote>
+<p>Critério de Aceitação (CA)</p>
+<ul>
+<li><strong>CA-US20-01:</strong> Em caso de acerto na montagem, o sistema abre uma explicação detalhada e textual do processo morfológico daquela palavra específica (ex: prefixação, sufixação).</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em>Critério de DoR (Scrum/XP)</em></th>
+<th style="text-align: left;"><em>Situação</em></th>
+<th style="text-align: left;"><em>Evidência / Link de Rastreabilidade</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><em>A User Story é atômica e clara?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Escopo focado unicamente na renderização do texto pedagógico atrelado ao sucesso da montagem.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Possui Critérios de Aceitação explícitos?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Conforme o critério CA-US20-01 (gatilho condicionado ao cenário de acerto).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Há rastreabilidade de restrições (RNFs)?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Garante a exibição correta dos metadados pedagógicos gravados no catálogo.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>A prioridade está coerente e justificada?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Should Have. Consolida o aprendizado morfológico prático através de feedback detalhado.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>O esforço foi estimado conjuntamente?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Estimado em 2 Story Points reaproveitando os componentes visuais de feedback estruturado.</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Critério de Pronto (DoD V4.0)</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Evidência de Implementação e Qualidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1. Implementação Arquitetural</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Bloco de expansão textual condicional desenvolvido em React 18+ e TypeScript 5+, integrado à tela de resultados do jogo.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2. Comunicação via API</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">O front-end consome os metadados linguísticos e textuais através de rotas REST de sucesso acionadas após a validação (RNF05).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3. Operações Django Admin</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">As explicações morfológicas detalhadas (como os processos de prefixação e sufixação) são cadastradas e geridas via Django Admin.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4. Validação de CAs</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Critério CA-US20-01 validado: em caso de acerto na montagem, a caixa pedagógica se expande automaticamente mostrando o processo de formação.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>5. Garantia das RNs</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">O gatilho lógico funciona de maneira amarrada ao perfil do estudante autenticado, prevenindo a exibição de dados pedagógicos em cenários de erro ou falha.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>6. Validação de RNFs (RNF11)</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Caixa de texto configurada com quebra automática de linha de maneira limpa.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>8. Homologação &amp; Validação</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Funcionalidade testada no ambiente de produção da Vercel através do fluxo de acesso e homologada formalmente com a cliente (PO).</td>
+</tr>
+</tbody>
+</table>
+<p>Links de Rastreabilidade e Artefatos</p>
+<p>Link no site: <a href="https://req-2026-1-t01-morfo-blocos-digital.vercel.app/">https://req-2026-1-t01-morfo-blocos-digital.vercel.app/</a></p>
+<p>Fluxo de Acesso:  </p>
+<p>a. Efetue login no sistema com uma conta ativa de Estudante.  </p>
+<p>b. Na dashboard inicial, clique em um exercício do tipo <strong>"Junção de Blocos"</strong>.  </p>
+<p>c. Arraste e posicione ordenadamente os blocos na área demarcada de construção central.  </p>
+<p>d. Clique no botão <strong>"Verificar Palavra"</strong>.  </p>
+<p>e. Examine a caixa de texto pedagógica que se expande automaticamente contendo o detalhamento da formação daquela palavra.</p>
+<p><img alt="US20" src="../img/us20.png" width="80%" /></p>
+</details>
+<details class="us-dropdown" id="us21">
+<summary><strong>US21 — Histórico de Desempenho do Estudante ✅</strong></summary>
+<h3 id="us21-historico-de-desempenho-do-estudante">US21 — Histórico de Desempenho do Estudante</h3>
+<blockquote>
+<p><strong>Como</strong> estudante, <strong>quero</strong> consultar o histórico de pontuações individuais, <strong>para</strong> acompanhar minha evolução ao longo do tempo.</p>
+</blockquote>
+<p>Critério de Aceitação (CA)</p>
+<ul>
+<li><strong>CA-US21-01:</strong> O ecrã/tela de portfólio deve expor uma listagem cronológica contendo o nome de cada atividade realizada, a data da tentativa e a nota alcançada pelo aluno.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em>Critério de DoR (Scrum/XP)</em></th>
+<th style="text-align: left;"><em>Situação</em></th>
+<th style="text-align: left;"><em>Evidência / Link de Rastreabilidade</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><em>A User Story é atômica e clara?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Destinada puramente à leitura e exibição linear do progresso do aluno autenticado.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Possui Critérios de Aceitação explícitos?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Mapeada sobre a listagem de colunas obrigatórias definidas no CA-US21-01.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Há rastreabilidade de restrições (RNFs)?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Rastreia restrição de privacidade (o aluno lê apenas seus dados).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>A prioridade está coerente e justificada?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Should Have. Atua como o painel agregador de notas do próprio discente.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>O esforço foi estimado conjuntamente?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Estimado em 2 Story Points por requerer uma consulta SQL de seleção simples.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Resolução de dependências validada?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Tabela de logs de notas do banco pronta para gravação e leitura de eventos.</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Critério de Pronto (DoD)</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Evidência de Implementação e Qualidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1. Implementação Arquitetural</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Tela de portfólio estruturada em React 18+ e TypeScript 5+ para listagem cronológica alimentada por consultas relacionais.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2. Comunicação via API</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">O front-end realiza a requisição GET mapeando o histórico seguro através de interceptores de token JWT para a API REST (RNF05).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3. Operações Django Admin</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">As tabelas de logs de notas e histórico de tentativas são estruturadas, auditáveis e visíveis na retaguarda do Django Admin.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4. Validação de CAs</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Critério CA-US21-01 validado com sucesso: a tela expõe a listagem cronológica com o nome da atividade, data da tentativa e nota alcançada.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>5. Garantia das RNs</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Cumprimento estrito de restrição de privacidade e segurança; o sistema garante de forma invariante que o aluno autenticado acesse apenas os seus próprios dados.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>6. Validação de RNFs (RNF11)</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Ajuste de Design: A tabela de notas foi otimizada para se converter automaticamente em blocos verticais legíveis em telas de 360px, evitando rolagem horizontal.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>7. Integração Contínua (CI)</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Código integrado com sucesso ao repositório principal com testes automatizados executados com sucesso.</td>
+</tr>
+</tbody>
+</table>
+<p>Links de Rastreabilidade e Artefatos</p>
+<p>Link no site: <a href="https://req-2026-1-t01-morfo-blocos-digital.vercel.app/">https://req-2026-1-t01-morfo-blocos-digital.vercel.app/</a></p>
+<p>Fluxo de Acesso:  </p>
+<p>a. Efetue login no sistema com uma conta ativa de Estudante.  </p>
+<p>b. Na dashboard inicial, localize e clique no painel ou botão <strong>"Histórico de Questões"</strong> posicionado na interface principal.</p>
+<p><img alt="US21" src="../img/us21.png" width="80%" /></p>
+</details>
+<details class="us-dropdown" id="us22">
+<summary><strong>US22 — Histórico de Pontuações do Estudante ✅</strong></summary>
+<h3 id="us22-historico-de-pontuacoes-do-estudante">US22 — Histórico de Pontuações do Estudante</h3>
+<blockquote>
+<p><strong>Como</strong> estudante, <strong>quero</strong> consultar o histórico das minhas pontuações individuais, para acompanhar minha evolução ao longo do tempo.</p>
+</blockquote>
+<p><strong>Critérios de Aceitação (CA)</strong></p>
+<ul>
+<li><strong>CA-US22-01:</strong> O histórico deve apresentar, para cada atividade concluída pelo estudante, no mínimo: nome da atividade, data de realização, pontuação obtida e resultado final da tentativa, ordenados cronologicamente [RNF01, RN08].</li>
+<li><strong>CA-US22-02:</strong> O estudante deve conseguir filtrar ou navegar pelo histórico para consultar diferentes períodos de utilização, e o sistema deve exibir a pontuação acumulada ou indicadores de progresso correspondentes aos registros apresentados [RN06, RN07].</li>
+</ul>
+<p>Verificação do Definition of Ready (DoR) — US22</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Critério de DoR (Scrum/XP)</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Evidência / Link de Rastreabilidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>A User Story é atômica e clara?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Escopo focado na transparência e autoavaliação do aluno a partir de dados passados.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Possui Critérios de Aceitação explícitos?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">CA-US22-01 e CA-US22-02 definem o ordenamento temporal estrito.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Há rastreabilidade de RNFs e RNs?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Mapeada para RF22, RN05, RN06, RN08, RNF11 e RNF15.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A prioridade está coerente e justificada?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Must Have — essencial para a engrenagem de gamificação e portfólio do aluno.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>O esforço foi estimado conjuntamente?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Estimado em 2 Story Points por demandar formatação amigável de datas e notas em gráficos/tabelas.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Resolução de dependências validada?</strong></td>
+<td style="text-align: left;">Sim</td>
+<td style="text-align: left;">Endpoint de histórico individual baseado no ID do Token JWT validado no backend.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>Critério de Pronto (DoD V4.0)</em></strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em>Critério de Pronto (DoD V4.0)</em></th>
+<th style="text-align: left;"><em>Status</em></th>
+<th style="text-align: left;"><em>Evidência de Implementação e Qualidade</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><em>1. Implementação Arquitetural</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Painel do Aluno desenvolvido em React consumindo dados históricos individuais de forma isolada.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>2. Comunicação via API</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>A requisição GET extrai o ID do estudante criptografado no token JWT para blindar acessos indevidos (RNF13).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>3. Ambiente de Produção</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Tela de portfólio disponível no ambiente de produção da Vercel diretamente na conta do aluno.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>4. Validação de CAs</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>CA-US22-01 e CA-US22-02 validados: histórico organiza os registros de forma cronológica partindo do mais recente automaticamente.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>5. Garantia das RNs</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Garantia de RN05, RN06 e RN08: toda tentativa válida ou inválida concluída pelo aluno persiste e consta no feed.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>6. Validação de RNFs (RNF15)</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Contraste de cor das pontuações validado em conformidade com o nível AA da WCAG (mínimo de 4.5:1).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>7. Integração Contínua (CI)</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Código integrado sem gerar quebras nas rotas globais de navegação da aplicação.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>8. Homologação e Validação</em></strong></td>
+<td style="text-align: left;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Funcionalidade exaustivamente testada no ambiente mobile real e homologada junto à equipe e PO.</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Links de Rastreabilidade e Artefatos</strong></p>
+<p>Link no site: <a href="https://req-2026-1-t01-morfo-blocos-digital.vercel.app/">https://req-2026-1-t01-morfo-blocos-digital.vercel.app/</a></p>
+<p><strong>Fluxo de Acesso:</strong></p>
+<p>a. Efetue login com uma conta de Aluno (Estudante).</p>
+<p>b. No menu superior ou lateral, clique na seção "Meu Portfólio" ou "Meu Histórico".</p>
+<p>c. Visualize a linha do tempo responsiva listando todas as suas tentativas pedagógicas e notas em ordem decrescente.</p>
+<p><img alt="US22" src="../img/us22.png" width="80%" /></p>
+</details>
+<details class="us-dropdown" id="us23">
+<summary><strong>US23 — Criação de Turmas (Visão do Professor) ✅</strong></summary>
+<h3 id="us23-criacao-de-turmas-visao-do-professor">US23 — Criação de Turmas (Visão do Professor)</h3>
+<blockquote>
+<p><strong>Como</strong> professor, <strong>quero</strong> cadastrar novas turmas no sistema, <strong>para</strong> agrupar meus estudantes e gerenciar seus acessos de forma organizada.</p>
+</blockquote>
+<p>Critério de Aceitação (CA)</p>
+<ul>
+<li><strong>CA-US23-01:</strong> O cadastro da turma exige um identificador único (Nome/Código) e o ano letivo corrente, bloqueando o acesso a esta rota para quem tiver perfil de estudante.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em>Critério de DoR (Scrum/XP)</em></th>
+<th style="text-align: left;"><em>Status</em></th>
+<th style="text-align: left;"><em>Evidência / Link de Rastreabilidade</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><em>A User Story é atômica e clara?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Focada nas regras de validação do formulário e travas de perfil.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Possui Critérios de Aceitação explícitos?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Atendida de forma direta pelo critério único de segurança CA-US23-01.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Há rastreabilidade de restrições (RNFs)?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Mapeia o controle de acesso baseado em funções (RBAC), impedindo perfis de estudantes de acessarem rotas de escrita.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>A prioridade está coerente e justificada?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Must Have. Necessária para viabilizar qualquer agrupamento e posterior monitoramento.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>O esforço foi estimado conjuntamente?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Estimado em 2 Story Points usando middlewares tradicionais de validação de token (JWT).</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Resolução de dependências validada?</em></td>
+<td style="text-align: left;"><em>Sim</em></td>
+<td style="text-align: left;"><em>Payload de login estruturado para identificar as claims de permissões de Professor.</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Critério de Pronto (DoD V4.0)</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Evidência de Implementação e Qualidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1. Implementação Arquitetural</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Estrutura de dados das turmas e models de escrita configurados no banco de dados relacional PostgreSQL 15+.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2. Comunicação via API</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Rotas e contratos de payload assinados e prontos para consumo seguro via requisições para a API REST (RNF05).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3. Operações Django Admin</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Gerenciamento, auditoria e vínculo manual de turmas e alunos operando de forma nativa no painel do Django Admin.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4. Validação de CAs</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Critério CA-US23-01 validado com sucesso: o formulário exige identificador único, ano letivo corrente e bloqueia o acesso para perfis de estudante.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>5. Garantia das RNs</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Middlewares de segurança baseados em funções (RBAC) e token JWT configurados para isolar os privilégios de escrita ao perfil do Professor (RN01).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>6. Validação de RNFs (RNF11)</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Interface do formulário de criação de turmas mapeada e validada em design responsivo fluido para telas móveis de 360px.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>7. Integração Contínua (CI)</strong></td>
+<td style="text-align: left;"><strong>Concluído</strong></td>
+<td style="text-align: left;">Modelagem de banco e regras de validação integradas à branch principal por meio de Pull Request aprovado sem falhas na pipeline.</td>
+</tr>
+</tbody>
+</table>
+<p>Link no site: <a href="https://req-2026-1-t01-morfo-blocos-digital.vercel.app/">https://req-2026-1-t01-morfo-blocos-digital.vercel.app/</a></p>
+<p>Fluxo de Acesso:  </p>
+<p>a. Efetue login com uma conta configurada com permissões de <strong>Professor</strong>.  </p>
+<p>b. Clique no link <strong>"Gerenciar Turmas"</strong> na barra de ferramentas lateral ou menu principal.</p>
+<p>c. Clique no botão de ação <strong>"Nova Turma"</strong> para carregar o formulário.  </p>
+<p>d. Preencha o nome da turma, ano corrente e confirme a operação de escrita.</p>
+<p><img alt="US23" src="../img/us23.png" width="80%" /></p>
+</details>
+<details class="us-dropdown" id="us24">
+<summary><strong>US24 — Relatório Analítico Consolidado da Turma ❌</strong></summary>
+<h3 id="us24-relatorio-analitico-consolidado-da-turma">US24 — Relatório Analítico Consolidado da Turma</h3>
+<blockquote>
+<p><strong>Como</strong> professor, <strong>quero</strong> acessar o relatório de desempenho consolidado da turma, <strong>para</strong> identificar dificuldades e orientar intervenções pedagógicas.</p>
+</blockquote>
+<p><strong>Critérios de Aceitação (CA):</strong></p>
+<ul>
+<li><strong>CA-US24-01:</strong> Se a turma selecionada for nova e os alunos ainda não tiverem realizado nenhum exercício, os gráficos e tabelas não podem quebrar; o sistema deve exibir uma mensagem clara.</li>
+</ul>
+<p><strong>Fora do MVP</strong>: Classificado como Must Have. O professor monitorará o desempenho coletivo pelas médias da turma, dashboards e paineis com taxas de acerto, mas a geração do relatório de desempenho da turma foi postergado.</p>
+</details>
+<details class="us-dropdown" id="us25">
+<summary><strong>US25 — Análise de Erros Frequentes ✅</strong></summary>
+<h3 id="us25-analise-de-erros-frequentes"><strong>US25 — Análise de Erros Frequentes</strong></h3>
+<blockquote>
+<p><strong>Como</strong> administrador/professor, <strong>quero</strong> visualizar um relatório descritivo dos erros mais frequentes cometidos pelos estudantes, <strong>para</strong> identificar dificuldades recorrentes e planejar intervenções pedagógicas direcionadas.</p>
+</blockquote>
+<p><strong>Critérios de Aceitação (CA)</strong>:</p>
+<ul>
+<li><strong>CA-US25-01</strong>: A análise de erros deve listar as palavras inválidas mais frequentemente submetidas pela turma no período selecionado, em ranking decrescente, com indicação da quantidade de ocorrências e dos estudantes envolvidos [RN02, RN05].</li>
+<li><strong>CA-US25-02</strong>: A análise depende funcionalmente do registro de tentativas inválidas realizado pela US20 (CA-US20-03); na ausência de submissões inválidas no período, a tela deve exibir mensagem informativa específica em vez de tabela vazia [RN05, RN08].</li>
+<li><strong>CA-US25-03</strong>: O período padrão da análise deve ser os últimos 30 dias, com filtros adicionais para últimos 7 dias e semestre completo, e filtro opcional por nível de dificuldade da atividade em que o erro foi cometido [RNF03].</li>
+</ul>
+<p>Verificação do Definition of Ready (DoR) — US25</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Critério de DoR (Scrum/XP)</th>
+<th style="text-align: center;">Status</th>
+<th style="text-align: left;">Evidência / Link de Rastreabilidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>A User Story é atômica e clara?</strong></td>
+<td style="text-align: center;">Sim</td>
+<td style="text-align: left;">Escopo focado exclusivamente na consolidação e exibição analítica das falhas de montagem morfológica mais comuns.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Possui Critérios de Aceitação explícitos?</strong></td>
+<td style="text-align: center;">Sim</td>
+<td style="text-align: left;">CAs definidos (exibição de ranking de palavras/morfemas errados e filtros de busca por turma).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Há rastreabilidade de RNFs e RNs?</strong></td>
+<td style="text-align: center;">Sim</td>
+<td style="text-align: left;">Mapeada para os requisitos de monitoramento, desempenho e tempo de resposta (RNF03).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A prioridade está coerente e justificada?</strong></td>
+<td style="text-align: center;">Sim</td>
+<td style="text-align: left;">Should Have / Must Have — essencial para o acompanhamento analítico do professor, preenchendo a vaga de relatórios do MVP após a remoção da US24.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>O esforço foi estimado conjuntamente?</strong></td>
+<td style="text-align: center;">Sim</td>
+<td style="text-align: left;">Estimado em 3 Story Points devido à necessidade de consultas agregadas (<code>GROUP BY</code> / <code>COUNT</code>) no banco de dados.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Resolução de dependências validada?</strong></td>
+<td style="text-align: center;">Sim</td>
+<td style="text-align: left;">Depende puramente da tabela de "Tentativas" (persistida na US22/US23) contendo os logs de validações incorretas dos alunos.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Critério de Pronto (DoD V4.0) — US25</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em>Critério de Pronto (DoD V4.0)</em></th>
+<th style="text-align: center;"><em>Status</em></th>
+<th style="text-align: left;"><em>Evidência de Implementação e Qualidade</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><em>1. Implementação Arquitetural</em></strong></td>
+<td style="text-align: center;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Interface construída em React/TypeScript apresentando um dashboard/painel com o ranking visual dos principais desvios morfológicos.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>2. Comunicação via API</em></strong></td>
+<td style="text-align: center;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Endpoint específico <code>GET /api/reports/frequent-errors/</code> estruturado no Django, realizando a agregação de dados de tentativas falhas.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>3. Ambiente de Produção</em></strong></td>
+<td style="text-align: center;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Módulo de relatório disponibilizado de forma segura no painel do professor hospedado na plataforma Vercel.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>4. Validação de CAs</em></strong></td>
+<td style="text-align: center;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>CAs validados: o sistema computa e ordena corretamente os erros em tempo real a cada submissão incorreta dos alunos.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>5. Garantia das RNs</em></strong></td>
+<td style="text-align: center;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Segurança baseada em perfis (RBAC): verificado que contas de nível 'Estudante' recebem erro <code>403 Forbidden</code> ao tentar acessar o endpoint.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>6. Validação de RNFs (RNF11)</em></strong></td>
+<td style="text-align: center;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Tabela e gráficos de erros validados como responsivos, adaptando-se para leitura limpa em resoluções a partir de 360px.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>7. Integração Contínua (CI)</em></strong></td>
+<td style="text-align: center;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Migrações de banco e rotas de agregação integradas à pipeline principal sem afetar a performance do jogo.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><em>8. Homologação e Validação</em></strong></td>
+<td style="text-align: center;"><em>Concluído</em></td>
+<td style="text-align: left;"><em>Apresentado e homologado com sucesso junto à PO, garantindo os dados estatísticos necessários para a tomada de decisão pedagógica.</em></td>
+</tr>
+</tbody>
+</table>
+<p>Link no site: <a href="https://req-2026-1-t01-morfo-blocos-digital.vercel.app/">https://req-2026-1-t01-morfo-blocos-digital.vercel.app/</a></p>
+<p>Fluxo de Acesso:  </p>
+<p>a. Efetue login com uma conta configurada com permissões de <strong>Professor</strong>.  </p>
+<p>b. Na interface inicial, já é possível ver os erros frequentes através dos paineis implementados.</p>
+<p><img alt="US25" src="../img/us25.png" width="80%" />
+<img alt="US25" src="../img/us25parte2.png" width="80%" /></p>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Equipe G4 • Engenharia de Software - FGA/UnB
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "toc.follow", "content.code.copy", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

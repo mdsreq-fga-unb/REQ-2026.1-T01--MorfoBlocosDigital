@@ -1,0 +1,2800 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentação do projeto MorfoBlocos Digital - Engenharia de Software">
+      
+      
+        <meta name="author" content="Equipe G4">
+      
+      
+        <link rel="canonical" href="https://mdsreq-fga-unb.github.io/REQ-2026.1-T01--MorfoBlocosDigital/v3/sprints/sprint2/">
+      
+      
+        <link rel="prev" href="../sprint1/">
+      
+      
+        <link rel="next" href="../sprint3/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Sprint 2 - MorfoBlocos Digital</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ata-de-reuniao-sprint-planning-sprint-02" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="MorfoBlocos Digital" class="md-header__button md-logo" aria-label="MorfoBlocos Digital" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MorfoBlocos Digital
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sprint 2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="red"  aria-label="Modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="yellow"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../v1/" class="md-tabs__link">
+          
+  
+  
+  Unidade II
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../v2/" class="md-tabs__link">
+          
+  
+  
+  Unidade III
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Unidade IV
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="MorfoBlocos Digital" class="md-nav__button md-logo" aria-label="MorfoBlocos Digital" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MorfoBlocos Digital
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade II
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidade II
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v1/reunioes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reuniões
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v1/visao_produto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão do Produto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade III
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidade III
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão do Produto
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Visão do Produto
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v2/visao-produto/cenario-atual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cenário Atual do Cliente e do Negócio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v2/visao-produto/solucao-proposta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solução Proposta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v2/visao-produto/intervencao-social/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intervenção Social
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v2/visao-produto/estrategias-esw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estratégias de Engenharia de Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v2/visao-produto/eng-requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engenharia de Requisitos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v2/visao-produto/cronograma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cronograma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v2/visao-produto/interacao-eqp-cliente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interação entre a Equipe e Cliente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v2/visao-produto/requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requisitos de Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v2/visao-produto/dor-dod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Definition of Ready (DoR) e Definition of Done (DoD)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v2/visao-produto/backlog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backlog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v2/visao-produto/licoes-aprendidas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lições Aprendidas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprints
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sprints
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v2/sprints/sprint1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v2/sprints/sprint2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v2/sprints/sprint3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v2/sprints/sprint4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v2/reunioes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reuniões
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../v2/status-projeto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Status do projeto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade IV
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidade IV
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planejamento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Planejamento e Organização
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão do Produto
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Visão do Produto
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visao-produto/cenario-atual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cenário Atual do Cliente e do Negócio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visao-produto/solucao-proposta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solução Proposta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visao-produto/intervencao-social/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intervenção Social
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visao-produto/estrategias-esw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estratégias de Engenharia de Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visao-produto/eng-requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engenharia de Requisitos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visao-produto/cronograma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cronograma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visao-produto/interacao-eqp-cliente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interação entre a Equipe e Cliente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visao-produto/requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requisitos de Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visao-produto/dor-dod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Definition of Ready (DoR) e Definition of Done (DoD)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visao-produto/backlog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backlog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../userstories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Stories
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visao-produto/licoes-aprendidas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lições Aprendidas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprints
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sprints
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#informacoes-gerais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Informações Gerais
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Informações Gerais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#participantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Participantes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos-da-reuniao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivos da Reunião
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pautas-e-definicoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pautas e Definições
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pautas e Definições">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-atomizacao-de-requisitos-e-classificacao-urps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Atomização de Requisitos e Classificação URPS+
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-criacao-de-prototipos-de-baixa-fidelidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Criação de Protótipos de Baixa Fidelidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-contratos-de-qualidade-dor-e-dod-e-intervencao-social" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Contratos de Qualidade (DoR e DoD) e Intervenção Social
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-priorizacao-do-backlog-e-definicao-do-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Priorização do Backlog e Definição do MVP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acoes-e-proximos-passos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ações e Próximos Passos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observacoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observações
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dailies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dailies
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reuniões
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reuniões
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reunioes/monitorias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monitorias
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reunioes/cliente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cliente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reunioes/videos-unidades/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entrega das Unidades
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#informacoes-gerais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Informações Gerais
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Informações Gerais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#participantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Participantes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos-da-reuniao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivos da Reunião
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pautas-e-definicoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pautas e Definições
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pautas e Definições">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-atomizacao-de-requisitos-e-classificacao-urps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Atomização de Requisitos e Classificação URPS+
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-criacao-de-prototipos-de-baixa-fidelidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Criação de Protótipos de Baixa Fidelidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-contratos-de-qualidade-dor-e-dod-e-intervencao-social" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Contratos de Qualidade (DoR e DoD) e Intervenção Social
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-priorizacao-do-backlog-e-definicao-do-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Priorização do Backlog e Definição do MVP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acoes-e-proximos-passos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ações e Próximos Passos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observacoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observações
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dailies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dailies
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ata-de-reuniao-sprint-planning-sprint-02">📌 Ata de Reunião — Sprint Planning (Sprint 02)</h1>
+<h2 id="informacoes-gerais">Informações Gerais</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Detalhe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Projeto</strong></td>
+<td>MorfoBlocos</td>
+</tr>
+<tr>
+<td><strong>Tipo de Reunião</strong></td>
+<td>Sprint Planning</td>
+</tr>
+<tr>
+<td><strong>Data</strong></td>
+<td>29/04/2026</td>
+</tr>
+</tbody>
+</table>
+<h3 id="participantes">Participantes</h3>
+<ul>
+<li>Artur Fernandes</li>
+<li>Luiz Henrique Pallavicini</li>
+<li>Bruno Souza</li>
+<li>Carlos Eduardo</li>
+<li>Ana Beatriz</li>
+</ul>
+<hr />
+<h2 id="objetivos-da-reuniao">Objetivos da Reunião</h2>
+<p>Planejar as atividades da <strong>Sprint 02</strong>, com foco na consolidação da <strong>Engenharia de Requisitos</strong>.</p>
+<p>Os objetivos principais definidos foram:</p>
+<ul>
+<li>Elencar e atomizar os Requisitos Funcionais (RFs) e Não Funcionais (RNFs);</li>
+<li>Estabelecer os contratos de qualidade (DoR e DoD);</li>
+<li>Elaborar os primeiros protótipos de interface;</li>
+<li>Definir o escopo do Produto Mínimo Viável (MVP) para a entrega da Unidade 2.</li>
+</ul>
+<hr />
+<h2 id="pautas-e-definicoes">Pautas e Definições</h2>
+<h3 id="1-atomizacao-de-requisitos-e-classificacao-urps">1. Atomização de Requisitos e Classificação URPS+</h3>
+<p><strong>Definição</strong></p>
+<p>Ficou acordado que os requisitos relacionados à manutenção de catálogo (morfemas, palavras e atividades) serão desmembrados em operações atômicas de CRUD para facilitar a rastreabilidade e o gerenciamento do backlog.</p>
+<p><strong>Diretrizes definidas</strong></p>
+<ul>
+<li>Separação dos requisitos em operações de Cadastrar, Editar, Remover e Listar;</li>
+<li>Classificação dos RNFs segundo o modelo URPS+;</li>
+<li>Definição de descrições claras e critérios de validação mensuráveis.</li>
+</ul>
+<p><strong>Resultado esperado</strong></p>
+<p>Obter requisitos mais rastreáveis, testáveis e alinhados às necessidades do projeto.</p>
+<hr />
+<h3 id="2-criacao-de-prototipos-de-baixa-fidelidade">2. Criação de Protótipos de Baixa Fidelidade</h3>
+<p><strong>Definição</strong></p>
+<p>A equipe de frontend iniciará a elaboração de wireframes no Figma para representar os principais fluxos do sistema.</p>
+<p><strong>Escopo dos protótipos</strong></p>
+<ul>
+<li>Espaço de Construção do estudante;</li>
+<li>Painel de Monitoramento do professor.</li>
+</ul>
+<p><strong>Objetivo da atividade</strong></p>
+<p>Validar fluxos visuais, navegação e usabilidade junto à cliente antes do início do desenvolvimento.</p>
+<hr />
+<h3 id="3-contratos-de-qualidade-dor-e-dod-e-intervencao-social">3. Contratos de Qualidade (DoR e DoD) e Intervenção Social</h3>
+<p><strong>Definição</strong></p>
+<p>Serão formalizados os contratos de qualidade do projeto por meio da Definition of Ready (DoR) e da Definition of Done (DoD).</p>
+<p><strong>Definition of Ready (DoR)</strong></p>
+<p>Garantir que uma história de usuário possua informações suficientes para iniciar o desenvolvimento.</p>
+<p><strong>Definition of Done (DoD)</strong></p>
+<p>Estabelecer critérios objetivos para considerar uma funcionalidade concluída, incluindo:</p>
+<ul>
+<li>Testes realizados;</li>
+<li>Revisão de código;</li>
+<li>Documentação atualizada;</li>
+<li>Critérios de aceitação atendidos.</li>
+</ul>
+<p><strong>Atividade complementar</strong></p>
+<p>Redação do documento de Intervenção Social, avaliando os impactos educacionais e sociais do projeto.</p>
+<hr />
+<h3 id="4-priorizacao-do-backlog-e-definicao-do-mvp">4. Priorização do Backlog e Definição do MVP</h3>
+<p><strong>Definição</strong></p>
+<p>A priorização será realizada utilizando a técnica <strong>MoSCoW</strong> em conjunto com a matriz <strong>Valor de Negócio × Complexidade Técnica</strong>.</p>
+<p><strong>Critérios utilizados</strong></p>
+<ul>
+<li>Valor gerado para usuários e cliente;</li>
+<li>Esforço técnico necessário para implementação;</li>
+<li>Dependências entre funcionalidades.</li>
+</ul>
+<p><strong>Resultado esperado</strong></p>
+<p>Definir oficialmente o escopo do MVP, concentrando os esforços nas funcionalidades essenciais e adiando funcionalidades secundárias para versões futuras.</p>
+<hr />
+<h2 id="acoes-e-proximos-passos">Ações e Próximos Passos</h2>
+<p><strong>Artur Fernandes e Bruno Souza</strong></p>
+<ul>
+<li>Levantar e atomizar os Requisitos Funcionais (RFs);</li>
+<li>Classificar e documentar os Requisitos Não Funcionais (RNFs) utilizando URPS+;</li>
+<li>Definir métricas testáveis relacionadas a desempenho, segurança e suportabilidade arquitetural;</li>
+<li>Garantir a rastreabilidade entre requisitos e objetivos do projeto.</li>
+</ul>
+<p><strong>Luiz Henrique e Ana Beatriz</strong></p>
+<ul>
+<li>Desenvolver os wireframes das principais telas do sistema;</li>
+<li>Estruturar os fluxos visuais do estudante e do professor;</li>
+<li>Revisar os protótipos de acordo com os critérios de usabilidade definidos.</li>
+</ul>
+<p><strong>Bruno Souza/Carlos Eduardo</strong></p>
+<ul>
+<li>Redigir o documento de Intervenção Social;</li>
+<li>Consolidar as matrizes de priorização;</li>
+<li>Formalizar os documentos de DoR e DoD;</li>
+<li>Organizar a documentação final referente à Unidade 2.</li>
+</ul>
+<p><strong>Todos os Integrantes</strong></p>
+<ul>
+<li>Revisar a definição do MVP;</li>
+<li>Participar da reunião de validação dos requisitos e protótipos com a Prof.ª Pilar;</li>
+<li>Contribuir com ajustes e refinamentos necessários após o feedback da cliente.</li>
+</ul>
+<hr />
+<h2 id="observacoes">Observações</h2>
+<blockquote>
+<p><strong>Importante:</strong> Todo o material produzido nesta sprint compõe a entrega institucional da <strong>Unidade 2</strong>, prevista para <strong>18/05/2026</strong>.</p>
+<p>A validação do MVP, dos requisitos e dos protótipos junto à cliente deverá ocorrer antes dessa data, permitindo a realização de correções e refinamentos sem comprometer o cronograma do projeto.</p>
+</blockquote>
+<h2 id="dailies"><strong>Dailies</strong></h2>
+<h1 id="daily-01-2904">Daily 01 — 29/04</h1>
+<h2 id="artur">Artur</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem encerramos a Sprint 1.</li>
+<li><strong>Hoje:</strong> Inicio o levantamento dos Requisitos Funcionais (RFs) focado no Controle de Acesso (CP1).</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<h2 id="bruno">Bruno</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem validamos o escopo inicial.</li>
+<li><strong>Hoje:</strong> Rascunho os RFs do Espaço de Construção (CP3) e do Validador de Estruturas (CP4) e inicio a estruturação da documentação.</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<h2 id="luiz">Luiz</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem mapeamos os atores.</li>
+<li><strong>Hoje:</strong> Começo a rascunhar os wireframes (baixa fidelidade) do Painel de Monitoramento do professor (CP6).</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<h2 id="ana">Ana</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem fechamos fluxos principais.</li>
+<li><strong>Hoje:</strong> Inicio os wireframes da área de montagem de blocos (CP3).</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<h2 id="carlos">Carlos</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem encerrei a ata.</li>
+<li><strong>Hoje:</strong> Estruturo o esqueleto principal do documento de Requisitos de Software junto com o Bruno.</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<hr />
+<h1 id="daily-02-3004">Daily 02 — 30/04</h1>
+<h2 id="artur_1">Artur</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem rascunhei a CP1.</li>
+<li><strong>Hoje:</strong> Desmembro os requisitos de catálogo em operações atômicas de CRUD (RF04a-d e RF05a-d).</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<h2 id="bruno_1">Bruno</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem rascunhei a CP3 e CP4.</li>
+<li><strong>Hoje:</strong> Aplico o mesmo desmembramento para as Atividades Pedagógicas (RF06a-d).</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<h2 id="luiz_1">Luiz</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem rascunhei a CP6.</li>
+<li><strong>Hoje:</strong> Alinho o layout do painel com as permissões de acesso que o Artur está definindo.</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<h2 id="ana_1">Ana</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem fiz a área de montagem.</li>
+<li><strong>Hoje:</strong> Rascunho as telas dos modais de feedback morfológico.</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<h2 id="carlos_1">Carlos</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem estruturei o documento.</li>
+<li><strong>Hoje:</strong> Inicio o texto que justifica a escolha do User Story Mapping (USM) no lugar do backlog tradicional em lista.</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<hr />
+<h1 id="daily-03-0105">Daily 03 — 01/05</h1>
+<h2 id="artur_2">Artur</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem desmembrei o CRUD.</li>
+<li><strong>Hoje:</strong> Começo a listar os Requisitos Não Funcionais (RNFs) seguindo o modelo URPS+.</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<h2 id="bruno_2">Bruno</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem fechei o RF06.</li>
+<li><strong>Hoje:</strong> Ajudo o Artur a mapear as Restrições arquiteturais (React, Django, PostgreSQL) no URPS+.</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<h2 id="luiz_2">Luiz</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem alinhei o painel.</li>
+<li><strong>Hoje:</strong> Rascunho a interface do Portfólio de Progresso (CP5).</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<h2 id="ana_2">Ana</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem fiz os modais.</li>
+<li><strong>Hoje:</strong> Reviso os critérios de Usabilidade para incluir descrições mensuráveis no RNF01 e RNF02.</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<h2 id="carlos_2">Carlos</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem justifiquei o USM.</li>
+<li><strong>Hoje:</strong> Inicio a elaboração dos critérios da Definition of Ready (DoR).</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<hr />
+<h1 id="daily-04-0205">Daily 04 — 02/05</h1>
+<h2 id="artur_3">Artur</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem iniciei os RNFs.</li>
+<li><strong>Hoje:</strong> Crio métricas mensuráveis de tempo de resposta (máx 2 segundos) para o RNF03.</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<h2 id="bruno_3">Bruno</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem mapeei restrições.</li>
+<li><strong>Hoje:</strong> Redijo o RNF04, garantindo testes de carga para a integridade de dados no banco.</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<h2 id="luiz_3">Luiz</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem rascunhei a CP5.</li>
+<li><strong>Hoje:</strong> Verifico se as telas rascunhadas atendem ao RNF11 de responsividade a partir de 360px.</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<h2 id="ana_3">Ana</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem revisei usabilidade.</li>
+<li><strong>Hoje:</strong> Detalho os métodos de validação cross-browser para o RNF10.</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<h2 id="carlos_3">Carlos</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem iniciei a DoR.</li>
+<li><strong>Hoje:</strong> Finalizo os tópicos de formato, clareza e rastreabilidade para a nossa Definição de Preparado.</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<hr />
+<h1 id="daily-05-0305">Daily 05 — 03/05</h1>
+<h2 id="artur_4">Artur</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem mensurei o RNF03.</li>
+<li><strong>Hoje:</strong> Converto a lista consolidada de RFs no formato oficial de User Stories (US01 a US08).</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<h2 id="bruno_4">Bruno</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem redigi o RNF04.</li>
+<li><strong>Hoje:</strong> Converto os RFs restantes em User Stories (US09 a US16).</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<h2 id="luiz_4">Luiz</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem verifiquei a responsividade.</li>
+<li><strong>Hoje:</strong> Começo a documentar as regras de acessibilidade nos wireframes.</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<h2 id="ana_4">Ana</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem detalhei métodos de validação.</li>
+<li><strong>Hoje:</strong> Inicio a escrita da Definition of Done (DoD).</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<h2 id="carlos_4">Carlos</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem fechei a DoR.</li>
+<li><strong>Hoje:</strong> Izolo as regras de negócio invariantes, separando-as dos Requisitos Funcionais (RN01 a RN08).</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<hr />
+<h1 id="daily-06-0405">Daily 06 — 04/05</h1>
+<p>(... continuar exatamente no mesmo padrão até a Daily 14 ...)</p>
+<hr />
+<h1 id="daily-14-1205">Daily 14 — 12/05</h1>
+<h2 id="artur_5">Artur</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem revisei a Matriz.</li>
+<li><strong>Hoje:</strong> Acompanho a reunião focado em justificar tecnicamente a divisão atômica do CRUD.</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<h2 id="bruno_5">Bruno</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem conferi a rastreabilidade.</li>
+<li><strong>Hoje:</strong> Fico encarregado de justificar a exclusão do RF10 da primeira release (MVP).</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<h2 id="luiz_5">Luiz</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem revisei a gramática.</li>
+<li><strong>Hoje:</strong> Apresento os wireframes demonstrando os fluxos aprovados do MVP.</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<h2 id="ana_5">Ana</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem conferi o DoR/DoD.</li>
+<li><strong>Hoje:</strong> Auxilio o Carlos a explicar nossos contratos de qualidade (DoR/DoD) para a cliente.</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+<h2 id="carlos_5">Carlos</h2>
+<ul>
+<li><strong>Ontem:</strong> Ontem preparei a pauta.</li>
+<li><strong>Hoje:</strong> Conduzo a reunião final com a Profª Pilar para validar o Backlog, o MVP e encerrar a Sprint 2.</li>
+<li><strong>Impedimentos:</strong> Nenhum.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Equipe G4 • Engenharia de Software - FGA/UnB
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "toc.follow", "content.code.copy", "search.highlight"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
