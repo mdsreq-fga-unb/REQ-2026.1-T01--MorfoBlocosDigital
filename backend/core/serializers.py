@@ -75,6 +75,18 @@ class AtividadeCreateSerializer(serializers.ModelSerializer):
             Pergunta.objects.create(atividade=atividade, **p)
         return atividade
 
+    def update(self, instance, validated_data):
+        perguntas = validated_data.pop("perguntas", None)
+        for attr, valor in validated_data.items():
+            setattr(instance, attr, valor)
+        instance.save()
+        # Se vierem perguntas, substituímos o conjunto atual pelo novo.
+        if perguntas is not None:
+            instance.perguntas.all().delete()
+            for p in perguntas:
+                Pergunta.objects.create(atividade=instance, **p)
+        return instance
+
 
 class BlocoSerializer(serializers.Serializer):
     texto = serializers.CharField()
