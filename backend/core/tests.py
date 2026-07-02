@@ -180,6 +180,53 @@ class ConteudoAdminTests(APITestCase):
         self.assertEqual(resp.status_code, status.HTTP_204_NO_CONTENT)
         self.assertFalse(Atividade.objects.filter(id=aid).exists())
 
+    def test_professor_edita_morfema(self):
+        m = Morfema.objects.create(texto="pre", tipo="prefixo", cor="bg-red-500")
+        self.client.force_authenticate(self.professor)
+        resp = self.client.patch(f"/api/morfemas/{m.id}/", {"texto": "pré"}, format="json")
+        self.assertEqual(resp.status_code, status.HTTP_200_OK)
+        m.refresh_from_db()
+        self.assertEqual(m.texto, "pré")
+
+    def test_professor_edita_palavra(self):
+        p = PalavraValida.objects.create(texto="testex", processo_morfologico="a")
+        self.client.force_authenticate(self.professor)
+        resp = self.client.patch(
+            f"/api/palavras/{p.id}/", {"processo_morfologico": "b + c"}, format="json"
+        )
+        self.assertEqual(resp.status_code, status.HTTP_200_OK)
+        p.refresh_from_db()
+        self.assertEqual(p.processo_morfologico, "b + c")
+
+    def test_professor_edita_atividade_substituindo_perguntas(self):
+        atividade = Atividade.objects.create(titulo="Antigo", tipo="quiz", nivel=1)
+        Pergunta.objects.create(
+            atividade=atividade, enunciado="velha", alternativas=["a", "b"], correta=0
+        )
+        self.client.force_authenticate(self.professor)
+        payload = {
+            "titulo": "Novo Título",
+            "tipo": "quiz",
+            "nivel": 2,
+            "perguntas": [
+                {"enunciado": "nova", "alternativas": ["x", "y", "z", "w"], "correta": 1, "explicacao": "", "topico": "T"}
+            ],
+        }
+        resp = self.client.put(f"/api/atividades/{atividade.id}/", payload, format="json")
+        self.assertEqual(resp.status_code, status.HTTP_200_OK)
+        atividade.refresh_from_db()
+        self.assertEqual(atividade.titulo, "Novo Título")
+        self.assertEqual(atividade.nivel, 2)
+        perguntas = list(atividade.perguntas.all())
+        self.assertEqual(len(perguntas), 1)
+        self.assertEqual(perguntas[0].enunciado, "nova")
+
+    def test_aluno_nao_edita_morfema(self):
+        m = Morfema.objects.create(texto="zzz", tipo="radical", cor="bg-blue-600")
+        self.client.force_authenticate(self.aluno)
+        resp = self.client.patch(f"/api/morfemas/{m.id}/", {"texto": "hack"}, format="json")
+        self.assertEqual(resp.status_code, status.HTTP_403_FORBIDDEN)
+
     def test_aluno_nao_cria_atividade(self):
         self.client.force_authenticate(self.aluno)
         resp = self.client.post(

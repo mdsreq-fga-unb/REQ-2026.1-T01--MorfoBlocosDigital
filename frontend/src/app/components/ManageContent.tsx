@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
-import { ArrowLeft, Plus, Trash2, Loader2 } from 'lucide-react';
+import { ArrowLeft, Plus, Trash2, Loader2, Pencil, X } from 'lucide-react';
 import { api } from '../../lib/api';
 
 type Tab = 'morfemas' | 'palavras' | 'atividades';
@@ -35,17 +35,20 @@ export function ManageContent() {
   const [atividades, setAtividades] = useState<Atividade[]>([]);
   const [carregando, setCarregando] = useState(true);
 
-  // Formulário Morfema
+  // Formulário Morfema (mEditId != null => editando)
   const [mTexto, setMTexto] = useState('');
   const [mTipo, setMTipo] = useState<Morfema['tipo']>('prefixo');
+  const [mEditId, setMEditId] = useState<number | null>(null);
   // Formulário Palavra
   const [pTexto, setPTexto] = useState('');
   const [pProcesso, setPProcesso] = useState('');
+  const [pEditId, setPEditId] = useState<number | null>(null);
   // Formulário Atividade
   const [aTitulo, setATitulo] = useState('');
   const [aTipo, setATipo] = useState<'quiz' | 'montagem'>('quiz');
   const [aNivel, setANivel] = useState(1);
   const [aPerguntas, setAPerguntas] = useState<PerguntaForm[]>([perguntaVazia()]);
+  const [aEditId, setAEditId] = useState<number | null>(null);
 
   useEffect(() => {
     let active = true;
@@ -90,38 +93,100 @@ export function ManageContent() {
     }
   };
 
-  const addMorfema = async () => {
+  const cancelarMorfema = () => {
+    setMEditId(null);
+    setMTexto('');
+    setMTipo('prefixo');
+  };
+
+  const editarMorfema = (m: Morfema) => {
+    setMEditId(m.id);
+    setMTexto(m.texto);
+    setMTipo(m.tipo);
+    setErro(null);
+  };
+
+  const salvarMorfema = async () => {
     if (!mTexto.trim()) return;
     setSalvando(true);
     setErro(null);
+    const body = { texto: mTexto.trim(), tipo: mTipo, cor: COR_POR_TIPO[mTipo] };
     try {
-      await api.post('/morfemas/', { texto: mTexto.trim(), tipo: mTipo, cor: COR_POR_TIPO[mTipo] });
-      setMTexto('');
+      if (mEditId) await api.patch(`/morfemas/${mEditId}/`, body);
+      else await api.post('/morfemas/', body);
+      cancelarMorfema();
       recarregar();
     } catch {
-      setErro('Não foi possível adicionar o morfema.');
+      setErro('Não foi possível salvar o morfema.');
     } finally {
       setSalvando(false);
     }
   };
 
-  const addPalavra = async () => {
+  const cancelarPalavra = () => {
+    setPEditId(null);
+    setPTexto('');
+    setPProcesso('');
+  };
+
+  const editarPalavra = (p: Palavra) => {
+    setPEditId(p.id);
+    setPTexto(p.texto);
+    setPProcesso(p.processo_morfologico);
+    setErro(null);
+  };
+
+  const salvarPalavra = async () => {
     if (!pTexto.trim() || !pProcesso.trim()) return;
     setSalvando(true);
     setErro(null);
+    const body = { texto: pTexto.trim().toLowerCase(), processo_morfologico: pProcesso.trim() };
     try {
-      await api.post('/palavras/', { texto: pTexto.trim().toLowerCase(), processo_morfologico: pProcesso.trim() });
-      setPTexto('');
-      setPProcesso('');
+      if (pEditId) await api.patch(`/palavras/${pEditId}/`, body);
+      else await api.post('/palavras/', body);
+      cancelarPalavra();
       recarregar();
     } catch {
-      setErro('Não foi possível adicionar a palavra (talvez já exista).');
+      setErro('Não foi possível salvar a palavra (talvez já exista).');
     } finally {
       setSalvando(false);
     }
   };
 
-  const addAtividade = async () => {
+  const cancelarAtividade = () => {
+    setAEditId(null);
+    setATitulo('');
+    setATipo('quiz');
+    setANivel(1);
+    setAPerguntas([perguntaVazia()]);
+  };
+
+  const editarAtividade = async (id: number) => {
+    setErro(null);
+    try {
+      const { data } = await api.get(`/atividades/${id}/`);
+      setAEditId(id);
+      setATitulo(data.titulo);
+      setATipo(data.tipo === 'montagem' ? 'montagem' : 'quiz');
+      setANivel(data.nivel);
+      setAPerguntas(
+        (data.perguntas ?? []).length
+          ? data.perguntas.map((p: PerguntaForm) => ({
+              enunciado: p.enunciado,
+              alternativas: [0, 1, 2, 3].map((j) => p.alternativas[j] ?? ''),
+              correta: p.correta,
+              explicacao: p.explicacao ?? '',
+              topico: p.topico ?? '',
+            }))
+          : [perguntaVazia()],
+      );
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch {
+      setErro('Não foi possível carregar a atividade para edição.');
+    }
+  };
+
+  const salvarAtividade = async () => {
     if (!aTitulo.trim()) return;
     const perguntas = aTipo === 'quiz'
       ? aPerguntas
@@ -134,14 +199,14 @@ export function ManageContent() {
     }
     setSalvando(true);
     setErro(null);
+    const body = { titulo: aTitulo.trim(), tipo: aTipo, nivel: aNivel, perguntas };
     try {
-      await api.post('/atividades/', { titulo: aTitulo.trim(), tipo: aTipo, nivel: aNivel, perguntas });
-      setATitulo('');
-      setANivel(1);
-      setAPerguntas([perguntaVazia()]);
+      if (aEditId) await api.patch(`/atividades/${aEditId}/`, body);
+      else await api.post('/atividades/', body);
+      cancelarAtividade();
       recarregar();
     } catch {
-      setErro('Não foi possível adicionar a atividade.');
+      setErro('Não foi possível salvar a atividade.');
     } finally {
       setSalvando(false);
     }
@@ -189,7 +254,7 @@ export function ManageContent() {
         {tab === 'morfemas' && (
           <div className="space-y-4">
             <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6">
-              <h2 className="text-base sm:text-lg mb-3">Adicionar Morfema</h2>
+              <h2 className="text-base sm:text-lg mb-3">{mEditId ? 'Editar Morfema' : 'Adicionar Morfema'}</h2>
               <div className="flex flex-col sm:flex-row gap-3">
                 <input value={mTexto} onChange={(e) => setMTexto(e.target.value)} placeholder="Texto (ex: in)" className={inputCls} />
                 <select value={mTipo} onChange={(e) => setMTipo(e.target.value as Morfema['tipo'])} className={`${inputCls} sm:w-48`}>
@@ -197,9 +262,14 @@ export function ManageContent() {
                   <option value="radical">Radical</option>
                   <option value="sufixo">Sufixo</option>
                 </select>
-                <button onClick={addMorfema} disabled={salvando || !mTexto.trim()} className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 disabled:opacity-50 flex items-center justify-center gap-2 shrink-0">
-                  {salvando ? <Loader2 className="w-4 h-4 animate-spin" /> : <Plus className="w-4 h-4" />} Adicionar
+                <button onClick={salvarMorfema} disabled={salvando || !mTexto.trim()} className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 disabled:opacity-50 flex items-center justify-center gap-2 shrink-0">
+                  {salvando ? <Loader2 className="w-4 h-4 animate-spin" /> : mEditId ? <Pencil className="w-4 h-4" /> : <Plus className="w-4 h-4" />} {mEditId ? 'Salvar' : 'Adicionar'}
                 </button>
+                {mEditId && (
+                  <button onClick={cancelarMorfema} className="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300 flex items-center justify-center gap-2 shrink-0">
+                    <X className="w-4 h-4" /> Cancelar
+                  </button>
+                )}
               </div>
             </div>
             <ListaCard carregando={carregando} vazio={morfemas.length === 0} vazioMsg="Nenhum morfema cadastrado.">
@@ -207,6 +277,7 @@ export function ManageContent() {
                 <li key={m.id} className="flex items-center gap-3 p-3 border-b border-border last:border-0">
                   <span className={`${m.cor} text-white px-3 py-1 rounded-md text-sm`}>{m.texto}</span>
                   <span className="text-sm text-muted-foreground flex-1 capitalize">{m.tipo}</span>
+                  <button onClick={() => editarMorfema(m)} className="text-blue-600 hover:text-blue-800 p-1"><Pencil className="w-4 h-4" /></button>
                   <button onClick={() => remover(`/morfemas/${m.id}/`)} className="text-red-500 hover:text-red-700 p-1"><Trash2 className="w-4 h-4" /></button>
                 </li>
               ))}
@@ -218,13 +289,20 @@ export function ManageContent() {
         {tab === 'palavras' && (
           <div className="space-y-4">
             <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6">
-              <h2 className="text-base sm:text-lg mb-3">Adicionar Palavra Válida</h2>
+              <h2 className="text-base sm:text-lg mb-3">{pEditId ? 'Editar Palavra Válida' : 'Adicionar Palavra Válida'}</h2>
               <div className="space-y-3">
                 <input value={pTexto} onChange={(e) => setPTexto(e.target.value)} placeholder="Palavra (ex: infelizmente)" className={inputCls} />
                 <input value={pProcesso} onChange={(e) => setPProcesso(e.target.value)} placeholder="Processo morfológico (ex: in + feliz + mente)" className={inputCls} />
-                <button onClick={addPalavra} disabled={salvando || !pTexto.trim() || !pProcesso.trim()} className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 disabled:opacity-50 flex items-center gap-2">
-                  {salvando ? <Loader2 className="w-4 h-4 animate-spin" /> : <Plus className="w-4 h-4" />} Adicionar
-                </button>
+                <div className="flex gap-3">
+                  <button onClick={salvarPalavra} disabled={salvando || !pTexto.trim() || !pProcesso.trim()} className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 disabled:opacity-50 flex items-center gap-2">
+                    {salvando ? <Loader2 className="w-4 h-4 animate-spin" /> : pEditId ? <Pencil className="w-4 h-4" /> : <Plus className="w-4 h-4" />} {pEditId ? 'Salvar' : 'Adicionar'}
+                  </button>
+                  {pEditId && (
+                    <button onClick={cancelarPalavra} className="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300 flex items-center gap-2">
+                      <X className="w-4 h-4" /> Cancelar
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
             <ListaCard carregando={carregando} vazio={palavras.length === 0} vazioMsg="Nenhuma palavra cadastrada.">
@@ -234,6 +312,7 @@ export function ManageContent() {
                     <div className="text-sm">{p.texto}</div>
                     <div className="text-xs text-muted-foreground truncate">{p.processo_morfologico}</div>
                   </div>
+                  <button onClick={() => editarPalavra(p)} className="text-blue-600 hover:text-blue-800 p-1"><Pencil className="w-4 h-4" /></button>
                   <button onClick={() => remover(`/palavras/${p.id}/`)} className="text-red-500 hover:text-red-700 p-1"><Trash2 className="w-4 h-4" /></button>
                 </li>
               ))}
@@ -245,7 +324,7 @@ export function ManageContent() {
         {tab === 'atividades' && (
           <div className="space-y-4">
             <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6">
-              <h2 className="text-base sm:text-lg mb-3">Adicionar Atividade</h2>
+              <h2 className="text-base sm:text-lg mb-3">{aEditId ? 'Editar Atividade' : 'Adicionar Atividade'}</h2>
               <div className="flex flex-col sm:flex-row gap-3 mb-3">
                 <input value={aTitulo} onChange={(e) => setATitulo(e.target.value)} placeholder="Título" className={inputCls} />
                 <select value={aTipo} onChange={(e) => setATipo(e.target.value as 'quiz' | 'montagem')} className={`${inputCls} sm:w-40`}>
@@ -289,9 +368,16 @@ export function ManageContent() {
                 </div>
               )}
 
-              <button onClick={addAtividade} disabled={salvando || !aTitulo.trim()} className="mt-4 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 disabled:opacity-50 flex items-center gap-2">
-                {salvando ? <Loader2 className="w-4 h-4 animate-spin" /> : <Plus className="w-4 h-4" />} Criar Atividade
-              </button>
+              <div className="mt-4 flex gap-3">
+                <button onClick={salvarAtividade} disabled={salvando || !aTitulo.trim()} className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 disabled:opacity-50 flex items-center gap-2">
+                  {salvando ? <Loader2 className="w-4 h-4 animate-spin" /> : aEditId ? <Pencil className="w-4 h-4" /> : <Plus className="w-4 h-4" />} {aEditId ? 'Salvar Alterações' : 'Criar Atividade'}
+                </button>
+                {aEditId && (
+                  <button onClick={cancelarAtividade} className="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300 flex items-center gap-2">
+                    <X className="w-4 h-4" /> Cancelar
+                  </button>
+                )}
+              </div>
             </div>
             <ListaCard carregando={carregando} vazio={atividades.length === 0} vazioMsg="Nenhuma atividade cadastrada.">
               {atividades.map((a) => (
@@ -300,6 +386,7 @@ export function ManageContent() {
                     <div className="text-sm truncate">{a.titulo}</div>
                     <div className="text-xs text-muted-foreground capitalize">{a.tipo} · Nível {a.nivel}</div>
                   </div>
+                  <button onClick={() => editarAtividade(a.id)} className="text-blue-600 hover:text-blue-800 p-1"><Pencil className="w-4 h-4" /></button>
                   <button onClick={() => remover(`/atividades/${a.id}/`)} className="text-red-500 hover:text-red-700 p-1"><Trash2 className="w-4 h-4" /></button>
                 </li>
               ))}

@@ -2,12 +2,9 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny, BasePermission
 from rest_framework.generics import (
-    ListAPIView,
     CreateAPIView,
     ListCreateAPIView,
-    RetrieveAPIView,
-    DestroyAPIView,
-    RetrieveDestroyAPIView,
+    RetrieveUpdateDestroyAPIView,
 )
 from rest_framework import status
 
@@ -75,8 +72,8 @@ class MorfemaListCreateView(ListCreateAPIView):
         return [IsAuthenticated()]
 
 
-class MorfemaDestroyView(DestroyAPIView):
-    """Remove um morfema do catálogo (RF06)."""
+class MorfemaDetailView(RetrieveUpdateDestroyAPIView):
+    """Edita (RF05) e remove (RF06) um morfema. Restrito a professores."""
 
     queryset = Morfema.objects.all()
     serializer_class = MorfemaSerializer
@@ -92,8 +89,8 @@ class PalavraValidaListCreateView(ListCreateAPIView):
     pagination_class = None
 
 
-class PalavraValidaDestroyView(DestroyAPIView):
-    """Remove uma palavra válida do catálogo (RF10)."""
+class PalavraValidaDetailView(RetrieveUpdateDestroyAPIView):
+    """Edita (RF09) e remove (RF10) uma palavra válida. Restrito a professores."""
 
     queryset = PalavraValida.objects.all()
     serializer_class = PalavraValidaSerializer
@@ -156,17 +153,21 @@ class AtividadeListCreateView(ListCreateAPIView):
         return [IsAuthenticated()]
 
 
-class AtividadeRetrieveDestroyView(RetrieveDestroyAPIView):
-    """Detalha uma atividade com perguntas (RF16) e permite removê-la (RF14).
+class AtividadeRetrieveUpdateDestroyView(RetrieveUpdateDestroyAPIView):
+    """Detalha (RF16), edita (RF13) e remove (RF14) uma atividade.
 
-    GET: qualquer autenticado. DELETE: apenas professor.
+    GET: qualquer autenticado (o aluno joga). PUT/PATCH/DELETE: apenas professor.
     """
 
     queryset = Atividade.objects.all()
-    serializer_class = AtividadeDetailSerializer
+
+    def get_serializer_class(self):
+        if self.request.method in ("PUT", "PATCH"):
+            return AtividadeCreateSerializer
+        return AtividadeDetailSerializer
 
     def get_permissions(self):
-        if self.request.method == "DELETE":
+        if self.request.method in ("PUT", "PATCH", "DELETE"):
             return [IsProfessor()]
         return [IsAuthenticated()]
 
