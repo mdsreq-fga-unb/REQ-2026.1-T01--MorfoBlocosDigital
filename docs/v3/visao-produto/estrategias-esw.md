@@ -39,3 +39,15 @@ As práticas do XP também se mostram adequadas às necessidades do produto. A l
 Em comparação, o OpenUP apresenta uma estrutura de fases mais rígida e maior ênfase na documentação de artefatos formais, como casos de uso e planos de iteração. Embora adequado para projetos que necessitam de maior previsibilidade arquitetural desde o início, o OpenUP pode ser excessivo para o escopo e o prazo da disciplina, além de demandar maior esforço de documentação em um contexto onde a comunicação direta com a cliente é viável e preferível.
 
 Dessa forma, o Scrum, em conjunto com práticas do XP, se mostra a alternativa mais adequada ao projeto, pois permite alinhar a organização do processo com a qualidade técnica do desenvolvimento, lidar com requisitos evolutivos e viabilizar entregas incrementais com validação contínua.
+
+### **4.3 Evidências de Aplicação do eXtreme Programming (XP)** 
+
+Para assegurar a corretude crítica da lógica de validação de combinações de morfemas (RF20), a equipe materializou as práticas do XP da seguinte forma:
+
+* **TDD (Test-Driven Development)**: O núcleo do validador morfológico no backend (Django) foi construído orientado a testes. Foram escritos casos de teste unitários (ex: test_validador.py) contemplando submissões válidas (composição, derivação) e inválidas antes da implementação final da regra de negócio.
+
+* **Integração Contínua (CI)**: O repositório foi configurado com GitHub Actions (ci.yml). Toda nova submissão de código (Pull Request) dispara automaticamente a suíte de testes do Django. O merge só é autorizado se 100% dos testes passarem, impedindo regressões no motor de validação.
+
+* **Refatoração**: O código passou por ciclos de refatoração contínua, onde a lógica de concatenação e consulta ao catálogo de palavras foi extraída diretamente das views da API para uma camada de services isolada, garantindo alta coesão e facilitando a cobertura de testes.
+
+![Êvidencias de Aplicação XP](../img/evidenciaESW.jpeg)
