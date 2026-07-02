@@ -59,3 +59,4 @@ O jogo é composto por peças coloridas que representam morfemas — raízes (ou
 | 01/06/2026 | 1.3 | Atualizações no Backlog, na Engenharia de Requisitos e Cronograma. | [Bruno Souza](https://github.com/youngburny) |
 | 01/06/2026 | 1.4 | Adiciona tabela consolidada de feedback da PO. | [Bruno Souza](https://github.com/youngburny) |
 | 01/06/2026 | 1.5 | Atualização nas Estratégias de ESW e linkagem no Cronograma. | [Bruno Souza](https://github.com/youngburny) |
+| 01/06/2026 | 1.6 | Atualização no Quadro MVP, Lições Aprendidas e User Stories. | [Bruno Souza](https://github.com/youngburny) |

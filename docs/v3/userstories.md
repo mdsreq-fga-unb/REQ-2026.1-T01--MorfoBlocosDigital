@@ -139,24 +139,16 @@ e. Clique no botão de submissão para concluir e persistir o registro.
 
 <details class="us-dropdown" id="us03" markdown="1">
 
-<summary><strong>US03 — Recuperação de Acesso</strong></summary>
+<summary><strong>US03 — Recuperação de Senha</strong></summary>
 
-### US03 — Recuperação de Acesso
-
-> **Como** usuário, **quero** recuperar meu acesso mediante envio de link de redefinição de senha, **para** retomar o uso da plataforma em caso de esquecimento.
-
-**Critérios de Aceitação (CA)**
-
-* **CA-US03-01:** O sistema deve enviar um link de redefinição de senha (e não a senha em texto puro) para o e-mail cadastrado do usuário, mediante solicitação na tela de login.
-* **CA-US03-02:** O link de redefinição deve ter validade limitada de no máximo 24 horas e ser invalidado após o primeiro uso, exibindo mensagem específica caso o usuário tente reutilizá-lo [RNF04].
-
-**Status:** Pendente. O frontend de recuperação de senha ficou pendente por problemas de envio de e-mail no servidor de testes.
+info
 
 </details>
 
 <details class="us-dropdown" id="us04" markdown="1">
 
-<summary><strong>US04 — Cadastro de Morfemas no Catálogo</strong></summary>
+<summary><strong>US04 — Cadastro de Morfemas no Catálogo✅</strong></summary>
+
 
 ### US04 — Cadastro de Morfemas no Catálogo
 
@@ -282,21 +274,12 @@ e. Clique no ícone de lixeira (vermelho) ao lado do registro para excluí-lo do
 
 <summary><strong>US07 — Listagem de Morfemas</strong></summary>
 
-### US07 — Listagem de Morfemas
-
-> **Como** administrador, **quero** listar os morfemas cadastrados, **para** consultar o catálogo atual.
-
-**Critério de Aceitação (CA)**
-
-* **CA-US07-01:** A listagem deve exibir, no mínimo, a grafia do morfema, seu tipo morfológico e a cor associada, permitindo ordenação e busca textual por grafia [RNF06].
-
-* **Status:** Não iniciado.
-
 </details>
 
 <details class="us-dropdown" id="us08" markdown="1">
 
 <summary><strong>US08 — Cadastro de Palavras Válidas</strong></summary>
+
 
 ### US08 — Cadastro de Palavras Válidas
 

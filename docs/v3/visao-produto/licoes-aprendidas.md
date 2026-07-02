@@ -70,3 +70,15 @@ O trabalho foi reorganizado em partes menores e, com isso, as prioridades passar
 
 A realização das validações apenas no final da sprint reduziu o tempo disponível para ajustes, o que aumentou a quantidade de retrabalho antes da entrega.
 Passou-se a realizar validações de forma antecipada, utilizando protótipos e representações de fluxo ainda nas fases iniciais. Essa mudança possibilitou identificar inconsistências mais cedo e reduzir correções em etapas avançadas.
+
+### **11.4 Unidade IV**
+
+A Unidade 4 permitiu compreender a importância da *rastreabilidade dos requisitos* para acompanhar a evolução do projeto e manter a consistência entre os artefatos produzidos. A elaboração da matriz de rastreabilidade facilitou o controle das alterações realizadas e a atualização da documentação ao longo do desenvolvimento.
+
+Outro aprendizado foi o *gerenciamento das mudanças de escopo*. A reformulação, inclusão e remoção de requisitos demonstrou que alterações fazem parte do desenvolvimento de software e precisam ser registradas e justificadas para manter a documentação consistente.
+
+Também foi reforçada a importância da *documentação contínua*, garantindo que as mudanças realizadas no sistema fossem refletidas nos documentos do projeto e evitando inconsistências entre as diferentes entregas.
+
+Além disso, a realização do *deploy* proporcionou experiência prática na disponibilização da aplicação, envolvendo a configuração do ambiente, a integração entre frontend e backend e a validação do funcionamento do sistema.
+
+Os principais desafios da unidade foram manter a documentação sincronizada com as mudanças de escopo, atualizar a matriz de rastreabilidade conforme a evolução do projeto e resolver questões de configuração durante o processo de deploy.
