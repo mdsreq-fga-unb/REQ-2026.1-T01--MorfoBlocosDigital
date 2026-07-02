@@ -497,17 +497,17 @@ Esta consolidação reflete o refinamento do escopo do Administrador (focado est
 | **RF02** | Cadastrar novos usuários no sistema. | Must Have | 5 | 2 | Q1 | Sim |
 | **RF03** | Permitir a recuperação de acesso mediante envio de nova senha. | Should Have | 3 | 3 | Q4 | Não |
 | **RF04** | Cadastrar morfemas no catálogo do sistema. | Must Have | 5 | 2 | Q1 | Sim |
-| **RF05** | Editar morfemas existentes no catálogo do sistema. | Won't Have | 2 | 2 | Q3 | Não |
+| **RF05** | Editar morfemas existentes no catálogo do sistema. | Must Have | 4 | 2 | Q1 | Sim |
 | **RF06** | Remover morfemas do catálogo do sistema. | Must Have | 4 | 2 | Q1 | Sim |
-| **RF07** | Listar morfemas cadastrados no catálogo do sistema. | Won't Have | 2 | 2 | Q3 | Não |
+| **RF07** | Listar morfemas cadastrados no catálogo do sistema. | Must Have | 4 | 2 | Q1 | Sim |
 | **RF08** | Cadastrar palavras válidas no catálogo do sistema. | Must Have | 5 | 2 | Q1 | Sim |
-| **RF09** | Editar palavras válidas existentes no catálogo do sistema. | Won't Have | 2 | 2 | Q3 | Não |
+| **RF09** | Editar palavras válidas existentes no catálogo do sistema. | Must Have | 4 | 2 | Q1 | Sim |
 | **RF10** | Remover palavras válidas do catálogo do sistema. | Must Have | 4 | 2 | Q1 | Sim |
-| **RF11** | Listar palavras válidas cadastradas no catálogo do sistema. | Won't Have | 2 | 2 | Q3 | Não |
+| **RF11** | Listar palavras válidas cadastradas no catálogo do sistema. | Must Have | 4 | 2 | Q1 | Sim |
 | **RF12** | Cadastrar atividades pedagógicas no sistema. | Must Have | 5 | 2 | Q1 | Sim |
-| **RF13** | Editar atividades pedagógicas existentes no sistema. | Won't Have | 2 | 2 | Q3 | Não |
+| **RF13** | Editar atividades pedagógicas existentes no sistema. | Must Have | 4 | 2 | Q1 | Sim |
 | **RF14** | Remover atividades pedagógicas do sistema. | Must Have | 4 | 2 | Q1 | Sim |
-| **RF15** | Listar atividades pedagógicas cadastradas no sistema. | Won't Have | 2 | 2 | Q3 | Não |
+| **RF15** | Listar atividades pedagógicas cadastradas no sistema. | Must Have | 4 | 2 | Q1 | Sim |
 | **RF16** | Realizar atividades pedagógicas do tipo Quiz. | Must Have | 5 | 3 | Q2 | Sim |
 | **RF17** | Realizar atividades pedagógicas de montagem de palavras. | Must Have | 5 | 5 | Q2 | Sim |
 | **RF18** | Consultar explicações sobre conteúdos morfológicos. | Must Have | 5 | 2 | Q1 | Sim |
@@ -558,14 +558,7 @@ Todos os 12 RNFs declarados no catálogo de requisitos são considerados válido
 | ID | Requisito Funcional | Motivo da Exclusão |
 | :--- | :--- | :--- |
 | **RF03** | Permitir a recuperação de acesso mediante envio de nova senha. | Classificado como Should Have. Embora importante para a conveniência do usuário, não impede a validação da hipótese central do negócio no primeiro ciclo de testes. |
-| **RF05** | Editar morfemas existentes no catálogo do sistema. | Classificado como Won't Have para o MVP. O fluxo de manutenção do administrador foi simplificado; correções de conteúdo serão resolvidas por meio de exclusão e nova inserção no banco de dados. |
-| **RF07** | Listar morfemas cadastrados no catálogo do sistema. | Classificado como Won't Have para o MVP. A visualização direta do catálogo de morfemas pelo administrador foi postergada para focar na persistência bruta dos dados via banco. |
-| **RF09** | Editar palavras válidas existentes no catálogo do sistema. | Classificado como Won't Have para o MVP. Segue a mesma diretriz de simplificação da gestão de conteúdo, priorizando a dinamicidade de escrita e deleção. |
-| **RF11** | Listar palavras válidas cadastradas no catálogo do sistema. | Classificado como Won't Have para o MVP. Adiado para reduzir o esforço de desenvolvimento de interfaces administrativas na primeira versão. |
-| **RF13** | Editar atividades pedagógicas existentes no sistema. | Classificado como Won't Have para o MVP. Alterações em enunciados ou morfemas de uma atividade ativa não entrarão neste ciclo de entrega. |
-| **RF15** | Listar atividades pedagógicas cadastradas no sistema. | Classificado como Won't Have para o MVP. A listagem de gerenciamento de tarefas no painel do administrador foi retirada para poupar escopo de front-end. |
-| **RF22** | Consultar os detalhes de uma atividade realizada. | Classificado como Should Have. O estudante terá o histórico macro de suas pontuações no MVP, mas a revisão analítica bloco a bloco de tentativas passadas ficou para a próxima versão. |
-| **RF25** | Consultar os erros morfológicos mais frequentes dos estudantes. | Classificado como Should Have. O professor monitorará o desempenho coletivo pelas médias da turma, mas o algoritmo analítico de agrupamento e ranking de erros frequentes foi postergado. |
+| **RF24** | Acessar relatório de desempenho consolidado da turma. | Classificado como Must Have. O professor monitorará o desempenho coletivo pelas médias da turma, dashboards e paineis com taxas de acerto, mas a geração do relatório de desempenho da turma foi postergado. |
 
 ### **10.3 Rastreabilidade e Comprovação de Implementação do MVP**
 
@@ -599,8 +592,11 @@ Para assegurar a transparência do processo de Engenharia de Requisitos e o cump
 
 * **RF17 (Montagem de Blocos) \- Status: RESOLVIDO.**  
   O impedimento técnico anterior relacionado à responsividade (RNF11) foi sanado. O *container* da área de montagem foi refatorado utilizando *flexbox* adaptativo, garantindo o empilhamento correto dos blocos em resoluções mínimas de 360px sem forçar barra de rolagem lateral ou sobreposição de componentes.  
-* **Gestão de Conteúdo Administrativo (RF04 a RF14) \- Status: RESOLVIDO.**  
-  As funcionalidades referentes ao CRUD de morfemas, palavras válidas e atividades, anteriormente não iniciadas, foram integralmente implementadas. A gestão foi centralizada diretamente na interface gráfica do próprio sistema (via ambiente de produção na Vercel), descartando a dependência do painel nativo do Django Admin. As operações contam com as devidas travas de segurança e integridade referencial (proteção contra exclusão em cascata), mantendo o rigoroso controle de acesso baseado em funções (RBAC) para garantir que apenas administradores autenticados manipulem o catálogo (RN03).  
+
+* **Gestão de Conteúdo Administrativo (RF04 a RF15) - Status: RESOLVIDO e HOMOLOGADO.**
+
+    As funcionalidades referentes ao CRUD completo de morfemas, palavras válidas e atividades foram integralmente implementadas e unificadas diretamente na interface gráfica do usuário final (via frontend React em produção na Vercel). A ambiguidade técnica entre os antigos RNF05 e RNF06 foi solucionada com o refaturamento dos requisitos, extinguindo a dependência operacional do painel nativo do Django Admin. As operações contam com validações reativas no cliente, comunicação via endpoints REST seguros e travas de integridade referencial que impedem exclusões em cascata órfãs, operando em total conformidade com as regras de controle de acesso (RBAC) homologadas pela Product Owner (Profª. Pilar).  
+
 * **RF23 e RF24 (Painel do Professor) \- Pendência Documental (Artefatos).**  
   A lógica arquitetural (Django), o controle de acesso (RBAC) e as interfaces gráficas (React) para gestão de turmas e relatórios de desempenho foram integralmente codificadas, testadas na *pipeline* de CI e validadas pela cliente (PO). O *status* da implementação foi promovido a "Concluído". Contudo, registra-se a ausência dos artefatos de protótipo de alta fidelidade (Figma) na documentação oficial dessas *User Stories*, que constam atualmente como "FALTANTES" e necessitam de atualização para fechar o ciclo de rastreabilidade visual.
 

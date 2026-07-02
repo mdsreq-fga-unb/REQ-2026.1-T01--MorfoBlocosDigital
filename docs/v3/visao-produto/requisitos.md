@@ -80,7 +80,7 @@ RF18: EXCLUÍDO
 | **RNF03** | Performance | O sistema deve processar a combinação de blocos e exibir o feedback visual na tela em um tempo máximo de 2 segundos. | Monitoramento de Tempo de Resposta (Network Tab / Testes de Performance). |
 | **RNF04** | Confiabilidade | O sistema deve preservar a integridade dos dados durante acessos simultâneos. | Teste de Carga e Concorrência no Banco de Dados (verificação ACID). |
 | **RNF05** | Suportabilidade | A interface cliente deve comunicar-se com a lógica de negócio exclusivamente por meio de APIs. | Inspeção de Arquitetura e Code Review. |
-| **RNF06** | Suportabilidade | O sistema deve permitir a manutenção do catálogo de morfemas via Django Admin, sem telas de cadastro no frontend React. | Teste de Inserção via Django Admin. |
+| **RNF06** | Suportabilidade | A manutenção do catálogo de conteúdo (morfemas, palavras válidas e atividades pedagógicas) e a gestão de turmas devem ser realizadas pelo usuário autorizado por meio de telas e fluxos dedicados e responsivos integrados diretamente no frontend React, sem dependência operacional de painéis nativos de terceiros no backend. | Teste de Integração de Fluxo de Administração no Frontend. |
 | **RNF07** | Restrições | O frontend deve ser desenvolvido obrigatoriamente utilizando React com TypeScript. | Inspeção de Código / Configuração do Repositório. |
 | **RNF08** | Restrições | O backend deve ser desenvolvido obrigatoriamente em Python utilizando o framework Django. | Inspeção de Código / Configuração do Repositório. |
 | **RNF09** | Restrições | O banco de dados deve ser implementado utilizando o SGBD PostgreSQL. | Validação da Infraestrutura / Configuração de Banco. |

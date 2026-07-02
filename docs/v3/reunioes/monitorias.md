@@ -39,3 +39,21 @@ Reunião realizada via Teams (02/06/2026)
 <iframe width="560" height="315" src="https://www.youtube.com/embed/r9xP0tlypeM?si=nojhaL1FLIkP1df3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Reunião realizada via Teams (10/06/2026)
+
+## **Monitoria #08**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XxFVFb3bo9w?si=qmQ_tpDnedwtOe2S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Reunião realizada via Teams (17/06/2026)
+
+## **Monitoria #09**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xS14RfOGeqE?si=T4iKo_7ISZAGxvKY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Reunião realizada via Teams (25/06/2026)
+
+## **Monitoria #10**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3LUqsszcyEc?si=VXxcGLKEmmZ-u2q0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Reunião realizada via Teams (30/06/2026)

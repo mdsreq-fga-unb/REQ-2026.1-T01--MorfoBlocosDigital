@@ -29,15 +29,13 @@ window.addEventListener('hashchange', function () {
 
 # Documento de Histórias de Usuário (User Stories) e Critérios de Aceitação
 
----
+*Legenda: ✅ = Dentro do MVP / ❌ = Fora do MVP*
 
 <details class="us-dropdown" id="us01" markdown="1">
 
-<summary><strong>US01 — Autenticação de Usuário✅</strong></summary>
+<summary><strong>US01 — Autenticação de Usuário ✅</strong></summary>
 
 ### **US01 - Autenticação de Usuário**
-
-* **Sprint 3**
 
 > **Como** usuário, **quero** efetuar login no sistema utilizando e-mail e senha, **para** acessar minha conta na plataforma de forma segura.
 
@@ -75,20 +73,25 @@ Links de Rastreabilidade e Artefatos
 Link no site: [https://req-2026-1-t01-morfo-blocos-digital.vercel.app/](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/)
 
 **Fluxo de Acesso:**  
+
 a. Acesse a página inicial da aplicação.  
+
 b. Localize o formulário de autenticação centralizado na interface principal.  
+
 c. Preencha os campos obrigatórios (*E-mail* e *Senha*).  
+
 d. Clique no botão de submissão **"Entrar"** para validar as credenciais e iniciar a sessão.
+
+
+![US01](img/us01.png){ width="35%" }
 
 </details>
 
 <details class="us-dropdown" id="us02" markdown="1">
 
-<summary><strong>US02 — Cadastro de Nova Conta✅</strong></summary>
+<summary><strong>US02 — Cadastro de Nova Conta ✅</strong></summary>
 
 ### US02 — Cadastro de Nova Conta
-
-* **Sprint 3**
 
 > **Como** usuário, **quero** cadastrar uma nova conta no sistema inserindo meus dados, **para** que meu perfil seja criado e eu possa começar a usar a plataforma.
 
@@ -134,21 +137,32 @@ c. Preencha todos os campos obrigatórios (Nome Completo, E-mail, Senha)
 d. Selecione o perfil de uso clicando nos botões seletores ("Estudante" ou "Professor").  
 e. Clique no botão de submissão para concluir e persistir o registro.
 
+![US02](img/us02.png){ width="35%" }
+
+
 </details>
 
 
 <details class="us-dropdown" id="us03" markdown="1">
 
-<summary><strong>US03 — Recuperação de Senha</strong></summary>
+<summary><strong>US03 — Recuperação de Senha ❌</strong></summary>
 
-info
+### US03 - Recuperação de Senha
+
+> **Como** usuário, **quero** recuperar meu acesso mediante envio de um link de redefinição de senha, **para** retomar o uso da plataforma caso esqueça minha senha.
+
+**Critérios de Aceitação (CA)**
+
+* **CA-US03-01:** O sistema deve enviar um link de redefinição de senha (e não a senha em texto puro) para o e-mail cadastrado do usuário, mediante solicitação na tela de login.
+* **CA-US03-02:** O link de redefinição deve ter validade limitada de no máximo 24 horas e ser invalidado após o primeiro uso, exibindo mensagem específica caso o usuário tente reutilizá-lo [RNF04](visao-produto/requisitos.md#82-lista-de-requisitos-não-funcionais).
+
+**Fora do MVP:** O frontend de recuperação de senha ficou pendente por problemas de envio de e-mail no servidor de testes. No entanto, devido ao prazo e por estar no Q4 de prioridade (pequeno valor, grande esforço) foi retirada do MVP.
 
 </details>
 
 <details class="us-dropdown" id="us04" markdown="1">
 
-<summary><strong>US04 — Cadastro de Morfemas no Catálogo✅</strong></summary>
-
+<summary><strong>US04 — Cadastro de Morfemas no Catálogo ✅</strong></summary>
 
 ### US04 — Cadastro de Morfemas no Catálogo
 
@@ -198,27 +212,72 @@ d. Preencha o campo Texto (ex: in) e selecione o tipo no dropdown (Prefixo/Radic
 
 e. Clique no botão "+ Adicionar" para persistir o morfema no banco de dados.
 
+![US04](img/us04.png){ width="80%" }
+
+
 </details>
 
 <details class="us-dropdown" id="us05" markdown="1">
 
-<summary><strong>US05 — Edição de Morfemas</strong></summary>
+<summary><strong>US05 — Edição de Morfemas ✅</strong></summary>
 
 ### US05 — Edição de Morfemas
 
 > **Como** administrador, **quero** editar morfemas existentes no catálogo, **para** corrigir grafias, classificações ou cores associadas.
 
-**Critério de Aceitação (CA)**
+**Critérios de Aceitação (CA):**
 
 * **CA-US05-01:** A edição de um morfema deve permitir alterar sua grafia, tipo morfológico e cor associada, refletindo as alterações imediatamente nas próximas atividades que utilizarem esse morfema [RN03, RNF06].
 
-**Status:** Não iniciado.
+Verificação do Definition of Ready (DoR) — US05
+
+| Critério de DoR (Scrum/XP) | Status | Evidência / Link de Rastreabilidade |
+| :---- | :---- | :---- |
+| **A User Story é atômica e clara?** | Sim | Escopo restrito à operação de alteração de atributos de um morfema. |
+| **Possui Critérios de Aceitação explícitos?** | Sim | CA-US05-01 define o carregamento de dados e o comportamento de salvamento. |
+| **Há rastreabilidade de RNFs e RNs?** | Sim | Mapeada para RN03, RNF03, RNF05 e RNF06. |
+| **A prioridade está coerente e justificada?** | Sim | Must Have — essencial para correções de conteúdo sem a necessidade de exclusão. |
+| **O esforço foi estimado conjuntamente?** | Sim | Estimado em 2 Story Points, reaproveitando a estrutura do frontend. |
+| **Resolução de dependências validada?** | Sim | Interface gráfica e endpoint `PUT/PATCH` da API mapeados. |
+
+***Critério de Pronto (DoD V4.0)***
+
+| *Critério de Pronto (DoD V4.0)* | *Status* | *Evidência de Implementação e Qualidade* |
+| :---- | :---- | :---- |
+| ***1. Implementação Arquitetural*** | *Concluído* | *Tela de formulário implementada em React/TypeScript com preenchimento reativo dos dados atuais do morfema selecionado.* |
+| ***2. Comunicação via API*** | *Concluído* | *O envio do formulário dispara uma requisição PUT/PATCH para a API REST, atualizando o PostgreSQL 15+ (RNF05).* |
+| ***3. Ambiente de Produção*** | *Concluído* | *A edição é realizada e refletida diretamente na interface unificada do sistema via ambiente Vercel (RNF06).* |
+| ***4. Validação de CAs*** | *Concluído* | *CA-US05-01 validado: campos carregam dados prévios e salvamento atualiza as telas dos estudantes em tempo real.* |
+| ***5. Garantia das RNs*** | *Concluído* | *RN03 garantida: rota de edição exige autenticação com perfil de professor/administrador.* |
+| ***6. Validação de RNFs (RNF11)*** | *Concluído* | *Interface validada como responsiva em telas a partir de 360px.* |
+| ***7. Integração Contínua (CI)*** | *Concluído* | *Código integrado ao repositório principal sem falhas na pipeline de CI.* |
+| ***8. Homologação e Validação*** | *Concluído* | *Funcionalidade testada no ambiente de produção (Vercel) e validada com a cliente (PO).* |
+
+**Links de Rastreabilidade e Artefatos**
+
+Link no site: [https://req-2026-1-t01-morfo-blocos-digital.vercel.app/](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/)
+
+**Fluxo de Acesso:**
+
+a. Efetue login com uma conta de Professor.
+
+b. Navegue até o Painel de Conteúdo (aba de gerenciamento).
+
+c. Selecione a aba "Morfemas".
+
+d. Localize na listagem o morfema a ser editado e clique no botão/ícone de edição.
+
+e. Altere os campos necessários no formulário e clique em "Salvar" para persistir as modificações.
+
+![US05](img/us05.png){ width="80%" }
+
 
 </details>
 
+
 <details class="us-dropdown" id="us06" markdown="1">
 
-<summary><strong>US06 — Remoção de Morfemas</strong></summary>
+<summary><strong>US06 — Remoção de Morfemas ✅</strong></summary>
 
 ### US06 — Remoção de Morfemas
 
@@ -254,7 +313,7 @@ Verificação do Definition of Ready (DoR) — US06
 
 **Links de Rastreabilidade e Artefatos**
 
-Link no site: https://req-2026-1-t01-morfo-blocos-digital.vercel.app/
+Link no site: [https://req-2026-1-t01-morfo-blocos-digital.vercel.app/](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/)
 
 **Fluxo de Acesso:**
 
@@ -268,18 +327,71 @@ d. Localize na listagem o morfema a ser removido.
 
 e. Clique no ícone de lixeira (vermelho) ao lado do registro para excluí-lo do banco de dados.
 
+![US06](img/us06.png){ width="80%" }
+
+
 </details>
 
 <details class="us-dropdown" id="us07" markdown="1">
 
-<summary><strong>US07 — Listagem de Morfemas</strong></summary>
+<summary><strong>US07 — Listagem de Morfemas ✅</strong></summary>
+
+### US07 — Listagem de Morfemas
+
+> **Como** administrador, **quero** listar os morfemas cadastrados, **para** consultar o conteúdo atual do catálogo.
+
+**Critérios de Aceitação (CA)**
+
+* **CA-US07-01:** A listagem deve exibir, no mínimo, a grafia do morfema, seu tipo morfológico e a cor associada, permitindo ordenação e busca textual por grafia [RNF06](visao-produto/requisitos.md).
+
+Verificação do Definition of Ready (DoR) — US07
+
+| Critério de DoR (Scrum/XP) | Status | Evidência / Link de Rastreabilidade |
+| :---- | :---- | :---- |
+| **A User Story é atômica e clara?** | Sim | Escopo restrito à exibição e filtragem do catálogo de morfemas. |
+| **Possui Critérios de Aceitação explícitos?** | Sim | CA-US07-01 detalha os campos obrigatórios e ferramentas de busca. |
+| **Há rastreabilidade de RNFs e RNs?** | Sim | Mapeada para RF07, RNF03, RNF06 e RNF11. |
+| **A prioridade está coerente e justificada?** | Sim | Must Have — base para a gerência, edição e exclusão de morfemas. |
+| **O esforço foi estimado conjuntamente?** | Sim | Estimado em 1 Story Point por envolver leitura e renderização de dados. |
+| **Resolução de dependências validada?** | Sim | Endpoint `GET` de morfemas estruturado e testado no backend. |
+
+***Critério de Pronto (DoD V4.0)***
+
+| *Critério de Pronto (DoD V4.0)* | *Status* | *Evidência de Implementação e Qualidade* |
+| :---- | :---- | :---- |
+| ***1. Implementação Arquitetural*** | *Concluído* | *Grid/tabela de blocos renderizada no React com a devida identificação visual de cor por tipo (RNF07).* |
+| ***2. Comunicação via API*** | *Concluído* | *Interface consome o endpoint GET de morfemas populando a tabela de forma dinâmica (RNF05).* |
+| ***3. Ambiente de Produção*** | *Concluído* | *Listagem disponibilizada no painel administrativo hospedado na Vercel (RNF06).* |
+| ***4. Validação de CAs*** | *Concluído* | *CA-US07-01 validado: listagem exibe todos os atributos; busca e filtros refinam os dados instantaneamente.* |
+| ***5. Garantia das RNs*** | *Concluído* | *Acesso restrito a usuários autenticados com nível de permissão adequado.* |
+| ***6. Validação de RNFs (RNF11)*** | *Concluído* | *Filtros e tabela testados em ambiente mobile (360px) garantindo empilhamento e vedação de scroll horizontal.* |
+| ***7. Integração Contínua (CI)*** | *Concluído* | *Código integrado ao repositório principal sem falhas na pipeline de CI.* |
+| ***8. Homologação e Validação*** | *Concluído* | *Performance de busca e filtros validada abaixo do limite de 2 segundos (RNF03) em produção na Vercel.* |
+
+**Links de Rastreabilidade e Artefatos**
+
+Link no site: [https://req-2026-1-t01-morfo-blocos-digital.vercel.app/](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/)
+
+**Fluxo de Acesso:**
+
+a. Efetue login com uma conta de Professor.
+
+b. Navegue até o Painel de Conteúdo (aba de gerenciamento).
+
+c. Selecione a aba "Morfemas" para visualizar a listagem completa.
+
+d. Utilize a barra de pesquisa ou os filtros por tipo para refinar os blocos exibidos.
+
+![US07](img/us07.png){ width="80%" }
+
+
+</details>
 
 </details>
 
 <details class="us-dropdown" id="us08" markdown="1">
 
-<summary><strong>US08 — Cadastro de Palavras Válidas</strong></summary>
-
+<summary><strong>US08 — Cadastro de Palavras Válidas ✅</strong></summary>
 
 ### US08 — Cadastro de Palavras Válidas
 
@@ -315,7 +427,7 @@ Verificação do Definition of Ready (DoR) — US08
 
 **Links de Rastreabilidade e Artefatos**
 
-Link no site: https://req-2026-1-t01-morfo-blocos-digital.vercel.app/
+Link no site: [https://req-2026-1-t01-morfo-blocos-digital.vercel.app/](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/)
 
 **Fluxo de Acesso:**
 
@@ -329,27 +441,71 @@ d. Preencha o campo Palavra (ex: infelizmente) e o campo Processo morfológico (
 
 e. Clique no botão "+ Adicionar" para persistir a palavra válida no banco de dados.
 
+![US08](img/us08.png){ width="80%" }
+
+
 </details>
 
 <details class="us-dropdown" id="us09" markdown="1">
 
-<summary><strong>US09 — Edição de Palavras Válidas</strong></summary>
+<summary><strong>US09 — Edição de Palavras Válidas ✅</strong></summary>
 
 ### US09 — Edição de Palavras Válidas
 
 > **Como** administrador, **quero** editar palavras válidas existentes, **para** corrigir registros ou ajustar processos morfológicos associados.
 
-**Critério de Aceitação (CA)**
+**Critérios de Aceitação (CA)**
 
 * **CA-US09-01:** A edição deve permitir alterar a grafia da palavra, sua composição morfológica e a descrição do processo de formação associado, mantendo a consistência das referências utilizadas pelo validador [RN03, RNF06].
 
-* **Status:** Não iniciado.
+Verificação do Definition of Ready (DoR) — US09
+
+| Critério de DoR (Scrum/XP) | Status | Evidência / Link de Rastreabilidade |
+| :---- | :---- | :---- |
+| **A User Story é atômica e clara?** | Sim | Escopo restrito à modificação de registros textuais e composições no dicionário de validação. |
+| **Possui Critérios de Aceitação explícitos?** | Sim | CA-US09-01 detalha as permissões e restrições de salvamento. |
+| **Há rastreabilidade de RNFs e RNs?** | Sim | Mapeada para RF09, RN04, RNF05 e RNF06. |
+| **A prioridade está coerente e justificada?** | Sim | Must Have — essencial para refinar as palavras aceitas pelo motor do jogo. |
+| **O esforço foi estimado conjuntamente?** | Sim | Estimado em 2 Story Points dada a necessidade de validação relacional com morfemas. |
+| **Resolução de dependências validada?** | Sim | Depende da existência do catálogo de morfemas populado para associação na edição. |
+
+***Critério de Pronto (DoD V4.0)***
+
+| *Critério de Pronto (DoD V4.0)* | *Status* | *Evidência de Implementação e Qualidade* |
+| :---- | :---- | :---- |
+| ***1. Implementação Arquitetural*** | *Concluído* | *Formulário em React/TypeScript implementado com seleção múltipla de morfemas para composição da palavra.* |
+| ***2. Comunicação via API*** | *Concluído* | *Requisições síncronas REST atualizam as tabelas de composição morfológica diretamente no PostgreSQL (RNF05).* |
+| ***3. Ambiente de Produção*** | *Concluído* | *Gestão de edição executada via interface gráfica hospedada na Vercel (RNF06).* |
+| ***4. Validação de CAs*** | *Concluído* | *CA-US09-01 validado: sistema emite erros visuais se a composição violar as regras morfológicas (RN04).* |
+| ***5. Garantia das RNs*** | *Concluído* | *Garantido que o motor de validação do jogo passa a considerar imediatamente a estrutura atualizada da palavra.* |
+| ***6. Validação de RNFs (RNF11)*** | *Concluído* | *Interface de edição validada como responsiva em telas móveis.* |
+| ***7. Integração Contínua (CI)*** | *Concluído* | *Código integrado ao repositório principal sem quebras nas dependências do backend.* |
+| ***8. Homologação e Validação*** | *Concluído* | *Validado com sucesso em produção na Vercel juntamente com a PO.* |
+
+**Links de Rastreabilidade e Artefatos**
+
+Link no site: [https://req-2026-1-t01-morfo-blocos-digital.vercel.app/](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/)
+
+**Fluxo de Acesso:**
+
+a. Efetue login com uma conta de Professor.
+
+b. Navegue até o Painel de Conteúdo (aba de gerenciamento).
+
+c. Selecione a aba "Palavras Válidas".
+
+d. Localize na listagem a palavra desejada e clique em "Editar".
+
+e. Modifique os morfemas vinculados ou o processo formativo e clique em "Salvar".
+
+![US09](img/us09.png){ width="80%" }
+
 
 </details>
 
 <details class="us-dropdown" id="us10" markdown="1">
 
-<summary><strong>US10 — Remoção de Palavras Válidas</strong></summary>
+<summary><strong>US10 — Remoção de Palavras Válidas ✅</strong></summary>
 
 ### US10 — Remoção de Palavras Válida
 
@@ -385,7 +541,7 @@ e. Clique no botão "+ Adicionar" para persistir a palavra válida no banco de d
 
 **Links de Rastreabilidade e Artefatos**
 
-Link no site: https://req-2026-1-t01-morfo-blocos-digital.vercel.app/
+Link no site: [https://req-2026-1-t01-morfo-blocos-digital.vercel.app/](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/)
 
 **Fluxo de Acesso:**
 
@@ -399,15 +555,69 @@ d. Localize na listagem a palavra a ser removida.
 
 e. Clique no ícone de lixeira (vermelho) ao lado do registro para excluí-la do banco de dados.
 
-**Protótipo de alta fidelidade:**
+![US10](img/us10.png){ width="80%" }
 
-![][image6]
+
+</details>
+
+<details class="us-dropdown" id="us11" markdown="1">
+
+<summary><strong>US11 — Listagem de Palavras Válidas ✅</strong></summary>
+
+### US11 — Listagem de Palavras Válidas
+
+> **Como** administrador, **quero** listar as palavras válidas cadastradas, **para** consultar a base utilizada pelo validador morfológico.
+
+**Critérios de Aceitação (CA)**
+
+* **CA-US11-01:** A listagem deve exibir, no mínimo, a grafia da palavra, sua composição morfológica e o processo de formação associado, permitindo consulta e busca textual [RNF06].
+
+Verificação do Definition of Ready (DoR) — US11
+
+| Critério de DoR (Scrum/XP) | Status | Evidência / Link de Rastreabilidade |
+| :---- | :---- | :---- |
+| **A User Story é atômica e clara?** | Sim | Escopo focado na exibição estruturada do dicionário de palavras. |
+| **Possui Critérios de Aceitação explícitos?** | Sim | CA-US11-01 determina os dados exibidos e o mecanismo de busca. |
+| **Há rastreabilidade de RNFs e RNs?** | Sim | Mapeada para RF11, RNF03 e RNF06. |
+| **A prioridade está coerente e justificada?** | Sim | Must Have — indispensável para auditoria do vocabulário cadastrado. |
+| **O esforço foi estimado conjuntamente?** | Sim | Estimado em 1 Story Point (leitura e renderização simples de tabelas relacionais). |
+| **Resolução de dependências validada?** | Sim | Endpoint de consulta no Django homologado previamente. |
+
+***Critério de Pronto (DoD V4.0)***
+
+| *Critério de Pronto (DoD V4.0)* | *Status* | *Evidência de Implementação e Qualidade* |
+| :---- | :---- | :---- |
+| ***1. Implementação Arquitetural*** | *Concluído* | *Tabela em React que renderiza a palavra-chave e expande os morfemas filhos associados de forma hierárquica.* |
+| ***2. Comunicação via API*** | *Concluído* | *Consumo do endpoint GET de palavras válidas via chamadas REST otimizadas (RNF05).* |
+| ***3. Ambiente de Produção*** | *Concluído* | *Visualização centralizada no ambiente Vercel dispensando o Django Admin tradicional (RNF06).* |
+| ***4. Validação de CAs*** | *Concluído* | *CA-US11-01 validado: busca textual localiza palavras instantaneamente com tempo de resposta < 2s (RNF03).* |
+| ***5. Garantia das RNs*** | *Concluído* | *Filtros e dados protegidos contra acessos não autenticados.* |
+| ***6. Validação de RNFs (RNF11)*** | *Concluído* | *Tabela adaptada de forma responsiva para visualização fluida em dispositivos móveis.* |
+| ***7. Integração Contínua (CI)*** | *Concluído* | *Integração sutil realizada no branch principal sem conflitos de layout.* |
+| ***8. Homologação e Validação*** | *Concluído* | *Homologado em produção sob uma base de testes de alta volumetria de palavras.* |
+
+**Links de Rastreabilidade e Artefatos**
+
+Link no site: [https://req-2026-1-t01-morfo-blocos-digital.vercel.app/](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/)
+
+**Fluxo de Acesso:**
+
+a. Efetue login com uma conta de Professor.
+
+b. Navegue até o Painel de Conteúdo.
+
+c. Selecione a aba "Palavras Válidas".
+
+d. Utilize o campo de busca no topo da tabela para pesquisar termos específicos do dicionário.
+
+![US11](img/us11.png){ width="80%" }
+
 
 </details>
 
 <details class="us-dropdown" id="us12" markdown="1">
 
-<summary><strong>US12 — Cadastro de Atividades Pedagógicas</strong></summary>
+<summary><strong>US12 — Cadastro de Atividades Pedagógicas ✅</strong></summary>
 
 ### US12 — Cadastro de Atividades Pedagógicas
 
@@ -443,7 +653,7 @@ e. Clique no ícone de lixeira (vermelho) ao lado do registro para excluí-la do
 
 **Links de Rastreabilidade e Artefatos**
 
-Link no site: https://req-2026-1-t01-morfo-blocos-digital.vercel.app/
+Link no site: [https://req-2026-1-t01-morfo-blocos-digital.vercel.app/](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/)
 
 **Fluxo de Acesso:**
 
@@ -459,31 +669,70 @@ e. Para atividades do tipo Quiz, adicione perguntas clicando em "+ Adicionar per
 
 f. Clique em "+ Criar Atividade" para persistir a atividade no banco de dados.
 
-**Protótipo de alta fidelidade:**
-
-![][image7]
+![US12](img/us12.png){ width="80%" }
 
 </details>
 
 <details class="us-dropdown" id="us13" markdown="1">
 
-<summary><strong>US13 — Edição de Atividades Pedagógicas</strong></summary>
+<summary><strong>US13 — Edição de Atividades Pedagógicas ✅</strong></summary>
 
 ### US13 — Edição de Atividades Pedagógicas
 
-> **Como** administrador, **quero** editar atividades pedagógicas existentes, **para** corrigir enunciados, níveis de dificuldade ou conjuntos de morfemas associados.
+> **Como** administrador, **quero** editar atividades pedagógicas existentes no sistema, **para** corrigir enunciados, níveis de dificuldade ou conjuntos de morfemas associados.
 
-**Critério de Aceitação (CA)**
+**Critérios de Aceitação (CA)**
 
 * **CA-US13-01:** A edição deve permitir alterar título, nível de dificuldade, conjunto de morfemas disponíveis e pontuação mínima para progressão, preservando o histórico das execuções já realizadas [RN03, RNF06, RNF08].
 
-* **Status:** Não iniciado.
+
+Verificação do Definition of Ready (DoR) — US13
+
+| Critério de DoR (Scrum/XP) | Status | Evidência / Link de Rastreabilidade |
+| :---- | :---- | :---- |
+| **A User Story é atômica e clara?** | Sim | Escopo isolado para modificação de metadados e blocos vinculados a um exercício. |
+| **Possui Critérios de Aceitação explícitos?** | Sim | CA-US13-01 protege os dados históricos e impõem regras de vinculação. |
+| **Há rastreabilidade de RNFs e RNs?** | Sim | Mapeada para RF13, RN03, RN08 e RNF06. |
+| **A prioridade está coerente e justificada?** | Sim | Must Have — necessária para o ajuste dinâmico das missões com base no feedback da turma. |
+| **O esforço foi estimado conjuntamente?** | Sim | Estimado em 3 Story Points devido à complexidade de integridade do histórico e chaves estrangeiras. |
+| **Resolução de dependências validada?** | Sim | Validada a não interferência nas tabelas de progresso e tentativas antigas. |
+
+***Critério de Pronto (DoD V4.0)***
+
+| *Critério de Pronto (DoD V4.0)* | *Status* | *Evidência de Implementação e Qualidade* |
+| :---- | :---- | :---- |
+| ***1. Implementação Arquitetural*** | *Concluído* | *Painel de edição em React 18+ contemplando a atualização de enunciados, dificuldades e banco de morfemas disponíveis.* |
+| ***2. Comunicação via API*** | *Concluído* | *Uso de requisições REST via HTTPS utilizando tokens JWT para autenticar o perfil administrativo (RNF14).* |
+| ***3. Ambiente de Produção*** | *Concluído* | *Funcionalidade plenamente operacional no frontend unificado via Vercel (RNF06).* |
+| ***4. Validação de CAs*** | *Concluído* | *CA-US13-01 validado: bloqueio de salvamento caso nenhum morfema seja selecionado; dados históricos blindados.* |
+| ***5. Garantia das RNs*** | *Concluído* | *Garantia das RN03 e RN08: verificado via Code Review o isolamento total das notas históricas já calculadas dos alunos.* |
+| ***6. Validação de RNFs (RNF11)*** | *Concluído* | *Formulários e caixas de seleção múltipla responsivos em telas a partir de 360px.* |
+| ***7. Integração Contínua (CI)*** | *Concluído* | *Testes automatizados cobrindo a integridade do banco de dados executados com sucesso no pipeline de CI.* |
+| ***8. Homologação e Validação*** | *Concluído* | *Módulo homologado e validado de ponta a ponta em produção junto à Profª Pilar.* |
+
+**Links de Rastreabilidade e Artefatos**
+
+Link no site: [https://req-2026-1-t01-morfo-blocos-digital.vercel.app/](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/)
+
+**Fluxo de Acesso:**
+
+a. Efetue login com uma conta de Professor.
+
+b. Acesse o Painel de Controle de Atividades.
+
+c. Na lista de exercícios, clique em "Editar" ao lado da atividade desejada.
+
+d. Modifique os campos textuais, ajuste o nível ou o banco de blocos e clique em "Salvar Alterações".
+
+![US13](img/us13.png){ width="80%" }
+![US13](img/us13parte2.png){ width="80%" }
+
 
 </details>
 
 <details class="us-dropdown" id="us14" markdown="1">
 
-<summary><strong>US14 — Remoção de Atividades Pedagógicas</strong></summary>
+<summary><strong>US14 — Remoção de Atividades Pedagógicas ✅</strong></summary>
 
 ### US14 — Remoção de Atividades Pedagógicas
 
@@ -519,7 +768,7 @@ f. Clique em "+ Criar Atividade" para persistir a atividade no banco de dados.
 
 **Links de Rastreabilidade e Artefatos**
 
-Link no site: https://req-2026-1-t01-morfo-blocos-digital.vercel.app/
+Link no site: [https://req-2026-1-t01-morfo-blocos-digital.vercel.app/](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/)
 
 **Fluxo de Acesso:**
 
@@ -533,33 +782,67 @@ d. Localize na listagem a atividade a ser removida.
 
 e. Clique no ícone de lixeira (vermelho) ao lado do registro para excluí-la do banco de dados.
 
-**Protótipo de alta fidelidade:**
-
-![][image8]
+![US14](img/us14.png){ width="80%" }
 
 
 </details>
 
 <details class="us-dropdown" id="us15" markdown="1">
 
-<summary><strong>US15 — Listagem de Atividades Pedagógicas</strong></summary>
+<summary><strong>US15 — Listagem de Atividades Pedagógicas ✅</strong></summary>
 
 ### US15 — Listagem de Atividades Pedagógicas
 
-> **Como** administrador, **quero** listar atividades cadastradas no sistema, **para** consultar o catálogo de exercícios disponíveis.
+> **Como** administrador, **quero** listar as atividades cadastradas, **para** consultar o catálogo de exercícios disponíveis.
 
-**Critério de Aceitação (CA)**
+**Critérios de Aceitação (CA)**
 
 * **CA-US15-01:** A listagem deve exibir, no mínimo, título da atividade, nível de dificuldade e quantidade de morfemas associados, permitindo ordenação e busca textual [RNF06].
 
-* **Status:** Pendente.
-* **Observação:** A visualização do catálogo de atividades foi tratada como parte da administração do conteúdo, mas ainda não está entregue.
+Verificação do Definition of Ready (DoR) — US15
+
+| Critério de DoR (Scrum/XP) | Status | Evidência / Link de Rastreabilidade |
+| :---- | :---- | :---- |
+| **A User Story é atômica e clara?** | Sim | Escopo focado estritamente na exibição consolidada das atividades criadas. |
+| **Possui Critérios de Aceitação explícitos?** | Sim | CA-US15-01 explicita os metadados visíveis e controles de ordenação. |
+| **Há rastreabilidade de RNFs e RNs?** | Sim | Mapeada para RF15, RNF06, RNF11 e RNF03. |
+| **A prioridade está coerente e justificada?** | Sim | Must Have — ponto de partida para o professor acompanhar o roteiro pedagógico do sistema. |
+| **O esforço foi estimado conjuntamente?** | Sim | Estimado em 1 Story Point (padrão de listagem/cards com paginação simples). |
+| **Resolução de dependências validada?** | Sim | Mapeado o correto relacionamento de contagem entre as tabelas Atividade e Morfema no banco. |
+
+***Critério de Pronto (DoD V4.0)***
+
+| *Critério de Pronto (DoD V4.0)* | *Status* | *Evidência de Implementação e Qualidade* |
+| :---- | :---- | :---- |
+| ***1. Implementação Arquitetural*** | *Concluído* | *Cards e linhas de listagem organizados no React 18+ trazendo informações analíticas rápidas de cada lição (RNF07).* |
+| ***2. Comunicação via API*** | *Concluído* | *Endpoint GET estruturado trazendo paginação reativa via API REST (RNF05).* |
+| ***3. Ambiente de Produção*** | *Concluído* | *Listagem disponibilizada no ambiente web da Vercel integrado ao fluxo do professor (RNF06).* |
+| ***4. Validação de CAs*** | *Concluído* | *CA-US15-01 validado: paginação funcional e ordenação por nível de dificuldade executadas sem lentidão.* |
+| ***5. Garantia das RNs*** | *Concluído* | *Controle de acesso (RBAC) validado para garantir que apenas docentes visualizem as métricas da listagem.* |
+| ***6. Validação de RNFs (RNF11)*** | *Concluído* | *Alinhamento vertical e tamanho de botões validados para touch em resoluções mobile (360px).* |
+| ***7. Integração Contínua (CI)*** | *Concluído* | *Mudanças integradas perfeitamente ao repositório master.* |
+| ***8. Homologação e Validação*** | *Concluído* | *Componente carregando em produção na Vercel com tempo de resposta em conformidade com o RNF03 (< 2s).* |
+
+**Links de Rastreabilidade e Artefatos**
+
+Link no site: [https://req-2026-1-t01-morfo-blocos-digital.vercel.app/](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/)
+
+**Fluxo de Acesso:**
+
+a. Efetue login com uma conta de Professor.
+
+b. No menu principal, clique em "Gerenciar Atividades".
+
+c. Visualize a listagem completa, navegue pelas páginas ou mude a ordenação padrão por nível de dificuldade.
+
+![US15](img/us15.png){ width="80%" }
+
 
 </details>
 
 <details class="us-dropdown" id="us16" markdown="1">
 
-<summary><strong>US16 — Atividades Pedagógicas do Tipo Quiz</strong></summary>
+<summary><strong>US16 — Atividades Pedagógicas do Tipo Quiz ✅</strong></summary>
 
 ### US16 — Atividades Pedagógicas do Tipo Quiz
 
@@ -596,16 +879,24 @@ Links de Rastreabilidade e Artefatos
 Link no site: [https://req-2026-1-t01-morfo-blocos-digital.vercel.app/](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/)
 
 Fluxo de Acesso:  
+
 a. Efetue login no sistema com uma conta ativa de Estudante.  
-b. Na dashboard inicial, localize e selecione um exercício rotulado como "Responder Perguntas".  
+
+b. Na dashboard inicial, localize e selecione um exercício rotulado como "Responder Perguntas".
+
 c. Responda sequencialmente às questões de múltipla escolha clicando nas alternativas desejadas.  
+
 d. Clique no botão de envio para submeter as respostas e visualizar o resultado final.
+
+![US16](img/us16.png){ width="80%" }
+![US16](img/us16parte2.png){ width="80%" }
+
 
 </details>
 
 <details class="us-dropdown" id="us17" markdown="1">
 
-<summary><strong>US17 — Atividades Pedagógicas de Montagem de Palavras (Interface)</strong></summary>
+<summary><strong>US17 — Atividades Pedagógicas de Montagem de Palavras (Interface) ✅</strong></summary>
 
 ### US17 — Atividades Pedagógicas de Montagem de Palavras (Interface)
 
@@ -646,16 +937,23 @@ Links de Rastreabilidade e Artefatos
 Link no site: [https://req-2026-1-t01-morfo-blocos-digital.vercel.app/](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/)
 
 Fluxo de Acesso:  
+
 a. Efetue login no sistema com uma conta ativa de **Estudante**.  
+
 b. Na dashboard inicial, clique em um exercício do tipo **"Junção de Blocos"**.  
+
 c. Visualize o tabuleiro interativo e os blocos de morfemas disponíveis na base da tela.  
+
 d. Arraste e posicione ordenadamente os blocos na área demarcada de construção central.
+
+![US17](img/us17.png){ width="80%" }
+
 
 </details>
 
 <details class="us-dropdown" id="us18" markdown="1">
 
-<summary><strong>US18 - Consulta de Conteúdos Morfológicos</strong></summary>
+<summary><strong>US18 - Consulta de Conteúdos Morfológicos ✅</strong></summary>
 
 ### US18 - Consulta de Conteúdos Morfológicos
 
@@ -690,15 +988,21 @@ Links de Rastreabilidade e Artefatos
 Link no site: [https://req-2026-1-t01-morfo-blocos-digital.vercel.app/](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/)
 
 Fluxo de Acesso:  
+
 a. Efetue login no sistema com uma conta ativa de Estudante.  
+
 b. Na dashboard inicial, clique no botão **"Trilha de Aprendizagem"** ou no ícone de ajuda posicionado na tela da atividade.  
+
 c. Inspecione os textos explicativos rápidos sobre a matéria dentro da janela.
+
+![US18](img/us18.png){ width="80%" }
+
 
 </details>
 
 <details class="us-dropdown" id="us19" markdown="1">
 
-<summary><strong>US19 — Resultado da Validação</strong></summary>
+<summary><strong>US19 — Resultado da Validação ✅</strong></summary>
 
 ### US19 — Resultado da Validação
 
@@ -732,17 +1036,25 @@ Links de Rastreabilidade e Artefatos
 Link no site: [https://req-2026-1-t01-morfo-blocos-digital.vercel.app/](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/)
 
 Fluxo de Acesso:  
+
 a. Efetue login no sistema com uma conta ativa de Estudante.  
+
 b. Na dashboard inicial, clique em um exercício do tipo **"Junção de Blocos"**.  
+
 c. Arraste e posicione ordenadamente os blocos na área demarcada de construção central.  
+
 d. Clique no botão **"Verificar Palavra"**.  
+
 e. Observe o aviso visual emitido indicando o resultado (**"Palavra Válida"** ou **"Palavra Inválida"**).
+
+![US19](img/us19.png){ width="80%" }
+
 
 </details>
 
 <details class="us-dropdown" id="us20" markdown="1">
 
-<summary><strong>US20 — Feedback Pedagógico Estrutural</strong></summary>
+<summary><strong>US20 — Feedback Pedagógico Estrutural ✅</strong></summary>
 
 ### US20 — Feedback Pedagógico Estrutural
 
@@ -775,17 +1087,25 @@ Links de Rastreabilidade e Artefatos
 Link no site: [https://req-2026-1-t01-morfo-blocos-digital.vercel.app/](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/)
 
 Fluxo de Acesso:  
+
 a. Efetue login no sistema com uma conta ativa de Estudante.  
+
 b. Na dashboard inicial, clique em um exercício do tipo **"Junção de Blocos"**.  
+
 c. Arraste e posicione ordenadamente os blocos na área demarcada de construção central.  
+
 d. Clique no botão **"Verificar Palavra"**.  
+
 e. Examine a caixa de texto pedagógica que se expande automaticamente contendo o detalhamento da formação daquela palavra.
+
+![US20](img/us20.png){ width="80%" }
+
 
 </details>
 
 <details class="us-dropdown" id="us21" markdown="1">
 
-<summary><strong>US21 — Histórico de Desempenho do Estudante</strong></summary>
+<summary><strong>US21 — Histórico de Desempenho do Estudante ✅</strong></summary>
 
 ### US21 — Histórico de Desempenho do Estudante
 
@@ -819,34 +1139,73 @@ Links de Rastreabilidade e Artefatos
 Link no site: [https://req-2026-1-t01-morfo-blocos-digital.vercel.app/](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/)
 
 Fluxo de Acesso:  
+
 a. Efetue login no sistema com uma conta ativa de Estudante.  
+
 b. Na dashboard inicial, localize e clique no painel ou botão **"Histórico de Questões"** posicionado na interface principal.
+
+![US21](img/us21.png){ width="80%" }
+
 
 </details>
 
 <details class="us-dropdown" id="us22" markdown="1">
 
-<summary><strong>US22 — Histórico de Pontuações do Estudante</strong></summary>
+<summary><strong>US22 — Histórico de Pontuações do Estudante ✅</strong></summary>
 
 ### US22 — Histórico de Pontuações do Estudante
 
-> **Como** estudante, **quero** consultar o histórico das minhas pontuações individuais, **para** acompanhar minha evolução ao longo do tempo.
+> **Como** estudante, **quero** consultar o histórico das minhas pontuações individuais, para acompanhar minha evolução ao longo do tempo.
 
 **Critérios de Aceitação (CA)**
 
 * **CA-US22-01:** O histórico deve apresentar, para cada atividade concluída pelo estudante, no mínimo: nome da atividade, data de realização, pontuação obtida e resultado final da tentativa, ordenados cronologicamente [RNF01, RN08].
 * **CA-US22-02:** O estudante deve conseguir filtrar ou navegar pelo histórico para consultar diferentes períodos de utilização, e o sistema deve exibir a pontuação acumulada ou indicadores de progresso correspondentes aos registros apresentados [RN06, RN07].
 
-* **Status:** Pendente.
-* **Observação:** A funcionalidade de navegação e agregação do histórico permanece em fase de refinamento para o próximo ciclo de desenvolvimento.
+Verificação do Definition of Ready (DoR) — US22
 
-</details>
+| Critério de DoR (Scrum/XP) | Status | Evidência / Link de Rastreabilidade |
+| :---- | :---- | :---- |
+| **A User Story é atômica e clara?** | Sim | Escopo focado na transparência e autoavaliação do aluno a partir de dados passados. |
+| **Possui Critérios de Aceitação explícitos?** | Sim | CA-US22-01 e CA-US22-02 definem o ordenamento temporal estrito. |
+| **Há rastreabilidade de RNFs e RNs?** | Sim | Mapeada para RF22, RN05, RN06, RN08, RNF11 e RNF15. |
+| **A prioridade está coerente e justificada?** | Sim | Must Have — essencial para a engrenagem de gamificação e portfólio do aluno. |
+| **O esforço foi estimado conjuntamente?** | Sim | Estimado em 2 Story Points por demandar formatação amigável de datas e notas em gráficos/tabelas. |
+| **Resolução de dependências validada?** | Sim | Endpoint de histórico individual baseado no ID do Token JWT validado no backend. |
+
+***Critério de Pronto (DoD V4.0)***
+
+| *Critério de Pronto (DoD V4.0)* | *Status* | *Evidência de Implementação e Qualidade* |
+| :---- | :---- | :---- |
+| ***1. Implementação Arquitetural*** | *Concluído* | *Painel do Aluno desenvolvido em React consumindo dados históricos individuais de forma isolada.* |
+| ***2. Comunicação via API*** | *Concluído* | *A requisição GET extrai o ID do estudante criptografado no token JWT para blindar acessos indevidos (RNF13).* |
+| ***3. Ambiente de Produção*** | *Concluído* | *Tela de portfólio disponível no ambiente de produção da Vercel diretamente na conta do aluno.* |
+| ***4. Validação de CAs*** | *Concluído* | *CA-US22-01 e CA-US22-02 validados: histórico organiza os registros de forma cronológica partindo do mais recente automaticamente.* |
+| ***5. Garantia das RNs*** | *Concluído* | *Garantia de RN05, RN06 e RN08: toda tentativa válida ou inválida concluída pelo aluno persiste e consta no feed.* |
+| ***6. Validação de RNFs (RNF15)*** | *Concluído* | *Contraste de cor das pontuações validado em conformidade com o nível AA da WCAG (mínimo de 4.5:1).* |
+| ***7. Integração Contínua (CI)*** | *Concluído* | *Código integrado sem gerar quebras nas rotas globais de navegação da aplicação.* |
+| ***8. Homologação e Validação*** | *Concluído* | *Funcionalidade exaustivamente testada no ambiente mobile real e homologada junto à equipe e PO.* |
+
+**Links de Rastreabilidade e Artefatos**
+
+Link no site: [https://req-2026-1-t01-morfo-blocos-digital.vercel.app/](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/)
+
+**Fluxo de Acesso:**
+
+a. Efetue login com uma conta de Aluno (Estudante).
+
+b. No menu superior ou lateral, clique na seção "Meu Portfólio" ou "Meu Histórico".
+
+c. Visualize a linha do tempo responsiva listando todas as suas tentativas pedagógicas e notas em ordem decrescente.
+
+![US22](img/us22.png){ width="80%" }
+
 
 </details>
 
 <details class="us-dropdown" id="us23" markdown="1">
 
-<summary><strong>US23 — Criação de Turmas (Visão do Professor)</strong></summary>
+<summary><strong>US23 — Criação de Turmas (Visão do Professor) ✅</strong></summary>
 
 ### US23 — Criação de Turmas (Visão do Professor)
 
@@ -875,19 +1234,26 @@ Critério de Aceitação (CA)
 | **6. Validação de RNFs (RNF11)** | **Concluído** | Interface do formulário de criação de turmas mapeada e validada em design responsivo fluido para telas móveis de 360px. |
 | **7. Integração Contínua (CI)** | **Concluído** | Modelagem de banco e regras de validação integradas à branch principal por meio de Pull Request aprovado sem falhas na pipeline. |
 
-Links de Rastreabilidade e Artefatos
+Link no site: [https://req-2026-1-t01-morfo-blocos-digital.vercel.app/](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/)
 
 Fluxo de Acesso:  
+
 a. Efetue login com uma conta configurada com permissões de **Professor**.  
-b. Clique no link **"Gerenciar Turmas"** na barra de ferramentas lateral ou menu principal.  
+
+b. Clique no link **"Gerenciar Turmas"** na barra de ferramentas lateral ou menu principal.
+
 c. Clique no botão de ação **"Nova Turma"** para carregar o formulário.  
+
 d. Preencha o nome da turma, ano corrente e confirme a operação de escrita.
+
+![US23](img/us23.png){ width="80%" }
+
 
 </details>
 
 <details class="us-dropdown" id="us24" markdown="1">
 
-<summary><strong>US24 — Relatório Analítico Consolidado da Turma</strong></summary>
+<summary><strong>US24 — Relatório Analítico Consolidado da Turma ❌</strong></summary>
 
 ### US24 — Relatório Analítico Consolidado da Turma
 
@@ -895,25 +1261,59 @@ d. Preencha o nome da turma, ano corrente e confirme a operação de escrita.
 
 **Critérios de Aceitação (CA):**
 
-* **CA-US24-01:** O painel deve agregar e exibir de forma visual as médias de pontuação, taxas de acertos e o progresso macro das atividades da turma selecionada.
-* **CA-US24-02:** O relatório permite filtrar os dados de desempenho por intervalo de tempo e por tarefas específicas, atualizando a tela de forma dinâmica.
-* **CA-US24-03:** Se a turma selecionada for nova e os alunos ainda não tiverem realizado nenhum exercício, os gráficos e tabelas não podem quebrar; o sistema deve exibir uma mensagem clara.
+* **CA-US24-01:** Se a turma selecionada for nova e os alunos ainda não tiverem realizado nenhum exercício, os gráficos e tabelas não podem quebrar; o sistema deve exibir uma mensagem clara.
 
-| *Critério de DoR (Scrum/XP)* | *Status* | *Evidência / Link de Rastreabilidade* |
-| :---- | :---- | :---- |
-| *A prioridade está coerente e justificada?* | *Sim* | *Should Have. Principal painel analítico para embasamento instrucional do professor.* |
-| *O esforço foi estimado conjuntamente?* | *Sim* | *Estimada em 4 Story Points pelo desenvolvimento de filtros dinâmicos e cálculos complexos de média em tempo real.* |
-| *Resolução de dependências validada?* | *Sim* | *Chaves estrangeiras conectando Turmas, Alunos e Notas devidamente mapeadas na arquitetura.* |
-
-| Critério de Pronto (DoD V4.0) | Status | Evidência de Implementação e Qualidade |
-| :---- | :---- | :---- |
-| **1. Implementação Arquitetural** | **Concluído** | Consultas e rotas para agregação estatística de médias e taxas de acerto desenvolvidas e otimizadas no banco de dados PostgreSQL 15+. |
-| **2. Comunicação via API** | **Concluído** | Endpoints REST criados para retornar pacotes estruturados de dados analíticos com suporte a parâmetros de filtros (RNF05). |
-| **3. Operações Django Admin** | **Concluído** | Tabelas relacionais que vinculam notas, turmas e históricos permanecem acessíveis e totalmente auditáveis no Django Admin. |
-| **4. Validação de CAs** | **Concluído** | Critérios CA-US24-01 a CA-US24-03 validados nos cenários de preenchimento e dados nulos. |
-| **5. Garantia das RNs** | **Concluído** | O sistema de buscas isola os dados por token JWT, garantindo de forma invariante que um professor autenticado acesse apenas os dados de suas próprias turmas. |
-| **6. Validação de RNFs (RNF11)** | **Concluído** | Painel de indicadores visuais estruturado em grid adaptativo, garantindo o redimensionamento fluido e legibilidade em telas móveis de 360px. |
-| **7. Integração Contínua (CI)** | **Concluído** | Código integrado com sucesso ao repositório principal, com funções matemáticas de cálculo de desempenho validadas na pipeline de testes. |
-| **8. Homologação & Validação** | **Concluído** | Painel analítico testado no ambiente de homologação da Vercel por meio do fluxo de acesso e homologado formalmente com a cliente (PO). |
+**Fora do MVP**: Classificado como Must Have. O professor monitorará o desempenho coletivo pelas médias da turma, dashboards e paineis com taxas de acerto, mas a geração do relatório de desempenho da turma foi postergado.
 
 </details>
+
+<details class="us-dropdown" id="us25" markdown="1">
+
+<summary><strong>US25 — Análise de Erros Frequentes ✅</strong></summary>
+
+### **US25 — Análise de Erros Frequentes**
+
+> **Como** administrador/professor, **quero** visualizar um relatório descritivo dos erros mais frequentes cometidos pelos estudantes, **para** identificar dificuldades recorrentes e planejar intervenções pedagógicas direcionadas.
+
+**Critérios de Aceitação (CA)**:
+
+* **CA-US25-01**: A análise de erros deve listar as palavras inválidas mais frequentemente submetidas pela turma no período selecionado, em ranking decrescente, com indicação da quantidade de ocorrências e dos estudantes envolvidos [RN02, RN05].
+* **CA-US25-02**: A análise depende funcionalmente do registro de tentativas inválidas realizado pela US20 (CA-US20-03); na ausência de submissões inválidas no período, a tela deve exibir mensagem informativa específica em vez de tabela vazia [RN05, RN08].
+* **CA-US25-03**: O período padrão da análise deve ser os últimos 30 dias, com filtros adicionais para últimos 7 dias e semestre completo, e filtro opcional por nível de dificuldade da atividade em que o erro foi cometido [RNF03].
+
+Verificação do Definition of Ready (DoR) — US25
+
+| Critério de DoR (Scrum/XP) | Status | Evidência / Link de Rastreabilidade |
+| :--- | :---: | :--- |
+| **A User Story é atômica e clara?** | Sim | Escopo focado exclusivamente na consolidação e exibição analítica das falhas de montagem morfológica mais comuns. |
+| **Possui Critérios de Aceitação explícitos?** | Sim | CAs definidos (exibição de ranking de palavras/morfemas errados e filtros de busca por turma). |
+| **Há rastreabilidade de RNFs e RNs?** | Sim | Mapeada para os requisitos de monitoramento, desempenho e tempo de resposta (RNF03). |
+| **A prioridade está coerente e justificada?** | Sim | Should Have / Must Have — essencial para o acompanhamento analítico do professor, preenchendo a vaga de relatórios do MVP após a remoção da US24. |
+| **O esforço foi estimado conjuntamente?** | Sim | Estimado em 3 Story Points devido à necessidade de consultas agregadas (`GROUP BY` / `COUNT`) no banco de dados. |
+| **Resolução de dependências validada?** | Sim | Depende puramente da tabela de "Tentativas" (persistida na US22/US23) contendo os logs de validações incorretas dos alunos. |
+
+---
+
+*Critério de Pronto (DoD V4.0) — US25*
+
+| *Critério de Pronto (DoD V4.0)* | *Status* | *Evidência de Implementação e Qualidade* |
+| :--- | :---: | :--- |
+| ***1. Implementação Arquitetural*** | *Concluído* | *Interface construída em React/TypeScript apresentando um dashboard/painel com o ranking visual dos principais desvios morfológicos.* |
+| ***2. Comunicação via API*** | *Concluído* | *Endpoint específico `GET /api/reports/frequent-errors/` estruturado no Django, realizando a agregação de dados de tentativas falhas.* |
+| ***3. Ambiente de Produção*** | *Concluído* | *Módulo de relatório disponibilizado de forma segura no painel do professor hospedado na plataforma Vercel.* |
+| ***4. Validação de CAs*** | *Concluído* | *CAs validados: o sistema computa e ordena corretamente os erros em tempo real a cada submissão incorreta dos alunos.* |
+| ***5. Garantia das RNs*** | *Concluído* | *Segurança baseada em perfis (RBAC): verificado que contas de nível 'Estudante' recebem erro `403 Forbidden` ao tentar acessar o endpoint.* |
+| ***6. Validação de RNFs (RNF11)*** | *Concluído* | *Tabela e gráficos de erros validados como responsivos, adaptando-se para leitura limpa em resoluções a partir de 360px.* |
+| ***7. Integração Contínua (CI)*** | *Concluído* | *Migrações de banco e rotas de agregação integradas à pipeline principal sem afetar a performance do jogo.* |
+| ***8. Homologação e Validação*** | *Concluído* | *Apresentado e homologado com sucesso junto à PO, garantindo os dados estatísticos necessários para a tomada de decisão pedagógica.* |
+
+Link no site: [https://req-2026-1-t01-morfo-blocos-digital.vercel.app/](https://req-2026-1-t01-morfo-blocos-digital.vercel.app/)
+
+Fluxo de Acesso:  
+
+a. Efetue login com uma conta configurada com permissões de **Professor**.  
+
+b. Na interface inicial, já é possível ver os erros frequentes através dos paineis implementados.
+
+![US25](img/us25.png){ width="80%" }
+![US25](img/us25parte2.png){ width="80%" }
