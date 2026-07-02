@@ -125,14 +125,11 @@ export function Login() {
               </div>
             </div>
 
-            <div className="flex items-center justify-between text-sm">
+            <div className="flex items-center text-sm">
               <label className="flex items-center gap-2 cursor-pointer">
                 <input type="checkbox" className="w-4 h-4 rounded border-border text-primary focus:ring-primary" />
                 <span>Lembrar de mim</span>
               </label>
-              <Link to="/esqueci-senha" className="text-primary hover:underline">
-                Esqueci a senha
-              </Link>
             </div>
 
             {error && (
