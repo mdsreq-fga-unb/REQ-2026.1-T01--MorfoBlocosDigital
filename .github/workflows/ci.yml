@@ -1,0 +1,58 @@
+name: CI MorfoBlocos Django
+
+on:
+  push:
+    branches: [ "main", "develop" ]
+  pull_request:
+    branches: [ "main", "develop" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    # Banco de teste: o manage.py test precisa de um PostgreSQL acessível.
+    # As credenciais batem com as variáveis de ambiente do passo de testes.
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: db_teste
+          POSTGRES_USER: user_teste
+          POSTGRES_PASSWORD: '123'
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    # 📌 A MÁGICA ESTÁ AQUI: Avisa o GitHub para rodar tudo dentro da pasta backend
+    defaults:
+      run:
+        working-directory: ./backend
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Configurar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'  # 📌 Mudei de 3.11 para 3.12 aqui!
+        
+    - name: Instalar dependências
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Rodar Testes Automatizados (TDD)
+      env:
+        SECRET_KEY: 'chave-falsa-so-para-o-robo-testar'
+        DEBUG: 'True'
+        DB_NAME: 'db_teste'
+        DB_USER: 'user_teste'
+        DB_PASSWORD: '123'
+        DB_HOST: 'localhost'
+        DB_PORT: '5432'
+      run: |
+        python manage.py test

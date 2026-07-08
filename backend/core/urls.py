@@ -1,0 +1,36 @@
+from django.urls import path
+from core.views import (
+    MeView,
+    RegistroView,
+    MorfemaListCreateView,
+    MorfemaDetailView,
+    PalavraValidaListCreateView,
+    PalavraValidaDetailView,
+    ValidarPalavraView,
+    ForgotPasswordView,
+    ResetPasswordConfirmView,
+    HistoricoAlunoView,
+    RelatorioProfessorView,
+    TurmaListCreateView,
+    AdicionarAlunoTurmaView,
+    AtividadeListCreateView,
+    AtividadeRetrieveUpdateDestroyView,
+)
+
+urlpatterns = [
+    path("auth/me/", MeView.as_view(), name="me"),
+    path("auth/registro/", RegistroView.as_view(), name="registro"),
+    path("auth/forgot-password/", ForgotPasswordView.as_view(), name="forgot-password"),
+    path("auth/reset-password/", ResetPasswordConfirmView.as_view(), name="reset-password"),
+    path("morfemas/", MorfemaListCreateView.as_view(), name="morfemas"),
+    path("morfemas/<int:pk>/", MorfemaDetailView.as_view(), name="morfema-detalhe"),
+    path("palavras/", PalavraValidaListCreateView.as_view(), name="palavras"),
+    path("palavras/<int:pk>/", PalavraValidaDetailView.as_view(), name="palavra-detalhe"),
+    path("validar-palavra/", ValidarPalavraView.as_view(), name="validar-palavra"),
+    path("atividades/", AtividadeListCreateView.as_view(), name="atividades"),
+    path("atividades/<int:pk>/", AtividadeRetrieveUpdateDestroyView.as_view(), name="atividade-detalhe"),
+    path("historico/", HistoricoAlunoView.as_view(), name="historico-aluno"),
+    path("professor/relatorio/", RelatorioProfessorView.as_view(), name="relatorio-professor"),
+    path("professor/turmas/", TurmaListCreateView.as_view(), name="turmas"),
+    path("professor/turmas/<int:turma_id>/alunos/", AdicionarAlunoTurmaView.as_view(), name="turma-add-aluno"),
+]
